@@ -3,17 +3,11 @@ package com.fabo.unmsmmap.datosprecargados;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.JLabel;
-
 import com.fabo.unmsmmap.logica.entidades.Biblioteca;
 import com.fabo.unmsmmap.logica.entidades.Comedor;
 import com.fabo.unmsmmap.logica.entidades.Establecimiento;
 import com.fabo.unmsmmap.logica.entidades.Facultad;
 import com.fabo.unmsmmap.logica.grafo.Edge;
-import com.fabo.unmsmmap.logica.grafo.Graph;
-import com.fabo.unmsmmap.logica.grafo.Vertex;
-import com.fabo.unmsmmap.utilidades.CargaImagen;
-import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
 
 public class InicializarGrafo {
 	public void inicializarEstablecimientos() {
@@ -187,265 +181,52 @@ public class InicializarGrafo {
 
 		ArrayList<Edge<Establecimiento>> edges = new ArrayList<>();
 
-		edges.add(new Edge<Establecimiento>(psicologia, 212, AlmacenDeCaminos.minasPsicologia()));
-
-		minas.addEdge(new Edge<Establecimiento>(psicologia, 212, AlmacenDeCaminos.minasPsicologia()));
-		// Con civil
-		minas.addEdge(new Edge<Establecimiento>(civil, 535, AlmacenDeCaminos.minasCivil()));
-
-		// Para psicologia
-		// Con minas
-		psicologia.addEdge(new Edge<Establecimiento>(minas, 212, AlmacenDeCaminos.minasPsicologia()));
-		// Con sistemas
-		psicologia.addEdge(new Edge<Establecimiento>(sistemas, 179, AlmacenDeCaminos.psicologiaSistemas()));
-		// Con odontologia
-		psicologia.addEdge(new Edge<Establecimiento>(odontologia, 233, AlmacenDeCaminos.psicologiaOdontologia()));
-		// Con electronica
-		psicologia.addEdge(new Edge<Establecimiento>(electronica, 295, AlmacenDeCaminos.psicologiaElectronica()));
-		// Con ciencias economicas
-		psicologia.addEdge(
-				new Edge<Establecimiento>(ciencias_economicas, 89, AlmacenDeCaminos.psicologiaCienciasEconomicas()));
-
-		// Para sistemas
-		// Con psicologia
-		sistemas.addEdge(new Edge<Establecimiento>(psicologia, 179, AlmacenDeCaminos.psicologiaSistemas()));
-		// Con odontologia
-		sistemas.addEdge(new Edge<Establecimiento>(odontologia, 135, AlmacenDeCaminos.odontologiaSistemas()));
-		// Con educacion fisica
-		sistemas.addEdge(new Edge<Establecimiento>(educacion_fisica, 262, AlmacenDeCaminos.sistemasEducacionFisica()));
-		// Con ciencias economicas
-		sistemas.addEdge(new Edge<Establecimiento>(ciencias_economicas, 46, AlmacenDeCaminos.cienciasEconomicasFISI()));
-
-		// Para odontologia
-		// Con psicologia
-		odontologia.addEdge(new Edge<Establecimiento>(psicologia, 233, AlmacenDeCaminos.psicologiaOdontologia()));
-		// Con sistemas
-		odontologia.addEdge(new Edge<Establecimiento>(sistemas, 135, AlmacenDeCaminos.odontologiaSistemas()));
-		// Con educacion
-		odontologia.addEdge(new Edge<Establecimiento>(educacion, 156, AlmacenDeCaminos.odontologiaEducacion()));
-		// Con electronica
-		odontologia.addEdge(new Edge<Establecimiento>(electronica, 149, AlmacenDeCaminos.odontologiaElectrica()));
-		// Con ciencias Economicas
-		odontologia.addEdge(
-				new Edge<Establecimiento>(ciencias_economicas, 134, AlmacenDeCaminos.cienciasEconomicasOdontologia()));
-		// Con biblioteca
-		odontologia.addEdge(new Edge<Establecimiento>(biblioteca, 223, AlmacenDeCaminos.odontologiaBiblioteca()));
-
-		// Para educacion
-		// Con odontologia
-		educacion.addEdge(new Edge<Establecimiento>(odontologia, 156, AlmacenDeCaminos.odontologiaEducacion()));
-		// Con educacion fisica
-		educacion.addEdge(new Edge<Establecimiento>(educacion_fisica, 33, AlmacenDeCaminos.EducacionEducacionFisica()));
-		// Con geografica
-		educacion.addEdge(new Edge<Establecimiento>(geografica, 184, AlmacenDeCaminos.educacionGeografica()));
-		// Con biblioteca
-		educacion.addEdge(new Edge<Establecimiento>(biblioteca, 148, AlmacenDeCaminos.educacionBiblioteca()));
-
-		// Para electronica
-		// Con psicologia
-		electronica.addEdge(new Edge<Establecimiento>(psicologia, 295, AlmacenDeCaminos.psicologiaElectronica()));
-		// Con odontologia
-		electronica.addEdge(new Edge<Establecimiento>(odontologia, 149, AlmacenDeCaminos.odontologiaElectrica()));
-		// Con civil
-		electronica.addEdge(new Edge<Establecimiento>(civil, 141, AlmacenDeCaminos.electronicaCivil()));
-		// Con geografica
-		electronica.addEdge(new Edge<Establecimiento>(geografica, 92, AlmacenDeCaminos.electronicaGeografica()));
-
-		// Para civil
-		// Con minas
-		civil.addEdge(new Edge<Establecimiento>(minas, 535, AlmacenDeCaminos.minasCivil()));
-		// Con electrica
-		civil.addEdge(new Edge<Establecimiento>(electronica, 141, AlmacenDeCaminos.electronicaCivil()));
-		// Con mecanica de fluidos
-		civil.addEdge(new Edge<Establecimiento>(mecanica_fluidos, 150, AlmacenDeCaminos.civilFluidos()));
-
-		// Para mecanica de fluidos
-		// Con civil
-		mecanica_fluidos.addEdge(new Edge<Establecimiento>(civil, 150, AlmacenDeCaminos.civilFluidos()));
-		// Con geologica
-		mecanica_fluidos.addEdge(new Edge<Establecimiento>(metalurgica, 524, AlmacenDeCaminos.fluidosMetalurgica()));
-		// Con comedor
-		mecanica_fluidos.addEdge(new Edge<Establecimiento>(comedor, 568, AlmacenDeCaminos.comedorFluidos()));
-
-		// Para geologica
-		// Con metalurgica
-		geologica.addEdge(new Edge<Establecimiento>(metalurgica, 81, AlmacenDeCaminos.geologicaMetalurgica()));
-		// Con matematicas
-		geologica
-				.addEdge(new Edge<Establecimiento>(ciencias_matematicas, 294, AlmacenDeCaminos.geologicaMatematicas()));
-
-		// Para quimica
-		// Con metalurgica
-		quimica.addEdge(new Edge<Establecimiento>(metalurgica, 77, AlmacenDeCaminos.metalurgicaQuimica()));
-		// Con comedor
-		quimica.addEdge(new Edge<Establecimiento>(comedor, 240, AlmacenDeCaminos.quimicaComedor()));
-
-		// Para Matematica
-		// Con geologica
-		ciencias_matematicas
-				.addEdge(new Edge<Establecimiento>(geologica, 294, AlmacenDeCaminos.geologicaMatematicas()));
-		// Con biologicas
-		ciencias_matematicas
-				.addEdge(new Edge<Establecimiento>(ciencias_biologicas, 67, AlmacenDeCaminos.matematicaBiologica()));
-		// Con fisicas
-		ciencias_matematicas
-				.addEdge(new Edge<Establecimiento>(ciencias_fisicas, 64, AlmacenDeCaminos.matematicaFisica()));
-		// Con comedor
-		ciencias_matematicas.addEdge(new Edge<Establecimiento>(comedor, 148, AlmacenDeCaminos.matematicaComedor()));
-
-		// Para industrial
-		// Con ciencias fisicas
-		industrial.addEdge(new Edge<Establecimiento>(ciencias_fisicas, 141, AlmacenDeCaminos.industrialfisica()));
-		// Con derecho
-		industrial.addEdge(new Edge<Establecimiento>(derecho, 169, AlmacenDeCaminos.industrialDerecho()));
-
-		// Para derecho
-		// Con industrial
-		derecho.addEdge(new Edge<Establecimiento>(industrial, 169, AlmacenDeCaminos.industrialDerecho()));
-		// Con cienciasEconomicas
-		derecho.addEdge(new Edge<Establecimiento>(ciencias_economicasA, 99,
-				AlmacenDeCaminos.derechoCienciasEconomicasAntiguo()));
-		// Con sociales
-		derecho.addEdge(new Edge<Establecimiento>(ciencias_sociales, 77, AlmacenDeCaminos.socialesDerecho()));
-
-		// Para Administrativas
-		// Con sociales
-		ciencias_administrativas.addEdge(new Edge<Establecimiento>(ciencias_sociales, 75,
-				AlmacenDeCaminos.cienciaSocialCienciaAdministrativa()));
-		// Con ciencias economicas Antiguo
-		ciencias_administrativas.addEdge(
-				new Edge<Establecimiento>(ciencias_economicasA, 57, AlmacenDeCaminos.administrativoEconomicasA()));
-		// Con letras
-		ciencias_administrativas
-				.addEdge(new Edge<Establecimiento>(letras, 75, AlmacenDeCaminos.cienciaAdministrativaLetras()));
-
-		// Para Biologicas
-		// Con Matematicas
-		ciencias_biologicas
-				.addEdge(new Edge<Establecimiento>(ciencias_matematicas, 67, AlmacenDeCaminos.matematicaBiologica()));
-		// Con fisicas
-		ciencias_biologicas
-				.addEdge(new Edge<Establecimiento>(ciencias_fisicas, 52, AlmacenDeCaminos.biologicasFisica()));
-		// Con comedor
-		ciencias_biologicas.addEdge(new Edge<Establecimiento>(comedor, 119, AlmacenDeCaminos.comedorBiologicas()));
-
-		// Para metalurgica
-		// Con quimica
-		metalurgica.addEdge(new Edge<Establecimiento>(quimica, 77, AlmacenDeCaminos.metalurgicaQuimica()));
-		// Con geologica
-		metalurgica.addEdge(new Edge<Establecimiento>(geologica, 115, AlmacenDeCaminos.geologicaMetalurgica()));
-		// Con comedor
-		metalurgica.addEdge(new Edge<Establecimiento>(comedor, 374, AlmacenDeCaminos.metalurgicaComedor()));
-
-		// Para Ciencias fisicas
-		// Con industrial
-		ciencias_fisicas.addEdge(new Edge<Establecimiento>(industrial, 141, AlmacenDeCaminos.industrialfisica()));
-		// Con ciencias biologicas
-		ciencias_fisicas
-				.addEdge(new Edge<Establecimiento>(ciencias_biologicas, 52, AlmacenDeCaminos.biologicasFisica()));
-		// Con ciencias matematicas
-		ciencias_fisicas
-				.addEdge(new Edge<Establecimiento>(ciencias_matematicas, 64, AlmacenDeCaminos.matematicaFisica()));
-
-		// Para ciencias contables
-		// Con electronica2
-		ciencias_contables
-				.addEdge(new Edge<Establecimiento>(electronica2, 160, AlmacenDeCaminos.contablesElectronica2()));
-		// Con ciencias sociales
-		ciencias_contables
-				.addEdge(new Edge<Establecimiento>(ciencias_sociales, 125, AlmacenDeCaminos.socialesContables()));
-		// Con ciencias EconomicasAP
-		ciencias_contables
-				.addEdge(new Edge<Establecimiento>(ciencias_economicasA, 105, AlmacenDeCaminos.economicasAPContable()));
-
-		// Para ciencias sociales
-		// Con administrativas
-		ciencias_sociales.addEdge(new Edge<Establecimiento>(ciencias_administrativas, 70,
-				AlmacenDeCaminos.cienciaSocialCienciaAdministrativa()));
-		// Con contables
-		ciencias_sociales
-				.addEdge(new Edge<Establecimiento>(ciencias_contables, 125, AlmacenDeCaminos.socialesContables()));
-		// Con economicas Antiguo
-		ciencias_sociales
-				.addEdge(new Edge<Establecimiento>(ciencias_economicasA, 68, AlmacenDeCaminos.socialesEconomicasA()));
-		// Con derecho
-		ciencias_sociales.addEdge(new Edge<Establecimiento>(derecho, 77, AlmacenDeCaminos.socialesDerecho()));
-
-		// Para letras
-		// Con ciencias administrativas
-		letras.addEdge(new Edge<Establecimiento>(ciencias_administrativas, 75,
-				AlmacenDeCaminos.cienciaAdministrativaLetras()));
-		// Con electrica2
-		letras.addEdge(new Edge<Establecimiento>(electronica2, 170, AlmacenDeCaminos.letrasElectronica()));
-
-		// Para electrica2
-		// Con contables
-		electronica2
-				.addEdge(new Edge<Establecimiento>(ciencias_contables, 160, AlmacenDeCaminos.contablesElectronica2()));
-		// Con educacionFisica
-		electronica2.addEdge(
-				new Edge<Establecimiento>(educacion_fisica, 443, AlmacenDeCaminos.electronica2EducacionFisica()));
-		// Con letras
-		electronica2.addEdge(new Edge<Establecimiento>(letras, 170, AlmacenDeCaminos.letrasElectronica()));
-
-		// Para Educacion Fisica
-		// Con educacion
-		educacion_fisica.addEdge(new Edge<Establecimiento>(educacion, 33, AlmacenDeCaminos.EducacionEducacionFisica()));
-		// Con electronica 2
-		educacion_fisica
-				.addEdge(new Edge<Establecimiento>(electronica2, 443, AlmacenDeCaminos.electronica2EducacionFisica()));
-
-		// Para geografica
-		// Con educacion
-		geografica.addEdge(new Edge<Establecimiento>(educacion, 167, AlmacenDeCaminos.educacionGeografica()));
-		// Con electronica
-		geografica.addEdge(new Edge<Establecimiento>(electronica, 92, AlmacenDeCaminos.electronicaGeografica()));
-		// Con comedor
-		geografica.addEdge(new Edge<Establecimiento>(comedor, 659, AlmacenDeCaminos.geograficaComedor()));
-		// Con biblioteca
-		geografica.addEdge(new Edge<Establecimiento>(biblioteca, 93, AlmacenDeCaminos.geograficaBiblioteca()));
-
-		// Para ciencias economicas
-		// Con odontologia
-		ciencias_economicas
-				.addEdge(new Edge<Establecimiento>(odontologia, 134, AlmacenDeCaminos.cienciasEconomicasOdontologia()));
-		// Con sistemas
-		ciencias_economicas.addEdge(new Edge<Establecimiento>(sistemas, 46, AlmacenDeCaminos.cienciasEconomicasFISI()));
-		ciencias_economicas
-				.addEdge(new Edge<Establecimiento>(psicologia, 89, AlmacenDeCaminos.psicologiaCienciasEconomicas()));
-
-		// Para ciencias economicas antiguo
-		// Con ciencias sociales
-		ciencias_economicasA
-				.addEdge(new Edge<Establecimiento>(ciencias_sociales, 68, AlmacenDeCaminos.socialesEconomicasA()));
-		// Con administrativo
-		ciencias_economicasA.addEdge(
-				new Edge<Establecimiento>(ciencias_administrativas, 57, AlmacenDeCaminos.administrativoEconomicasA()));
-		// Con contables
-		ciencias_economicasA
-				.addEdge(new Edge<Establecimiento>(ciencias_contables, 105, AlmacenDeCaminos.economicasAPContable()));
-
-		// Para biblioteca
-		// Con educacion
-		biblioteca.addEdge(new Edge<Establecimiento>(educacion, 148, AlmacenDeCaminos.educacionBiblioteca()));
-		// Con odontologia
-		biblioteca
-				.addEdge(new Edge<Establecimiento>(odontologia, 223, AlmacenDeCaminos.cienciasEconomicasOdontologia()));
-		// Con geografica
-		biblioteca.addEdge(new Edge<Establecimiento>(geografica, 93, AlmacenDeCaminos.geograficaBiblioteca()));
-
-		// Para comedor
-		// Con quimica
-		comedor.addEdge(new Edge<Establecimiento>(quimica, 240, AlmacenDeCaminos.quimicaComedor()));
-		// Con ciencias matematicas
-		comedor.addEdge(new Edge<Establecimiento>(ciencias_matematicas, 148, AlmacenDeCaminos.matematicaComedor()));
-		// Con geografica
-		comedor.addEdge(new Edge<Establecimiento>(geografica, 659, AlmacenDeCaminos.geograficaComedor()));
-		// Con mecanica de fluidos
-		comedor.addEdge(new Edge<Establecimiento>(mecanica_fluidos, 568, AlmacenDeCaminos.comedorFluidos()));
-		// Con metalurgica
-		comedor.addEdge(new Edge<Establecimiento>(metalurgica, 374, AlmacenDeCaminos.metalurgicaComedor()));
-		// Con ciencias biologicas
-		comedor.addEdge(new Edge<Establecimiento>(ciencias_biologicas, 119, AlmacenDeCaminos.comedorBiologicas()));
+		edges.add(new Edge<>("FAC20", "FAC22", AlmacenDeCaminos.MINAS_PSICOLOGIA, 212));
+		edges.add(new Edge<>("FAC20", "FAC24", AlmacenDeCaminos.MINAS_CIVIL, 535));
+		edges.add(new Edge<>("FAC22", "FAC13", AlmacenDeCaminos.PSICOLOGIA_SISTEMAS, 179));
+		edges.add(new Edge<>("FAC22", "FAC21", AlmacenDeCaminos.PSICOLOGIA_ODONTOLOGIA, 233));
+		edges.add(new Edge<>("FAC22", "FAC16", AlmacenDeCaminos.PSICOLOGIA_ELECTRONICA, 295));
+		edges.add(new Edge<>("FAC22", "FAC06", AlmacenDeCaminos.PSICOLOGIA_CIENCIAS_ECONOMICAS, 89));
+		edges.add(new Edge<>("FAC13", "FAC21", AlmacenDeCaminos.SISTEMAS_ODONTOLOGIA, 135));
+		edges.add(new Edge<>("FAC13", "FAC11", AlmacenDeCaminos.SISTEMAS_EDUCACION_FISICA, 262));
+		edges.add(new Edge<>("FAC13", "FAC06", AlmacenDeCaminos.SISTEMAS_CIENCIAS_ECONOMICAS, 46));
+		edges.add(new Edge<>("FAC21", "FAC10", AlmacenDeCaminos.ODONTOLOGIA_EDUCACION, 156));
+		edges.add(new Edge<>("FAC21", "FAC16", AlmacenDeCaminos.ODONTOLOGIA_ELECTRICA, 149));
+		edges.add(new Edge<>("FAC21", "FAC06", AlmacenDeCaminos.ODONTOLOGIA_CIENCIAS_ECONOMICAS, 134));
+		edges.add(new Edge<>("FAC21", "BIB1", AlmacenDeCaminos.ODONTOLOGIA_BIBLIOTECA, 223));
+		edges.add(new Edge<>("FAC10", "FAC11", AlmacenDeCaminos.EDUCACION_EDUCACION_FISICA, 33));
+		edges.add(new Edge<>("FAC10", "FAC14", AlmacenDeCaminos.EDUCACION_GEOGRAFICA, 184));
+		edges.add(new Edge<>("FAC10", "BIB1", AlmacenDeCaminos.EDUCACION_BIBLIOTECA, 148));
+		edges.add(new Edge<>("FAC16", "FAC24", AlmacenDeCaminos.ELECTRONICA_CIVIL, 141));
+		edges.add(new Edge<>("FAC16", "FAC14", AlmacenDeCaminos.ELECTRONICA_GEOGRAFICA, 92));
+		edges.add(new Edge<>("FAC24", "FAC25", AlmacenDeCaminos.CIVIL_FLUIDOS, 150));
+		edges.add(new Edge<>("FAC25", "FAC17", AlmacenDeCaminos.FLUIDOS_METALURGICA, 524));
+		edges.add(new Edge<>("FAC25", "COM1", AlmacenDeCaminos.COMEDOR_FLUIDOS, 568));
+		edges.add(new Edge<>("FAC17", "FAC19", AlmacenDeCaminos.GEOLOGICA_METALURGICA, 81));
+		edges.add(new Edge<>("FAC17", "FAC03", AlmacenDeCaminos.GEOLOGICA_MATEMATICAS, 294));
+		edges.add(new Edge<>("FAC12", "FAC19", AlmacenDeCaminos.METALURGICA_QUIMICA, 77));
+		edges.add(new Edge<>("FAC12", "COM1", AlmacenDeCaminos.QUIMICA_COMEDOR, 240));
+		edges.add(new Edge<>("FAC03", "FAC02", AlmacenDeCaminos.MATEMATICA_BIOLOGICA, 67));
+		edges.add(new Edge<>("FAC03", "FAC01", AlmacenDeCaminos.MATEMATICA_FISICA, 64));
+		edges.add(new Edge<>("FAC03", "COM1", AlmacenDeCaminos.MATEMATICA_COMEDOR, 148));
+		edges.add(new Edge<>("FAC15", "FAC01", AlmacenDeCaminos.INDUSTRIAL_FISICA, 141));
+		edges.add(new Edge<>("FAC15", "FAC09", AlmacenDeCaminos.INDUSTRIAL_DERECHO, 169));
+		edges.add(new Edge<>("FAC09", "FAC07", AlmacenDeCaminos.DERECHO_ECONOMICAS_ANTIGUO, 99));
+		edges.add(new Edge<>("FAC09", "FAC08", AlmacenDeCaminos.SOCIALES_DERECHO, 77));
+		edges.add(new Edge<>("FAC04", "FAC08", AlmacenDeCaminos.SOCIALES_CIENCIA_ADMINISTRATIVA, 75));
+		edges.add(new Edge<>("FAC04", "FAC07", AlmacenDeCaminos.ADMINISTRATIVO_CIENCIA_ECONOMICA_ANTIGUO, 57));
+		edges.add(new Edge<>("FAC04", "FAC18", AlmacenDeCaminos.CIENCIA_ADMINISTRATIVA_LETRAS, 75));
+		edges.add(new Edge<>("FAC02", "FAC01", AlmacenDeCaminos.CIENCIAS_BIOLOGICAS_FISICA, 52));
+		edges.add(new Edge<>("FAC02", "COM1", AlmacenDeCaminos.COMEDOR_BIOLOGICA, 119));
+		edges.add(new Edge<>("FAC19", "COM1", AlmacenDeCaminos.METALURGICA_COMEDOR, 374));
+		edges.add(new Edge<>("FAC05", "FAC23", AlmacenDeCaminos.CONTABLES_ELECTRONICA_ANTIGUO, 160));
+		edges.add(new Edge<>("FAC05", "FAC08", AlmacenDeCaminos.SOCIALES_CIENCIA_CONTABLE, 125));
+		edges.add(new Edge<>("FAC05", "FAC07", AlmacenDeCaminos.CONTABLE_CIENCIA_ECONOMICA_ANTIGUO, 105));
+		edges.add(new Edge<>("FAC08", "FAC07", AlmacenDeCaminos.SOCIALES_ECONOMICAS_ANTIGUO, 68));
+		edges.add(new Edge<>("FAC08", "FAC09", AlmacenDeCaminos.SOCIALES_DERECHO, 77));
+		edges.add(new Edge<>("FAC18", "FAC23", AlmacenDeCaminos.LETRAS_ELECTRONICA, 170));
+		edges.add(new Edge<>("FAC23", "FAC11", AlmacenDeCaminos.ELECTRONICA_ANTIGUO_EDUCACION_FISICA, 443));
+		edges.add(new Edge<>("FAC14", "COM1", AlmacenDeCaminos.COMEDOR_GEOGRAFICA, 659));
+		edges.add(new Edge<>("FAC14", "BIB1", AlmacenDeCaminos.BIBLIOTECA_GEOGRAFICA, 93));
 	}
 }
