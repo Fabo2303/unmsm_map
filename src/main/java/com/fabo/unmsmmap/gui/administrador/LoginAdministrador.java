@@ -8,6 +8,7 @@ import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -34,7 +35,7 @@ public class LoginAdministrador {
 	}
 
 	private void iniciarUsuarios() {
-		try (FileReader fileReader = new FileReader("src/main/resources/archivos/usuarios.json")) {
+		try (FileReader fileReader = new FileReader(RutasArchivos.USUARIOS)) {
 			Gson gson = new GsonBuilder().create();
 			usuarios = gson.fromJson(fileReader, Usuario[].class);
 		} catch (IOException e) {
@@ -188,8 +189,8 @@ public class LoginAdministrador {
 			public void mouseClicked(MouseEvent e) {
 				String usuario = userTextField.getText().replace(" ", "");
 				String password = passwordTextField.getText().replace(" ", "");
-				if(!usuario.isEmpty() && !password.isEmpty()){
-					if(validar(usuario, password)){
+				if (!usuario.isEmpty() && !password.isEmpty()) {
+					if (validar(usuario, password)) {
 						imagePanel.removeAll();
 						new PantallaMenuAdmin();
 						imagePanel.repaint();
@@ -219,7 +220,7 @@ public class LoginAdministrador {
 	private void logo() {
 		logo = new JLabel("Logo");
 		logo.setPreferredSize(new Dimension(148, 148));
-		CargaImagen.setImagen(logo, "src/main/resources/imagenes/logo.webp");
+		CargaImagen.setImagen(logo, RutasArchivos.LOGO);
 		Formato.formato(logo, 0, 40f);
 		logo.setOpaque(true);
 		updatePositionLogo();

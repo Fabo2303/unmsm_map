@@ -9,6 +9,7 @@ import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class PantallaIngreso {
 	private ImagePanel imagePanel;
@@ -17,7 +18,7 @@ public class PantallaIngreso {
 	private CustomButton visitanteButton, administradorButton;
 
 	public PantallaIngreso() {
-		imagePanel = ImagePanel.getInstance("src/main/resources/imagenes/fondo.webp");
+		imagePanel = ImagePanel.getInstance(RutasArchivos.FONDO);
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
 		initComponentes();
@@ -47,7 +48,7 @@ public class PantallaIngreso {
 	private void logo() {
 		logo = new JLabel("Logo");
 		logo.setPreferredSize(new Dimension(148, 148));
-		CargaImagen.setImagen(logo, "src/main/resources/imagenes/logo.webp");
+		CargaImagen.setImagen(logo, RutasArchivos.LOGO);
 		Formato.formato(logo, 0, 40f);
 		logo.setOpaque(true);
 		updatePositionLogo();
@@ -125,7 +126,7 @@ public class PantallaIngreso {
 	private void iconVisitante() {
 		visitanteIcon = new JLabel("Visit");
 		visitanteIcon.setPreferredSize(new Dimension(148, 148));
-		CargaImagen.setImagen(visitanteIcon, "src/main/resources/imagenes/iconVisitante.webp");
+		CargaImagen.setImagen(visitanteIcon, RutasArchivos.ICON_VISITANTE);
 		Formato.formato(visitanteIcon, 0, 40f);
 		visitanteIcon.setOpaque(true);
 		updateIconVisitante();
@@ -171,7 +172,7 @@ public class PantallaIngreso {
 		administradorIcon = new JLabel("Admin");
 		administradorIcon = new JLabel("Visit");
 		administradorIcon.setPreferredSize(new Dimension(148, 148));
-		CargaImagen.setImagen(administradorIcon, "src/main/resources/imagenes/iconAdministrador.webp");
+		CargaImagen.setImagen(administradorIcon, RutasArchivos.ICON_ADMINISTRADOR);
 		Formato.formato(administradorIcon, 0, 40f);
 		administradorIcon.setOpaque(true);
 		updateIconAdministrador();

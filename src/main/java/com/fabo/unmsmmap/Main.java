@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import com.fabo.unmsmmap.gui.PantallaInicial;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class Main {
 
@@ -19,7 +20,7 @@ public class Main {
 		ventana.setTitle("San Marcos MAP");
 		ventana.setLocationRelativeTo(null);
 		ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		ventana.add(ImagePanel.getInstance("src/main/resources/imagenes/fondo_temporal.webp"));
+		ventana.add(ImagePanel.getInstance(RutasArchivos.FONDO_TEMPORAL));
 		ventana.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent windowEvent) {

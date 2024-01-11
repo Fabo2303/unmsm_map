@@ -1,19 +1,12 @@
 package com.fabo.unmsmmap.utilidades;
 
 public class RutasArchivos {
-    public static final String LOGO;
-    public static final String FONDO;
-
-    static {
-        String sistemaOperativo = System.getProperty("os.name").toLowerCase();
-        if (sistemaOperativo.contains("win")) {
-            LOGO = "src/main/resources/imagenes/logo.webp";
-            FONDO = "src\\main\\resources\\imagenes\\fondo_temporal.webp";
-            // Otras rutas de imágenes para Windows...
-        } else {
-            LOGO = "src/Main/tilin.jpg";
-            FONDO = "src/main/resources/imagenes/fondo_temporal.webp";
-            // Otras rutas de imágenes para otros sistemas operativos...
-        }
-    }
+    public static final String LOGO = "src/main/resources/imagenes/logo.webp";
+    public static final String FONDO_TEMPORAL = "src/main/resources/imagenes/fondo_temporal.webp";
+    public static final String FONDO = "src/main/resources/imagenes/fondo.webp";
+    public static final String ICON_VISITANTE = "src/main/resources/imagenes/icon_visitante.webp";
+    public static final String ICON_ADMINISTRADOR = "src/main/resources/imagenes/icon_administrador.webp";
+    public static final String PLANO = "src/main/resources/imagenes/plano.webp";
+    public static final String USUARIOS = "src/main/resources/archivos/usuarios.json";
+    public static final String ESTABLECIMIENTOS = "src/main/resources/facultades/";
 }

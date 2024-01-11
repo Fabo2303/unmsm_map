@@ -14,6 +14,11 @@ public class ImagePanel extends JPanel {
     private ImagePanel() {
     }
 
+    /**
+     * 
+     * 
+     * @return retorna instancia ImagePanel
+     */
     public static ImagePanel getInstance() {
         if (instance == null) {
             instance = new ImagePanel();
@@ -27,6 +32,10 @@ public class ImagePanel extends JPanel {
         return imagePanel;
     }
 
+    /**
+     * 
+     * @param path ruta de la imagen
+     */
     public void setImage(String path) {
         try {
             image = ImageIO.read(new File(path));

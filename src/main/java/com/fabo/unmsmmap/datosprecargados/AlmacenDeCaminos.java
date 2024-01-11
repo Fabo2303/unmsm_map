@@ -1,6276 +1,1891 @@
 package com.fabo.unmsmmap.datosprecargados;
 
-import java.io.Serializable;
 import java.util.LinkedList;
 
-/*
- * Clase que almacena los caminos entre establecimientos
- */
-public class AlmacenDeCaminos implements Serializable {
+public class AlmacenDeCaminos {
 
-	public static LinkedList<Integer> minasPsicologia() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1163);
-		coordenadas.add(86);
-		coordenadas.add(1135);
-		coordenadas.add(86);
-		coordenadas.add(1110);
-		coordenadas.add(91);
-		coordenadas.add(1087);
-		coordenadas.add(98);
-		coordenadas.add(1053);
-		coordenadas.add(105);
-		coordenadas.add(1051);
-		coordenadas.add(103);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> metalurgicaComedor(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(160);
-		coordenadas.add(306);
-		coordenadas.add(161);
-		coordenadas.add(307);
-		coordenadas.add(162);
-		coordenadas.add(307);
-		coordenadas.add(162);
-		coordenadas.add(308);
-		coordenadas.add(163);
-		coordenadas.add(308);
-		coordenadas.add(164);
-		coordenadas.add(308);
-		coordenadas.add(165);
-		coordenadas.add(308);
-		coordenadas.add(166);
-		coordenadas.add(308);
-		coordenadas.add(167);
-		coordenadas.add(308);
-		coordenadas.add(168);
-		coordenadas.add(308);
-		coordenadas.add(169);
-		coordenadas.add(308);
-		coordenadas.add(170);
-		coordenadas.add(308);
-		coordenadas.add(171);
-		coordenadas.add(308);
-		coordenadas.add(172);
-		coordenadas.add(308);
-		coordenadas.add(173);
-		coordenadas.add(308);
-		coordenadas.add(173);
-		coordenadas.add(307);
-		coordenadas.add(174);
-		coordenadas.add(307);
-		coordenadas.add(175);
-		coordenadas.add(307);
-		coordenadas.add(175);
-		coordenadas.add(306);
-		coordenadas.add(176);
-		coordenadas.add(306);
-		coordenadas.add(176);
-		coordenadas.add(305);
-		coordenadas.add(177);
-		coordenadas.add(305);
-		coordenadas.add(177);
-		coordenadas.add(304);
-		coordenadas.add(177);
-		coordenadas.add(303);
-		coordenadas.add(178);
-		coordenadas.add(303);
-		coordenadas.add(179);
-		coordenadas.add(302);
-		coordenadas.add(179);
-		coordenadas.add(301);
-		coordenadas.add(179);
-		coordenadas.add(300);
-		coordenadas.add(180);
-		coordenadas.add(299);
-		coordenadas.add(181);
-		coordenadas.add(299);
-		coordenadas.add(182);
-		coordenadas.add(299);
-		coordenadas.add(302);
-		coordenadas.add(280);
-		coordenadas.add(304);
-		coordenadas.add(280);
-		coordenadas.add(305);
-		coordenadas.add(280);
-		coordenadas.add(306);
-		coordenadas.add(280);
-		coordenadas.add(307);
-		coordenadas.add(280);
-		coordenadas.add(308);
-		coordenadas.add(281);
-		coordenadas.add(309);
-		coordenadas.add(281);
-		coordenadas.add(309);
-		coordenadas.add(282);
-		coordenadas.add(310);
-		coordenadas.add(282);
-		coordenadas.add(311);
-		coordenadas.add(282);
-		coordenadas.add(311);
-		coordenadas.add(283);
-		coordenadas.add(312);
-		coordenadas.add(283);
-		coordenadas.add(313);
-		coordenadas.add(283);
-		coordenadas.add(313);
-		coordenadas.add(284);
-		coordenadas.add(314);
-		coordenadas.add(284);
-		coordenadas.add(315);
-		coordenadas.add(285);
-		coordenadas.add(315);
-		coordenadas.add(286);
-		coordenadas.add(316);
-		coordenadas.add(286);
-		coordenadas.add(317);
-		coordenadas.add(286);
-		coordenadas.add(317);
-		coordenadas.add(287);
-		coordenadas.add(318);
-		coordenadas.add(287);
-		coordenadas.add(318);
-		coordenadas.add(288);
-		coordenadas.add(319);
-		coordenadas.add(288);
-		coordenadas.add(319);
-		coordenadas.add(289);
-		coordenadas.add(319);
-		coordenadas.add(290);
-		coordenadas.add(320);
-		coordenadas.add(290);
-		coordenadas.add(320);
-		coordenadas.add(291);
-		coordenadas.add(321);
-		coordenadas.add(291);
-		coordenadas.add(321);
-		coordenadas.add(292);
-		coordenadas.add(322);
-		coordenadas.add(293);
-		coordenadas.add(322);
-		coordenadas.add(294);
-		coordenadas.add(322);
-		coordenadas.add(295);
-		coordenadas.add(322);
-		coordenadas.add(296);
-		coordenadas.add(323);
-		coordenadas.add(296);
-		coordenadas.add(323);
-		coordenadas.add(297);
-		coordenadas.add(323);
-		coordenadas.add(298);
-		coordenadas.add(323);
-		coordenadas.add(299);
-		coordenadas.add(323);
-		coordenadas.add(300);
-		coordenadas.add(323);
-		coordenadas.add(301);
-		coordenadas.add(324);
-		coordenadas.add(301);
-		coordenadas.add(324);
-		coordenadas.add(302);
-		coordenadas.add(324);
-		coordenadas.add(303);
-		coordenadas.add(324);
-		coordenadas.add(304);
-		coordenadas.add(324);
-		coordenadas.add(305);
-		coordenadas.add(324);
-		coordenadas.add(306);
-		coordenadas.add(324);
-		coordenadas.add(307);
-		coordenadas.add(325);
-		coordenadas.add(308);
-		coordenadas.add(325);
-		coordenadas.add(309);
-		coordenadas.add(325);
-		coordenadas.add(310);
-		coordenadas.add(325);
-		coordenadas.add(311);
-		coordenadas.add(325);
-		coordenadas.add(312);
-		coordenadas.add(325);
-		coordenadas.add(313);
-		coordenadas.add(325);
-		coordenadas.add(314);
-		coordenadas.add(325);
-		coordenadas.add(315);
-		coordenadas.add(325);
-		coordenadas.add(316);
-		coordenadas.add(325);
-		coordenadas.add(317);
-		coordenadas.add(325);
-		coordenadas.add(318);
-		coordenadas.add(325);
-		coordenadas.add(319);
-		coordenadas.add(325);
-		coordenadas.add(320);
-		coordenadas.add(238);
-		coordenadas.add(375);
-		coordenadas.add(239);
-		coordenadas.add(375);
-		coordenadas.add(240);
-		coordenadas.add(375);
-		coordenadas.add(241);
-		coordenadas.add(375);
-		coordenadas.add(242);
-		coordenadas.add(375);
-		coordenadas.add(243);
-		coordenadas.add(375);
-		coordenadas.add(244);
-		coordenadas.add(375);
-		coordenadas.add(245);
-		coordenadas.add(375);
-		coordenadas.add(246);
-		coordenadas.add(376);
-		coordenadas.add(247);
-		coordenadas.add(376);
-		coordenadas.add(247);
-		coordenadas.add(377);
-		coordenadas.add(248);
-		coordenadas.add(378);
-		coordenadas.add(249);
-		coordenadas.add(378);
-		coordenadas.add(250);
-		coordenadas.add(378);
-		coordenadas.add(250);
-		coordenadas.add(379);
-		coordenadas.add(251);
-		coordenadas.add(379);
-		coordenadas.add(251);
-		coordenadas.add(380);
-		coordenadas.add(252);
-		coordenadas.add(380);
-		coordenadas.add(252);
-		coordenadas.add(381);
-		coordenadas.add(253);
-		coordenadas.add(382);
-		coordenadas.add(254);
-		coordenadas.add(382);
-		coordenadas.add(254);
-		coordenadas.add(383);
-		coordenadas.add(255);
-		coordenadas.add(384);
-		coordenadas.add(256);
-		coordenadas.add(385);
-		coordenadas.add(256);
-		coordenadas.add(386);
-		coordenadas.add(256);
-		coordenadas.add(387);
-		coordenadas.add(257);
-		coordenadas.add(387);
-		coordenadas.add(257);
-		coordenadas.add(388);
-		coordenadas.add(258);
-		coordenadas.add(388);
-		coordenadas.add(258);
-		coordenadas.add(389);
-		coordenadas.add(258);
-		coordenadas.add(390);
-		coordenadas.add(286);
-		coordenadas.add(378);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> geologicaMatematicas(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(94);
-		coordenadas.add(231);
-		coordenadas.add(56);
-		coordenadas.add(241);
-		coordenadas.add(96);
-		coordenadas.add(456);
-		coordenadas.add(124);
-		coordenadas.add(451);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> comedorBiologicas(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(214);
-		coordenadas.add(438);
-		coordenadas.add(257);
-		coordenadas.add(425);
-		coordenadas.add(258);
-		coordenadas.add(423);
-		coordenadas.add(259);
-		coordenadas.add(423);
-		coordenadas.add(260);
-		coordenadas.add(422);
-		coordenadas.add(260);
-		coordenadas.add(421);
-		coordenadas.add(260);
-		coordenadas.add(420);
-		coordenadas.add(261);
-		coordenadas.add(420);
-		coordenadas.add(261);
-		coordenadas.add(419);
-		coordenadas.add(261);
-		coordenadas.add(418);
-		coordenadas.add(262);
-		coordenadas.add(418);
-		coordenadas.add(262);
-		coordenadas.add(417);
-		coordenadas.add(262);
-		coordenadas.add(416);
-		coordenadas.add(262);
-		coordenadas.add(415);
-		coordenadas.add(262);
-		coordenadas.add(414);
-		coordenadas.add(263);
-		coordenadas.add(413);
-		coordenadas.add(263);
-		coordenadas.add(412);
-		coordenadas.add(263);
-		coordenadas.add(411);
-		coordenadas.add(263);
-		coordenadas.add(410);
-		coordenadas.add(263);
-		coordenadas.add(409);
-		coordenadas.add(263);
-		coordenadas.add(408);
-		coordenadas.add(263);
-		coordenadas.add(407);
-		coordenadas.add(263);
-		coordenadas.add(406);
-		coordenadas.add(263);
-		coordenadas.add(405);
-		coordenadas.add(263);
-		coordenadas.add(404);
-		coordenadas.add(263);
-		coordenadas.add(403);
-		coordenadas.add(263);
-		coordenadas.add(402);
-		coordenadas.add(263);
-		coordenadas.add(401);
-		coordenadas.add(263);
-		coordenadas.add(400);
-		coordenadas.add(263);
-		coordenadas.add(399);
-		coordenadas.add(263);
-		coordenadas.add(398);
-		coordenadas.add(263);
-		coordenadas.add(397);
-		coordenadas.add(263);
-		coordenadas.add(396);
-		coordenadas.add(263);
-		coordenadas.add(395);
-		coordenadas.add(263);
-		coordenadas.add(394);
-		coordenadas.add(262);
-		coordenadas.add(393);
-		coordenadas.add(262);
-		coordenadas.add(392);
-		coordenadas.add(262);
-		coordenadas.add(391);
-		coordenadas.add(262);
-		coordenadas.add(390);
-		coordenadas.add(261);
-		coordenadas.add(389);
-		coordenadas.add(285);
-		coordenadas.add(378);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> comedorFluidos(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(599);
-		coordenadas.add(103);
-		coordenadas.add(599);
-		coordenadas.add(104);
-		coordenadas.add(599);
-		coordenadas.add(105);
-		coordenadas.add(599);
-		coordenadas.add(106);
-		coordenadas.add(599);
-		coordenadas.add(107);
-		coordenadas.add(599);
-		coordenadas.add(108);
-		coordenadas.add(599);
-		coordenadas.add(109);
-		coordenadas.add(598);
-		coordenadas.add(109);
-		coordenadas.add(597);
-		coordenadas.add(109);
-		coordenadas.add(596);
-		coordenadas.add(109);
-		coordenadas.add(595);
-		coordenadas.add(109);
-		coordenadas.add(594);
-		coordenadas.add(109);
-		coordenadas.add(593);
-		coordenadas.add(109);
-		coordenadas.add(592);
-		coordenadas.add(109);
-		coordenadas.add(591);
-		coordenadas.add(109);
-		coordenadas.add(590);
-		coordenadas.add(109);
-		coordenadas.add(589);
-		coordenadas.add(109);
-		coordenadas.add(587);
-		coordenadas.add(109);
-		coordenadas.add(586);
-		coordenadas.add(109);
-		coordenadas.add(585);
-		coordenadas.add(109);
-		coordenadas.add(584);
-		coordenadas.add(109);
-		coordenadas.add(583);
-		coordenadas.add(109);
-		coordenadas.add(582);
-		coordenadas.add(109);
-		coordenadas.add(581);
-		coordenadas.add(109);
-		coordenadas.add(580);
-		coordenadas.add(109);
-		coordenadas.add(579);
-		coordenadas.add(109);
-		coordenadas.add(578);
-		coordenadas.add(109);
-		coordenadas.add(577);
-		coordenadas.add(109);
-		coordenadas.add(576);
-		coordenadas.add(109);
-		coordenadas.add(575);
-		coordenadas.add(109);
-		coordenadas.add(574);
-		coordenadas.add(109);
-		coordenadas.add(573);
-		coordenadas.add(109);
-		coordenadas.add(572);
-		coordenadas.add(109);
-		coordenadas.add(571);
-		coordenadas.add(109);
-		coordenadas.add(570);
-		coordenadas.add(109);
-		coordenadas.add(569);
-		coordenadas.add(109);
-		coordenadas.add(568);
-		coordenadas.add(109);
-		coordenadas.add(567);
-		coordenadas.add(109);
-		coordenadas.add(566);
-		coordenadas.add(109);
-		coordenadas.add(565);
-		coordenadas.add(109);
-		coordenadas.add(564);
-		coordenadas.add(109);
-		coordenadas.add(563);
-		coordenadas.add(109);
-		coordenadas.add(562);
-		coordenadas.add(109);
-		coordenadas.add(561);
-		coordenadas.add(109);
-		coordenadas.add(560);
-		coordenadas.add(109);
-		coordenadas.add(559);
-		coordenadas.add(109);
-		coordenadas.add(558);
-		coordenadas.add(109);
-		coordenadas.add(557);
-		coordenadas.add(109);
-		coordenadas.add(556);
-		coordenadas.add(109);
-		coordenadas.add(555);
-		coordenadas.add(109);
-		coordenadas.add(554);
-		coordenadas.add(109);
-		coordenadas.add(553);
-		coordenadas.add(109);
-		coordenadas.add(552);
-		coordenadas.add(109);
-		coordenadas.add(551);
-		coordenadas.add(109);
-		coordenadas.add(550);
-		coordenadas.add(109);
-		coordenadas.add(549);
-		coordenadas.add(109);
-		coordenadas.add(548);
-		coordenadas.add(109);
-		coordenadas.add(547);
-		coordenadas.add(109);
-		coordenadas.add(546);
-		coordenadas.add(109);
-		coordenadas.add(545);
-		coordenadas.add(109);
-		coordenadas.add(544);
-		coordenadas.add(109);
-		coordenadas.add(543);
-		coordenadas.add(109);
-		coordenadas.add(542);
-		coordenadas.add(109);
-		coordenadas.add(541);
-		coordenadas.add(109);
-		coordenadas.add(540);
-		coordenadas.add(109);
-		coordenadas.add(539);
-		coordenadas.add(109);
-		coordenadas.add(538);
-		coordenadas.add(109);
-		coordenadas.add(537);
-		coordenadas.add(109);
-		coordenadas.add(536);
-		coordenadas.add(109);
-		coordenadas.add(535);
-		coordenadas.add(109);
-		coordenadas.add(534);
-		coordenadas.add(109);
-		coordenadas.add(533);
-		coordenadas.add(109);
-		coordenadas.add(532);
-		coordenadas.add(109);
-		coordenadas.add(531);
-		coordenadas.add(109);
-		coordenadas.add(530);
-		coordenadas.add(109);
-		coordenadas.add(529);
-		coordenadas.add(109);
-		coordenadas.add(528);
-		coordenadas.add(109);
-		coordenadas.add(527);
-		coordenadas.add(109);
-		coordenadas.add(526);
-		coordenadas.add(109);
-		coordenadas.add(525);
-		coordenadas.add(109);
-		coordenadas.add(524);
-		coordenadas.add(109);
-		coordenadas.add(523);
-		coordenadas.add(109);
-		coordenadas.add(522);
-		coordenadas.add(109);
-		coordenadas.add(521);
-		coordenadas.add(109);
-		coordenadas.add(520);
-		coordenadas.add(109);
-		coordenadas.add(519);
-		coordenadas.add(109);
-		coordenadas.add(518);
-		coordenadas.add(109);
-		coordenadas.add(517);
-		coordenadas.add(109);
-		coordenadas.add(516);
-		coordenadas.add(109);
-		coordenadas.add(515);
-		coordenadas.add(109);
-		coordenadas.add(514);
-		coordenadas.add(109);
-		coordenadas.add(513);
-		coordenadas.add(109);
-		coordenadas.add(512);
-		coordenadas.add(109);
-		coordenadas.add(511);
-		coordenadas.add(109);
-		coordenadas.add(510);
-		coordenadas.add(109);
-		coordenadas.add(509);
-		coordenadas.add(109);
-		coordenadas.add(508);
-		coordenadas.add(109);
-		coordenadas.add(507);
-		coordenadas.add(109);
-		coordenadas.add(506);
-		coordenadas.add(109);
-		coordenadas.add(505);
-		coordenadas.add(109);
-		coordenadas.add(504);
-		coordenadas.add(109);
-		coordenadas.add(503);
-		coordenadas.add(109);
-		coordenadas.add(502);
-		coordenadas.add(109);
-		coordenadas.add(501);
-		coordenadas.add(109);
-		coordenadas.add(500);
-		coordenadas.add(109);
-		coordenadas.add(499);
-		coordenadas.add(109);
-		coordenadas.add(498);
-		coordenadas.add(109);
-		coordenadas.add(497);
-		coordenadas.add(109);
-		coordenadas.add(496);
-		coordenadas.add(109);
-		coordenadas.add(495);
-		coordenadas.add(109);
-		coordenadas.add(494);
-		coordenadas.add(109);
-		coordenadas.add(493);
-		coordenadas.add(109);
-		coordenadas.add(492);
-		coordenadas.add(109);
-		coordenadas.add(491);
-		coordenadas.add(109);
-		coordenadas.add(490);
-		coordenadas.add(109);
-		coordenadas.add(489);
-		coordenadas.add(109);
-		coordenadas.add(488);
-		coordenadas.add(109);
-		coordenadas.add(487);
-		coordenadas.add(109);
-		coordenadas.add(485);
-		coordenadas.add(108);
-		coordenadas.add(485);
-		coordenadas.add(109);
-		coordenadas.add(484);
-		coordenadas.add(110);
-		coordenadas.add(484);
-		coordenadas.add(111);
-		coordenadas.add(483);
-		coordenadas.add(112);
-		coordenadas.add(483);
-		coordenadas.add(113);
-		coordenadas.add(483);
-		coordenadas.add(114);
-		coordenadas.add(482);
-		coordenadas.add(115);
-		coordenadas.add(482);
-		coordenadas.add(116);
-		coordenadas.add(482);
-		coordenadas.add(117);
-		coordenadas.add(482);
-		coordenadas.add(118);
-		coordenadas.add(482);
-		coordenadas.add(119);
-		coordenadas.add(482);
-		coordenadas.add(120);
-		coordenadas.add(482);
-		coordenadas.add(121);
-		coordenadas.add(482);
-		coordenadas.add(122);
-		coordenadas.add(482);
-		coordenadas.add(123);
-		coordenadas.add(482);
-		coordenadas.add(124);
-		coordenadas.add(481);
-		coordenadas.add(124);
-		coordenadas.add(481);
-		coordenadas.add(125);
-		coordenadas.add(481);
-		coordenadas.add(126);
-		coordenadas.add(481);
-		coordenadas.add(127);
-		coordenadas.add(481);
-		coordenadas.add(128);
-		coordenadas.add(480);
-		coordenadas.add(129);
-		coordenadas.add(480);
-		coordenadas.add(130);
-		coordenadas.add(480);
-		coordenadas.add(131);
-		coordenadas.add(480);
-		coordenadas.add(132);
-		coordenadas.add(479);
-		coordenadas.add(133);
-		coordenadas.add(479);
-		coordenadas.add(134);
-		coordenadas.add(479);
-		coordenadas.add(135);
-		coordenadas.add(478);
-		coordenadas.add(136);
-		coordenadas.add(478);
-		coordenadas.add(137);
-		coordenadas.add(477);
-		coordenadas.add(138);
-		coordenadas.add(477);
-		coordenadas.add(139);
-		coordenadas.add(477);
-		coordenadas.add(140);
-		coordenadas.add(476);
-		coordenadas.add(140);
-		coordenadas.add(476);
-		coordenadas.add(141);
-		coordenadas.add(476);
-		coordenadas.add(142);
-		coordenadas.add(476);
-		coordenadas.add(143);
-		coordenadas.add(476);
-		coordenadas.add(144);
-		coordenadas.add(475);
-		coordenadas.add(144);
-		coordenadas.add(475);
-		coordenadas.add(145);
-		coordenadas.add(475);
-		coordenadas.add(146);
-		coordenadas.add(475);
-		coordenadas.add(147);
-		coordenadas.add(474);
-		coordenadas.add(147);
-		coordenadas.add(474);
-		coordenadas.add(148);
-		coordenadas.add(473);
-		coordenadas.add(148);
-		coordenadas.add(473);
-		coordenadas.add(149);
-		coordenadas.add(473);
-		coordenadas.add(150);
-		coordenadas.add(473);
-		coordenadas.add(151);
-		coordenadas.add(472);
-		coordenadas.add(151);
-		coordenadas.add(472);
-		coordenadas.add(152);
-		coordenadas.add(472);
-		coordenadas.add(153);
-		coordenadas.add(471);
-		coordenadas.add(153);
-		coordenadas.add(471);
-		coordenadas.add(154);
-		coordenadas.add(471);
-		coordenadas.add(155);
-		coordenadas.add(470);
-		coordenadas.add(156);
-		coordenadas.add(469);
-		coordenadas.add(156);
-		coordenadas.add(469);
-		coordenadas.add(157);
-		coordenadas.add(468);
-		coordenadas.add(157);
-		coordenadas.add(468);
-		coordenadas.add(158);
-		coordenadas.add(468);
-		coordenadas.add(159);
-		coordenadas.add(467);
-		coordenadas.add(159);
-		coordenadas.add(466);
-		coordenadas.add(160);
-		coordenadas.add(465);
-		coordenadas.add(161);
-		coordenadas.add(464);
-		coordenadas.add(161);
-		coordenadas.add(464);
-		coordenadas.add(162);
-		coordenadas.add(463);
-		coordenadas.add(162);
-		coordenadas.add(463);
-		coordenadas.add(163);
-		coordenadas.add(462);
-		coordenadas.add(164);
-		coordenadas.add(461);
-		coordenadas.add(164);
-		coordenadas.add(461);
-		coordenadas.add(165);
-		coordenadas.add(460);
-		coordenadas.add(165);
-		coordenadas.add(460);
-		coordenadas.add(166);
-		coordenadas.add(459);
-		coordenadas.add(166);
-		coordenadas.add(459);
-		coordenadas.add(167);
-		coordenadas.add(459);
-		coordenadas.add(168);
-		coordenadas.add(458);
-		coordenadas.add(168);
-		coordenadas.add(457);
-		coordenadas.add(169);
-		coordenadas.add(456);
-		coordenadas.add(170);
-		coordenadas.add(455);
-		coordenadas.add(171);
-		coordenadas.add(455);
-		coordenadas.add(172);
-		coordenadas.add(454);
-		coordenadas.add(172);
-		coordenadas.add(453);
-		coordenadas.add(173);
-		coordenadas.add(452);
-		coordenadas.add(174);
-		coordenadas.add(451);
-		coordenadas.add(174);
-		coordenadas.add(451);
-		coordenadas.add(175);
-		coordenadas.add(451);
-		coordenadas.add(176);
-		coordenadas.add(450);
-		coordenadas.add(176);
-		coordenadas.add(449);
-		coordenadas.add(176);
-		coordenadas.add(449);
-		coordenadas.add(177);
-		coordenadas.add(448);
-		coordenadas.add(177);
-		coordenadas.add(448);
-		coordenadas.add(178);
-		coordenadas.add(447);
-		coordenadas.add(178);
-		coordenadas.add(447);
-		coordenadas.add(179);
-		coordenadas.add(446);
-		coordenadas.add(180);
-		coordenadas.add(446);
-		coordenadas.add(181);
-		coordenadas.add(445);
-		coordenadas.add(181);
-		coordenadas.add(444);
-		coordenadas.add(181);
-		coordenadas.add(444);
-		coordenadas.add(182);
-		coordenadas.add(444);
-		coordenadas.add(183);
-		coordenadas.add(443);
-		coordenadas.add(183);
-		coordenadas.add(443);
-		coordenadas.add(184);
-		coordenadas.add(442);
-		coordenadas.add(184);
-		coordenadas.add(442);
-		coordenadas.add(185);
-		coordenadas.add(441);
-		coordenadas.add(186);
-		coordenadas.add(440);
-		coordenadas.add(186);
-		coordenadas.add(440);
-		coordenadas.add(187);
-		coordenadas.add(440);
-		coordenadas.add(188);
-		coordenadas.add(439);
-		coordenadas.add(188);
-		coordenadas.add(439);
-		coordenadas.add(189);
-		coordenadas.add(438);
-		coordenadas.add(189);
-		coordenadas.add(438);
-		coordenadas.add(190);
-		coordenadas.add(437);
-		coordenadas.add(191);
-		coordenadas.add(436);
-		coordenadas.add(192);
-		coordenadas.add(435);
-		coordenadas.add(193);
-		coordenadas.add(435);
-		coordenadas.add(194);
-		coordenadas.add(434);
-		coordenadas.add(194);
-		coordenadas.add(434);
-		coordenadas.add(195);
-		coordenadas.add(433);
-		coordenadas.add(196);
-		coordenadas.add(432);
-		coordenadas.add(197);
-		coordenadas.add(431);
-		coordenadas.add(198);
-		coordenadas.add(431);
-		coordenadas.add(199);
-		coordenadas.add(430);
-		coordenadas.add(199);
-		coordenadas.add(430);
-		coordenadas.add(200);
-		coordenadas.add(429);
-		coordenadas.add(201);
-		coordenadas.add(429);
-		coordenadas.add(202);
-		coordenadas.add(428);
-		coordenadas.add(202);
-		coordenadas.add(428);
-		coordenadas.add(203);
-		coordenadas.add(427);
-		coordenadas.add(204);
-		coordenadas.add(427);
-		coordenadas.add(205);
-		coordenadas.add(426);
-		coordenadas.add(205);
-		coordenadas.add(426);
-		coordenadas.add(206);
-		coordenadas.add(425);
-		coordenadas.add(206);
-		coordenadas.add(425);
-		coordenadas.add(207);
-		coordenadas.add(424);
-		coordenadas.add(207);
-		coordenadas.add(424);
-		coordenadas.add(208);
-		coordenadas.add(423);
-		coordenadas.add(209);
-		coordenadas.add(423);
-		coordenadas.add(210);
-		coordenadas.add(424);
-		coordenadas.add(207);
-		coordenadas.add(423);
-		coordenadas.add(208);
-		coordenadas.add(423);
-		coordenadas.add(209);
-		coordenadas.add(422);
-		coordenadas.add(209);
-		coordenadas.add(421);
-		coordenadas.add(210);
-		coordenadas.add(420);
-		coordenadas.add(211);
-		coordenadas.add(419);
-		coordenadas.add(211);
-		coordenadas.add(418);
-		coordenadas.add(212);
-		coordenadas.add(418);
-		coordenadas.add(213);
-		coordenadas.add(417);
-		coordenadas.add(213);
-		coordenadas.add(417);
-		coordenadas.add(214);
-		coordenadas.add(416);
-		coordenadas.add(214);
-		coordenadas.add(416);
-		coordenadas.add(215);
-		coordenadas.add(415);
-		coordenadas.add(215);
-		coordenadas.add(414);
-		coordenadas.add(215);
-		coordenadas.add(414);
-		coordenadas.add(216);
-		coordenadas.add(413);
-		coordenadas.add(216);
-		coordenadas.add(413);
-		coordenadas.add(217);
-		coordenadas.add(412);
-		coordenadas.add(217);
-		coordenadas.add(412);
-		coordenadas.add(218);
-		coordenadas.add(411);
-		coordenadas.add(218);
-		coordenadas.add(411);
-		coordenadas.add(219);
-		coordenadas.add(410);
-		coordenadas.add(219);
-		coordenadas.add(409);
-		coordenadas.add(220);
-		coordenadas.add(408);
-		coordenadas.add(221);
-		coordenadas.add(408);
-		coordenadas.add(222);
-		coordenadas.add(407);
-		coordenadas.add(222);
-		coordenadas.add(406);
-		coordenadas.add(222);
-		coordenadas.add(406);
-		coordenadas.add(223);
-		coordenadas.add(405);
-		coordenadas.add(223);
-		coordenadas.add(405);
-		coordenadas.add(224);
-		coordenadas.add(404);
-		coordenadas.add(224);
-		coordenadas.add(404);
-		coordenadas.add(225);
-		coordenadas.add(403);
-		coordenadas.add(226);
-		coordenadas.add(402);
-		coordenadas.add(226);
-		coordenadas.add(402);
-		coordenadas.add(227);
-		coordenadas.add(401);
-		coordenadas.add(227);
-		coordenadas.add(401);
-		coordenadas.add(228);
-		coordenadas.add(400);
-		coordenadas.add(228);
-		coordenadas.add(399);
-		coordenadas.add(229);
-		coordenadas.add(398);
-		coordenadas.add(230);
-		coordenadas.add(397);
-		coordenadas.add(230);
-		coordenadas.add(397);
-		coordenadas.add(231);
-		coordenadas.add(396);
-		coordenadas.add(231);
-		coordenadas.add(396);
-		coordenadas.add(232);
-		coordenadas.add(396);
-		coordenadas.add(233);
-		coordenadas.add(395);
-		coordenadas.add(233);
-		coordenadas.add(394);
-		coordenadas.add(233);
-		coordenadas.add(394);
-		coordenadas.add(234);
-		coordenadas.add(393);
-		coordenadas.add(235);
-		coordenadas.add(392);
-		coordenadas.add(236);
-		coordenadas.add(391);
-		coordenadas.add(237);
-		coordenadas.add(391);
-		coordenadas.add(238);
-		coordenadas.add(390);
-		coordenadas.add(238);
-		coordenadas.add(389);
-		coordenadas.add(239);
-		coordenadas.add(389);
-		coordenadas.add(240);
-		coordenadas.add(388);
-		coordenadas.add(240);
-		coordenadas.add(388);
-		coordenadas.add(241);
-		coordenadas.add(387);
-		coordenadas.add(242);
-		coordenadas.add(386);
-		coordenadas.add(242);
-		coordenadas.add(385);
-		coordenadas.add(243);
-		coordenadas.add(384);
-		coordenadas.add(244);
-		coordenadas.add(383);
-		coordenadas.add(245);
-		coordenadas.add(383);
-		coordenadas.add(246);
-		coordenadas.add(382);
-		coordenadas.add(246);
-		coordenadas.add(381);
-		coordenadas.add(247);
-		coordenadas.add(381);
-		coordenadas.add(248);
-		coordenadas.add(380);
-		coordenadas.add(248);
-		coordenadas.add(380);
-		coordenadas.add(249);
-		coordenadas.add(379);
-		coordenadas.add(249);
-		coordenadas.add(379);
-		coordenadas.add(250);
-		coordenadas.add(379);
-		coordenadas.add(251);
-		coordenadas.add(378);
-		coordenadas.add(251);
-		coordenadas.add(377);
-		coordenadas.add(252);
-		coordenadas.add(377);
-		coordenadas.add(253);
-		coordenadas.add(376);
-		coordenadas.add(253);
-		coordenadas.add(376);
-		coordenadas.add(254);
-		coordenadas.add(375);
-		coordenadas.add(254);
-		coordenadas.add(375);
-		coordenadas.add(255);
-		coordenadas.add(374);
-		coordenadas.add(255);
-		coordenadas.add(373);
-		coordenadas.add(256);
-		coordenadas.add(372);
-		coordenadas.add(257);
-		coordenadas.add(371);
-		coordenadas.add(258);
-		coordenadas.add(371);
-		coordenadas.add(259);
-		coordenadas.add(370);
-		coordenadas.add(259);
-		coordenadas.add(369);
-		coordenadas.add(260);
-		coordenadas.add(368);
-		coordenadas.add(261);
-		coordenadas.add(367);
-		coordenadas.add(262);
-		coordenadas.add(367);
-		coordenadas.add(263);
-		coordenadas.add(366);
-		coordenadas.add(263);
-		coordenadas.add(365);
-		coordenadas.add(263);
-		coordenadas.add(365);
-		coordenadas.add(264);
-		coordenadas.add(364);
-		coordenadas.add(264);
-		coordenadas.add(364);
-		coordenadas.add(265);
-		coordenadas.add(363);
-		coordenadas.add(265);
-		coordenadas.add(363);
-		coordenadas.add(266);
-		coordenadas.add(362);
-		coordenadas.add(267);
-		coordenadas.add(361);
-		coordenadas.add(267);
-		coordenadas.add(361);
-		coordenadas.add(268);
-		coordenadas.add(360);
-		coordenadas.add(268);
-		coordenadas.add(360);
-		coordenadas.add(269);
-		coordenadas.add(359);
-		coordenadas.add(269);
-		coordenadas.add(359);
-		coordenadas.add(270);
-		coordenadas.add(358);
-		coordenadas.add(271);
-		coordenadas.add(357);
-		coordenadas.add(272);
-		coordenadas.add(356);
-		coordenadas.add(272);
-		coordenadas.add(356);
-		coordenadas.add(273);
-		coordenadas.add(355);
-		coordenadas.add(273);
-		coordenadas.add(355);
-		coordenadas.add(274);
-		coordenadas.add(354);
-		coordenadas.add(275);
-		coordenadas.add(353);
-		coordenadas.add(276);
-		coordenadas.add(352);
-		coordenadas.add(276);
-		coordenadas.add(352);
-		coordenadas.add(277);
-		coordenadas.add(351);
-		coordenadas.add(277);
-		coordenadas.add(350);
-		coordenadas.add(278);
-		coordenadas.add(350);
-		coordenadas.add(279);
-		coordenadas.add(349);
-		coordenadas.add(279);
-		coordenadas.add(349);
-		coordenadas.add(280);
-		coordenadas.add(348);
-		coordenadas.add(280);
-		coordenadas.add(347);
-		coordenadas.add(281);
-		coordenadas.add(346);
-		coordenadas.add(281);
-		coordenadas.add(346);
-		coordenadas.add(282);
-		coordenadas.add(345);
-		coordenadas.add(282);
-		coordenadas.add(344);
-		coordenadas.add(283);
-		coordenadas.add(343);
-		coordenadas.add(284);
-		coordenadas.add(342);
-		coordenadas.add(285);
-		coordenadas.add(341);
-		coordenadas.add(285);
-		coordenadas.add(340);
-		coordenadas.add(285);
-		coordenadas.add(340);
-		coordenadas.add(286);
-		coordenadas.add(339);
-		coordenadas.add(287);
-		coordenadas.add(339);
-		coordenadas.add(288);
-		coordenadas.add(338);
-		coordenadas.add(288);
-		coordenadas.add(337);
-		coordenadas.add(289);
-		coordenadas.add(336);
-		coordenadas.add(289);
-		coordenadas.add(336);
-		coordenadas.add(291);
-		coordenadas.add(335);
-		coordenadas.add(292);
-		coordenadas.add(334);
-		coordenadas.add(292);
-		coordenadas.add(334);
-		coordenadas.add(293);
-		coordenadas.add(333);
-		coordenadas.add(294);
-		coordenadas.add(333);
-		coordenadas.add(295);
-		coordenadas.add(332);
-		coordenadas.add(295);
-		coordenadas.add(332);
-		coordenadas.add(296);
-		coordenadas.add(331);
-		coordenadas.add(296);
-		coordenadas.add(331);
-		coordenadas.add(297);
-		coordenadas.add(330);
-		coordenadas.add(298);
-		coordenadas.add(330);
-		coordenadas.add(299);
-		coordenadas.add(329);
-		coordenadas.add(299);
-		coordenadas.add(329);
-		coordenadas.add(300);
-		coordenadas.add(329);
-		coordenadas.add(301);
-		coordenadas.add(328);
-		coordenadas.add(301);
-		coordenadas.add(328);
-		coordenadas.add(302);
-		coordenadas.add(328);
-		coordenadas.add(303);
-		coordenadas.add(327);
-		coordenadas.add(303);
-		coordenadas.add(327);
-		coordenadas.add(304);
-		coordenadas.add(327);
-		coordenadas.add(305);
-		coordenadas.add(327);
-		coordenadas.add(306);
-		coordenadas.add(327);
-		coordenadas.add(307);
-		coordenadas.add(327);
-		coordenadas.add(308);
-		coordenadas.add(326);
-		coordenadas.add(308);
-		coordenadas.add(326);
-		coordenadas.add(309);
-		coordenadas.add(326);
-		coordenadas.add(310);
-		coordenadas.add(326);
-		coordenadas.add(311);
-		coordenadas.add(326);
-		coordenadas.add(312);
-		coordenadas.add(326);
-		coordenadas.add(313);
-		coordenadas.add(325);
-		coordenadas.add(313);
-		coordenadas.add(325);
-		coordenadas.add(314);
-		coordenadas.add(325);
-		coordenadas.add(315);
-		coordenadas.add(324);
-		coordenadas.add(316);
-		coordenadas.add(324);
-		coordenadas.add(317);
-		coordenadas.add(323);
-		coordenadas.add(318);
-		coordenadas.add(322);
-		coordenadas.add(319);
-		coordenadas.add(322);
-		coordenadas.add(320);
-		coordenadas.add(321);
-		coordenadas.add(320);
-		coordenadas.add(320);
-		coordenadas.add(320);
-		coordenadas.add(320);
-		coordenadas.add(321);
-		coordenadas.add(319);
-		coordenadas.add(321);
-		coordenadas.add(319);
-		coordenadas.add(322);
-		coordenadas.add(318);
-		coordenadas.add(322);
-		coordenadas.add(317);
-		coordenadas.add(322);
-		coordenadas.add(316);
-		coordenadas.add(323);
-		coordenadas.add(316);
-		coordenadas.add(324);
-		coordenadas.add(315);
-		coordenadas.add(324);
-		coordenadas.add(314);
-		coordenadas.add(325);
-		coordenadas.add(314);
-		coordenadas.add(326);
-		coordenadas.add(313);
-		coordenadas.add(326);
-		coordenadas.add(312);
-		coordenadas.add(327);
-		coordenadas.add(311);
-		coordenadas.add(327);
-		coordenadas.add(311);
-		coordenadas.add(328);
-		coordenadas.add(310);
-		coordenadas.add(328);
-		coordenadas.add(310);
-		coordenadas.add(329);
-		coordenadas.add(309);
-		coordenadas.add(329);
-		coordenadas.add(309);
-		coordenadas.add(330);
-		coordenadas.add(308);
-		coordenadas.add(330);
-		coordenadas.add(307);
-		coordenadas.add(330);
-		coordenadas.add(306);
-		coordenadas.add(330);
-		coordenadas.add(305);
-		coordenadas.add(330);
-		coordenadas.add(305);
-		coordenadas.add(331);
-		coordenadas.add(304);
-		coordenadas.add(332);
-		coordenadas.add(303);
-		coordenadas.add(332);
-		coordenadas.add(302);
-		coordenadas.add(332);
-		coordenadas.add(302);
-		coordenadas.add(333);
-		coordenadas.add(301);
-		coordenadas.add(333);
-		coordenadas.add(300);
-		coordenadas.add(333);
-		coordenadas.add(299);
-		coordenadas.add(333);
-		coordenadas.add(299);
-		coordenadas.add(334);
-		coordenadas.add(298);
-		coordenadas.add(334);
-		coordenadas.add(297);
-		coordenadas.add(334);
-		coordenadas.add(296);
-		coordenadas.add(335);
-		coordenadas.add(295);
-		coordenadas.add(335);
-		coordenadas.add(294);
-		coordenadas.add(336);
-		coordenadas.add(293);
-		coordenadas.add(336);
-		coordenadas.add(292);
-		coordenadas.add(337);
-		coordenadas.add(291);
-		coordenadas.add(337);
-		coordenadas.add(290);
-		coordenadas.add(337);
-		coordenadas.add(289);
-		coordenadas.add(338);
-		coordenadas.add(288);
-		coordenadas.add(338);
-		coordenadas.add(287);
-		coordenadas.add(338);
-		coordenadas.add(286);
-		coordenadas.add(338);
-		coordenadas.add(286);
-		coordenadas.add(339);
-		coordenadas.add(285);
-		coordenadas.add(339);
-		coordenadas.add(284);
-		coordenadas.add(339);
-		coordenadas.add(283);
-		coordenadas.add(339);
-		coordenadas.add(283);
-		coordenadas.add(340);
-		coordenadas.add(282);
-		coordenadas.add(340);
-		coordenadas.add(281);
-		coordenadas.add(341);
-		coordenadas.add(280);
-		coordenadas.add(342);
-		coordenadas.add(279);
-		coordenadas.add(342);
-		coordenadas.add(278);
-		coordenadas.add(342);
-		coordenadas.add(278);
-		coordenadas.add(343);
-		coordenadas.add(277);
-		coordenadas.add(344);
-		coordenadas.add(276);
-		coordenadas.add(344);
-		coordenadas.add(276);
-		coordenadas.add(345);
-		coordenadas.add(276);
-		coordenadas.add(346);
-		coordenadas.add(275);
-		coordenadas.add(346);
-		coordenadas.add(275);
-		coordenadas.add(347);
-		coordenadas.add(274);
-		coordenadas.add(348);
-		coordenadas.add(274);
-		coordenadas.add(349);
-		coordenadas.add(274);
-		coordenadas.add(350);
-		coordenadas.add(274);
-		coordenadas.add(351);
-		coordenadas.add(273);
-		coordenadas.add(352);
-		coordenadas.add(273);
-		coordenadas.add(353);
-		coordenadas.add(272);
-		coordenadas.add(354);
-		coordenadas.add(271);
-		coordenadas.add(355);
-		coordenadas.add(270);
-		coordenadas.add(355);
-		coordenadas.add(269);
-		coordenadas.add(355);
-		coordenadas.add(269);
-		coordenadas.add(356);
-		coordenadas.add(268);
-		coordenadas.add(357);
-		coordenadas.add(267);
-		coordenadas.add(357);
-		coordenadas.add(266);
-		coordenadas.add(357);
-		coordenadas.add(266);
-		coordenadas.add(358);
-		coordenadas.add(265);
-		coordenadas.add(358);
-		coordenadas.add(265);
-		coordenadas.add(359);
-		coordenadas.add(264);
-		coordenadas.add(359);
-		coordenadas.add(263);
-		coordenadas.add(359);
-		coordenadas.add(262);
-		coordenadas.add(360);
-		coordenadas.add(261);
-		coordenadas.add(361);
-		coordenadas.add(259);
-		coordenadas.add(361);
-		coordenadas.add(258);
-		coordenadas.add(361);
-		coordenadas.add(258);
-		coordenadas.add(362);
-		coordenadas.add(257);
-		coordenadas.add(362);
-		coordenadas.add(256);
-		coordenadas.add(362);
-		coordenadas.add(256);
-		coordenadas.add(363);
-		coordenadas.add(255);
-		coordenadas.add(363);
-		coordenadas.add(254);
-		coordenadas.add(364);
-		coordenadas.add(253);
-		coordenadas.add(365);
-		coordenadas.add(252);
-		coordenadas.add(365);
-		coordenadas.add(252);
-		coordenadas.add(366);
-		coordenadas.add(251);
-		coordenadas.add(366);
-		coordenadas.add(250);
-		coordenadas.add(366);
-		coordenadas.add(250);
-		coordenadas.add(367);
-		coordenadas.add(249);
-		coordenadas.add(367);
-		coordenadas.add(248);
-		coordenadas.add(368);
-		coordenadas.add(247);
-		coordenadas.add(368);
-		coordenadas.add(247);
-		coordenadas.add(369);
-		coordenadas.add(246);
-		coordenadas.add(369);
-		coordenadas.add(245);
-		coordenadas.add(370);
-		coordenadas.add(246);
-		coordenadas.add(370);
-		coordenadas.add(246);
-		coordenadas.add(371);
-		coordenadas.add(247);
-		coordenadas.add(371);
-		coordenadas.add(247);
-		coordenadas.add(372);
-		coordenadas.add(248);
-		coordenadas.add(373);
-		coordenadas.add(248);
-		coordenadas.add(374);
-		coordenadas.add(249);
-		coordenadas.add(374);
-		coordenadas.add(249);
-		coordenadas.add(375);
-		coordenadas.add(250);
-		coordenadas.add(375);
-		coordenadas.add(250);
-		coordenadas.add(376);
-		coordenadas.add(251);
-		coordenadas.add(376);
-		coordenadas.add(251);
-		coordenadas.add(377);
-		coordenadas.add(252);
-		coordenadas.add(377);
-		coordenadas.add(252);
-		coordenadas.add(378);
-		coordenadas.add(253);
-		coordenadas.add(379);
-		coordenadas.add(253);
-		coordenadas.add(380);
-		coordenadas.add(254);
-		coordenadas.add(380);
-		coordenadas.add(254);
-		coordenadas.add(381);
-		coordenadas.add(254);
-		coordenadas.add(382);
-		coordenadas.add(255);
-		coordenadas.add(382);
-		coordenadas.add(255);
-		coordenadas.add(383);
-		coordenadas.add(256);
-		coordenadas.add(383);
-		coordenadas.add(256);
-		coordenadas.add(384);
-		coordenadas.add(257);
-		coordenadas.add(385);
-		coordenadas.add(257);
-		coordenadas.add(386);
-		coordenadas.add(258);
-		coordenadas.add(386);
-		coordenadas.add(258);
-		coordenadas.add(385);
-		coordenadas.add(259);
-		coordenadas.add(384);
-		coordenadas.add(260);
-		coordenadas.add(384);
-		coordenadas.add(260);
-		coordenadas.add(383);
-		coordenadas.add(261);
-		coordenadas.add(383);
-		coordenadas.add(261);
-		coordenadas.add(382);
-		coordenadas.add(261);
-		coordenadas.add(381);
-		coordenadas.add(262);
-		coordenadas.add(381);
-		coordenadas.add(262);
-		coordenadas.add(380);
-		coordenadas.add(263);
-		coordenadas.add(380);
-		coordenadas.add(263);
-		coordenadas.add(379);
-		coordenadas.add(264);
-		coordenadas.add(379);
-		coordenadas.add(265);
-		coordenadas.add(378);
-		coordenadas.add(266);
-		coordenadas.add(378);
-		coordenadas.add(267);
-		coordenadas.add(377);
-		coordenadas.add(268);
-		coordenadas.add(376);
-		coordenadas.add(269);
-		coordenadas.add(376);
-		coordenadas.add(270);
-		coordenadas.add(376);
-		coordenadas.add(271);
-		coordenadas.add(376);
-		coordenadas.add(272);
-		coordenadas.add(376);
-		coordenadas.add(273);
-		coordenadas.add(376);
-		coordenadas.add(274);
-		coordenadas.add(376);
-		coordenadas.add(275);
-		coordenadas.add(376);
-		coordenadas.add(276);
-		coordenadas.add(376);
-		coordenadas.add(277);
-		coordenadas.add(376);
-		coordenadas.add(278);
-		coordenadas.add(376);
-		coordenadas.add(279);
-		coordenadas.add(376);
-		coordenadas.add(280);
-		coordenadas.add(376);
-		coordenadas.add(281);
-		coordenadas.add(376);
-		coordenadas.add(282);
-		coordenadas.add(376);
-		coordenadas.add(283);
-		coordenadas.add(376);
-		coordenadas.add(284);
-		coordenadas.add(376);
-		coordenadas.add(285);
-		coordenadas.add(376);
-		coordenadas.add(286);
-		coordenadas.add(376);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> geograficaComedor(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(763);
-		coordenadas.add(143);
-		coordenadas.add(763);
-		coordenadas.add(142);
-		coordenadas.add(763);
-		coordenadas.add(141);
-		coordenadas.add(763);
-		coordenadas.add(140);
-		coordenadas.add(763);
-		coordenadas.add(139);
-		coordenadas.add(763);
-		coordenadas.add(138);
-		coordenadas.add(763);
-		coordenadas.add(137);
-		coordenadas.add(763);
-		coordenadas.add(136);
-		coordenadas.add(763);
-		coordenadas.add(135);
-		coordenadas.add(763);
-		coordenadas.add(134);
-		coordenadas.add(763);
-		coordenadas.add(133);
-		coordenadas.add(763);
-		coordenadas.add(132);
-		coordenadas.add(763);
-		coordenadas.add(131);
-		coordenadas.add(763);
-		coordenadas.add(130);
-		coordenadas.add(763);
-		coordenadas.add(129);
-		coordenadas.add(763);
-		coordenadas.add(128);
-		coordenadas.add(762);
-		coordenadas.add(128);
-		coordenadas.add(762);
-		coordenadas.add(127);
-		coordenadas.add(762);
-		coordenadas.add(126);
-		coordenadas.add(762);
-		coordenadas.add(125);
-		coordenadas.add(762);
-		coordenadas.add(124);
-		coordenadas.add(762);
-		coordenadas.add(123);
-		coordenadas.add(762);
-		coordenadas.add(122);
-		coordenadas.add(485);
-		coordenadas.add(102);
-		coordenadas.add(485);
-		coordenadas.add(103);
-		coordenadas.add(485);
-		coordenadas.add(104);
-		coordenadas.add(485);
-		coordenadas.add(105);
-		coordenadas.add(476);
-		coordenadas.add(147);
-		coordenadas.add(477);
-		coordenadas.add(148);
-		coordenadas.add(478);
-		coordenadas.add(148);
-		coordenadas.add(477);
-		coordenadas.add(149);
-		coordenadas.add(429);
-		coordenadas.add(196);
-		coordenadas.add(429);
-		coordenadas.add(197);
-		coordenadas.add(428);
-		coordenadas.add(198);
-		coordenadas.add(427);
-		coordenadas.add(199);
-		coordenadas.add(355);
-		coordenadas.add(271);
-		coordenadas.add(354);
-		coordenadas.add(272);
-		coordenadas.add(353);
-		coordenadas.add(273);
-		coordenadas.add(351);
-		coordenadas.add(273);
-		coordenadas.add(327);
-		coordenadas.add(295);
-		coordenadas.add(326);
-		coordenadas.add(295);
-		coordenadas.add(325);
-		coordenadas.add(296);
-		coordenadas.add(325);
-		coordenadas.add(297);
-		coordenadas.add(325);
-		coordenadas.add(298);
-		coordenadas.add(325);
-		coordenadas.add(299);
-		coordenadas.add(325);
-		coordenadas.add(300);
-		coordenadas.add(325);
-		coordenadas.add(301);
-		coordenadas.add(325);
-		coordenadas.add(302);
-		coordenadas.add(325);
-		coordenadas.add(303);
-		coordenadas.add(325);
-		coordenadas.add(304);
-		coordenadas.add(325);
-		coordenadas.add(305);
-		coordenadas.add(325);
-		coordenadas.add(306);
-		coordenadas.add(325);
-		coordenadas.add(307);
-		coordenadas.add(325);
-		coordenadas.add(308);
-		coordenadas.add(325);
-		coordenadas.add(309);
-		coordenadas.add(325);
-		coordenadas.add(310);
-		coordenadas.add(325);
-		coordenadas.add(311);
-		coordenadas.add(325);
-		coordenadas.add(312);
-		coordenadas.add(324);
-		coordenadas.add(313);
-		coordenadas.add(323);
-		coordenadas.add(314);
-		coordenadas.add(322);
-		coordenadas.add(315);
-		coordenadas.add(321);
-		coordenadas.add(316);
-		coordenadas.add(320);
-		coordenadas.add(317);
-		coordenadas.add(319);
-		coordenadas.add(318);
-		coordenadas.add(318);
-		coordenadas.add(319);
-		coordenadas.add(317);
-		coordenadas.add(319);
-		coordenadas.add(316);
-		coordenadas.add(320);
-		coordenadas.add(315);
-		coordenadas.add(320);
-		coordenadas.add(314);
-		coordenadas.add(320);
-		coordenadas.add(313);
-		coordenadas.add(320);
-		coordenadas.add(312);
-		coordenadas.add(321);
-		coordenadas.add(312);
-		coordenadas.add(322);
-		coordenadas.add(310);
-		coordenadas.add(322);
-		coordenadas.add(310);
-		coordenadas.add(323);
-		coordenadas.add(309);
-		coordenadas.add(323);
-		coordenadas.add(307);
-		coordenadas.add(324);
-		coordenadas.add(306);
-		coordenadas.add(325);
-		coordenadas.add(305);
-		coordenadas.add(325);
-		coordenadas.add(304);
-		coordenadas.add(325);
-		coordenadas.add(303);
-		coordenadas.add(326);
-		coordenadas.add(302);
-		coordenadas.add(326);
-		coordenadas.add(301);
-		coordenadas.add(327);
-		coordenadas.add(300);
-		coordenadas.add(327);
-		coordenadas.add(299);
-		coordenadas.add(327);
-		coordenadas.add(298);
-		coordenadas.add(328);
-		coordenadas.add(297);
-		coordenadas.add(328);
-		coordenadas.add(296);
-		coordenadas.add(328);
-		coordenadas.add(295);
-		coordenadas.add(328);
-		coordenadas.add(294);
-		coordenadas.add(328);
-		coordenadas.add(293);
-		coordenadas.add(329);
-		coordenadas.add(292);
-		coordenadas.add(329);
-		coordenadas.add(291);
-		coordenadas.add(330);
-		coordenadas.add(290);
-		coordenadas.add(330);
-		coordenadas.add(290);
-		coordenadas.add(331);
-		coordenadas.add(288);
-		coordenadas.add(332);
-		coordenadas.add(288);
-		coordenadas.add(333);
-		coordenadas.add(286);
-		coordenadas.add(333);
-		coordenadas.add(285);
-		coordenadas.add(334);
-		coordenadas.add(284);
-		coordenadas.add(335);
-		coordenadas.add(283);
-		coordenadas.add(336);
-		coordenadas.add(282);
-		coordenadas.add(336);
-		coordenadas.add(281);
-		coordenadas.add(338);
-		coordenadas.add(281);
-		coordenadas.add(339);
-		coordenadas.add(279);
-		coordenadas.add(340);
-		coordenadas.add(279);
-		coordenadas.add(341);
-		coordenadas.add(278);
-		coordenadas.add(342);
-		coordenadas.add(277);
-		coordenadas.add(343);
-		coordenadas.add(277);
-		coordenadas.add(344);
-		coordenadas.add(277);
-		coordenadas.add(345);
-		coordenadas.add(276);
-		coordenadas.add(347);
-		coordenadas.add(275);
-		coordenadas.add(348);
-		coordenadas.add(275);
-		coordenadas.add(349);
-		coordenadas.add(274);
-		coordenadas.add(350);
-		coordenadas.add(274);
-		coordenadas.add(351);
-		coordenadas.add(274);
-		coordenadas.add(352);
-		coordenadas.add(274);
-		coordenadas.add(353);
-		coordenadas.add(274);
-		coordenadas.add(354);
-		coordenadas.add(273);
-		coordenadas.add(353);
-		coordenadas.add(253);
-		coordenadas.add(360);
-		coordenadas.add(253);
-		coordenadas.add(361);
-		coordenadas.add(252);
-		coordenadas.add(362);
-		coordenadas.add(251);
-		coordenadas.add(363);
-		coordenadas.add(251);
-		coordenadas.add(364);
-		coordenadas.add(250);
-		coordenadas.add(364);
-		coordenadas.add(249);
-		coordenadas.add(364);
-		coordenadas.add(248);
-		coordenadas.add(364);
-		coordenadas.add(247);
-		coordenadas.add(364);
-		coordenadas.add(246);
-		coordenadas.add(364);
-		coordenadas.add(245);
-		coordenadas.add(364);
-		coordenadas.add(244);
-		coordenadas.add(364);
-		coordenadas.add(243);
-		coordenadas.add(364);
-		coordenadas.add(242);
-		coordenadas.add(365);
-		coordenadas.add(241);
-		coordenadas.add(367);
-		coordenadas.add(240);
-		coordenadas.add(367);
-		coordenadas.add(240);
-		coordenadas.add(368);
-		coordenadas.add(240);
-		coordenadas.add(369);
-		coordenadas.add(240);
-		coordenadas.add(370);
-		coordenadas.add(240);
-		coordenadas.add(371);
-		coordenadas.add(240);
-		coordenadas.add(372);
-		coordenadas.add(240);
-		coordenadas.add(373);
-		coordenadas.add(240);
-		coordenadas.add(374);
-		coordenadas.add(240);
-		coordenadas.add(375);
-		coordenadas.add(240);
-		coordenadas.add(376);
-		coordenadas.add(241);
-		coordenadas.add(377);
-		coordenadas.add(242);
-		coordenadas.add(378);
-		coordenadas.add(242);
-		coordenadas.add(379);
-		coordenadas.add(243);
-		coordenadas.add(380);
-		coordenadas.add(244);
-		coordenadas.add(381);
-		coordenadas.add(245);
-		coordenadas.add(382);
-		coordenadas.add(246);
-		coordenadas.add(382);
-		coordenadas.add(247);
-		coordenadas.add(383);
-		coordenadas.add(248);
-		coordenadas.add(383);
-		coordenadas.add(248);
-		coordenadas.add(384);
-		coordenadas.add(249);
-		coordenadas.add(384);
-		coordenadas.add(249);
-		coordenadas.add(385);
-		coordenadas.add(251);
-		coordenadas.add(386);
-		coordenadas.add(252);
-		coordenadas.add(386);
-		coordenadas.add(253);
-		coordenadas.add(388);
-		coordenadas.add(254);
-		coordenadas.add(388);
-		coordenadas.add(255);
-		coordenadas.add(388);
-		coordenadas.add(256);
-		coordenadas.add(388);
-		coordenadas.add(257);
-		coordenadas.add(388);
-		coordenadas.add(257);
-		coordenadas.add(387);
-		coordenadas.add(258);
-		coordenadas.add(387);
-		coordenadas.add(259);
-		coordenadas.add(386);
-		coordenadas.add(260);
-		coordenadas.add(385);
-		coordenadas.add(261);
-		coordenadas.add(384);
-		coordenadas.add(263);
-		coordenadas.add(383);
-		coordenadas.add(265);
-		coordenadas.add(383);
-		coordenadas.add(267);
-		coordenadas.add(382);
-		coordenadas.add(269);
-		coordenadas.add(382);
-		coordenadas.add(270);
-		coordenadas.add(381);
-		coordenadas.add(271);
-		coordenadas.add(381);
-		coordenadas.add(271);
-		coordenadas.add(380);
-		coordenadas.add(273);
-		coordenadas.add(380);
-		coordenadas.add(273);
-		coordenadas.add(378);
-		coordenadas.add(275);
-		coordenadas.add(378);
-		coordenadas.add(276);
-		coordenadas.add(378);
-		coordenadas.add(277);
-		coordenadas.add(377);
-		coordenadas.add(279);
-		coordenadas.add(376);
-		coordenadas.add(280);
-		coordenadas.add(376);
-		coordenadas.add(282);
-		coordenadas.add(376);
-		coordenadas.add(283);
-		coordenadas.add(376);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> geograficaBiblioteca(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(763);
-		coordenadas.add(208);
-		coordenadas.add(736);
-		coordenadas.add(211);
-		coordenadas.add(720);
-		coordenadas.add(165);
-		coordenadas.add(739);
-		coordenadas.add(144);
-		coordenadas.add(764);
-		coordenadas.add(143);
-		return coordenadas;
-	}
+	public static final String MINAS_PSICOLOGIA = "1163,86,1135,86,1110,91,1087,98,1053,105,1051,103";
 
-	public static LinkedList<Integer> minasCivil() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1164);
-		coordenadas.add(84);
-		coordenadas.add(1143);
-		coordenadas.add(79);
-		coordenadas.add(1122);
-		coordenadas.add(64);
-		coordenadas.add(1095);
-		coordenadas.add(56);
-		coordenadas.add(1083);
-		coordenadas.add(56);
-		coordenadas.add(1003);
-		coordenadas.add(50);
-		coordenadas.add(958);
-		coordenadas.add(50);
-		coordenadas.add(924);
-		coordenadas.add(49);
-		coordenadas.add(881);
-		coordenadas.add(47);
-		coordenadas.add(836);
-		coordenadas.add(43);
-		coordenadas.add(723);
-		coordenadas.add(35);
-		coordenadas.add(718);
-		coordenadas.add(37);
-		coordenadas.add(715);
-		coordenadas.add(40);
-		coordenadas.add(711);
-		coordenadas.add(60);
-		coordenadas.add(708);
-		coordenadas.add(65);
-		coordenadas.add(701);
-		coordenadas.add(70);
-		coordenadas.add(695);
-		coordenadas.add(70);
-		coordenadas.add(690);
-		coordenadas.add(70);
-		coordenadas.add(683);
-		coordenadas.add(70);
-		coordenadas.add(675);
-		coordenadas.add(61);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> educacionGeografica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(887);
-		coordenadas.add(239);
-		coordenadas.add(868);
-		coordenadas.add(241);
-		coordenadas.add(861);
-		coordenadas.add(230);
-		coordenadas.add(861);
-		coordenadas.add(213);
-		coordenadas.add(861);
-		coordenadas.add(191);
-		coordenadas.add(856);
-		coordenadas.add(174);
-		coordenadas.add(833);
-		coordenadas.add(145);
-		coordenadas.add(815);
-		coordenadas.add(136);
-		coordenadas.add(762);
-		coordenadas.add(144);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> educacionBiblioteca(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(888);
-		coordenadas.add(240);
-		coordenadas.add(888);
-		coordenadas.add(238);
-		coordenadas.add(887);
-		coordenadas.add(245);
-		coordenadas.add(870);
-		coordenadas.add(245);
-		coordenadas.add(860);
-		coordenadas.add(242);
-		coordenadas.add(847);
-		coordenadas.add(237);
-		coordenadas.add(831);
-		coordenadas.add(234);
-		coordenadas.add(800);
-		coordenadas.add(233);
-		coordenadas.add(770);
-		coordenadas.add(229);
-		coordenadas.add(770);
-		coordenadas.add(218);
-		coordenadas.add(763);
-		coordenadas.add(208);
-		return coordenadas;
-	}
+	public static final String METALURGICA_COMEDOR = "160,306,161,307,162,307,162,308,163,308,164,308,165,308,166,308,167,308,168,308,169,308,170,308,171,308,172,308,173,308,173,307,174,307,175,307,175,306,176,306,176,305,177,305,177,304,177,303,178,303,179,302,179,301,179,300,180,299,181,299,182,299,302,280,324,304,324,305,325,315,325,316,325,317,325,318,325,319,325,320,238,375,239,375,240,375,241,375,242,375,243,375,244,375,245,375,246,376,247,376,247,377,248,378,249,378,250,378,250,379,251,379,251,380,252,380,252,381,253,382,254,382,254,383,255,384,256,385,256,386,256,387,257,387,257,388,258,388,258,389,258,390,286,378";
 
-	public static LinkedList<Integer> psicologiaSistemas() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1049);
-		coordenadas.add(101);
-		coordenadas.add(1050);
-		coordenadas.add(127);
-		coordenadas.add(1050);
-		coordenadas.add(140);
-		coordenadas.add(1050);
-		coordenadas.add(147);
-		coordenadas.add(1049);
-		coordenadas.add(156);
-		coordenadas.add(1040);
-		coordenadas.add(169);
-		coordenadas.add(1033);
-		coordenadas.add(193);
-		coordenadas.add(1035);
-		coordenadas.add(216);
-		coordenadas.add(1049);
-		coordenadas.add(227);
-		coordenadas.add(1057);
-		coordenadas.add(228);
-		coordenadas.add(1066);
-		coordenadas.add(221);
-		return coordenadas;
-	}
+	public static final String GEOLOGICA_MATEMATICAS = "94,231,56,241,96,456,124,451";
 
-	public static LinkedList<Integer> psicologiaOdontologia() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1050);
-		coordenadas.add(99);
-		coordenadas.add(1036);
-		coordenadas.add(101);
-		coordenadas.add(1023);
-		coordenadas.add(115);
-		coordenadas.add(1019);
-		coordenadas.add(120);
-		coordenadas.add(1015);
-		coordenadas.add(130);
-		coordenadas.add(1013);
-		coordenadas.add(151);
-		coordenadas.add(1011);
-		coordenadas.add(163);
-		coordenadas.add(1002);
-		coordenadas.add(173);
-		coordenadas.add(992);
-		coordenadas.add(177);
-		coordenadas.add(982);
-		coordenadas.add(178);
-		coordenadas.add(973);
-		coordenadas.add(164);
-		return coordenadas;
-	}
+	public static final String COMEDOR_BIOLOGICA = "214,438,257,425,258,423,259,423,260,422,260,421,260,420,261,420,261,419,261,418,262,418,262,417,262,416,262,415,262,414,263,413,263,412,263,411,263,410,263,409,263,408,263,407,263,406,263,405,263,404,263,403,263,402,263,401,263,400,263,399,263,398,263,397,263,396,263,395,263,394,262,393,262,392,262,391,262,390,261,389,285,378";
 
-	public static LinkedList<Integer> psicologiaCienciasEconomicas() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1050);
-		coordenadas.add(99);
-		coordenadas.add(1060);
-		coordenadas.add(98);
-		coordenadas.add(1065);
-		coordenadas.add(98);
-		coordenadas.add(1071);
-		coordenadas.add(98);
-		coordenadas.add(1075);
-		coordenadas.add(98);
-		coordenadas.add(1077);
-		coordenadas.add(98);
-		coordenadas.add(1080);
-		coordenadas.add(100);
-		coordenadas.add(1086);
-		coordenadas.add(104);
-		coordenadas.add(1089);
-		coordenadas.add(109);
-		coordenadas.add(1089);
-		coordenadas.add(112);
-		coordenadas.add(1089);
-		coordenadas.add(115);
-		coordenadas.add(1092);
-		coordenadas.add(131);
-		coordenadas.add(1094);
-		coordenadas.add(142);
-		coordenadas.add(1097);
-		coordenadas.add(150);
-		coordenadas.add(1100);
-		coordenadas.add(158);
-		coordenadas.add(1103);
-		coordenadas.add(167);
-		coordenadas.add(1110);
-		coordenadas.add(182);
-		coordenadas.add(1115);
-		coordenadas.add(187);
-		coordenadas.add(1127);
-		coordenadas.add(192);
-		coordenadas.add(1133);
-		coordenadas.add(192);
-		coordenadas.add(1142);
-		coordenadas.add(190);
-		return coordenadas;
-	}
+	public static final String COMEDOR_FLUIDOS = "599,103,599,104,599,105,599,106,599,107,599,108,599,109,598,109,597,109,596,109,595,109,594,109,593,109,592,109,591,109,590,109,589,109,587,109,586,109,585,109,584,109,583,109,582,109,581,109,580,109,579,109,578,109,577,109,576,109,575,109,531,109,530,109,529,109,528,109,527,109,376,269,376,270,376,271,376,272,376,273,376,274,376,275,376,276,376,277,376,278,376,279,376,280,376,281,376,282,376,283,376,284,376,285,376,286,376";
 
-	public static LinkedList<Integer> cienciasEconomicasFISI() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1140);
-		coordenadas.add(188);
-		coordenadas.add(1140);
-		coordenadas.add(194);
-		coordenadas.add(1140);
-		coordenadas.add(198);
-		coordenadas.add(1139);
-		coordenadas.add(202);
-		coordenadas.add(1138);
-		coordenadas.add(205);
-		coordenadas.add(1137);
-		coordenadas.add(206);
-		coordenadas.add(1136);
-		coordenadas.add(207);
-		coordenadas.add(1133);
-		coordenadas.add(210);
-		coordenadas.add(1130);
-		coordenadas.add(211);
-		coordenadas.add(1126);
-		coordenadas.add(213);
-		coordenadas.add(1122);
-		coordenadas.add(216);
-		coordenadas.add(1115);
-		coordenadas.add(217);
-		coordenadas.add(1108);
-		coordenadas.add(217);
-		coordenadas.add(1100);
-		coordenadas.add(219);
-		coordenadas.add(1095);
-		coordenadas.add(220);
-		coordenadas.add(1070);
-		coordenadas.add(221);
-		return coordenadas;
-	}
+	public static final String COMEDOR_GEOGRAFICA = 
+	"763,143,763,142,763,141,763,140,763,139,763,138,763,137,763,136,763,135,763,134,763,133,763,132,763,131,763,130,763,129,763,128,762,128,762,127,762,126,762,125,762,124,762,123,762,122,485,102,485,103,485,104,485,105,476,147,363,251,364,250,364,249,364,248,364,247,364,246,364,245,364,244,364,243,364,242,365,241,367,240,367,240,368,240,369,240,370,240,371,240,372,240,373,240,374,240,375,240,376,241,377,242,378,242,379,243,380,244,381,245,382,246,382,247,383,248,383,248,384,249,384,249,385,251,386,252,386,253,388,254,388,255,388,256,388,257,388,257,387,258,387,259,386,260,385,261,384,263,383,265,383,267,382,269,382,270,381,271,381,271,380,273,380,273,378,275,378,276,378,277,377,279,376,280,376,282,376,283,376";
 
-	public static LinkedList<Integer> odontologiaSistemas() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1064);
-		coordenadas.add(221);
-		coordenadas.add(1050);
-		coordenadas.add(224);
-		coordenadas.add(1041);
-		coordenadas.add(221);
-		coordenadas.add(1037);
-		coordenadas.add(212);
-		coordenadas.add(1037);
-		coordenadas.add(200);
-		coordenadas.add(1037);
-		coordenadas.add(183);
-		coordenadas.add(1037);
-		coordenadas.add(169);
-		coordenadas.add(1032);
-		coordenadas.add(160);
-		coordenadas.add(1022);
-		coordenadas.add(155);
-		coordenadas.add(1007);
-		coordenadas.add(157);
-		coordenadas.add(979);
-		coordenadas.add(168);
-		return coordenadas;
-	}
+	public static final String BIBLIOTECA_GEOGRAFICA = "763,208,736,211,720,165,739,144,764,143";
 
-	public static LinkedList<Integer> cienciasEconomicasOdontologia() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1141);
-		coordenadas.add(189);
-		coordenadas.add(1119);
-		coordenadas.add(184);
-		coordenadas.add(1113);
-		coordenadas.add(170);
-		coordenadas.add(1099);
-		coordenadas.add(157);
-		coordenadas.add(1093);
-		coordenadas.add(157);
-		coordenadas.add(1084);
-		coordenadas.add(158);
-		coordenadas.add(1066);
-		coordenadas.add(160);
-		coordenadas.add(1035);
-		coordenadas.add(163);
-		coordenadas.add(1000);
-		coordenadas.add(166);
-		coordenadas.add(973);
-		coordenadas.add(165);
-		return coordenadas;
-	}
+	public static final String MINAS_CIVIL = "1164,84,1143,79,1122,64,1095,56,1083,56,1003,50,958,50,924,49,881,47,836,43,723,35,718,37,715,40,711,60,708,65,701,70,695,70,690,70,683,70,675,61";
 
-	public static LinkedList<Integer> sistemasEducacionFisica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1065);
-		coordenadas.add(222);
-		coordenadas.add(1065);
-		coordenadas.add(222);
-		coordenadas.add(1065);
-		coordenadas.add(228);
-		coordenadas.add(1058);
-		coordenadas.add(234);
-		coordenadas.add(1048);
-		coordenadas.add(239);
-		coordenadas.add(1037);
-		coordenadas.add(246);
-		coordenadas.add(1030);
-		coordenadas.add(250);
-		coordenadas.add(1020);
-		coordenadas.add(253);
-		coordenadas.add(1008);
-		coordenadas.add(258);
-		coordenadas.add(999);
-		coordenadas.add(263);
-		coordenadas.add(971);
-		coordenadas.add(275);
-		coordenadas.add(964);
-		coordenadas.add(276);
-		coordenadas.add(958);
-		coordenadas.add(276);
-		coordenadas.add(953);
-		coordenadas.add(273);
-		coordenadas.add(950);
-		coordenadas.add(265);
-		coordenadas.add(950);
-		coordenadas.add(265);
-		coordenadas.add(950);
-		coordenadas.add(265);
-		coordenadas.add(950);
-		coordenadas.add(265);
-		return coordenadas;
-	}
+	public static final String EDUCACION_GEOGRAFICA = "887,239,868,241,861,230,861,213,861,191,856,174,833,145,815,136,762,144";
 
-	public static LinkedList<Integer> EducacionEducacionFisica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(950);
-		coordenadas.add(265);
-		coordenadas.add(950);
-		coordenadas.add(265);
-		coordenadas.add(920);
-		coordenadas.add(283);
-		coordenadas.add(887);
-		coordenadas.add(238);
-		coordenadas.add(887);
-		coordenadas.add(238);
-		return coordenadas;
-	}
+	public static final String EDUCACION_BIBLIOTECA = "888,240,888,238,887,245,870,245,860,242,847,237,831,234,800,233,770,229,770,218,763,208";
 
-	public static LinkedList<Integer> odontologiaElectrica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(974);
-		coordenadas.add(166);
-		coordenadas.add(974);
-		coordenadas.add(166);
-		coordenadas.add(962);
-		coordenadas.add(167);
-		coordenadas.add(937);
-		coordenadas.add(163);
-		coordenadas.add(932);
-		coordenadas.add(153);
-		coordenadas.add(928);
-		coordenadas.add(128);
-		coordenadas.add(928);
-		coordenadas.add(117);
-		coordenadas.add(924);
-		coordenadas.add(104);
-		coordenadas.add(897);
-		coordenadas.add(99);
-		coordenadas.add(882);
-		coordenadas.add(90);
-		coordenadas.add(850);
-		coordenadas.add(84);
-		coordenadas.add(813);
-		coordenadas.add(80);
-		coordenadas.add(802);
-		coordenadas.add(75);
-		return coordenadas;
-	}
+	public static final String PSICOLOGIA_SISTEMAS = "1049,101,1050,127,1050,140,1050,147,1049,156,1040,169,1033,193,1035,216,1049,227,1057,228,1066,221";
 
-	public static LinkedList<Integer> odontologiaBiblioteca() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(975);
-		coordenadas.add(168);
-		coordenadas.add(975);
-		coordenadas.add(168);
-		coordenadas.add(974);
-		coordenadas.add(169);
-		coordenadas.add(974);
-		coordenadas.add(171);
-		coordenadas.add(973);
-		coordenadas.add(173);
-		coordenadas.add(973);
-		coordenadas.add(175);
-		coordenadas.add(972);
-		coordenadas.add(176);
-		coordenadas.add(972);
-		coordenadas.add(178);
-		coordenadas.add(971);
-		coordenadas.add(179);
-		coordenadas.add(971);
-		coordenadas.add(179);
-		coordenadas.add(971);
-		coordenadas.add(180);
-		coordenadas.add(971);
-		coordenadas.add(180);
-		coordenadas.add(971);
-		coordenadas.add(180);
-		coordenadas.add(971);
-		coordenadas.add(180);
-		coordenadas.add(971);
-		coordenadas.add(181);
-		coordenadas.add(971);
-		coordenadas.add(182);
-		coordenadas.add(970);
-		coordenadas.add(182);
-		coordenadas.add(970);
-		coordenadas.add(183);
-		coordenadas.add(970);
-		coordenadas.add(184);
-		coordenadas.add(970);
-		coordenadas.add(185);
-		coordenadas.add(969);
-		coordenadas.add(186);
-		coordenadas.add(969);
-		coordenadas.add(186);
-		coordenadas.add(969);
-		coordenadas.add(186);
-		coordenadas.add(969);
-		coordenadas.add(187);
-		coordenadas.add(969);
-		coordenadas.add(187);
-		coordenadas.add(969);
-		coordenadas.add(188);
-		coordenadas.add(969);
-		coordenadas.add(188);
-		coordenadas.add(969);
-		coordenadas.add(189);
-		coordenadas.add(969);
-		coordenadas.add(190);
-		coordenadas.add(969);
-		coordenadas.add(191);
-		coordenadas.add(969);
-		coordenadas.add(191);
-		coordenadas.add(969);
-		coordenadas.add(192);
-		coordenadas.add(969);
-		coordenadas.add(193);
-		coordenadas.add(969);
-		coordenadas.add(194);
-		coordenadas.add(969);
-		coordenadas.add(194);
-		coordenadas.add(969);
-		coordenadas.add(194);
-		coordenadas.add(968);
-		coordenadas.add(195);
-		coordenadas.add(968);
-		coordenadas.add(195);
-		coordenadas.add(968);
-		coordenadas.add(195);
-		coordenadas.add(968);
-		coordenadas.add(196);
-		coordenadas.add(968);
-		coordenadas.add(197);
-		coordenadas.add(968);
-		coordenadas.add(198);
-		coordenadas.add(968);
-		coordenadas.add(198);
-		coordenadas.add(968);
-		coordenadas.add(199);
-		coordenadas.add(968);
-		coordenadas.add(199);
-		coordenadas.add(968);
-		coordenadas.add(200);
-		coordenadas.add(968);
-		coordenadas.add(200);
-		coordenadas.add(968);
-		coordenadas.add(200);
-		coordenadas.add(968);
-		coordenadas.add(200);
-		coordenadas.add(967);
-		coordenadas.add(201);
-		coordenadas.add(967);
-		coordenadas.add(202);
-		coordenadas.add(967);
-		coordenadas.add(203);
-		coordenadas.add(967);
-		coordenadas.add(203);
-		coordenadas.add(966);
-		coordenadas.add(204);
-		coordenadas.add(966);
-		coordenadas.add(205);
-		coordenadas.add(966);
-		coordenadas.add(206);
-		coordenadas.add(965);
-		coordenadas.add(207);
-		coordenadas.add(965);
-		coordenadas.add(208);
-		coordenadas.add(965);
-		coordenadas.add(209);
-		coordenadas.add(965);
-		coordenadas.add(210);
-		coordenadas.add(964);
-		coordenadas.add(210);
-		coordenadas.add(964);
-		coordenadas.add(211);
-		coordenadas.add(964);
-		coordenadas.add(212);
-		coordenadas.add(964);
-		coordenadas.add(212);
-		coordenadas.add(964);
-		coordenadas.add(213);
-		coordenadas.add(963);
-		coordenadas.add(213);
-		coordenadas.add(963);
-		coordenadas.add(214);
-		coordenadas.add(963);
-		coordenadas.add(214);
-		coordenadas.add(963);
-		coordenadas.add(215);
-		coordenadas.add(963);
-		coordenadas.add(216);
-		coordenadas.add(963);
-		coordenadas.add(216);
-		coordenadas.add(963);
-		coordenadas.add(216);
-		coordenadas.add(963);
-		coordenadas.add(216);
-		coordenadas.add(962);
-		coordenadas.add(216);
-		coordenadas.add(960);
-		coordenadas.add(216);
-		coordenadas.add(959);
-		coordenadas.add(216);
-		coordenadas.add(957);
-		coordenadas.add(216);
-		coordenadas.add(956);
-		coordenadas.add(216);
-		coordenadas.add(955);
-		coordenadas.add(216);
-		coordenadas.add(953);
-		coordenadas.add(216);
-		coordenadas.add(953);
-		coordenadas.add(216);
-		coordenadas.add(952);
-		coordenadas.add(216);
-		coordenadas.add(952);
-		coordenadas.add(216);
-		coordenadas.add(951);
-		coordenadas.add(216);
-		coordenadas.add(950);
-		coordenadas.add(216);
-		coordenadas.add(949);
-		coordenadas.add(216);
-		coordenadas.add(948);
-		coordenadas.add(215);
-		coordenadas.add(947);
-		coordenadas.add(215);
-		coordenadas.add(946);
-		coordenadas.add(215);
-		coordenadas.add(945);
-		coordenadas.add(215);
-		coordenadas.add(945);
-		coordenadas.add(215);
-		coordenadas.add(944);
-		coordenadas.add(215);
-		coordenadas.add(944);
-		coordenadas.add(215);
-		coordenadas.add(944);
-		coordenadas.add(215);
-		coordenadas.add(943);
-		coordenadas.add(215);
-		coordenadas.add(942);
-		coordenadas.add(215);
-		coordenadas.add(940);
-		coordenadas.add(215);
-		coordenadas.add(939);
-		coordenadas.add(215);
-		coordenadas.add(938);
-		coordenadas.add(215);
-		coordenadas.add(936);
-		coordenadas.add(215);
-		coordenadas.add(936);
-		coordenadas.add(215);
-		coordenadas.add(936);
-		coordenadas.add(215);
-		coordenadas.add(935);
-		coordenadas.add(215);
-		coordenadas.add(934);
-		coordenadas.add(215);
-		coordenadas.add(933);
-		coordenadas.add(215);
-		coordenadas.add(932);
-		coordenadas.add(215);
-		coordenadas.add(930);
-		coordenadas.add(215);
-		coordenadas.add(929);
-		coordenadas.add(215);
-		coordenadas.add(927);
-		coordenadas.add(215);
-		coordenadas.add(926);
-		coordenadas.add(215);
-		coordenadas.add(924);
-		coordenadas.add(215);
-		coordenadas.add(923);
-		coordenadas.add(215);
-		coordenadas.add(922);
-		coordenadas.add(215);
-		coordenadas.add(921);
-		coordenadas.add(214);
-		coordenadas.add(920);
-		coordenadas.add(214);
-		coordenadas.add(920);
-		coordenadas.add(214);
-		coordenadas.add(919);
-		coordenadas.add(214);
-		coordenadas.add(919);
-		coordenadas.add(214);
-		coordenadas.add(918);
-		coordenadas.add(214);
-		coordenadas.add(916);
-		coordenadas.add(214);
-		coordenadas.add(914);
-		coordenadas.add(214);
-		coordenadas.add(912);
-		coordenadas.add(214);
-		coordenadas.add(910);
-		coordenadas.add(214);
-		coordenadas.add(908);
-		coordenadas.add(213);
-		coordenadas.add(907);
-		coordenadas.add(213);
-		coordenadas.add(906);
-		coordenadas.add(213);
-		coordenadas.add(905);
-		coordenadas.add(213);
-		coordenadas.add(905);
-		coordenadas.add(213);
-		coordenadas.add(905);
-		coordenadas.add(213);
-		coordenadas.add(904);
-		coordenadas.add(213);
-		coordenadas.add(904);
-		coordenadas.add(213);
-		coordenadas.add(904);
-		coordenadas.add(213);
-		coordenadas.add(903);
-		coordenadas.add(213);
-		coordenadas.add(903);
-		coordenadas.add(213);
-		coordenadas.add(902);
-		coordenadas.add(213);
-		coordenadas.add(900);
-		coordenadas.add(213);
-		coordenadas.add(899);
-		coordenadas.add(213);
-		coordenadas.add(897);
-		coordenadas.add(213);
-		coordenadas.add(893);
-		coordenadas.add(213);
-		coordenadas.add(891);
-		coordenadas.add(213);
-		coordenadas.add(889);
-		coordenadas.add(213);
-		coordenadas.add(888);
-		coordenadas.add(213);
-		coordenadas.add(887);
-		coordenadas.add(213);
-		coordenadas.add(887);
-		coordenadas.add(213);
-		coordenadas.add(886);
-		coordenadas.add(213);
-		coordenadas.add(886);
-		coordenadas.add(213);
-		coordenadas.add(886);
-		coordenadas.add(213);
-		coordenadas.add(886);
-		coordenadas.add(213);
-		coordenadas.add(885);
-		coordenadas.add(213);
-		coordenadas.add(884);
-		coordenadas.add(213);
-		coordenadas.add(881);
-		coordenadas.add(213);
-		coordenadas.add(879);
-		coordenadas.add(213);
-		coordenadas.add(877);
-		coordenadas.add(213);
-		coordenadas.add(874);
-		coordenadas.add(213);
-		coordenadas.add(872);
-		coordenadas.add(213);
-		coordenadas.add(870);
-		coordenadas.add(213);
-		coordenadas.add(869);
-		coordenadas.add(213);
-		coordenadas.add(868);
-		coordenadas.add(213);
-		coordenadas.add(867);
-		coordenadas.add(213);
-		coordenadas.add(867);
-		coordenadas.add(213);
-		coordenadas.add(866);
-		coordenadas.add(212);
-		coordenadas.add(866);
-		coordenadas.add(212);
-		coordenadas.add(866);
-		coordenadas.add(212);
-		coordenadas.add(865);
-		coordenadas.add(212);
-		coordenadas.add(865);
-		coordenadas.add(212);
-		coordenadas.add(863);
-		coordenadas.add(212);
-		coordenadas.add(861);
-		coordenadas.add(212);
-		coordenadas.add(858);
-		coordenadas.add(212);
-		coordenadas.add(856);
-		coordenadas.add(212);
-		coordenadas.add(854);
-		coordenadas.add(212);
-		coordenadas.add(853);
-		coordenadas.add(212);
-		coordenadas.add(852);
-		coordenadas.add(212);
-		coordenadas.add(852);
-		coordenadas.add(212);
-		coordenadas.add(852);
-		coordenadas.add(212);
-		coordenadas.add(851);
-		coordenadas.add(212);
-		coordenadas.add(851);
-		coordenadas.add(212);
-		coordenadas.add(850);
-		coordenadas.add(212);
-		coordenadas.add(850);
-		coordenadas.add(212);
-		coordenadas.add(849);
-		coordenadas.add(212);
-		coordenadas.add(847);
-		coordenadas.add(212);
-		coordenadas.add(846);
-		coordenadas.add(212);
-		coordenadas.add(845);
-		coordenadas.add(212);
-		coordenadas.add(845);
-		coordenadas.add(212);
-		coordenadas.add(844);
-		coordenadas.add(212);
-		coordenadas.add(844);
-		coordenadas.add(212);
-		coordenadas.add(843);
-		coordenadas.add(212);
-		coordenadas.add(843);
-		coordenadas.add(212);
-		coordenadas.add(843);
-		coordenadas.add(212);
-		coordenadas.add(843);
-		coordenadas.add(212);
-		coordenadas.add(843);
-		coordenadas.add(212);
-		coordenadas.add(842);
-		coordenadas.add(212);
-		coordenadas.add(842);
-		coordenadas.add(212);
-		coordenadas.add(842);
-		coordenadas.add(212);
-		coordenadas.add(842);
-		coordenadas.add(212);
-		coordenadas.add(841);
-		coordenadas.add(212);
-		coordenadas.add(841);
-		coordenadas.add(213);
-		coordenadas.add(841);
-		coordenadas.add(213);
-		coordenadas.add(841);
-		coordenadas.add(214);
-		coordenadas.add(841);
-		coordenadas.add(214);
-		coordenadas.add(841);
-		coordenadas.add(215);
-		coordenadas.add(841);
-		coordenadas.add(215);
-		coordenadas.add(840);
-		coordenadas.add(216);
-		coordenadas.add(840);
-		coordenadas.add(216);
-		coordenadas.add(840);
-		coordenadas.add(216);
-		coordenadas.add(840);
-		coordenadas.add(217);
-		coordenadas.add(840);
-		coordenadas.add(217);
-		coordenadas.add(839);
-		coordenadas.add(217);
-		coordenadas.add(839);
-		coordenadas.add(218);
-		coordenadas.add(839);
-		coordenadas.add(218);
-		coordenadas.add(839);
-		coordenadas.add(219);
-		coordenadas.add(838);
-		coordenadas.add(219);
-		coordenadas.add(838);
-		coordenadas.add(220);
-		coordenadas.add(838);
-		coordenadas.add(220);
-		coordenadas.add(838);
-		coordenadas.add(220);
-		coordenadas.add(838);
-		coordenadas.add(221);
-		coordenadas.add(837);
-		coordenadas.add(222);
-		coordenadas.add(837);
-		coordenadas.add(222);
-		coordenadas.add(837);
-		coordenadas.add(223);
-		coordenadas.add(837);
-		coordenadas.add(223);
-		coordenadas.add(836);
-		coordenadas.add(224);
-		coordenadas.add(836);
-		coordenadas.add(224);
-		coordenadas.add(836);
-		coordenadas.add(224);
-		coordenadas.add(835);
-		coordenadas.add(224);
-		coordenadas.add(835);
-		coordenadas.add(224);
-		coordenadas.add(835);
-		coordenadas.add(224);
-		coordenadas.add(835);
-		coordenadas.add(224);
-		coordenadas.add(834);
-		coordenadas.add(224);
-		coordenadas.add(834);
-		coordenadas.add(224);
-		coordenadas.add(833);
-		coordenadas.add(224);
-		coordenadas.add(832);
-		coordenadas.add(224);
-		coordenadas.add(832);
-		coordenadas.add(224);
-		coordenadas.add(831);
-		coordenadas.add(224);
-		coordenadas.add(830);
-		coordenadas.add(224);
-		coordenadas.add(829);
-		coordenadas.add(224);
-		coordenadas.add(829);
-		coordenadas.add(224);
-		coordenadas.add(828);
-		coordenadas.add(224);
-		coordenadas.add(828);
-		coordenadas.add(224);
-		coordenadas.add(828);
-		coordenadas.add(224);
-		coordenadas.add(828);
-		coordenadas.add(224);
-		coordenadas.add(827);
-		coordenadas.add(224);
-		coordenadas.add(827);
-		coordenadas.add(224);
-		coordenadas.add(827);
-		coordenadas.add(224);
-		coordenadas.add(826);
-		coordenadas.add(224);
-		coordenadas.add(826);
-		coordenadas.add(224);
-		coordenadas.add(825);
-		coordenadas.add(224);
-		coordenadas.add(825);
-		coordenadas.add(224);
-		coordenadas.add(824);
-		coordenadas.add(224);
-		coordenadas.add(824);
-		coordenadas.add(224);
-		coordenadas.add(823);
-		coordenadas.add(224);
-		coordenadas.add(823);
-		coordenadas.add(224);
-		coordenadas.add(823);
-		coordenadas.add(224);
-		coordenadas.add(822);
-		coordenadas.add(224);
-		coordenadas.add(822);
-		coordenadas.add(224);
-		coordenadas.add(822);
-		coordenadas.add(224);
-		coordenadas.add(822);
-		coordenadas.add(224);
-		coordenadas.add(821);
-		coordenadas.add(224);
-		coordenadas.add(821);
-		coordenadas.add(224);
-		coordenadas.add(821);
-		coordenadas.add(224);
-		coordenadas.add(820);
-		coordenadas.add(224);
-		coordenadas.add(820);
-		coordenadas.add(224);
-		coordenadas.add(820);
-		coordenadas.add(224);
-		coordenadas.add(820);
-		coordenadas.add(224);
-		coordenadas.add(819);
-		coordenadas.add(224);
-		coordenadas.add(819);
-		coordenadas.add(224);
-		coordenadas.add(819);
-		coordenadas.add(224);
-		coordenadas.add(818);
-		coordenadas.add(224);
-		coordenadas.add(818);
-		coordenadas.add(224);
-		coordenadas.add(817);
-		coordenadas.add(224);
-		coordenadas.add(817);
-		coordenadas.add(224);
-		coordenadas.add(817);
-		coordenadas.add(224);
-		coordenadas.add(816);
-		coordenadas.add(224);
-		coordenadas.add(816);
-		coordenadas.add(224);
-		coordenadas.add(816);
-		coordenadas.add(224);
-		coordenadas.add(815);
-		coordenadas.add(224);
-		coordenadas.add(815);
-		coordenadas.add(224);
-		coordenadas.add(815);
-		coordenadas.add(224);
-		coordenadas.add(814);
-		coordenadas.add(224);
-		coordenadas.add(813);
-		coordenadas.add(224);
-		coordenadas.add(812);
-		coordenadas.add(224);
-		coordenadas.add(811);
-		coordenadas.add(224);
-		coordenadas.add(810);
-		coordenadas.add(224);
-		coordenadas.add(810);
-		coordenadas.add(224);
-		coordenadas.add(809);
-		coordenadas.add(224);
-		coordenadas.add(809);
-		coordenadas.add(224);
-		coordenadas.add(809);
-		coordenadas.add(224);
-		coordenadas.add(809);
-		coordenadas.add(224);
-		coordenadas.add(808);
-		coordenadas.add(224);
-		coordenadas.add(808);
-		coordenadas.add(224);
-		coordenadas.add(808);
-		coordenadas.add(224);
-		coordenadas.add(807);
-		coordenadas.add(224);
-		coordenadas.add(807);
-		coordenadas.add(224);
-		coordenadas.add(807);
-		coordenadas.add(225);
-		coordenadas.add(807);
-		coordenadas.add(225);
-		coordenadas.add(806);
-		coordenadas.add(225);
-		coordenadas.add(806);
-		coordenadas.add(225);
-		coordenadas.add(806);
-		coordenadas.add(225);
-		coordenadas.add(806);
-		coordenadas.add(225);
-		coordenadas.add(806);
-		coordenadas.add(225);
-		coordenadas.add(806);
-		coordenadas.add(226);
-		coordenadas.add(806);
-		coordenadas.add(226);
-		coordenadas.add(805);
-		coordenadas.add(226);
-		coordenadas.add(805);
-		coordenadas.add(226);
-		coordenadas.add(805);
-		coordenadas.add(227);
-		coordenadas.add(805);
-		coordenadas.add(227);
-		coordenadas.add(805);
-		coordenadas.add(227);
-		coordenadas.add(805);
-		coordenadas.add(227);
-		coordenadas.add(805);
-		coordenadas.add(227);
-		coordenadas.add(805);
-		coordenadas.add(227);
-		coordenadas.add(804);
-		coordenadas.add(227);
-		coordenadas.add(804);
-		coordenadas.add(228);
-		coordenadas.add(804);
-		coordenadas.add(228);
-		coordenadas.add(804);
-		coordenadas.add(228);
-		coordenadas.add(804);
-		coordenadas.add(228);
-		coordenadas.add(804);
-		coordenadas.add(228);
-		coordenadas.add(804);
-		coordenadas.add(229);
-		coordenadas.add(804);
-		coordenadas.add(229);
-		coordenadas.add(804);
-		coordenadas.add(229);
-		coordenadas.add(804);
-		coordenadas.add(229);
-		coordenadas.add(804);
-		coordenadas.add(229);
-		coordenadas.add(803);
-		coordenadas.add(229);
-		coordenadas.add(803);
-		coordenadas.add(229);
-		coordenadas.add(803);
-		coordenadas.add(229);
-		coordenadas.add(803);
-		coordenadas.add(229);
-		coordenadas.add(802);
-		coordenadas.add(229);
-		coordenadas.add(802);
-		coordenadas.add(229);
-		coordenadas.add(802);
-		coordenadas.add(229);
-		coordenadas.add(801);
-		coordenadas.add(229);
-		coordenadas.add(801);
-		coordenadas.add(229);
-		coordenadas.add(801);
-		coordenadas.add(228);
-		coordenadas.add(800);
-		coordenadas.add(228);
-		coordenadas.add(800);
-		coordenadas.add(228);
-		coordenadas.add(799);
-		coordenadas.add(228);
-		coordenadas.add(799);
-		coordenadas.add(227);
-		coordenadas.add(798);
-		coordenadas.add(227);
-		coordenadas.add(797);
-		coordenadas.add(227);
-		coordenadas.add(797);
-		coordenadas.add(226);
-		coordenadas.add(796);
-		coordenadas.add(226);
-		coordenadas.add(795);
-		coordenadas.add(225);
-		coordenadas.add(795);
-		coordenadas.add(225);
-		coordenadas.add(795);
-		coordenadas.add(225);
-		coordenadas.add(794);
-		coordenadas.add(225);
-		coordenadas.add(793);
-		coordenadas.add(224);
-		coordenadas.add(792);
-		coordenadas.add(223);
-		coordenadas.add(791);
-		coordenadas.add(223);
-		coordenadas.add(790);
-		coordenadas.add(223);
-		coordenadas.add(790);
-		coordenadas.add(222);
-		coordenadas.add(789);
-		coordenadas.add(222);
-		coordenadas.add(788);
-		coordenadas.add(222);
-		coordenadas.add(788);
-		coordenadas.add(221);
-		coordenadas.add(787);
-		coordenadas.add(221);
-		coordenadas.add(787);
-		coordenadas.add(221);
-		coordenadas.add(786);
-		coordenadas.add(220);
-		coordenadas.add(785);
-		coordenadas.add(220);
-		coordenadas.add(785);
-		coordenadas.add(219);
-		coordenadas.add(784);
-		coordenadas.add(219);
-		coordenadas.add(783);
-		coordenadas.add(218);
-		coordenadas.add(782);
-		coordenadas.add(218);
-		coordenadas.add(781);
-		coordenadas.add(218);
-		coordenadas.add(780);
-		coordenadas.add(217);
-		coordenadas.add(780);
-		coordenadas.add(217);
-		coordenadas.add(779);
-		coordenadas.add(217);
-		coordenadas.add(778);
-		coordenadas.add(216);
-		coordenadas.add(777);
-		coordenadas.add(216);
-		coordenadas.add(777);
-		coordenadas.add(216);
-		coordenadas.add(776);
-		coordenadas.add(216);
-		coordenadas.add(776);
-		coordenadas.add(216);
-		coordenadas.add(775);
-		coordenadas.add(216);
-		coordenadas.add(775);
-		coordenadas.add(215);
-		coordenadas.add(775);
-		coordenadas.add(215);
-		coordenadas.add(775);
-		coordenadas.add(215);
-		coordenadas.add(774);
-		coordenadas.add(215);
-		coordenadas.add(773);
-		coordenadas.add(215);
-		coordenadas.add(772);
-		coordenadas.add(214);
-		coordenadas.add(772);
-		coordenadas.add(214);
-		coordenadas.add(771);
-		coordenadas.add(214);
-		coordenadas.add(771);
-		coordenadas.add(213);
-		coordenadas.add(770);
-		coordenadas.add(213);
-		coordenadas.add(770);
-		coordenadas.add(213);
-		coordenadas.add(770);
-		coordenadas.add(213);
-		coordenadas.add(770);
-		coordenadas.add(213);
-		coordenadas.add(769);
-		coordenadas.add(213);
-		coordenadas.add(769);
-		coordenadas.add(213);
-		coordenadas.add(769);
-		coordenadas.add(212);
-		coordenadas.add(768);
-		coordenadas.add(212);
-		coordenadas.add(768);
-		coordenadas.add(212);
-		coordenadas.add(768);
-		coordenadas.add(212);
-		coordenadas.add(767);
-		coordenadas.add(212);
-		coordenadas.add(767);
-		coordenadas.add(212);
-		coordenadas.add(766);
-		coordenadas.add(211);
-		coordenadas.add(766);
-		coordenadas.add(211);
-		coordenadas.add(766);
-		coordenadas.add(211);
-		coordenadas.add(765);
-		coordenadas.add(211);
-		coordenadas.add(765);
-		coordenadas.add(211);
-		coordenadas.add(764);
-		coordenadas.add(210);
-		coordenadas.add(764);
-		coordenadas.add(210);
-		coordenadas.add(764);
-		coordenadas.add(210);
-		coordenadas.add(763);
-		coordenadas.add(209);
-		coordenadas.add(762);
-		coordenadas.add(209);
-		coordenadas.add(762);
-		coordenadas.add(209);
-		coordenadas.add(761);
-		coordenadas.add(209);
-		coordenadas.add(761);
-		coordenadas.add(208);
-		coordenadas.add(761);
-		coordenadas.add(208);
-		coordenadas.add(761);
-		coordenadas.add(208);
-		coordenadas.add(761);
-		coordenadas.add(208);
-		coordenadas.add(761);
-		coordenadas.add(208);
-		coordenadas.add(761);
-		coordenadas.add(208);
-		coordenadas.add(760);
-		coordenadas.add(209);
-		coordenadas.add(760);
-		coordenadas.add(209);
-		coordenadas.add(760);
-		coordenadas.add(209);
-		coordenadas.add(760);
-		coordenadas.add(208);
-		coordenadas.add(760);
-		coordenadas.add(208);
-		coordenadas.add(760);
-		coordenadas.add(208);
-		coordenadas.add(760);
-		coordenadas.add(207);
-		coordenadas.add(760);
-		coordenadas.add(207);
-		coordenadas.add(760);
-		coordenadas.add(207);
-		coordenadas.add(760);
-		coordenadas.add(206);
-		coordenadas.add(760);
-		coordenadas.add(206);
-		coordenadas.add(760);
-		coordenadas.add(206);
-		coordenadas.add(760);
-		coordenadas.add(206);
-		coordenadas.add(760);
-		coordenadas.add(205);
-		return coordenadas;
-	}
+	public static final String PSICOLOGIA_ODONTOLOGIA = "1050,99,1036,101,1023,115,1019,120,1015,130,1013,151,1011,163,1002,173,992,177,982,178,973,164";
 
-	public static LinkedList<Integer> odontologiaEducacion() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(973);
-		coordenadas.add(166);
-		coordenadas.add(973);
-		coordenadas.add(166);
-		coordenadas.add(955);
-		coordenadas.add(168);
-		coordenadas.add(938);
-		coordenadas.add(169);
-		coordenadas.add(921);
-		coordenadas.add(169);
-		coordenadas.add(904);
-		coordenadas.add(169);
-		coordenadas.add(876);
-		coordenadas.add(171);
-		coordenadas.add(867);
-		coordenadas.add(172);
-		coordenadas.add(863);
-		coordenadas.add(181);
-		coordenadas.add(859);
-		coordenadas.add(191);
-		coordenadas.add(858);
-		coordenadas.add(202);
-		coordenadas.add(858);
-		coordenadas.add(220);
-		coordenadas.add(860);
-		coordenadas.add(233);
-		coordenadas.add(865);
-		coordenadas.add(240);
-		coordenadas.add(873);
-		coordenadas.add(240);
-		coordenadas.add(888);
-		coordenadas.add(239);
-		return coordenadas;
-	}
+	public static final String PSICOLOGIA_CIENCIAS_ECONOMICAS = "1050,99,1060,98,1065,98,1071,98,1075,98,1077,98,1080,100,1086,104,1089,109,1089,112,1089,115,1092,131,1094,142,1097,150,1100,158,1103,167,1110,182,1115,187,1127,192,1133,192,1142,190";
 
-	public static LinkedList<Integer> odontologiaEducacionFisica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1432);
-		coordenadas.add(288);
-		coordenadas.add(1422);
-		coordenadas.add(292);
-		coordenadas.add(1413);
-		coordenadas.add(283);
-		coordenadas.add(1399);
-		coordenadas.add(283);
-		coordenadas.add(1382);
-		coordenadas.add(288);
-		coordenadas.add(1370);
-		coordenadas.add(290);
-		coordenadas.add(1342);
-		coordenadas.add(295);
-		coordenadas.add(1313);
-		coordenadas.add(305);
-		coordenadas.add(1303);
-		coordenadas.add(312);
-		coordenadas.add(1291);
-		coordenadas.add(318);
-		coordenadas.add(1285);
-		coordenadas.add(327);
-		coordenadas.add(1290);
-		coordenadas.add(356);
-		coordenadas.add(1303);
-		coordenadas.add(375);
-		coordenadas.add(1329);
-		coordenadas.add(373);
-		return coordenadas;
-	}
+	public static final String SISTEMAS_CIENCIAS_ECONOMICAS = "1140,188,1140,194,1140,198,1139,202,1138,205,1137,206,1136,207,1133,210,1130,211,1126,213,1122,216,1115,217,1108,217,1100,219,1095,220,1070,221";
 
-	public static LinkedList<Integer> psicologiaElectronica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1049);
-		coordenadas.add(104);
-		coordenadas.add(980);
-		coordenadas.add(95);
-		coordenadas.add(928);
-		coordenadas.add(90);
-		coordenadas.add(890);
-		coordenadas.add(80);
-		coordenadas.add(861);
-		coordenadas.add(86);
-		coordenadas.add(832);
-		coordenadas.add(87);
-		coordenadas.add(803);
-		coordenadas.add(77);
-		return coordenadas;
-	}
+	public static final String SISTEMAS_ODONTOLOGIA = "1064,221,1050,224,1041,221,1037,212,1037,200,1037,183,1037,169,1032,160,1022,155,1007,157,979,168";
 
-	public static LinkedList<Integer> electronicaCivil() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(803);
-		coordenadas.add(73);
-		coordenadas.add(802);
-		coordenadas.add(73);
-		coordenadas.add(801);
-		coordenadas.add(74);
-		coordenadas.add(798);
-		coordenadas.add(77);
-		coordenadas.add(794);
-		coordenadas.add(78);
-		coordenadas.add(788);
-		coordenadas.add(80);
-		coordenadas.add(781);
-		coordenadas.add(80);
-		coordenadas.add(771);
-		coordenadas.add(80);
-		coordenadas.add(762);
-		coordenadas.add(80);
-		coordenadas.add(738);
-		coordenadas.add(81);
-		coordenadas.add(705);
-		coordenadas.add(80);
-		coordenadas.add(695);
-		coordenadas.add(77);
-		coordenadas.add(691);
-		coordenadas.add(75);
-		coordenadas.add(683);
-		coordenadas.add(72);
-		coordenadas.add(673);
-		coordenadas.add(64);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> fluidosMetalurgica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(597);
-		coordenadas.add(102);
-		coordenadas.add(580);
-		coordenadas.add(104);
-		coordenadas.add(541);
-		coordenadas.add(107);
-		coordenadas.add(496);
-		coordenadas.add(114);
-		coordenadas.add(427);
-		coordenadas.add(126);
-		coordenadas.add(363);
-		coordenadas.add(113);
-		coordenadas.add(315);
-		coordenadas.add(110);
-		coordenadas.add(262);
-		coordenadas.add(113);
-		coordenadas.add(229);
-		coordenadas.add(130);
-		coordenadas.add(210);
-		coordenadas.add(161);
-		coordenadas.add(192);
-		coordenadas.add(188);
-		coordenadas.add(175);
-		coordenadas.add(198);
-		coordenadas.add(152);
-		coordenadas.add(199);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> metalurgicaQuimica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(158);
-		coordenadas.add(305);
-		coordenadas.add(111);
-		coordenadas.add(308);
-		coordenadas.add(143);
-		coordenadas.add(390);
-		coordenadas.add(170);
-		coordenadas.add(386);
-		coordenadas.add(170);
-		coordenadas.add(383);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> matematicaFisica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(125);
-		coordenadas.add(452);
-		coordenadas.add(131);
-		coordenadas.add(475);
-		coordenadas.add(141);
-		coordenadas.add(491);
-		coordenadas.add(173);
-		coordenadas.add(494);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> industrialDerecho(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(243);
-		coordenadas.add(566);
-		coordenadas.add(273);
-		coordenadas.add(557);
-		coordenadas.add(277);
-		coordenadas.add(566);
-		coordenadas.add(278);
-		coordenadas.add(566);
-		coordenadas.add(279);
-		coordenadas.add(566);
-		coordenadas.add(279);
-		coordenadas.add(567);
-		coordenadas.add(280);
-		coordenadas.add(567);
-		coordenadas.add(281);
-		coordenadas.add(567);
-		coordenadas.add(282);
-		coordenadas.add(567);
-		coordenadas.add(283);
-		coordenadas.add(567);
-		coordenadas.add(284);
-		coordenadas.add(567);
-		coordenadas.add(285);
-		coordenadas.add(567);
-		coordenadas.add(286);
-		coordenadas.add(567);
-		coordenadas.add(287);
-		coordenadas.add(567);
-		coordenadas.add(288);
-		coordenadas.add(567);
-		coordenadas.add(289);
-		coordenadas.add(567);
-		coordenadas.add(290);
-		coordenadas.add(567);
-		coordenadas.add(291);
-		coordenadas.add(567);
-		coordenadas.add(292);
-		coordenadas.add(567);
-		coordenadas.add(293);
-		coordenadas.add(567);
-		coordenadas.add(294);
-		coordenadas.add(567);
-		coordenadas.add(295);
-		coordenadas.add(567);
-		coordenadas.add(296);
-		coordenadas.add(567);
-		coordenadas.add(297);
-		coordenadas.add(567);
-		coordenadas.add(298);
-		coordenadas.add(567);
-		coordenadas.add(299);
-		coordenadas.add(567);
-		coordenadas.add(300);
-		coordenadas.add(567);
-		coordenadas.add(301);
-		coordenadas.add(567);
-		coordenadas.add(303);
-		coordenadas.add(567);
-		coordenadas.add(304);
-		coordenadas.add(567);
-		coordenadas.add(305);
-		coordenadas.add(567);
-		coordenadas.add(306);
-		coordenadas.add(567);
-		coordenadas.add(307);
-		coordenadas.add(567);
-		coordenadas.add(308);
-		coordenadas.add(567);
-		coordenadas.add(309);
-		coordenadas.add(567);
-		coordenadas.add(310);
-		coordenadas.add(567);
-		coordenadas.add(311);
-		coordenadas.add(567);
-		coordenadas.add(312);
-		coordenadas.add(567);
-		coordenadas.add(313);
-		coordenadas.add(567);
-		coordenadas.add(314);
-		coordenadas.add(567);
-		coordenadas.add(315);
-		coordenadas.add(567);
-		coordenadas.add(316);
-		coordenadas.add(567);
-		coordenadas.add(317);
-		coordenadas.add(568);
-		coordenadas.add(318);
-		coordenadas.add(568);
-		coordenadas.add(319);
-		coordenadas.add(568);
-		coordenadas.add(320);
-		coordenadas.add(568);
-		coordenadas.add(320);
-		coordenadas.add(569);
-		coordenadas.add(321);
-		coordenadas.add(569);
-		coordenadas.add(322);
-		coordenadas.add(569);
-		coordenadas.add(323);
-		coordenadas.add(570);
-		coordenadas.add(324);
-		coordenadas.add(570);
-		coordenadas.add(325);
-		coordenadas.add(570);
-		coordenadas.add(326);
-		coordenadas.add(571);
-		coordenadas.add(327);
-		coordenadas.add(571);
-		coordenadas.add(328);
-		coordenadas.add(571);
-		coordenadas.add(328);
-		coordenadas.add(572);
-		coordenadas.add(329);
-		coordenadas.add(573);
-		coordenadas.add(330);
-		coordenadas.add(573);
-		coordenadas.add(331);
-		coordenadas.add(574);
-		coordenadas.add(332);
-		coordenadas.add(574);
-		coordenadas.add(333);
-		coordenadas.add(574);
-		coordenadas.add(333);
-		coordenadas.add(575);
-		coordenadas.add(334);
-		coordenadas.add(575);
-		coordenadas.add(335);
-		coordenadas.add(575);
-		coordenadas.add(336);
-		coordenadas.add(576);
-		coordenadas.add(337);
-		coordenadas.add(576);
-		coordenadas.add(338);
-		coordenadas.add(576);
-		coordenadas.add(339);
-		coordenadas.add(576);
-		coordenadas.add(340);
-		coordenadas.add(576);
-		coordenadas.add(341);
-		coordenadas.add(576);
-		coordenadas.add(342);
-		coordenadas.add(576);
-		coordenadas.add(343);
-		coordenadas.add(576);
-		coordenadas.add(344);
-		coordenadas.add(576);
-		coordenadas.add(345);
-		coordenadas.add(576);
-		coordenadas.add(346);
-		coordenadas.add(576);
-		coordenadas.add(347);
-		coordenadas.add(576);
-		coordenadas.add(348);
-		coordenadas.add(576);
-		coordenadas.add(349);
-		coordenadas.add(576);
-		coordenadas.add(350);
-		coordenadas.add(576);
-		coordenadas.add(351);
-		coordenadas.add(576);
-		coordenadas.add(352);
-		coordenadas.add(576);
-		coordenadas.add(353);
-		coordenadas.add(576);
-		coordenadas.add(353);
-		coordenadas.add(575);
-		coordenadas.add(354);
-		coordenadas.add(575);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> industrialfisica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(174);
-		coordenadas.add(495);
-		coordenadas.add(148);
-		coordenadas.add(502);
-		coordenadas.add(173);
-		coordenadas.add(578);
-		coordenadas.add(242);
-		coordenadas.add(564);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> matematicaComedor(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(125);
-		coordenadas.add(451);
-		coordenadas.add(125);
-		coordenadas.add(450);
-		coordenadas.add(125);
-		coordenadas.add(449);
-		coordenadas.add(125);
-		coordenadas.add(448);
-		coordenadas.add(125);
-		coordenadas.add(447);
-		coordenadas.add(125);
-		coordenadas.add(446);
-		coordenadas.add(125);
-		coordenadas.add(445);
-		coordenadas.add(126);
-		coordenadas.add(445);
-		coordenadas.add(126);
-		coordenadas.add(444);
-		coordenadas.add(126);
-		coordenadas.add(443);
-		coordenadas.add(126);
-		coordenadas.add(442);
-		coordenadas.add(127);
-		coordenadas.add(442);
-		coordenadas.add(127);
-		coordenadas.add(441);
-		coordenadas.add(127);
-		coordenadas.add(440);
-		coordenadas.add(128);
-		coordenadas.add(440);
-		coordenadas.add(128);
-		coordenadas.add(439);
-		coordenadas.add(128);
-		coordenadas.add(438);
-		coordenadas.add(129);
-		coordenadas.add(438);
-		coordenadas.add(129);
-		coordenadas.add(437);
-		coordenadas.add(129);
-		coordenadas.add(436);
-		coordenadas.add(130);
-		coordenadas.add(436);
-		coordenadas.add(130);
-		coordenadas.add(435);
-		coordenadas.add(130);
-		coordenadas.add(434);
-		coordenadas.add(131);
-		coordenadas.add(434);
-		coordenadas.add(131);
-		coordenadas.add(433);
-		coordenadas.add(132);
-		coordenadas.add(433);
-		coordenadas.add(132);
-		coordenadas.add(432);
-		coordenadas.add(133);
-		coordenadas.add(432);
-		coordenadas.add(134);
-		coordenadas.add(431);
-		coordenadas.add(134);
-		coordenadas.add(430);
-		coordenadas.add(135);
-		coordenadas.add(430);
-		coordenadas.add(135);
-		coordenadas.add(429);
-		coordenadas.add(136);
-		coordenadas.add(428);
-		coordenadas.add(137);
-		coordenadas.add(427);
-		coordenadas.add(138);
-		coordenadas.add(426);
-		coordenadas.add(139);
-		coordenadas.add(425);
-		coordenadas.add(139);
-		coordenadas.add(424);
-		coordenadas.add(140);
-		coordenadas.add(423);
-		coordenadas.add(141);
-		coordenadas.add(422);
-		coordenadas.add(142);
-		coordenadas.add(422);
-		coordenadas.add(142);
-		coordenadas.add(421);
-		coordenadas.add(143);
-		coordenadas.add(421);
-		coordenadas.add(144);
-		coordenadas.add(420);
-		coordenadas.add(145);
-		coordenadas.add(419);
-		coordenadas.add(146);
-		coordenadas.add(419);
-		coordenadas.add(146);
-		coordenadas.add(418);
-		coordenadas.add(147);
-		coordenadas.add(418);
-		coordenadas.add(148);
-		coordenadas.add(418);
-		coordenadas.add(148);
-		coordenadas.add(417);
-		coordenadas.add(149);
-		coordenadas.add(417);
-		coordenadas.add(149);
-		coordenadas.add(416);
-		coordenadas.add(150);
-		coordenadas.add(416);
-		coordenadas.add(151);
-		coordenadas.add(416);
-		coordenadas.add(152);
-		coordenadas.add(415);
-		coordenadas.add(153);
-		coordenadas.add(414);
-		coordenadas.add(154);
-		coordenadas.add(414);
-		coordenadas.add(155);
-		coordenadas.add(414);
-		coordenadas.add(155);
-		coordenadas.add(413);
-		coordenadas.add(156);
-		coordenadas.add(413);
-		coordenadas.add(157);
-		coordenadas.add(413);
-		coordenadas.add(158);
-		coordenadas.add(412);
-		coordenadas.add(159);
-		coordenadas.add(412);
-		coordenadas.add(159);
-		coordenadas.add(411);
-		coordenadas.add(160);
-		coordenadas.add(411);
-		coordenadas.add(161);
-		coordenadas.add(411);
-		coordenadas.add(161);
-		coordenadas.add(410);
-		coordenadas.add(162);
-		coordenadas.add(410);
-		coordenadas.add(163);
-		coordenadas.add(410);
-		coordenadas.add(164);
-		coordenadas.add(410);
-		coordenadas.add(164);
-		coordenadas.add(409);
-		coordenadas.add(165);
-		coordenadas.add(409);
-		coordenadas.add(166);
-		coordenadas.add(409);
-		coordenadas.add(167);
-		coordenadas.add(409);
-		coordenadas.add(168);
-		coordenadas.add(408);
-		coordenadas.add(169);
-		coordenadas.add(408);
-		coordenadas.add(169);
-		coordenadas.add(407);
-		coordenadas.add(170);
-		coordenadas.add(407);
-		coordenadas.add(171);
-		coordenadas.add(407);
-		coordenadas.add(172);
-		coordenadas.add(407);
-		coordenadas.add(173);
-		coordenadas.add(407);
-		coordenadas.add(174);
-		coordenadas.add(406);
-		coordenadas.add(175);
-		coordenadas.add(406);
-		coordenadas.add(176);
-		coordenadas.add(406);
-		coordenadas.add(177);
-		coordenadas.add(406);
-		coordenadas.add(177);
-		coordenadas.add(405);
-		coordenadas.add(178);
-		coordenadas.add(405);
-		coordenadas.add(179);
-		coordenadas.add(405);
-		coordenadas.add(180);
-		coordenadas.add(405);
-		coordenadas.add(181);
-		coordenadas.add(405);
-		coordenadas.add(181);
-		coordenadas.add(404);
-		coordenadas.add(182);
-		coordenadas.add(404);
-		coordenadas.add(183);
-		coordenadas.add(404);
-		coordenadas.add(184);
-		coordenadas.add(404);
-		coordenadas.add(185);
-		coordenadas.add(404);
-		coordenadas.add(186);
-		coordenadas.add(403);
-		coordenadas.add(187);
-		coordenadas.add(403);
-		coordenadas.add(188);
-		coordenadas.add(403);
-		coordenadas.add(189);
-		coordenadas.add(403);
-		coordenadas.add(190);
-		coordenadas.add(403);
-		coordenadas.add(191);
-		coordenadas.add(402);
-		coordenadas.add(192);
-		coordenadas.add(402);
-		coordenadas.add(193);
-		coordenadas.add(401);
-		coordenadas.add(194);
-		coordenadas.add(401);
-		coordenadas.add(195);
-		coordenadas.add(401);
-		coordenadas.add(196);
-		coordenadas.add(401);
-		coordenadas.add(197);
-		coordenadas.add(401);
-		coordenadas.add(198);
-		coordenadas.add(400);
-		coordenadas.add(199);
-		coordenadas.add(400);
-		coordenadas.add(200);
-		coordenadas.add(400);
-		coordenadas.add(201);
-		coordenadas.add(400);
-		coordenadas.add(202);
-		coordenadas.add(399);
-		coordenadas.add(203);
-		coordenadas.add(399);
-		coordenadas.add(204);
-		coordenadas.add(399);
-		coordenadas.add(205);
-		coordenadas.add(399);
-		coordenadas.add(205);
-		coordenadas.add(398);
-		coordenadas.add(206);
-		coordenadas.add(398);
-		coordenadas.add(207);
-		coordenadas.add(398);
-		coordenadas.add(208);
-		coordenadas.add(398);
-		coordenadas.add(209);
-		coordenadas.add(397);
-		coordenadas.add(210);
-		coordenadas.add(397);
-		coordenadas.add(211);
-		coordenadas.add(397);
-		coordenadas.add(212);
-		coordenadas.add(397);
-		coordenadas.add(213);
-		coordenadas.add(397);
-		coordenadas.add(213);
-		coordenadas.add(396);
-		coordenadas.add(214);
-		coordenadas.add(396);
-		coordenadas.add(215);
-		coordenadas.add(396);
-		coordenadas.add(216);
-		coordenadas.add(396);
-		coordenadas.add(217);
-		coordenadas.add(396);
-		coordenadas.add(218);
-		coordenadas.add(396);
-		coordenadas.add(219);
-		coordenadas.add(396);
-		coordenadas.add(220);
-		coordenadas.add(396);
-		coordenadas.add(220);
-		coordenadas.add(395);
-		coordenadas.add(221);
-		coordenadas.add(395);
-		coordenadas.add(222);
-		coordenadas.add(395);
-		coordenadas.add(223);
-		coordenadas.add(395);
-		coordenadas.add(224);
-		coordenadas.add(395);
-		coordenadas.add(225);
-		coordenadas.add(395);
-		coordenadas.add(226);
-		coordenadas.add(395);
-		coordenadas.add(227);
-		coordenadas.add(394);
-		coordenadas.add(228);
-		coordenadas.add(394);
-		coordenadas.add(229);
-		coordenadas.add(394);
-		coordenadas.add(230);
-		coordenadas.add(394);
-		coordenadas.add(230);
-		coordenadas.add(393);
-		coordenadas.add(231);
-		coordenadas.add(393);
-		coordenadas.add(232);
-		coordenadas.add(393);
-		coordenadas.add(233);
-		coordenadas.add(393);
-		coordenadas.add(234);
-		coordenadas.add(393);
-		coordenadas.add(235);
-		coordenadas.add(393);
-		coordenadas.add(236);
-		coordenadas.add(393);
-		coordenadas.add(237);
-		coordenadas.add(393);
-		coordenadas.add(238);
-		coordenadas.add(393);
-		coordenadas.add(239);
-		coordenadas.add(393);
-		coordenadas.add(240);
-		coordenadas.add(392);
-		coordenadas.add(241);
-		coordenadas.add(392);
-		coordenadas.add(242);
-		coordenadas.add(392);
-		coordenadas.add(243);
-		coordenadas.add(392);
-		coordenadas.add(244);
-		coordenadas.add(391);
-		coordenadas.add(245);
-		coordenadas.add(391);
-		coordenadas.add(246);
-		coordenadas.add(391);
-		coordenadas.add(247);
-		coordenadas.add(391);
-		coordenadas.add(248);
-		coordenadas.add(391);
-		coordenadas.add(249);
-		coordenadas.add(391);
-		coordenadas.add(250);
-		coordenadas.add(391);
-		coordenadas.add(251);
-		coordenadas.add(391);
-		coordenadas.add(251);
-		coordenadas.add(390);
-		coordenadas.add(252);
-		coordenadas.add(390);
-		coordenadas.add(253);
-		coordenadas.add(390);
-		coordenadas.add(253);
-		coordenadas.add(389);
-		coordenadas.add(254);
-		coordenadas.add(389);
-		coordenadas.add(255);
-		coordenadas.add(389);
-		coordenadas.add(284);
-		coordenadas.add(378);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> matematicaBiologica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(126);
-		coordenadas.add(452);
-		coordenadas.add(213);
-		coordenadas.add(436);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> geologicaMetalurgica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(94);
-		coordenadas.add(231);
-		coordenadas.add(55);
-		coordenadas.add(236);
-		coordenadas.add(75);
-		coordenadas.add(306);
-		coordenadas.add(132);
-		coordenadas.add(304);
-		coordenadas.add(135);
-		coordenadas.add(303);
-		coordenadas.add(136);
-		coordenadas.add(303);
-		coordenadas.add(137);
-		coordenadas.add(303);
-		coordenadas.add(138);
-		coordenadas.add(303);
-		coordenadas.add(139);
-		coordenadas.add(303);
-		coordenadas.add(140);
-		coordenadas.add(303);
-		coordenadas.add(141);
-		coordenadas.add(303);
-		coordenadas.add(142);
-		coordenadas.add(303);
-		coordenadas.add(143);
-		coordenadas.add(303);
-		coordenadas.add(143);
-		coordenadas.add(304);
-		coordenadas.add(144);
-		coordenadas.add(304);
-		coordenadas.add(145);
-		coordenadas.add(304);
-		coordenadas.add(145);
-		coordenadas.add(305);
-		coordenadas.add(146);
-		coordenadas.add(305);
-		coordenadas.add(147);
-		coordenadas.add(305);
-		coordenadas.add(147);
-		coordenadas.add(306);
-		coordenadas.add(148);
-		coordenadas.add(306);
-		coordenadas.add(149);
-		coordenadas.add(306);
-		coordenadas.add(150);
-		coordenadas.add(306);
-		coordenadas.add(150);
-		coordenadas.add(307);
-		coordenadas.add(151);
-		coordenadas.add(307);
-		coordenadas.add(152);
-		coordenadas.add(307);
-		coordenadas.add(153);
-		coordenadas.add(307);
-		coordenadas.add(154);
-		coordenadas.add(307);
-		coordenadas.add(155);
-		coordenadas.add(307);
-		coordenadas.add(156);
-		coordenadas.add(307);
-		coordenadas.add(157);
-		coordenadas.add(307);
-		coordenadas.add(158);
-		coordenadas.add(307);
-		coordenadas.add(158);
-		coordenadas.add(306);
-		coordenadas.add(159);
-		coordenadas.add(306);
-		coordenadas.add(159);
-		coordenadas.add(305);
-		coordenadas.add(159);
-		coordenadas.add(304);
-		coordenadas.add(159);
-		coordenadas.add(303);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> quimicaComedor(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(171);
-		coordenadas.add(385);
-		coordenadas.add(173);
-		coordenadas.add(392);
-		coordenadas.add(175);
-		coordenadas.add(392);
-		coordenadas.add(175);
-		coordenadas.add(391);
-		coordenadas.add(176);
-		coordenadas.add(391);
-		coordenadas.add(177);
-		coordenadas.add(391);
-		coordenadas.add(177);
-		coordenadas.add(390);
-		coordenadas.add(178);
-		coordenadas.add(390);
-		coordenadas.add(179);
-		coordenadas.add(390);
-		coordenadas.add(180);
-		coordenadas.add(390);
-		coordenadas.add(181);
-		coordenadas.add(390);
-		coordenadas.add(182);
-		coordenadas.add(390);
-		coordenadas.add(183);
-		coordenadas.add(390);
-		coordenadas.add(183);
-		coordenadas.add(389);
-		coordenadas.add(184);
-		coordenadas.add(389);
-		coordenadas.add(185);
-		coordenadas.add(389);
-		coordenadas.add(186);
-		coordenadas.add(389);
-		coordenadas.add(187);
-		coordenadas.add(388);
-		coordenadas.add(188);
-		coordenadas.add(388);
-		coordenadas.add(189);
-		coordenadas.add(388);
-		coordenadas.add(190);
-		coordenadas.add(388);
-		coordenadas.add(191);
-		coordenadas.add(387);
-		coordenadas.add(192);
-		coordenadas.add(387);
-		coordenadas.add(193);
-		coordenadas.add(387);
-		coordenadas.add(193);
-		coordenadas.add(386);
-		coordenadas.add(194);
-		coordenadas.add(386);
-		coordenadas.add(195);
-		coordenadas.add(386);
-		coordenadas.add(196);
-		coordenadas.add(385);
-		coordenadas.add(197);
-		coordenadas.add(385);
-		coordenadas.add(198);
-		coordenadas.add(385);
-		coordenadas.add(199);
-		coordenadas.add(385);
-		coordenadas.add(200);
-		coordenadas.add(385);
-		coordenadas.add(201);
-		coordenadas.add(385);
-		coordenadas.add(202);
-		coordenadas.add(385);
-		coordenadas.add(203);
-		coordenadas.add(385);
-		coordenadas.add(204);
-		coordenadas.add(385);
-		coordenadas.add(205);
-		coordenadas.add(385);
-		coordenadas.add(206);
-		coordenadas.add(385);
-		coordenadas.add(207);
-		coordenadas.add(385);
-		coordenadas.add(208);
-		coordenadas.add(385);
-		coordenadas.add(209);
-		coordenadas.add(385);
-		coordenadas.add(210);
-		coordenadas.add(385);
-		coordenadas.add(211);
-		coordenadas.add(385);
-		coordenadas.add(212);
-		coordenadas.add(385);
-		coordenadas.add(213);
-		coordenadas.add(385);
-		coordenadas.add(214);
-		coordenadas.add(386);
-		coordenadas.add(215);
-		coordenadas.add(386);
-		coordenadas.add(216);
-		coordenadas.add(386);
-		coordenadas.add(217);
-		coordenadas.add(387);
-		coordenadas.add(218);
-		coordenadas.add(387);
-		coordenadas.add(218);
-		coordenadas.add(388);
-		coordenadas.add(219);
-		coordenadas.add(388);
-		coordenadas.add(220);
-		coordenadas.add(388);
-		coordenadas.add(221);
-		coordenadas.add(389);
-		coordenadas.add(222);
-		coordenadas.add(390);
-		coordenadas.add(222);
-		coordenadas.add(391);
-		coordenadas.add(223);
-		coordenadas.add(391);
-		coordenadas.add(224);
-		coordenadas.add(391);
-		coordenadas.add(224);
-		coordenadas.add(392);
-		coordenadas.add(225);
-		coordenadas.add(392);
-		coordenadas.add(225);
-		coordenadas.add(393);
-		coordenadas.add(226);
-		coordenadas.add(393);
-		coordenadas.add(227);
-		coordenadas.add(394);
-		coordenadas.add(228);
-		coordenadas.add(395);
-		coordenadas.add(228);
-		coordenadas.add(396);
-		coordenadas.add(229);
-		coordenadas.add(397);
-		coordenadas.add(230);
-		coordenadas.add(397);
-		coordenadas.add(230);
-		coordenadas.add(398);
-		coordenadas.add(230);
-		coordenadas.add(399);
-		coordenadas.add(231);
-		coordenadas.add(399);
-		coordenadas.add(232);
-		coordenadas.add(399);
-		coordenadas.add(232);
-		coordenadas.add(400);
-		coordenadas.add(233);
-		coordenadas.add(401);
-		coordenadas.add(233);
-		coordenadas.add(402);
-		coordenadas.add(234);
-		coordenadas.add(403);
-		coordenadas.add(234);
-		coordenadas.add(404);
-		coordenadas.add(235);
-		coordenadas.add(405);
-		coordenadas.add(236);
-		coordenadas.add(406);
-		coordenadas.add(236);
-		coordenadas.add(407);
-		coordenadas.add(236);
-		coordenadas.add(408);
-		coordenadas.add(237);
-		coordenadas.add(408);
-		coordenadas.add(237);
-		coordenadas.add(409);
-		coordenadas.add(263);
-		coordenadas.add(409);
-		coordenadas.add(263);
-		coordenadas.add(407);
-		coordenadas.add(263);
-		coordenadas.add(406);
-		coordenadas.add(263);
-		coordenadas.add(405);
-		coordenadas.add(263);
-		coordenadas.add(404);
-		coordenadas.add(263);
-		coordenadas.add(403);
-		coordenadas.add(263);
-		coordenadas.add(402);
-		coordenadas.add(263);
-		coordenadas.add(401);
-		coordenadas.add(263);
-		coordenadas.add(400);
-		coordenadas.add(263);
-		coordenadas.add(399);
-		coordenadas.add(263);
-		coordenadas.add(398);
-		coordenadas.add(263);
-		coordenadas.add(397);
-		coordenadas.add(262);
-		coordenadas.add(397);
-		coordenadas.add(262);
-		coordenadas.add(396);
-		coordenadas.add(262);
-		coordenadas.add(395);
-		coordenadas.add(261);
-		coordenadas.add(394);
-		coordenadas.add(260);
-		coordenadas.add(393);
-		coordenadas.add(260);
-		coordenadas.add(392);
-		coordenadas.add(259);
-		coordenadas.add(392);
-		coordenadas.add(259);
-		coordenadas.add(391);
-		coordenadas.add(258);
-		coordenadas.add(391);
-		coordenadas.add(258);
-		coordenadas.add(390);
-		coordenadas.add(258);
-		coordenadas.add(389);
-		coordenadas.add(257);
-		coordenadas.add(389);
-		coordenadas.add(256);
-		coordenadas.add(388);
-		coordenadas.add(284);
-		coordenadas.add(380);
-		return coordenadas;
-	}
+	public static final String ODONTOLOGIA_CIENCIAS_ECONOMICAS = "1141,189,1119,184,1113,170,1099,157,1093,157,1084,158,1066,160,1035,163,1000,166,973,165";
 
-	public static LinkedList<Integer> civilFluidos() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(675);
-		coordenadas.add(66);
-		coordenadas.add(669);
-		coordenadas.add(77);
-		coordenadas.add(656);
-		coordenadas.add(104);
-		coordenadas.add(643);
-		coordenadas.add(109);
-		coordenadas.add(627);
-		coordenadas.add(116);
-		coordenadas.add(610);
-		coordenadas.add(116);
-		coordenadas.add(599);
-		coordenadas.add(102);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> electronicaGeografica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(804);
-		coordenadas.add(75);
-		coordenadas.add(802);
-		coordenadas.add(87);
-		coordenadas.add(798);
-		coordenadas.add(111);
-		coordenadas.add(790);
-		coordenadas.add(144);
-		coordenadas.add(762);
-		coordenadas.add(143);
-		return coordenadas;
-	}
+	public static final String SISTEMAS_EDUCACION_FISICA = "1065,222,1065,222,1065,228,1058,234,1048,239,1037,246,1030,250,1020,253,1008,258,999,263,971,275,964,276,958,276,953,273,950,265,950,265,950,265,950,265";
 
-	public static LinkedList<Integer> derechoCienciaEconomica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(523);
-		coordenadas.add(911);
-		coordenadas.add(523);
-		coordenadas.add(911);
-		coordenadas.add(491);
-		coordenadas.add(921);
-		coordenadas.add(476);
-		coordenadas.add(872);
-		coordenadas.add(461);
-		coordenadas.add(804);
-		coordenadas.add(517);
-		coordenadas.add(788);
-		coordenadas.add(579);
-		coordenadas.add(773);
-		coordenadas.add(630);
-		coordenadas.add(762);
-		coordenadas.add(685);
-		coordenadas.add(747);
-		coordenadas.add(685);
-		coordenadas.add(747);
-		return coordenadas;
-	}
+	public static final String EDUCACION_EDUCACION_FISICA = "950,265,950,265,920,283,887,238,887,238";
 
-	public static LinkedList<Integer> cienciaEconomicaCienciaSocial() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(683);
-		coordenadas.add(746);
-		coordenadas.add(683);
-		coordenadas.add(746);
-		coordenadas.add(748);
-		coordenadas.add(724);
-		coordenadas.add(722);
-		coordenadas.add(631);
-		coordenadas.add(722);
-		coordenadas.add(631);
-		coordenadas.add(722);
-		coordenadas.add(630);
-		return coordenadas;
-	}
+	public static final String ODONTOLOGIA_ELECTRICA = "974,166,974,166,962,167,937,163,932,153,928,128,928,117,924,104,897,99,882,90,850,84,813,80,802,75";
+
+	public static final String ODONTOLOGIA_BIBLIOTECA = "975,168,975,168,974,169,974,171,973,173,973,175,972,176,972,178,971,179,971,179,971,180,971,180,971,180,971,180,971,181,971,182,762,209,762,209,761,209,761,208,761,208,761,208,761,208,761,208,761,208,760,209,760,209,760,209,760,208,760,208,760,208,760,207,760,207,760,207,760,206,760,206,760,206,760,206,760,205";
+
+	public static final String ODONTOLOGIA_EDUCACION = "973,166,973,166,955,168,938,169,921,169,904,169,876,171,867,172,863,181,859,191,858,202,858,220,860,233,865,240,873,240,888,239";
+
+	public static final String ODONTOLOGIA_EDUCACION_FISICA = "1432,288,1422,292,1413,283,1399,283,1382,288,1370,290,1342,295,1313,305,1303,312,1291,318,1285,327,1290,356,1303,375,1329,373";
+
+	public static final String PSICOLOGIA_ELECTRONICA  = "1049,104,980,95,928,90,890,80,861,86,832,87,803,77";
+
+	public static final String ELECTRONICA_CIVIL = "803,73,802,73,801,74,798,77,794,78,788,80,781,80,771,80,762,80,738,81,705,80,695,77,691,75,683,72,673,64";
+
+	public static final String FLUIDOS_METALURGICA = "597,102,580,104,541,107,496,114,427,126,363,113,315,110,262,113,229,130,210,161,192,188,175,198,152,199";
+
+	public static final String METALURGICA_QUIMICA = "158,305,111,308,143,390,170,386,170,383";
+
+	public static final String MATEMATICA_FISICA = "125,452,131,475,141,491,173,494";
+
+	public static final String INDUSTRIAL_DERECHO = "243,566,273,557,277,566,278,566,279,566,279,567,280,567,281,567,282,567,283,567,284,567,285,567,286,567,287,567,288,567,289,567,290,567,291,567,292,567,293,567,294,567,295,567,296,567,326,571,327,571,328,571,328,572,329,573,330,573,331,574,332,574,333,574,333,575,334,575,335,575,336,576,337,576,338,576,339,576,340,576,341,576,342,576,343,576,344,576,345,576,346,576,347,576,348,576,349,576,350,576,351,576,352,576,353,576,353,575,354,575";
+
+	public static final String INDUSTRIAL_FISICA = "174,495,148,502,173,578,242,564";
+
+	public static final String MATEMATICA_COMEDOR = "125,451,125,450,125,449,125,448,125,447,125,446,125,445,126,445,126,444,126,443,126,442,127,442,127,441,127,440,128,440,393,232,393,233,393,234,393,235,393,236,393,237,393,238,393,239,393,240,392,241,392,242,392,243,392,244,391,245,391,246,391,247,391,248,391,249,391,250,391,251,391,251,390,252,390,253,390,253,389,254,389,255,389,284,378";
 	
-	public static LinkedList<Integer> administrativoEconomicasA(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(492);
-		coordenadas.add(505);
-		coordenadas.add(491);
-		coordenadas.add(505);
-		coordenadas.add(489);
-		coordenadas.add(505);
-		coordenadas.add(486);
-		coordenadas.add(505);
-		coordenadas.add(483);
-		coordenadas.add(505);
-		coordenadas.add(479);
-		coordenadas.add(505);
-		coordenadas.add(479);
-		coordenadas.add(505);
-		coordenadas.add(478);
-		coordenadas.add(505);
-		coordenadas.add(477);
-		coordenadas.add(505);
-		coordenadas.add(476);
-		coordenadas.add(505);
-		coordenadas.add(475);
-		coordenadas.add(505);
-		coordenadas.add(474);
-		coordenadas.add(505);
-		coordenadas.add(473);
-		coordenadas.add(505);
-		coordenadas.add(473);
-		coordenadas.add(505);
-		coordenadas.add(473);
-		coordenadas.add(505);
-		coordenadas.add(473);
-		coordenadas.add(505);
-		coordenadas.add(472);
-		coordenadas.add(505);
-		coordenadas.add(472);
-		coordenadas.add(505);
-		coordenadas.add(471);
-		coordenadas.add(505);
-		coordenadas.add(469);
-		coordenadas.add(505);
-		coordenadas.add(466);
-		coordenadas.add(506);
-		coordenadas.add(462);
-		coordenadas.add(507);
-		coordenadas.add(458);
-		coordenadas.add(508);
-		coordenadas.add(455);
-		coordenadas.add(508);
-		coordenadas.add(452);
-		coordenadas.add(509);
-		coordenadas.add(451);
-		coordenadas.add(509);
-		coordenadas.add(450);
-		coordenadas.add(509);
-		coordenadas.add(449);
-		coordenadas.add(509);
-		coordenadas.add(449);
-		coordenadas.add(509);
-		coordenadas.add(448);
-		coordenadas.add(509);
-		coordenadas.add(448);
-		coordenadas.add(509);
-		coordenadas.add(448);
-		coordenadas.add(509);
-		coordenadas.add(448);
-		coordenadas.add(509);
-		coordenadas.add(447);
-		coordenadas.add(510);
-		coordenadas.add(446);
-		coordenadas.add(510);
-		coordenadas.add(444);
-		coordenadas.add(510);
-		coordenadas.add(442);
-		coordenadas.add(511);
-		coordenadas.add(440);
-		coordenadas.add(511);
-		coordenadas.add(439);
-		coordenadas.add(511);
-		coordenadas.add(438);
-		coordenadas.add(512);
-		coordenadas.add(437);
-		coordenadas.add(512);
-		coordenadas.add(437);
-		coordenadas.add(512);
-		coordenadas.add(437);
-		coordenadas.add(512);
-		coordenadas.add(437);
-		coordenadas.add(512);
-		coordenadas.add(437);
-		coordenadas.add(512);
-		coordenadas.add(437);
-		coordenadas.add(512);
-		coordenadas.add(437);
-		coordenadas.add(512);
-		coordenadas.add(438);
-		coordenadas.add(512);
-		coordenadas.add(438);
-		coordenadas.add(513);
-		coordenadas.add(438);
-		coordenadas.add(513);
-		coordenadas.add(439);
-		coordenadas.add(514);
-		coordenadas.add(440);
-		coordenadas.add(517);
-		coordenadas.add(442);
-		coordenadas.add(521);
-		coordenadas.add(443);
-		coordenadas.add(525);
-		coordenadas.add(445);
-		coordenadas.add(529);
-		coordenadas.add(446);
-		coordenadas.add(531);
-		coordenadas.add(447);
-		coordenadas.add(533);
-		coordenadas.add(447);
-		coordenadas.add(534);
-		coordenadas.add(448);
-		coordenadas.add(535);
-		coordenadas.add(448);
-		coordenadas.add(536);
-		coordenadas.add(448);
-		coordenadas.add(537);
-		coordenadas.add(448);
-		coordenadas.add(538);
-		coordenadas.add(449);
-		coordenadas.add(539);
-		coordenadas.add(449);
-		coordenadas.add(539);
-		coordenadas.add(449);
-		coordenadas.add(539);
-		coordenadas.add(449);
-		coordenadas.add(540);
-		coordenadas.add(450);
-		coordenadas.add(541);
-		coordenadas.add(450);
-		coordenadas.add(542);
-		coordenadas.add(451);
-		coordenadas.add(544);
-		coordenadas.add(451);
-		coordenadas.add(546);
-		coordenadas.add(452);
-		coordenadas.add(547);
-		coordenadas.add(452);
-		coordenadas.add(548);
-		coordenadas.add(452);
-		coordenadas.add(549);
-		coordenadas.add(452);
-		coordenadas.add(549);
-		coordenadas.add(453);
-		coordenadas.add(549);
-		coordenadas.add(453);
-		coordenadas.add(549);
-		return coordenadas;
-	}
+	public static final String MATEMATICA_BIOLOGICA = "126,452,213,436";
+
+	public static final String GEOLOGICA_METALURGICA = "94,231,55,236,75,306,132,304,135,303,136,303,137,303,138,303,139,303,140,303,141,303,142,303,143,303,143,304,144,304,145,304,145,305,146,305,147,305,147,306,148,306,149,306,150,306,150,307,151,307,152,307,153,307,154,307,155,307,156,307,157,307,158,307,158,306,159,306,159,305,159,304,159,303";
+
+	public static final String QUIMICA_COMEDOR = "171,385,173,392,175,392,175,391,176,391,177,391,177,390,178,390,179,390,180,390,181,390,182,390,183,390,183,389,184,389,185,389,186,389,237,409,263,409,263,407,263,406,263,405,263,404,263,403,263,402,263,401,263,400,263,399,263,398,263,397,262,397,262,396,262,395,261,394,260,393,260,392,259,392,259,391,258,391,258,390,258,389,257,389,256,388,284,380";
+
+	public static final String CIVIL_FLUIDOS = "675,66,669,77,656,104,643,109,627,116,610,116,599,102";
+
+	public static final String ELECTRONICA_GEOGRAFICA = "804,75,802,87,798,111,790,144,762,143";
+
+	public static final String DERECHO_CIENCIA_ECONOMICA = "523,911,523,911,491,921,476,872,461,804,517,788,579,773,630,762,685,747,685,747";
+
+	public static final String CIENCIA_ECONOMICA_CIENCIA_SOCIAL = "683,746,683,746,748,724,722,631,722,631,722,630";
+
+	public static final String ADMINISTRATIVO_CIENCIA_ECONOMICA_ANTIGUO = "492,505,491,505,489,505,486,505,483,505,479,505,479,505,478,505,477,505,476,505,475,505,474,505,473,505,473,505,473,505,473,505,472,505,472,505,471,505,469,505,450,541,450,542,451,544,451,546,452,547,452,548,452,549,452,549,453,549,453,549";
+
+	public static final String CONTABLE_CIENCIA_ECONOMICA_ANTIGUO = "450,551,462,601,490,596";
+
+	public static final String CONTABLE_ADMINISTRATIVO = "475,460,474,457,474,469,474,500,474,533,484,579,508,594,516,584";
+
+	public static final String CIENCIAS_BIOLOGICAS_FISICA = "173,496,228,486,213,435";
+
+	public static final String CIENCIAS_BIOLOGICAS_QUIMICA = "170,384,213,436";
+
 	
-	public static LinkedList<Integer> economicasAPContable(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(450);
-		coordenadas.add(551);
-		coordenadas.add(462);
-		coordenadas.add(601);
-		coordenadas.add(490);
-		coordenadas.add(596);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> administrativoContables(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(475);
-		coordenadas.add(460);
-		coordenadas.add(474);
-		coordenadas.add(457);
-		coordenadas.add(474);
-		coordenadas.add(469);
-		coordenadas.add(474);
-		coordenadas.add(500);
-		coordenadas.add(474);
-		coordenadas.add(533);
-		coordenadas.add(484);
-		coordenadas.add(579);
-		coordenadas.add(508);
-		coordenadas.add(594);
-		coordenadas.add(516);
-		coordenadas.add(584);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> biologicasFisica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(173);
-		coordenadas.add(496);
-		coordenadas.add(228);
-		coordenadas.add(486);
-		coordenadas.add(213);
-		coordenadas.add(435);
-		return coordenadas;
-	}
-	
-	public static LinkedList<Integer> biologicasQuimica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(170);
-		coordenadas.add(384);
-		coordenadas.add(213);
-		coordenadas.add(436);
-		return coordenadas;
-	}
-	
+
 	public static LinkedList<Integer> socialesContables(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(406);
-		coordenadas.add(511);
-		coordenadas.add(407);
-		coordenadas.add(511);
-		coordenadas.add(411);
-		coordenadas.add(510);
-		coordenadas.add(416);
-		coordenadas.add(507);
-		coordenadas.add(420);
-		coordenadas.add(504);
-		coordenadas.add(424);
-		coordenadas.add(502);
-		coordenadas.add(426);
-		coordenadas.add(500);
-		coordenadas.add(427);
-		coordenadas.add(500);
-		coordenadas.add(427);
-		coordenadas.add(500);
-		coordenadas.add(427);
-		coordenadas.add(500);
-		coordenadas.add(428);
-		coordenadas.add(500);
-		coordenadas.add(428);
-		coordenadas.add(500);
-		coordenadas.add(428);
-		coordenadas.add(500);
-		coordenadas.add(429);
-		coordenadas.add(500);
-		coordenadas.add(429);
-		coordenadas.add(500);
-		coordenadas.add(430);
-		coordenadas.add(499);
-		coordenadas.add(431);
-		coordenadas.add(498);
-		coordenadas.add(432);
-		coordenadas.add(498);
-		coordenadas.add(432);
-		coordenadas.add(498);
-		coordenadas.add(433);
-		coordenadas.add(498);
-		coordenadas.add(433);
-		coordenadas.add(497);
-		coordenadas.add(433);
-		coordenadas.add(497);
-		coordenadas.add(433);
-		coordenadas.add(497);
-		coordenadas.add(434);
-		coordenadas.add(497);
-		coordenadas.add(434);
-		coordenadas.add(497);
-		coordenadas.add(434);
-		coordenadas.add(497);
-		coordenadas.add(435);
-		coordenadas.add(497);
-		coordenadas.add(435);
-		coordenadas.add(497);
-		coordenadas.add(436);
-		coordenadas.add(496);
-		coordenadas.add(436);
-		coordenadas.add(496);
-		coordenadas.add(437);
-		coordenadas.add(496);
-		coordenadas.add(437);
-		coordenadas.add(495);
-		coordenadas.add(438);
-		coordenadas.add(495);
-		coordenadas.add(438);
-		coordenadas.add(495);
-		coordenadas.add(439);
-		coordenadas.add(495);
-		coordenadas.add(439);
-		coordenadas.add(495);
-		coordenadas.add(440);
-		coordenadas.add(494);
-		coordenadas.add(441);
-		coordenadas.add(494);
-		coordenadas.add(442);
-		coordenadas.add(494);
-		coordenadas.add(444);
-		coordenadas.add(493);
-		coordenadas.add(445);
-		coordenadas.add(493);
-		coordenadas.add(446);
-		coordenadas.add(493);
-		coordenadas.add(447);
-		coordenadas.add(493);
-		coordenadas.add(447);
-		coordenadas.add(493);
-		coordenadas.add(447);
-		coordenadas.add(493);
-		coordenadas.add(447);
-		coordenadas.add(493);
-		coordenadas.add(447);
-		coordenadas.add(492);
-		coordenadas.add(448);
-		coordenadas.add(492);
-		coordenadas.add(448);
-		coordenadas.add(492);
-		coordenadas.add(449);
-		coordenadas.add(492);
-		coordenadas.add(449);
-		coordenadas.add(492);
-		coordenadas.add(450);
-		coordenadas.add(492);
-		coordenadas.add(450);
-		coordenadas.add(492);
-		coordenadas.add(450);
-		coordenadas.add(492);
-		coordenadas.add(451);
-		coordenadas.add(492);
-		coordenadas.add(451);
-		coordenadas.add(491);
-		coordenadas.add(451);
-		coordenadas.add(491);
-		coordenadas.add(451);
-		coordenadas.add(491);
-		coordenadas.add(451);
-		coordenadas.add(492);
-		coordenadas.add(451);
-		coordenadas.add(493);
-		coordenadas.add(451);
-		coordenadas.add(495);
-		coordenadas.add(451);
-		coordenadas.add(498);
-		coordenadas.add(451);
-		coordenadas.add(500);
-		coordenadas.add(451);
-		coordenadas.add(502);
-		coordenadas.add(451);
-		coordenadas.add(503);
-		coordenadas.add(451);
-		coordenadas.add(505);
-		coordenadas.add(451);
-		coordenadas.add(506);
-		coordenadas.add(451);
-		coordenadas.add(507);
-		coordenadas.add(451);
-		coordenadas.add(508);
-		coordenadas.add(451);
-		coordenadas.add(508);
-		coordenadas.add(451);
-		coordenadas.add(509);
-		coordenadas.add(451);
-		coordenadas.add(510);
-		coordenadas.add(451);
-		coordenadas.add(510);
-		coordenadas.add(451);
-		coordenadas.add(511);
-		coordenadas.add(451);
-		coordenadas.add(512);
-		coordenadas.add(451);
-		coordenadas.add(513);
-		coordenadas.add(451);
-		coordenadas.add(514);
-		coordenadas.add(451);
-		coordenadas.add(515);
-		coordenadas.add(451);
-		coordenadas.add(517);
-		coordenadas.add(451);
-		coordenadas.add(518);
-		coordenadas.add(451);
-		coordenadas.add(520);
-		coordenadas.add(451);
-		coordenadas.add(522);
-		coordenadas.add(451);
-		coordenadas.add(523);
-		coordenadas.add(451);
-		coordenadas.add(524);
-		coordenadas.add(451);
-		coordenadas.add(525);
-		coordenadas.add(451);
-		coordenadas.add(526);
-		coordenadas.add(451);
-		coordenadas.add(527);
-		coordenadas.add(451);
-		coordenadas.add(528);
-		coordenadas.add(451);
-		coordenadas.add(530);
-		coordenadas.add(451);
-		coordenadas.add(531);
-		coordenadas.add(451);
-		coordenadas.add(532);
-		coordenadas.add(451);
-		coordenadas.add(533);
-		coordenadas.add(451);
-		coordenadas.add(534);
-		coordenadas.add(451);
-		coordenadas.add(535);
-		coordenadas.add(451);
-		coordenadas.add(536);
-		coordenadas.add(451);
-		coordenadas.add(537);
-		coordenadas.add(451);
-		coordenadas.add(537);
-		coordenadas.add(451);
-		coordenadas.add(538);
-		coordenadas.add(451);
-		coordenadas.add(539);
-		coordenadas.add(451);
-		coordenadas.add(540);
-		coordenadas.add(451);
-		coordenadas.add(540);
-		coordenadas.add(451);
-		coordenadas.add(540);
-		coordenadas.add(451);
-		coordenadas.add(541);
-		coordenadas.add(451);
-		coordenadas.add(541);
-		coordenadas.add(451);
-		coordenadas.add(541);
-		coordenadas.add(451);
-		coordenadas.add(542);
-		coordenadas.add(451);
-		coordenadas.add(543);
-		coordenadas.add(452);
-		coordenadas.add(544);
-		coordenadas.add(453);
-		coordenadas.add(545);
-		coordenadas.add(453);
-		coordenadas.add(546);
-		coordenadas.add(454);
-		coordenadas.add(548);
-		coordenadas.add(454);
-		coordenadas.add(548);
-		coordenadas.add(455);
-		coordenadas.add(549);
-		coordenadas.add(455);
-		coordenadas.add(550);
-		coordenadas.add(456);
-		coordenadas.add(551);
-		coordenadas.add(456);
-		coordenadas.add(552);
-		coordenadas.add(457);
-		coordenadas.add(553);
-		coordenadas.add(458);
-		coordenadas.add(554);
-		coordenadas.add(458);
-		coordenadas.add(555);
-		coordenadas.add(459);
-		coordenadas.add(555);
-		coordenadas.add(459);
-		coordenadas.add(556);
-		coordenadas.add(460);
-		coordenadas.add(557);
-		coordenadas.add(460);
-		coordenadas.add(558);
-		coordenadas.add(461);
-		coordenadas.add(558);
-		coordenadas.add(462);
-		coordenadas.add(559);
-		coordenadas.add(462);
-		coordenadas.add(560);
-		coordenadas.add(463);
-		coordenadas.add(560);
-		coordenadas.add(463);
-		coordenadas.add(561);
-		coordenadas.add(463);
-		coordenadas.add(561);
-		coordenadas.add(464);
-		coordenadas.add(562);
-		coordenadas.add(464);
-		coordenadas.add(563);
-		coordenadas.add(465);
-		coordenadas.add(563);
-		coordenadas.add(466);
-		coordenadas.add(564);
-		coordenadas.add(466);
-		coordenadas.add(564);
-		coordenadas.add(467);
-		coordenadas.add(565);
-		coordenadas.add(467);
-		coordenadas.add(566);
-		coordenadas.add(468);
-		coordenadas.add(567);
-		coordenadas.add(469);
-		coordenadas.add(567);
-		coordenadas.add(469);
-		coordenadas.add(568);
-		coordenadas.add(469);
-		coordenadas.add(568);
-		coordenadas.add(470);
-		coordenadas.add(568);
-		coordenadas.add(470);
-		coordenadas.add(569);
-		coordenadas.add(470);
-		coordenadas.add(569);
-		coordenadas.add(471);
-		coordenadas.add(569);
-		coordenadas.add(471);
-		coordenadas.add(570);
-		coordenadas.add(471);
-		coordenadas.add(570);
-		coordenadas.add(472);
-		coordenadas.add(571);
-		coordenadas.add(472);
-		coordenadas.add(571);
-		coordenadas.add(473);
-		coordenadas.add(572);
-		coordenadas.add(473);
-		coordenadas.add(573);
-		coordenadas.add(474);
-		coordenadas.add(574);
-		coordenadas.add(475);
-		coordenadas.add(575);
-		coordenadas.add(476);
-		coordenadas.add(577);
-		coordenadas.add(477);
-		coordenadas.add(578);
-		coordenadas.add(477);
-		coordenadas.add(579);
-		coordenadas.add(478);
-		coordenadas.add(579);
-		coordenadas.add(478);
-		coordenadas.add(580);
-		coordenadas.add(478);
-		coordenadas.add(580);
-		coordenadas.add(478);
-		coordenadas.add(580);
-		coordenadas.add(478);
-		coordenadas.add(580);
-		coordenadas.add(479);
-		coordenadas.add(581);
-		coordenadas.add(479);
-		coordenadas.add(581);
-		coordenadas.add(480);
-		coordenadas.add(582);
-		coordenadas.add(480);
-		coordenadas.add(583);
-		coordenadas.add(481);
-		coordenadas.add(583);
-		coordenadas.add(481);
-		coordenadas.add(583);
-		coordenadas.add(481);
-		coordenadas.add(584);
-		coordenadas.add(482);
-		coordenadas.add(584);
-		coordenadas.add(482);
-		coordenadas.add(585);
-		coordenadas.add(482);
-		coordenadas.add(585);
-		coordenadas.add(482);
-		coordenadas.add(585);
-		coordenadas.add(483);
-		coordenadas.add(586);
-		coordenadas.add(483);
-		coordenadas.add(586);
-		coordenadas.add(484);
-		coordenadas.add(587);
-		coordenadas.add(484);
-		coordenadas.add(587);
-		coordenadas.add(484);
-		coordenadas.add(588);
-		coordenadas.add(485);
-		coordenadas.add(589);
-		coordenadas.add(486);
-		coordenadas.add(589);
-		coordenadas.add(486);
-		coordenadas.add(590);
-		coordenadas.add(486);
-		coordenadas.add(590);
-		coordenadas.add(486);
-		coordenadas.add(590);
-		coordenadas.add(486);
-		coordenadas.add(590);
-		coordenadas.add(487);
-		coordenadas.add(590);
-		coordenadas.add(487);
-		coordenadas.add(590);
-		coordenadas.add(487);
-		coordenadas.add(590);
-		coordenadas.add(487);
-		coordenadas.add(590);
-		coordenadas.add(488);
-		coordenadas.add(590);
-		coordenadas.add(488);
-		coordenadas.add(590);
-		coordenadas.add(488);
-		coordenadas.add(590);
-		return coordenadas;
+
+406,
+511,
+407,
+511,
+411,
+510,
+416,
+507,
+420,
+504,
+424,
+502,
+426,
+500,
+427,
+500,
+427,
+500,
+427,
+500,
+428,
+500,
+428,
+500,
+428,
+500,
+429,
+500,
+429,
+500,
+430,
+499,
+431,
+498,
+432,
+498,
+432,
+498,
+433,
+498,
+433,
+497,
+433,
+497,
+433,
+497,
+434,
+497,
+434,
+497,
+434,
+497,
+435,
+497,
+435,
+497,
+436,
+496,
+436,
+496,
+437,
+496,
+437,
+495,
+438,
+495,
+438,
+495,
+439,
+495,
+439,
+495,
+440,
+494,
+441,
+494,
+442,
+494,
+444,
+493,
+445,
+493,
+446,
+493,
+447,
+493,
+447,
+493,
+447,
+493,
+447,
+493,
+447,
+492,
+448,
+492,
+448,
+492,
+449,
+492,
+449,
+492,
+450,
+492,
+450,
+492,
+450,
+492,
+451,
+492,
+451,
+491,
+451,
+491,
+451,
+491,
+451,
+492,
+451,
+493,
+451,
+495,
+451,
+498,
+451,
+500,
+451,
+502,
+451,
+503,
+451,
+505,
+451,
+506,
+451,
+507,
+451,
+508,
+451,
+508,
+451,
+509,
+451,
+510,
+451,
+510,
+451,
+511,
+451,
+512,
+451,
+513,
+451,
+514,
+451,
+515,
+451,
+517,
+451,
+518,
+451,
+520,
+451,
+522,
+451,
+523,
+451,
+524,
+451,
+525,
+451,
+526,
+451,
+527,
+451,
+528,
+451,
+530,
+451,
+531,
+451,
+532,
+451,
+533,
+451,
+534,
+451,
+535,
+451,
+536,
+451,
+537,
+451,
+537,
+451,
+538,
+451,
+539,
+451,
+540,
+451,
+540,
+451,
+540,
+451,
+541,
+451,
+541,
+451,
+541,
+451,
+542,
+451,
+543,
+452,
+544,
+453,
+545,
+453,
+546,
+454,
+548,
+454,
+548,
+455,
+549,
+455,
+550,
+456,
+551,
+456,
+552,
+457,
+553,
+458,
+554,
+458,
+555,
+459,
+555,
+459,
+556,
+460,
+557,
+460,
+558,
+461,
+558,
+462,
+559,
+462,
+560,
+463,
+560,
+463,
+561,
+463,
+561,
+464,
+562,
+464,
+563,
+465,
+563,
+466,
+564,
+466,
+564,
+467,
+565,
+467,
+566,
+468,
+567,
+469,
+567,
+469,
+568,
+469,
+568,
+470,
+568,
+470,
+569,
+470,
+569,
+471,
+569,
+471,
+570,
+471,
+570,
+472,
+571,
+472,
+571,
+473,
+572,
+473,
+573,
+474,
+574,
+475,
+575,
+476,
+577,
+477,
+578,
+477,
+579,
+478,
+579,
+478,
+580,
+478,
+580,
+478,
+580,
+478,
+580,
+479,
+581,
+479,
+581,
+480,
+582,
+480,
+583,
+481,
+583,
+481,
+583,
+481,
+584,
+482,
+584,
+482,
+585,
+482,
+585,
+482,
+585,
+483,
+586,
+483,
+586,
+484,
+587,
+484,
+587,
+484,
+588,
+485,
+589,
+486,
+589,
+486,
+590,
+486,
+590,
+486,
+590,
+486,
+590,
+487,
+590,
+487,
+590,
+487,
+590,
+487,
+590,
+488,
+590,
+488,
+590,
+488,
+590,
+return coordenadas;
 	}
-	
+
 	public static LinkedList<Integer> socialesDerecho(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(355);
-		coordenadas.add(576);
-		coordenadas.add(418);
-		coordenadas.add(556);
-		coordenadas.add(404);
-		coordenadas.add(514);
-		return coordenadas;
+
+355,
+576,
+418,
+556,
+404,
+514,
+return coordenadas;
 	}
-	
+
 	public static LinkedList<Integer> electronica2EducacionFisica(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(951);
-		coordenadas.add(267);
-		coordenadas.add(951);
-		coordenadas.add(273);
-		coordenadas.add(936);
-		coordenadas.add(289);
-		coordenadas.add(919);
-		coordenadas.add(306);
-		coordenadas.add(891);
-		coordenadas.add(338);
-		coordenadas.add(855);
-		coordenadas.add(367);
-		coordenadas.add(800);
-		coordenadas.add(405);
-		coordenadas.add(753);
-		coordenadas.add(450);
-		coordenadas.add(742);
-		coordenadas.add(467);
-		coordenadas.add(704);
-		coordenadas.add(504);
-		coordenadas.add(674);
-		coordenadas.add(538);
-		coordenadas.add(643);
-		coordenadas.add(523);
-		return coordenadas;
+
+951,
+267,
+951,
+273,
+936,
+289,
+919,
+306,
+891,
+338,
+855,
+367,
+800,
+405,
+753,
+450,
+742,
+467,
+704,
+504,
+674,
+538,
+643,
+523,
+return coordenadas;
 	}
-	
+
 	public static LinkedList<Integer> socialesEconomicasA(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(404);
-		coordenadas.add(513);
-		coordenadas.add(419);
-		coordenadas.add(556);
-		coordenadas.add(452);
-		coordenadas.add(548);
-		return coordenadas;
+
+404,
+513,
+419,
+556,
+452,
+548,
+return coordenadas;
 	}
-	
+
 	public static LinkedList<Integer> contablesElectronica2(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(644);
-		coordenadas.add(527);
-		coordenadas.add(645);
-		coordenadas.add(528);
-		coordenadas.add(646);
-		coordenadas.add(530);
-		coordenadas.add(647);
-		coordenadas.add(532);
-		coordenadas.add(647);
-		coordenadas.add(532);
-		coordenadas.add(648);
-		coordenadas.add(533);
-		coordenadas.add(648);
-		coordenadas.add(533);
-		coordenadas.add(648);
-		coordenadas.add(533);
-		coordenadas.add(648);
-		coordenadas.add(533);
-		coordenadas.add(649);
-		coordenadas.add(534);
-		coordenadas.add(649);
-		coordenadas.add(535);
-		coordenadas.add(650);
-		coordenadas.add(536);
-		coordenadas.add(650);
-		coordenadas.add(537);
-		coordenadas.add(651);
-		coordenadas.add(538);
-		coordenadas.add(652);
-		coordenadas.add(539);
-		coordenadas.add(652);
-		coordenadas.add(539);
-		coordenadas.add(653);
-		coordenadas.add(541);
-		coordenadas.add(653);
-		coordenadas.add(541);
-		coordenadas.add(653);
-		coordenadas.add(541);
-		coordenadas.add(654);
-		coordenadas.add(541);
-		coordenadas.add(654);
-		coordenadas.add(542);
-		coordenadas.add(655);
-		coordenadas.add(543);
-		coordenadas.add(655);
-		coordenadas.add(543);
-		coordenadas.add(656);
-		coordenadas.add(544);
-		coordenadas.add(656);
-		coordenadas.add(545);
-		coordenadas.add(657);
-		coordenadas.add(546);
-		coordenadas.add(657);
-		coordenadas.add(546);
-		coordenadas.add(658);
-		coordenadas.add(546);
-		coordenadas.add(658);
-		coordenadas.add(547);
-		coordenadas.add(658);
-		coordenadas.add(547);
-		coordenadas.add(658);
-		coordenadas.add(547);
-		coordenadas.add(658);
-		coordenadas.add(547);
-		coordenadas.add(659);
-		coordenadas.add(548);
-		coordenadas.add(659);
-		coordenadas.add(548);
-		coordenadas.add(660);
-		coordenadas.add(549);
-		coordenadas.add(660);
-		coordenadas.add(549);
-		coordenadas.add(661);
-		coordenadas.add(550);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(662);
-		coordenadas.add(551);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(660);
-		coordenadas.add(551);
-		coordenadas.add(660);
-		coordenadas.add(551);
-		coordenadas.add(660);
-		coordenadas.add(551);
-		coordenadas.add(660);
-		coordenadas.add(552);
-		coordenadas.add(660);
-		coordenadas.add(552);
-		coordenadas.add(660);
-		coordenadas.add(552);
-		coordenadas.add(659);
-		coordenadas.add(552);
-		coordenadas.add(659);
-		coordenadas.add(552);
-		coordenadas.add(659);
-		coordenadas.add(552);
-		coordenadas.add(659);
-		coordenadas.add(552);
-		coordenadas.add(658);
-		coordenadas.add(552);
-		coordenadas.add(658);
-		coordenadas.add(553);
-		coordenadas.add(657);
-		coordenadas.add(553);
-		coordenadas.add(657);
-		coordenadas.add(554);
-		coordenadas.add(657);
-		coordenadas.add(554);
-		coordenadas.add(656);
-		coordenadas.add(554);
-		coordenadas.add(655);
-		coordenadas.add(555);
-		coordenadas.add(655);
-		coordenadas.add(555);
-		coordenadas.add(654);
-		coordenadas.add(556);
-		coordenadas.add(653);
-		coordenadas.add(556);
-		coordenadas.add(653);
-		coordenadas.add(557);
-		coordenadas.add(652);
-		coordenadas.add(557);
-		coordenadas.add(651);
-		coordenadas.add(558);
-		coordenadas.add(650);
-		coordenadas.add(558);
-		coordenadas.add(650);
-		coordenadas.add(559);
-		coordenadas.add(649);
-		coordenadas.add(559);
-		coordenadas.add(648);
-		coordenadas.add(560);
-		coordenadas.add(648);
-		coordenadas.add(560);
-		coordenadas.add(647);
-		coordenadas.add(561);
-		coordenadas.add(647);
-		coordenadas.add(561);
-		coordenadas.add(646);
-		coordenadas.add(561);
-		coordenadas.add(645);
-		coordenadas.add(562);
-		coordenadas.add(644);
-		coordenadas.add(562);
-		coordenadas.add(644);
-		coordenadas.add(563);
-		coordenadas.add(642);
-		coordenadas.add(563);
-		coordenadas.add(641);
-		coordenadas.add(564);
-		coordenadas.add(640);
-		coordenadas.add(565);
-		coordenadas.add(638);
-		coordenadas.add(566);
-		coordenadas.add(636);
-		coordenadas.add(567);
-		coordenadas.add(635);
-		coordenadas.add(568);
-		coordenadas.add(633);
-		coordenadas.add(569);
-		coordenadas.add(632);
-		coordenadas.add(570);
-		coordenadas.add(631);
-		coordenadas.add(571);
-		coordenadas.add(630);
-		coordenadas.add(571);
-		coordenadas.add(629);
-		coordenadas.add(572);
-		coordenadas.add(628);
-		coordenadas.add(573);
-		coordenadas.add(627);
-		coordenadas.add(573);
-		coordenadas.add(626);
-		coordenadas.add(574);
-		coordenadas.add(625);
-		coordenadas.add(575);
-		coordenadas.add(623);
-		coordenadas.add(576);
-		coordenadas.add(622);
-		coordenadas.add(577);
-		coordenadas.add(621);
-		coordenadas.add(578);
-		coordenadas.add(620);
-		coordenadas.add(578);
-		coordenadas.add(619);
-		coordenadas.add(579);
-		coordenadas.add(619);
-		coordenadas.add(579);
-		coordenadas.add(618);
-		coordenadas.add(579);
-		coordenadas.add(618);
-		coordenadas.add(579);
-		coordenadas.add(617);
-		coordenadas.add(579);
-		coordenadas.add(617);
-		coordenadas.add(580);
-		coordenadas.add(616);
-		coordenadas.add(580);
-		coordenadas.add(614);
-		coordenadas.add(581);
-		coordenadas.add(612);
-		coordenadas.add(582);
-		coordenadas.add(609);
-		coordenadas.add(583);
-		coordenadas.add(608);
-		coordenadas.add(584);
-		coordenadas.add(606);
-		coordenadas.add(584);
-		coordenadas.add(606);
-		coordenadas.add(585);
-		coordenadas.add(605);
-		coordenadas.add(585);
-		coordenadas.add(604);
-		coordenadas.add(585);
-		coordenadas.add(604);
-		coordenadas.add(585);
-		coordenadas.add(603);
-		coordenadas.add(586);
-		coordenadas.add(603);
-		coordenadas.add(586);
-		coordenadas.add(602);
-		coordenadas.add(587);
-		coordenadas.add(600);
-		coordenadas.add(587);
-		coordenadas.add(598);
-		coordenadas.add(588);
-		coordenadas.add(597);
-		coordenadas.add(589);
-		coordenadas.add(596);
-		coordenadas.add(589);
-		coordenadas.add(595);
-		coordenadas.add(590);
-		coordenadas.add(595);
-		coordenadas.add(590);
-		coordenadas.add(594);
-		coordenadas.add(590);
-		coordenadas.add(594);
-		coordenadas.add(590);
-		coordenadas.add(594);
-		coordenadas.add(590);
-		coordenadas.add(593);
-		coordenadas.add(590);
-		coordenadas.add(591);
-		coordenadas.add(590);
-		coordenadas.add(589);
-		coordenadas.add(590);
-		coordenadas.add(586);
-		coordenadas.add(590);
-		coordenadas.add(584);
-		coordenadas.add(591);
-		coordenadas.add(582);
-		coordenadas.add(592);
-		coordenadas.add(580);
-		coordenadas.add(592);
-		coordenadas.add(578);
-		coordenadas.add(592);
-		coordenadas.add(576);
-		coordenadas.add(593);
-		coordenadas.add(575);
-		coordenadas.add(593);
-		coordenadas.add(574);
-		coordenadas.add(593);
-		coordenadas.add(572);
-		coordenadas.add(593);
-		coordenadas.add(571);
-		coordenadas.add(594);
-		coordenadas.add(568);
-		coordenadas.add(594);
-		coordenadas.add(567);
-		coordenadas.add(594);
-		coordenadas.add(565);
-		coordenadas.add(594);
-		coordenadas.add(564);
-		coordenadas.add(594);
-		coordenadas.add(563);
-		coordenadas.add(595);
-		coordenadas.add(561);
-		coordenadas.add(595);
-		coordenadas.add(558);
-		coordenadas.add(595);
-		coordenadas.add(556);
-		coordenadas.add(596);
-		coordenadas.add(554);
-		coordenadas.add(596);
-		coordenadas.add(552);
-		coordenadas.add(596);
-		coordenadas.add(551);
-		coordenadas.add(596);
-		coordenadas.add(550);
-		coordenadas.add(596);
-		coordenadas.add(549);
-		coordenadas.add(597);
-		coordenadas.add(548);
-		coordenadas.add(597);
-		coordenadas.add(546);
-		coordenadas.add(598);
-		coordenadas.add(544);
-		coordenadas.add(598);
-		coordenadas.add(543);
-		coordenadas.add(598);
-		coordenadas.add(542);
-		coordenadas.add(599);
-		coordenadas.add(540);
-		coordenadas.add(599);
-		coordenadas.add(537);
-		coordenadas.add(599);
-		coordenadas.add(535);
-		coordenadas.add(600);
-		coordenadas.add(532);
-		coordenadas.add(600);
-		coordenadas.add(531);
-		coordenadas.add(601);
-		coordenadas.add(530);
-		coordenadas.add(601);
-		coordenadas.add(529);
-		coordenadas.add(601);
-		coordenadas.add(529);
-		coordenadas.add(601);
-		coordenadas.add(528);
-		coordenadas.add(601);
-		coordenadas.add(526);
-		coordenadas.add(601);
-		coordenadas.add(524);
-		coordenadas.add(602);
-		coordenadas.add(523);
-		coordenadas.add(602);
-		coordenadas.add(521);
-		coordenadas.add(602);
-		coordenadas.add(520);
-		coordenadas.add(602);
-		coordenadas.add(519);
-		coordenadas.add(603);
-		coordenadas.add(517);
-		coordenadas.add(603);
-		coordenadas.add(515);
-		coordenadas.add(604);
-		coordenadas.add(513);
-		coordenadas.add(604);
-		coordenadas.add(511);
-		coordenadas.add(604);
-		coordenadas.add(511);
-		coordenadas.add(605);
-		coordenadas.add(510);
-		coordenadas.add(605);
-		coordenadas.add(509);
-		coordenadas.add(605);
-		coordenadas.add(509);
-		coordenadas.add(606);
-		coordenadas.add(508);
-		coordenadas.add(606);
-		coordenadas.add(507);
-		coordenadas.add(606);
-		coordenadas.add(506);
-		coordenadas.add(606);
-		coordenadas.add(505);
-		coordenadas.add(606);
-		coordenadas.add(504);
-		coordenadas.add(606);
-		coordenadas.add(502);
-		coordenadas.add(607);
-		coordenadas.add(500);
-		coordenadas.add(607);
-		coordenadas.add(499);
-		coordenadas.add(607);
-		coordenadas.add(497);
-		coordenadas.add(607);
-		coordenadas.add(497);
-		coordenadas.add(607);
-		coordenadas.add(496);
-		coordenadas.add(607);
-		coordenadas.add(496);
-		coordenadas.add(608);
-		coordenadas.add(496);
-		coordenadas.add(608);
-		coordenadas.add(496);
-		coordenadas.add(608);
-		coordenadas.add(495);
-		coordenadas.add(608);
-		coordenadas.add(495);
-		coordenadas.add(608);
-		coordenadas.add(495);
-		coordenadas.add(608);
-		coordenadas.add(495);
-		coordenadas.add(608);
-		coordenadas.add(494);
-		coordenadas.add(608);
-		coordenadas.add(494);
-		coordenadas.add(608);
-		coordenadas.add(494);
-		coordenadas.add(608);
-		coordenadas.add(494);
-		coordenadas.add(608);
-		coordenadas.add(494);
-		coordenadas.add(607);
-		coordenadas.add(494);
-		coordenadas.add(607);
-		coordenadas.add(494);
-		coordenadas.add(607);
-		coordenadas.add(494);
-		coordenadas.add(607);
-		coordenadas.add(494);
-		coordenadas.add(606);
-		coordenadas.add(494);
-		coordenadas.add(606);
-		coordenadas.add(494);
-		coordenadas.add(606);
-		coordenadas.add(494);
-		coordenadas.add(606);
-		coordenadas.add(494);
-		coordenadas.add(605);
-		coordenadas.add(494);
-		coordenadas.add(605);
-		coordenadas.add(494);
-		coordenadas.add(604);
-		coordenadas.add(494);
-		coordenadas.add(604);
-		coordenadas.add(493);
-		coordenadas.add(603);
-		coordenadas.add(493);
-		coordenadas.add(603);
-		coordenadas.add(493);
-		coordenadas.add(602);
-		coordenadas.add(493);
-		coordenadas.add(602);
-		coordenadas.add(493);
-		coordenadas.add(601);
-		coordenadas.add(492);
-		coordenadas.add(600);
-		coordenadas.add(492);
-		coordenadas.add(600);
-		coordenadas.add(492);
-		coordenadas.add(599);
-		coordenadas.add(492);
-		coordenadas.add(599);
-		coordenadas.add(492);
-		coordenadas.add(598);
-		coordenadas.add(491);
-		coordenadas.add(597);
-		coordenadas.add(491);
-		coordenadas.add(597);
-		coordenadas.add(491);
-		coordenadas.add(596);
-		coordenadas.add(491);
-		coordenadas.add(596);
-		coordenadas.add(491);
-		coordenadas.add(595);
-		coordenadas.add(491);
-		coordenadas.add(595);
-		coordenadas.add(490);
-		coordenadas.add(595);
-		coordenadas.add(490);
-		coordenadas.add(595);
-		coordenadas.add(490);
-		coordenadas.add(594);
-		coordenadas.add(490);
-		coordenadas.add(594);
-		coordenadas.add(490);
-		coordenadas.add(594);
-		coordenadas.add(490);
-		coordenadas.add(593);
-		coordenadas.add(490);
-		coordenadas.add(593);
-		coordenadas.add(490);
-		coordenadas.add(593);
-		coordenadas.add(489);
-		coordenadas.add(593);
-		return coordenadas;
+
+644,
+527,
+645,
+528,
+646,
+530,
+647,
+532,
+647,
+532,
+648,
+533,
+648,
+533,
+648,
+533,
+648,
+533,
+649,
+534,
+649,
+535,
+650,
+536,
+650,
+537,
+651,
+538,
+652,
+539,
+652,
+539,
+653,
+541,
+653,
+541,
+653,
+541,
+654,
+541,
+654,
+542,
+655,
+543,
+655,
+543,
+656,
+544,
+656,
+545,
+657,
+546,
+657,
+546,
+658,
+546,
+658,
+547,
+658,
+547,
+658,
+547,
+658,
+547,
+659,
+548,
+659,
+548,
+660,
+549,
+660,
+549,
+661,
+550,
+661,
+551,
+661,
+551,
+662,
+551,
+661,
+551,
+661,
+551,
+661,
+551,
+661,
+551,
+661,
+551,
+660,
+551,
+660,
+551,
+660,
+551,
+660,
+552,
+660,
+552,
+660,
+552,
+659,
+552,
+659,
+552,
+659,
+552,
+659,
+552,
+658,
+552,
+658,
+553,
+657,
+553,
+657,
+554,
+657,
+554,
+656,
+554,
+655,
+555,
+655,
+555,
+654,
+556,
+653,
+556,
+653,
+557,
+652,
+557,
+651,
+558,
+650,
+558,
+650,
+559,
+649,
+559,
+648,
+560,
+648,
+560,
+647,
+561,
+647,
+561,
+646,
+561,
+645,
+562,
+644,
+562,
+644,
+563,
+642,
+563,
+641,
+564,
+640,
+565,
+638,
+566,
+636,
+567,
+635,
+568,
+633,
+569,
+632,
+570,
+631,
+571,
+630,
+571,
+629,
+572,
+628,
+573,
+627,
+573,
+626,
+574,
+625,
+575,
+623,
+576,
+622,
+577,
+621,
+578,
+620,
+578,
+619,
+579,
+619,
+579,
+618,
+579,
+618,
+579,
+617,
+579,
+617,
+580,
+616,
+580,
+614,
+581,
+612,
+582,
+609,
+583,
+608,
+584,
+606,
+584,
+606,
+585,
+605,
+585,
+604,
+585,
+604,
+585,
+603,
+586,
+603,
+586,
+602,
+587,
+600,
+587,
+598,
+588,
+597,
+589,
+596,
+589,
+595,
+590,
+595,
+590,
+594,
+590,
+594,
+590,
+594,
+590,
+593,
+590,
+591,
+590,
+589,
+590,
+586,
+590,
+584,
+591,
+582,
+592,
+580,
+592,
+578,
+592,
+576,
+593,
+575,
+593,
+574,
+593,
+572,
+593,
+571,
+594,
+568,
+594,
+567,
+594,
+565,
+594,
+564,
+594,
+563,
+595,
+561,
+595,
+558,
+595,
+556,
+596,
+554,
+596,
+552,
+596,
+551,
+596,
+550,
+596,
+549,
+597,
+548,
+597,
+546,
+598,
+544,
+598,
+543,
+598,
+542,
+599,
+540,
+599,
+537,
+599,
+535,
+600,
+532,
+600,
+531,
+601,
+530,
+601,
+529,
+601,
+529,
+601,
+528,
+601,
+526,
+601,
+524,
+602,
+523,
+602,
+521,
+602,
+520,
+602,
+519,
+603,
+517,
+603,
+515,
+604,
+513,
+604,
+511,
+604,
+511,
+605,
+510,
+605,
+509,
+605,
+509,
+606,
+508,
+606,
+507,
+606,
+506,
+606,
+505,
+606,
+504,
+606,
+502,
+607,
+500,
+607,
+499,
+607,
+497,
+607,
+497,
+607,
+496,
+607,
+496,
+608,
+496,
+608,
+496,
+608,
+495,
+608,
+495,
+608,
+495,
+608,
+495,
+608,
+494,
+608,
+494,
+608,
+494,
+608,
+494,
+608,
+494,
+607,
+494,
+607,
+494,
+607,
+494,
+607,
+494,
+606,
+494,
+606,
+494,
+606,
+494,
+606,
+494,
+605,
+494,
+605,
+494,
+604,
+494,
+604,
+493,
+603,
+493,
+603,
+493,
+602,
+493,
+602,
+493,
+601,
+492,
+600,
+492,
+600,
+492,
+599,
+492,
+599,
+492,
+598,
+491,
+597,
+491,
+597,
+491,
+596,
+491,
+596,
+491,
+595,
+491,
+595,
+490,
+595,
+490,
+595,
+490,
+594,
+490,
+594,
+490,
+594,
+490,
+593,
+490,
+593,
+490,
+593,
+489,
+593,
+return coordenadas;
 	}
 
 	public static LinkedList<Integer> cienciaSocialCienciaAdministrativa() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(405);
-		coordenadas.add(512);
-		coordenadas.add(491);
-		coordenadas.add(504);
-		return coordenadas;
+
+405,
+512,
+491,
+504,
+return coordenadas;
 	}
 
 	public static LinkedList<Integer> cienciaSocialCienciaContable() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(722);
-		coordenadas.add(629);
-		coordenadas.add(722);
-		coordenadas.add(629);
-		coordenadas.add(773);
-		coordenadas.add(871);
-		coordenadas.add(652);
-		coordenadas.add(886);
-		return coordenadas;
+
+722,
+629,
+722,
+629,
+773,
+871,
+652,
+886,
+return coordenadas;
 	}
 
 	public static LinkedList<Integer> cienciaAdministrativaLetras() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(555);
-		coordenadas.add(524);
-		coordenadas.add(555);
-		coordenadas.add(523);
-		coordenadas.add(555);
-		coordenadas.add(521);
-		coordenadas.add(555);
-		coordenadas.add(517);
-		coordenadas.add(554);
-		coordenadas.add(513);
-		coordenadas.add(553);
-		coordenadas.add(508);
-		coordenadas.add(552);
-		coordenadas.add(506);
-		coordenadas.add(551);
-		coordenadas.add(504);
-		coordenadas.add(551);
-		coordenadas.add(502);
-		coordenadas.add(551);
-		coordenadas.add(501);
-		coordenadas.add(550);
-		coordenadas.add(499);
-		coordenadas.add(550);
-		coordenadas.add(498);
-		coordenadas.add(550);
-		coordenadas.add(496);
-		coordenadas.add(550);
-		coordenadas.add(495);
-		coordenadas.add(549);
-		coordenadas.add(493);
-		coordenadas.add(549);
-		coordenadas.add(492);
-		coordenadas.add(549);
-		coordenadas.add(490);
-		coordenadas.add(549);
-		coordenadas.add(488);
-		coordenadas.add(549);
-		coordenadas.add(487);
-		coordenadas.add(549);
-		coordenadas.add(485);
-		coordenadas.add(548);
-		coordenadas.add(483);
-		coordenadas.add(548);
-		coordenadas.add(481);
-		coordenadas.add(548);
-		coordenadas.add(480);
-		coordenadas.add(548);
-		coordenadas.add(479);
-		coordenadas.add(548);
-		coordenadas.add(477);
-		coordenadas.add(548);
-		coordenadas.add(476);
-		coordenadas.add(548);
-		coordenadas.add(476);
-		coordenadas.add(548);
-		coordenadas.add(475);
-		coordenadas.add(548);
-		coordenadas.add(475);
-		coordenadas.add(547);
-		coordenadas.add(474);
-		coordenadas.add(547);
-		coordenadas.add(474);
-		coordenadas.add(547);
-		coordenadas.add(473);
-		coordenadas.add(547);
-		coordenadas.add(472);
-		coordenadas.add(546);
-		coordenadas.add(472);
-		coordenadas.add(546);
-		coordenadas.add(471);
-		coordenadas.add(546);
-		coordenadas.add(471);
-		coordenadas.add(546);
-		coordenadas.add(471);
-		coordenadas.add(546);
-		coordenadas.add(470);
-		coordenadas.add(546);
-		coordenadas.add(470);
-		coordenadas.add(546);
-		coordenadas.add(469);
-		coordenadas.add(545);
-		coordenadas.add(469);
-		coordenadas.add(545);
-		coordenadas.add(468);
-		coordenadas.add(545);
-		coordenadas.add(467);
-		coordenadas.add(545);
-		coordenadas.add(467);
-		coordenadas.add(545);
-		coordenadas.add(467);
-		coordenadas.add(544);
-		coordenadas.add(467);
-		coordenadas.add(544);
-		coordenadas.add(467);
-		coordenadas.add(543);
-		coordenadas.add(467);
-		coordenadas.add(543);
-		coordenadas.add(467);
-		coordenadas.add(543);
-		coordenadas.add(467);
-		coordenadas.add(543);
-		coordenadas.add(467);
-		coordenadas.add(542);
-		coordenadas.add(467);
-		coordenadas.add(541);
-		coordenadas.add(467);
-		coordenadas.add(538);
-		coordenadas.add(467);
-		coordenadas.add(534);
-		coordenadas.add(467);
-		coordenadas.add(528);
-		coordenadas.add(467);
-		coordenadas.add(522);
-		coordenadas.add(467);
-		coordenadas.add(518);
-		coordenadas.add(467);
-		coordenadas.add(514);
-		coordenadas.add(467);
-		coordenadas.add(512);
-		coordenadas.add(467);
-		coordenadas.add(511);
-		coordenadas.add(467);
-		coordenadas.add(509);
-		coordenadas.add(467);
-		coordenadas.add(509);
-		coordenadas.add(467);
-		coordenadas.add(508);
-		coordenadas.add(467);
-		coordenadas.add(507);
-		coordenadas.add(467);
-		coordenadas.add(507);
-		coordenadas.add(467);
-		coordenadas.add(507);
-		coordenadas.add(467);
-		coordenadas.add(506);
-		coordenadas.add(467);
-		coordenadas.add(506);
-		coordenadas.add(467);
-		coordenadas.add(505);
-		coordenadas.add(467);
-		coordenadas.add(505);
-		coordenadas.add(467);
-		coordenadas.add(503);
-		coordenadas.add(467);
-		coordenadas.add(502);
-		coordenadas.add(466);
-		coordenadas.add(501);
-		coordenadas.add(466);
-		coordenadas.add(500);
-		coordenadas.add(466);
-		coordenadas.add(499);
-		coordenadas.add(466);
-		coordenadas.add(498);
-		coordenadas.add(466);
-		coordenadas.add(498);
-		coordenadas.add(466);
-		coordenadas.add(497);
-		coordenadas.add(465);
-		coordenadas.add(497);
-		coordenadas.add(465);
-		coordenadas.add(496);
-		coordenadas.add(465);
-		coordenadas.add(496);
-		coordenadas.add(465);
-		coordenadas.add(496);
-		coordenadas.add(465);
-		coordenadas.add(495);
-		coordenadas.add(465);
-		coordenadas.add(495);
-		coordenadas.add(465);
-		coordenadas.add(494);
-		coordenadas.add(465);
-		coordenadas.add(494);
-		coordenadas.add(465);
-		coordenadas.add(494);
-		coordenadas.add(465);
-		coordenadas.add(493);
-		coordenadas.add(465);
-		coordenadas.add(493);
-		coordenadas.add(465);
-		coordenadas.add(492);
-		coordenadas.add(465);
-		coordenadas.add(491);
-		coordenadas.add(465);
-		coordenadas.add(490);
-		coordenadas.add(465);
-		coordenadas.add(488);
-		coordenadas.add(465);
-		coordenadas.add(486);
-		coordenadas.add(465);
-		coordenadas.add(486);
-		coordenadas.add(465);
-		coordenadas.add(485);
-		coordenadas.add(465);
-		coordenadas.add(485);
-		coordenadas.add(465);
-		coordenadas.add(484);
-		coordenadas.add(465);
-		coordenadas.add(484);
-		coordenadas.add(464);
-		coordenadas.add(484);
-		coordenadas.add(464);
-		coordenadas.add(484);
-		coordenadas.add(464);
-		coordenadas.add(484);
-		coordenadas.add(464);
-		coordenadas.add(483);
-		coordenadas.add(464);
-		coordenadas.add(483);
-		coordenadas.add(464);
-		coordenadas.add(483);
-		coordenadas.add(464);
-		coordenadas.add(483);
-		coordenadas.add(464);
-		coordenadas.add(482);
-		coordenadas.add(464);
-		coordenadas.add(482);
-		coordenadas.add(464);
-		coordenadas.add(482);
-		coordenadas.add(464);
-		coordenadas.add(482);
-		coordenadas.add(464);
-		coordenadas.add(481);
-		coordenadas.add(464);
-		coordenadas.add(481);
-		coordenadas.add(464);
-		coordenadas.add(480);
-		coordenadas.add(464);
-		coordenadas.add(479);
-		coordenadas.add(463);
-		coordenadas.add(479);
-		coordenadas.add(463);
-		coordenadas.add(478);
-		coordenadas.add(463);
-		coordenadas.add(478);
-		coordenadas.add(464);
-		coordenadas.add(479);
-		coordenadas.add(464);
-		coordenadas.add(480);
-		coordenadas.add(466);
-		coordenadas.add(483);
-		coordenadas.add(470);
-		coordenadas.add(485);
-		coordenadas.add(473);
-		coordenadas.add(488);
-		coordenadas.add(477);
-		coordenadas.add(489);
-		coordenadas.add(480);
-		coordenadas.add(491);
-		coordenadas.add(482);
-		coordenadas.add(491);
-		coordenadas.add(483);
-		coordenadas.add(492);
-		coordenadas.add(484);
-		coordenadas.add(493);
-		coordenadas.add(485);
-		coordenadas.add(493);
-		coordenadas.add(486);
-		coordenadas.add(494);
-		coordenadas.add(487);
-		coordenadas.add(494);
-		coordenadas.add(488);
-		coordenadas.add(495);
-		coordenadas.add(488);
-		coordenadas.add(495);
-		coordenadas.add(489);
-		coordenadas.add(495);
-		coordenadas.add(490);
-		coordenadas.add(496);
-		coordenadas.add(491);
-		coordenadas.add(496);
-		coordenadas.add(493);
-		coordenadas.add(497);
-		coordenadas.add(494);
-		coordenadas.add(497);
-		coordenadas.add(496);
-		coordenadas.add(498);
-		coordenadas.add(498);
-		coordenadas.add(499);
-		coordenadas.add(500);
-		coordenadas.add(499);
-		coordenadas.add(501);
-		coordenadas.add(499);
-		coordenadas.add(503);
-		coordenadas.add(499);
-		coordenadas.add(504);
-		coordenadas.add(499);
-		coordenadas.add(504);
-		coordenadas.add(500);
-		coordenadas.add(505);
-		coordenadas.add(500);
-		coordenadas.add(506);
-		coordenadas.add(500);
-		coordenadas.add(506);
-		coordenadas.add(500);
-		coordenadas.add(506);
-		coordenadas.add(500);
-		coordenadas.add(506);
-		coordenadas.add(500);
-		coordenadas.add(507);
-		coordenadas.add(500);
-		coordenadas.add(507);
-		coordenadas.add(500);
-		coordenadas.add(507);
-		coordenadas.add(502);
-		coordenadas.add(512);
-		coordenadas.add(501);
-		coordenadas.add(512);
-		coordenadas.add(501);
-		coordenadas.add(512);
-		coordenadas.add(501);
-		coordenadas.add(511);
-		coordenadas.add(500);
-		coordenadas.add(511);
-		coordenadas.add(499);
-		coordenadas.add(511);
-		coordenadas.add(497);
-		coordenadas.add(509);
-		coordenadas.add(494);
-		coordenadas.add(509);
-		coordenadas.add(493);
-		coordenadas.add(508);
-		coordenadas.add(492);
-		coordenadas.add(507);
-		coordenadas.add(491);
-		coordenadas.add(507);
-		coordenadas.add(491);
-		coordenadas.add(507);
-		coordenadas.add(491);
-		coordenadas.add(506);
-		coordenadas.add(491);
-		coordenadas.add(506);
-		coordenadas.add(491);
-		coordenadas.add(505);
-		coordenadas.add(491);
-		coordenadas.add(505);
-		coordenadas.add(491);
-		coordenadas.add(505);
-		coordenadas.add(491);
-		coordenadas.add(505);
-		coordenadas.add(491);
-		coordenadas.add(504);
-		coordenadas.add(492);
-		coordenadas.add(504);
-		coordenadas.add(492);
-		coordenadas.add(504);
-		coordenadas.add(492);
-		coordenadas.add(504);
-		coordenadas.add(492);
-		coordenadas.add(504);
-		coordenadas.add(492);
-		coordenadas.add(504);
-		coordenadas.add(492);
-		coordenadas.add(503);
-		coordenadas.add(492);
-		coordenadas.add(503);
-		coordenadas.add(492);
-		coordenadas.add(503);
-		coordenadas.add(492);
-		coordenadas.add(504);
 
-		return coordenadas;
+555,
+524,
+555,
+523,
+555,
+521,
+555,
+517,
+554,
+513,
+553,
+508,
+552,
+506,
+551,
+504,
+551,
+502,
+551,
+501,
+550,
+499,
+550,
+498,
+550,
+496,
+550,
+495,
+549,
+493,
+549,
+492,
+549,
+490,
+549,
+488,
+549,
+487,
+549,
+485,
+548,
+483,
+548,
+481,
+548,
+480,
+548,
+479,
+548,
+477,
+548,
+476,
+548,
+476,
+548,
+475,
+548,
+475,
+547,
+474,
+547,
+474,
+547,
+473,
+547,
+472,
+546,
+472,
+546,
+471,
+546,
+471,
+546,
+471,
+546,
+470,
+546,
+470,
+546,
+469,
+545,
+469,
+545,
+468,
+545,
+467,
+545,
+467,
+545,
+467,
+544,
+467,
+544,
+467,
+543,
+467,
+543,
+467,
+543,
+467,
+543,
+467,
+542,
+467,
+541,
+467,
+538,
+467,
+534,
+467,
+528,
+467,
+522,
+467,
+518,
+467,
+514,
+467,
+512,
+467,
+511,
+467,
+509,
+467,
+509,
+467,
+508,
+467,
+507,
+467,
+507,
+467,
+507,
+467,
+506,
+467,
+506,
+467,
+505,
+467,
+505,
+467,
+503,
+467,
+502,
+466,
+501,
+466,
+500,
+466,
+499,
+466,
+498,
+466,
+498,
+466,
+497,
+465,
+497,
+465,
+496,
+465,
+496,
+465,
+496,
+465,
+495,
+465,
+495,
+465,
+494,
+465,
+494,
+465,
+494,
+465,
+493,
+465,
+493,
+465,
+492,
+465,
+491,
+465,
+490,
+465,
+488,
+465,
+486,
+465,
+486,
+465,
+485,
+465,
+485,
+465,
+484,
+465,
+484,
+464,
+484,
+464,
+484,
+464,
+484,
+464,
+483,
+464,
+483,
+464,
+483,
+464,
+483,
+464,
+482,
+464,
+482,
+464,
+482,
+464,
+482,
+464,
+481,
+464,
+481,
+464,
+480,
+464,
+479,
+463,
+479,
+463,
+478,
+463,
+478,
+464,
+479,
+464,
+480,
+466,
+483,
+470,
+485,
+473,
+488,
+477,
+489,
+480,
+491,
+482,
+491,
+483,
+492,
+484,
+493,
+485,
+493,
+486,
+494,
+487,
+494,
+488,
+495,
+488,
+495,
+489,
+495,
+490,
+496,
+491,
+496,
+493,
+497,
+494,
+497,
+496,
+498,
+498,
+499,
+500,
+499,
+501,
+499,
+503,
+499,
+504,
+499,
+504,
+500,
+505,
+500,
+506,
+500,
+506,
+500,
+506,
+500,
+506,
+500,
+507,
+500,
+507,
+500,
+507,
+502,
+512,
+501,
+512,
+501,
+512,
+501,
+511,
+500,
+511,
+499,
+511,
+497,
+509,
+494,
+509,
+493,
+508,
+492,
+507,
+491,
+507,
+491,
+507,
+491,
+506,
+491,
+506,
+491,
+505,
+491,
+505,
+491,
+505,
+491,
+505,
+491,
+504,
+492,
+504,
+492,
+504,
+492,
+504,
+492,
+504,
+492,
+504,
+492,
+503,
+492,
+503,
+492,
+503,
+492,
+504,
+
+return coordenadas;
 
 	}
-	
+
 	public static LinkedList<Integer> derechoCienciasEconomicasAntiguo(){
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(355);
-		coordenadas.add(576);
-		coordenadas.add(451);
-		coordenadas.add(546);
-		return coordenadas;
+
+355,
+576,
+451,
+546,
+return coordenadas;
 	}
 
 	public static LinkedList<Integer> educacionFisicaElectronica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(1389);
-		coordenadas.add(446);
-		coordenadas.add(1384);
-		coordenadas.add(458);
-		coordenadas.add(1370);
-		coordenadas.add(469);
-		coordenadas.add(1347);
-		coordenadas.add(483);
-		coordenadas.add(1328);
-		coordenadas.add(496);
-		coordenadas.add(1311);
-		coordenadas.add(515);
-		coordenadas.add(1297);
-		coordenadas.add(532);
-		coordenadas.add(1283);
-		coordenadas.add(549);
-		coordenadas.add(1272);
-		coordenadas.add(562);
-		coordenadas.add(1253);
-		coordenadas.add(578);
-		coordenadas.add(1231);
-		coordenadas.add(592);
-		coordenadas.add(1224);
-		coordenadas.add(603);
-		coordenadas.add(1205);
-		coordenadas.add(633);
-		coordenadas.add(1172);
-		coordenadas.add(661);
-		coordenadas.add(1104);
-		coordenadas.add(695);
-		coordenadas.add(1074);
-		coordenadas.add(699);
-		coordenadas.add(1070);
-		coordenadas.add(665);
-		return coordenadas;
+
+1389,
+446,
+1384,
+458,
+1370,
+469,
+1347,
+483,
+1328,
+496,
+1311,
+515,
+1297,
+532,
+1283,
+549,
+1272,
+562,
+1253,
+578,
+1231,
+592,
+1224,
+603,
+1205,
+633,
+1172,
+661,
+1104,
+695,
+1074,
+699,
+1070,
+665,
+return coordenadas;
 	}
 
 	public static LinkedList<Integer> letrasElectronica() {
-		LinkedList<Integer> coordenadas = new LinkedList<Integer>();
-		coordenadas.add(646);
-		coordenadas.add(524);
-		coordenadas.add(646);
-		coordenadas.add(524);
-		coordenadas.add(647);
-		coordenadas.add(525);
-		coordenadas.add(649);
-		coordenadas.add(527);
-		coordenadas.add(651);
-		coordenadas.add(529);
-		coordenadas.add(652);
-		coordenadas.add(531);
-		coordenadas.add(653);
-		coordenadas.add(532);
-		coordenadas.add(654);
-		coordenadas.add(533);
-		coordenadas.add(654);
-		coordenadas.add(534);
-		coordenadas.add(655);
-		coordenadas.add(534);
-		coordenadas.add(655);
-		coordenadas.add(535);
-		coordenadas.add(656);
-		coordenadas.add(535);
-		coordenadas.add(656);
-		coordenadas.add(536);
-		coordenadas.add(657);
-		coordenadas.add(537);
-		coordenadas.add(657);
-		coordenadas.add(538);
-		coordenadas.add(658);
-		coordenadas.add(538);
-		coordenadas.add(659);
-		coordenadas.add(539);
-		coordenadas.add(659);
-		coordenadas.add(540);
-		coordenadas.add(660);
-		coordenadas.add(541);
-		coordenadas.add(660);
-		coordenadas.add(542);
-		coordenadas.add(661);
-		coordenadas.add(543);
-		coordenadas.add(662);
-		coordenadas.add(544);
-		coordenadas.add(662);
-		coordenadas.add(545);
-		coordenadas.add(662);
-		coordenadas.add(545);
-		coordenadas.add(662);
-		coordenadas.add(545);
-		coordenadas.add(662);
-		coordenadas.add(546);
-		coordenadas.add(663);
-		coordenadas.add(546);
-		coordenadas.add(663);
-		coordenadas.add(546);
-		coordenadas.add(663);
-		coordenadas.add(546);
-		coordenadas.add(663);
-		coordenadas.add(546);
-		coordenadas.add(663);
-		coordenadas.add(546);
-		coordenadas.add(663);
-		coordenadas.add(547);
-		coordenadas.add(664);
-		coordenadas.add(547);
-		coordenadas.add(664);
-		coordenadas.add(548);
-		coordenadas.add(664);
-		coordenadas.add(548);
-		coordenadas.add(665);
-		coordenadas.add(548);
-		coordenadas.add(665);
-		coordenadas.add(549);
-		coordenadas.add(665);
-		coordenadas.add(549);
-		coordenadas.add(665);
-		coordenadas.add(549);
-		coordenadas.add(665);
-		coordenadas.add(549);
-		coordenadas.add(666);
-		coordenadas.add(549);
-		coordenadas.add(666);
-		coordenadas.add(550);
-		coordenadas.add(666);
-		coordenadas.add(550);
-		coordenadas.add(666);
-		coordenadas.add(550);
-		coordenadas.add(665);
-		coordenadas.add(550);
-		coordenadas.add(665);
-		coordenadas.add(550);
-		coordenadas.add(664);
-		coordenadas.add(550);
-		coordenadas.add(664);
-		coordenadas.add(550);
-		coordenadas.add(663);
-		coordenadas.add(550);
-		coordenadas.add(663);
-		coordenadas.add(550);
-		coordenadas.add(661);
-		coordenadas.add(551);
-		coordenadas.add(660);
-		coordenadas.add(551);
-		coordenadas.add(659);
-		coordenadas.add(552);
-		coordenadas.add(658);
-		coordenadas.add(553);
-		coordenadas.add(657);
-		coordenadas.add(553);
-		coordenadas.add(656);
-		coordenadas.add(554);
-		coordenadas.add(655);
-		coordenadas.add(555);
-		coordenadas.add(653);
-		coordenadas.add(556);
-		coordenadas.add(651);
-		coordenadas.add(556);
-		coordenadas.add(649);
-		coordenadas.add(557);
-		coordenadas.add(647);
-		coordenadas.add(559);
-		coordenadas.add(645);
-		coordenadas.add(560);
-		coordenadas.add(643);
-		coordenadas.add(561);
-		coordenadas.add(642);
-		coordenadas.add(562);
-		coordenadas.add(640);
-		coordenadas.add(563);
-		coordenadas.add(639);
-		coordenadas.add(564);
-		coordenadas.add(638);
-		coordenadas.add(564);
-		coordenadas.add(637);
-		coordenadas.add(565);
-		coordenadas.add(636);
-		coordenadas.add(566);
-		coordenadas.add(634);
-		coordenadas.add(567);
-		coordenadas.add(633);
-		coordenadas.add(567);
-		coordenadas.add(632);
-		coordenadas.add(568);
-		coordenadas.add(632);
-		coordenadas.add(568);
-		coordenadas.add(631);
-		coordenadas.add(568);
-		coordenadas.add(631);
-		coordenadas.add(569);
-		coordenadas.add(631);
-		coordenadas.add(569);
-		coordenadas.add(631);
-		coordenadas.add(569);
-		coordenadas.add(630);
-		coordenadas.add(569);
-		coordenadas.add(630);
-		coordenadas.add(569);
-		coordenadas.add(630);
-		coordenadas.add(569);
-		coordenadas.add(630);
-		coordenadas.add(569);
-		coordenadas.add(630);
-		coordenadas.add(569);
-		coordenadas.add(630);
-		coordenadas.add(570);
-		coordenadas.add(629);
-		coordenadas.add(570);
-		coordenadas.add(629);
-		coordenadas.add(569);
-		coordenadas.add(629);
-		coordenadas.add(569);
-		coordenadas.add(629);
-		coordenadas.add(567);
-		coordenadas.add(628);
-		coordenadas.add(564);
-		coordenadas.add(626);
-		coordenadas.add(561);
-		coordenadas.add(625);
-		coordenadas.add(559);
-		coordenadas.add(624);
-		coordenadas.add(557);
-		coordenadas.add(623);
-		coordenadas.add(555);
-		coordenadas.add(622);
-		coordenadas.add(553);
-		coordenadas.add(621);
-		coordenadas.add(551);
-		coordenadas.add(620);
-		coordenadas.add(550);
-		coordenadas.add(618);
-		coordenadas.add(548);
-		coordenadas.add(617);
-		coordenadas.add(546);
-		coordenadas.add(616);
-		coordenadas.add(544);
-		coordenadas.add(615);
-		coordenadas.add(542);
-		coordenadas.add(615);
-		coordenadas.add(541);
-		coordenadas.add(614);
-		coordenadas.add(539);
-		coordenadas.add(613);
-		coordenadas.add(538);
-		coordenadas.add(612);
-		coordenadas.add(536);
-		coordenadas.add(611);
-		coordenadas.add(534);
-		coordenadas.add(611);
-		coordenadas.add(532);
-		coordenadas.add(610);
-		coordenadas.add(531);
-		coordenadas.add(609);
-		coordenadas.add(529);
-		coordenadas.add(609);
-		coordenadas.add(528);
-		coordenadas.add(609);
-		coordenadas.add(527);
-		coordenadas.add(608);
-		coordenadas.add(525);
-		coordenadas.add(607);
-		coordenadas.add(523);
-		coordenadas.add(606);
-		coordenadas.add(521);
-		coordenadas.add(605);
-		coordenadas.add(518);
-		coordenadas.add(605);
-		coordenadas.add(515);
-		coordenadas.add(603);
-		coordenadas.add(512);
-		coordenadas.add(602);
-		coordenadas.add(509);
-		coordenadas.add(601);
-		coordenadas.add(507);
-		coordenadas.add(600);
-		coordenadas.add(504);
-		coordenadas.add(599);
-		coordenadas.add(502);
-		coordenadas.add(598);
-		coordenadas.add(500);
-		coordenadas.add(598);
-		coordenadas.add(498);
-		coordenadas.add(597);
-		coordenadas.add(496);
-		coordenadas.add(596);
-		coordenadas.add(495);
-		coordenadas.add(596);
-		coordenadas.add(492);
-		coordenadas.add(595);
-		coordenadas.add(490);
-		coordenadas.add(594);
-		coordenadas.add(488);
-		coordenadas.add(593);
-		coordenadas.add(486);
-		coordenadas.add(593);
-		coordenadas.add(484);
-		coordenadas.add(592);
-		coordenadas.add(482);
-		coordenadas.add(592);
-		coordenadas.add(480);
-		coordenadas.add(592);
-		coordenadas.add(478);
-		coordenadas.add(592);
-		coordenadas.add(477);
-		coordenadas.add(591);
-		coordenadas.add(475);
-		coordenadas.add(591);
-		coordenadas.add(473);
-		coordenadas.add(591);
-		coordenadas.add(472);
-		coordenadas.add(590);
-		coordenadas.add(471);
-		coordenadas.add(590);
-		coordenadas.add(469);
-		coordenadas.add(589);
-		coordenadas.add(468);
-		coordenadas.add(589);
-		coordenadas.add(467);
-		coordenadas.add(589);
-		coordenadas.add(465);
-		coordenadas.add(589);
-		coordenadas.add(465);
-		coordenadas.add(588);
-		coordenadas.add(465);
-		coordenadas.add(588);
-		coordenadas.add(465);
-		coordenadas.add(588);
-		coordenadas.add(465);
-		coordenadas.add(586);
-		coordenadas.add(465);
-		coordenadas.add(582);
-		coordenadas.add(465);
-		coordenadas.add(578);
-		coordenadas.add(465);
-		coordenadas.add(575);
-		coordenadas.add(466);
-		coordenadas.add(571);
-		coordenadas.add(466);
-		coordenadas.add(568);
-		coordenadas.add(467);
-		coordenadas.add(566);
-		coordenadas.add(467);
-		coordenadas.add(564);
-		coordenadas.add(467);
-		coordenadas.add(562);
-		coordenadas.add(467);
-		coordenadas.add(561);
-		coordenadas.add(467);
-		coordenadas.add(560);
-		coordenadas.add(467);
-		coordenadas.add(559);
-		coordenadas.add(467);
-		coordenadas.add(558);
-		coordenadas.add(467);
-		coordenadas.add(556);
-		coordenadas.add(467);
-		coordenadas.add(555);
-		coordenadas.add(468);
-		coordenadas.add(553);
-		coordenadas.add(468);
-		coordenadas.add(552);
-		coordenadas.add(468);
-		coordenadas.add(550);
-		coordenadas.add(468);
-		coordenadas.add(549);
-		coordenadas.add(468);
-		coordenadas.add(548);
-		coordenadas.add(468);
-		coordenadas.add(547);
-		coordenadas.add(468);
-		coordenadas.add(546);
-		coordenadas.add(469);
-		coordenadas.add(546);
-		coordenadas.add(469);
-		coordenadas.add(546);
-		coordenadas.add(469);
-		coordenadas.add(545);
-		coordenadas.add(469);
-		coordenadas.add(544);
-		coordenadas.add(469);
-		coordenadas.add(544);
-		coordenadas.add(469);
-		coordenadas.add(544);
-		coordenadas.add(469);
-		coordenadas.add(544);
-		coordenadas.add(469);
-		coordenadas.add(544);
-		coordenadas.add(470);
-		coordenadas.add(544);
-		coordenadas.add(470);
-		coordenadas.add(544);
-		coordenadas.add(471);
-		coordenadas.add(544);
-		coordenadas.add(472);
-		coordenadas.add(545);
-		coordenadas.add(474);
-		coordenadas.add(546);
-		coordenadas.add(477);
-		coordenadas.add(546);
-		coordenadas.add(480);
-		coordenadas.add(547);
-		coordenadas.add(482);
-		coordenadas.add(547);
-		coordenadas.add(485);
-		coordenadas.add(547);
-		coordenadas.add(487);
-		coordenadas.add(547);
-		coordenadas.add(488);
-		coordenadas.add(548);
-		coordenadas.add(489);
-		coordenadas.add(548);
-		coordenadas.add(490);
-		coordenadas.add(549);
-		coordenadas.add(491);
-		coordenadas.add(549);
-		coordenadas.add(493);
-		coordenadas.add(549);
-		coordenadas.add(494);
-		coordenadas.add(550);
-		coordenadas.add(496);
-		coordenadas.add(550);
-		coordenadas.add(498);
-		coordenadas.add(551);
-		coordenadas.add(500);
-		coordenadas.add(551);
-		coordenadas.add(502);
-		coordenadas.add(552);
-		coordenadas.add(503);
-		coordenadas.add(552);
-		coordenadas.add(504);
-		coordenadas.add(552);
-		coordenadas.add(505);
-		coordenadas.add(552);
-		coordenadas.add(506);
-		coordenadas.add(553);
-		coordenadas.add(507);
-		coordenadas.add(553);
-		coordenadas.add(507);
-		coordenadas.add(553);
-		coordenadas.add(508);
-		coordenadas.add(553);
-		coordenadas.add(509);
-		coordenadas.add(553);
-		coordenadas.add(511);
-		coordenadas.add(554);
-		coordenadas.add(512);
-		coordenadas.add(554);
-		coordenadas.add(514);
-		coordenadas.add(554);
-		coordenadas.add(515);
-		coordenadas.add(554);
-		coordenadas.add(516);
-		coordenadas.add(554);
-		coordenadas.add(517);
-		coordenadas.add(555);
-		coordenadas.add(518);
-		coordenadas.add(555);
-		coordenadas.add(519);
-		coordenadas.add(555);
-		coordenadas.add(520);
-		coordenadas.add(555);
-		coordenadas.add(522);
-		coordenadas.add(556);
-		coordenadas.add(523);
-		coordenadas.add(556);
-		coordenadas.add(524);
-		coordenadas.add(556);
-		coordenadas.add(525);
-		coordenadas.add(556);
-		coordenadas.add(525);
-		coordenadas.add(556);
-		coordenadas.add(526);
-		coordenadas.add(556);
-		coordenadas.add(527);
-		coordenadas.add(556);
-		coordenadas.add(528);
-		coordenadas.add(556);
-		coordenadas.add(528);
-		return coordenadas;
+
+646,
+524,
+646,
+524,
+647,
+525,
+649,
+527,
+651,
+529,
+652,
+531,
+653,
+532,
+654,
+533,
+654,
+534,
+655,
+534,
+655,
+535,
+656,
+535,
+656,
+536,
+657,
+537,
+657,
+538,
+658,
+538,
+659,
+539,
+659,
+540,
+660,
+541,
+660,
+542,
+661,
+543,
+662,
+544,
+662,
+545,
+662,
+545,
+662,
+545,
+662,
+546,
+663,
+546,
+663,
+546,
+663,
+546,
+663,
+546,
+663,
+546,
+663,
+547,
+664,
+547,
+664,
+548,
+664,
+548,
+665,
+548,
+665,
+549,
+665,
+549,
+665,
+549,
+665,
+549,
+666,
+549,
+666,
+550,
+666,
+550,
+666,
+550,
+665,
+550,
+665,
+550,
+664,
+550,
+664,
+550,
+663,
+550,
+663,
+550,
+661,
+551,
+660,
+551,
+659,
+552,
+658,
+553,
+657,
+553,
+656,
+554,
+655,
+555,
+653,
+556,
+651,
+556,
+649,
+557,
+647,
+559,
+645,
+560,
+643,
+561,
+642,
+562,
+640,
+563,
+639,
+564,
+638,
+564,
+637,
+565,
+636,
+566,
+634,
+567,
+633,
+567,
+632,
+568,
+632,
+568,
+631,
+568,
+631,
+569,
+631,
+569,
+631,
+569,
+630,
+569,
+630,
+569,
+630,
+569,
+630,
+569,
+630,
+569,
+630,
+570,
+629,
+570,
+629,
+569,
+629,
+569,
+629,
+567,
+628,
+564,
+626,
+561,
+625,
+559,
+624,
+557,
+623,
+555,
+622,
+553,
+621,
+551,
+620,
+550,
+618,
+548,
+617,
+546,
+616,
+544,
+615,
+542,
+615,
+541,
+614,
+539,
+613,
+538,
+612,
+536,
+611,
+534,
+611,
+532,
+610,
+531,
+609,
+529,
+609,
+528,
+609,
+527,
+608,
+525,
+607,
+523,
+606,
+521,
+605,
+518,
+605,
+515,
+603,
+512,
+602,
+509,
+601,
+507,
+600,
+504,
+599,
+502,
+598,
+500,
+598,
+498,
+597,
+496,
+596,
+495,
+596,
+492,
+595,
+490,
+594,
+488,
+593,
+486,
+593,
+484,
+592,
+482,
+592,
+480,
+592,
+478,
+592,
+477,
+591,
+475,
+591,
+473,
+591,
+472,
+590,
+471,
+590,
+469,
+589,
+468,
+589,
+467,
+589,
+465,
+589,
+465,
+588,
+465,
+588,
+465,
+588,
+465,
+586,
+465,
+582,
+465,
+578,
+465,
+575,
+466,
+571,
+466,
+568,
+467,
+566,
+467,
+564,
+467,
+562,
+467,
+561,
+467,
+560,
+467,
+559,
+467,
+558,
+467,
+556,
+467,
+555,
+468,
+553,
+468,
+552,
+468,
+550,
+468,
+549,
+468,
+548,
+468,
+547,
+468,
+546,
+469,
+546,
+469,
+546,
+469,
+545,
+469,
+544,
+469,
+544,
+469,
+544,
+469,
+544,
+469,
+544,
+470,
+544,
+470,
+544,
+471,
+544,
+472,
+545,
+474,
+546,
+477,
+546,
+480,
+547,
+482,
+547,
+485,
+547,
+487,
+547,
+488,
+548,
+489,
+548,
+490,
+549,
+491,
+549,
+493,
+549,
+494,
+550,
+496,
+550,
+498,
+551,
+500,
+551,
+502,
+552,
+503,
+552,
+504,
+552,
+505,
+552,
+506,
+553,
+507,
+553,
+507,
+553,
+508,
+553,
+509,
+553,
+511,
+554,
+512,
+554,
+514,
+554,
+515,
+554,
+516,
+554,
+517,
+555,
+518,
+555,
+519,
+555,
+520,
+555,
+522,
+556,
+523,
+556,
+524,
+556,
+525,
+556,
+525,
+556,
+526,
+556,
+527,
+556,
+528,
+556,
+528,
+return coordenadas;
 	}
 
 }

@@ -352,7 +352,7 @@ public class PantallaModificarFacultad {
 	private void logo() {
 		logo = new JLabel("Logo");
 		logo.setPreferredSize(new Dimension(148, 148));
-		CargaImagen.setImagen(logo, "src/main/resources/imagenes/logo.webp");
+		CargaImagen.setImagen(logo, RutasArchivos.LOGO);
 		Formato.formato(logo, 0, 40f);
 		logo.setOpaque(true);
 		updatePositionLogo();

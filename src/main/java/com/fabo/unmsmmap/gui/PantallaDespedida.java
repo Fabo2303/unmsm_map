@@ -9,20 +9,27 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
+
 public class PantallaDespedida extends JPanel{
 	private JFrame frame;
 	private BufferedImage image;
 
 	public PantallaDespedida() {
+        frame = new JFrame();
 		frame.setSize(240, 400);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setLayout(null);
-		setImage();
+		setImage(RutasArchivos.FONDO);
         frame.add(this);
 	}
+
+    public void initComponentes() {
+        
+    }
 
 	public void setImage(String path) {
         try {

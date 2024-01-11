@@ -1,6 +1,7 @@
 package com.fabo.unmsmmap.datosprecargados;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.swing.JLabel;
 
@@ -14,384 +15,180 @@ import com.fabo.unmsmmap.logica.grafo.Vertex;
 import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
 
-/*
- * Clase que almacena la información de los establecimientos de la universidad
- */
 public class InicializarGrafo {
-	private ArrayList<JLabel> labels = new ArrayList<>();;
-	private ArrayList<Vertex<Establecimiento>> vertices = new ArrayList<>();
-	private Graph<Establecimiento> grafo = new Graph<>();
-
 	public void inicializarEstablecimientos() {
-		// Para biblioteca
-		JLabel Jbiblioteca = new JLabel();
-		Jbiblioteca.setBounds(738, 156, 50, 50);
-		CargaImagen.setImagen(Jbiblioteca, "biblioteca.png", 0);
-
-		Vertex<Establecimiento> biblioteca = new Vertex<>(
-				new Biblioteca("Biblioteca central", "Biblioteca", CargaImagen.retornarImagen("biblioteca.png"),
-						CargaImagen.setGaleria("biblioteca_central\\\\biblioteca_", 3, ".jpg"), Jbiblioteca,
-						"947806777", "12:00 - 15:00"),
-				0);
-
-		labels.add(biblioteca.getDato().getLabel());
-
-		// Para ciencias fisicas
-		JLabel Jciencias_fisicas = new JLabel();
-		Jciencias_fisicas.setBounds(148, 443, 50, 50);
-		CargaImagen.setImagen(Jciencias_fisicas, "ciencias_fisicas.png", 0);
-
-		Vertex<Establecimiento> ciencias_fisicas = new Vertex<>(
-				new Facultad("Ciencias Fisicas", "Facultad", CargaImagen.retornarImagen("ciencias_fisicas.png"),
-						CargaImagen.setGaleria("ciencias_fisicas\\\\fisicas_", 2, ".jpg"), Jciencias_fisicas, "111",
-						"992829322", "ciencias.fisicas@unmsm.edu.pe"),
-				1);
-
-		labels.add(ciencias_fisicas.getDato().getLabel());
-
-		// Para ciencias biologicas
-		JLabel Jciencias_biologicas = new JLabel();
-		Jciencias_biologicas.setBounds(190, 385, 50, 50);
-		CargaImagen.setImagen(Jciencias_biologicas, "ciencias_biologicas.png", 0);
-
-		Vertex<Establecimiento> ciencias_biologicas = new Vertex<>(
-				new Facultad("Ciencias Biologicas", "Facultad", CargaImagen.retornarImagen("ciencias_biologicas.png"),
-						CargaImagen.setGaleria("biológicas\\\\biologicas_", 2, ".jpg"), Jciencias_biologicas, "222",
-						"998675667", "ciencias.biologicas@unmsm.edu.pe"),
-				2);
-
-		labels.add(ciencias_biologicas.getDato().getLabel());
-
-		// Para ciencias matematicas
-		JLabel Jciencias_matematicas = new JLabel();
-		Jciencias_matematicas.setBounds(103, 400, 50, 50);
-		CargaImagen.setImagen(Jciencias_matematicas, "ciencias_matematicas.png", 0);
-
-		Vertex<Establecimiento> ciencias_matematicas = new Vertex<>(
-				new Facultad("Ciencias Matematicas", "Facultad", CargaImagen.retornarImagen("ciencias_matematicas.png"),
-						CargaImagen.setGaleria("matemáticas\\\\matematicas_", 2, ".jpg"), Jciencias_matematicas, "333",
-						"986665776", "matematicas@unmsm.edu.pe"),
-				3);
-
-		labels.add(ciencias_matematicas.getDato().getLabel());
-
-		// para ciencias administrativas
-		JLabel Jciencias_administrativas = new JLabel();
-		Jciencias_administrativas.setBounds(468, 454, 50, 50);
-		CargaImagen.setImagen(Jciencias_administrativas, "ciencias_administrativas.png", 0);
+		Comedor comedor = new Comedor("COM1", "Comedor", "Comedor", "comedor.png",
+				new ArrayList<>(
+						Arrays.asList("comedor/comedor_1.webp", "comedor/comedor_2.webp", "comedor/comedor_3.webp")),
+				"12:00 - 18:00", "600");
+
+		Biblioteca biblioteca = new Biblioteca("BIB1", "Biblioteca central", "Biblioteca", "biblioteca.png",
+				new ArrayList<>(Arrays.asList("biblioteca_central/biblioteca_1.webp",
+						"biblioteca_central/biblioteca_2.webp", "biblioteca_central/biblioteca_3.webp")),
+				"947806777", "12:00 - 15:00");
+
+		Facultad ciencias_fisicas = new Facultad("FAC01", "Ciencias Fisicas", "Facultad", "ciencias_fisicas.png",
+				new ArrayList<>(Arrays.asList("ciencias_fisicas/fisicas_1.webp", "ciencias_fisicas/fisicas_2.webp")),
+				"001", "992829322", "ciencias.fisicas@unmsm.edu.pe");
+
+		Facultad ciencias_biologicas = new Facultad("FAC02", "Ciencias Biologicas", "Facultad",
+				"ciencias_biologicas.png",
+				new ArrayList<>(Arrays.asList("ciencias_biologicas/biologicas_1.webp",
+						"ciencias_biologicas/biologicas_2.webp")),
+				"002", "992829322", "ciencias.biologicas@unmsm.edu.pe");
+
+		Facultad ciencias_matematicas = new Facultad("FAC03", "Ciencias Matematicas", "Facultad",
+				"ciencias_matematicas.png",
+				new ArrayList<>(Arrays.asList("ciencias_matematicas/matematicas_1.webp",
+						"ciencias_matematicas/matematicas_2.webp")),
+				"003", "986665776", "ciencias.matematicas@unmsm.edu.pe");
+
+		Facultad ciencias_administrativas = new Facultad(
+				"FAC04", "Ciencias Administrativas", "Facultad", "ciencias_administrativas.png", new ArrayList<>(Arrays
+						.asList("administrativas/administrativas_1.webp", "administrativas/administrativas_2.webp")),
+				"004", "932456678", "administrativas@unmsm.edu.pe");
+
+		Facultad ciencias_contables = new Facultad("FAC05", "Ciencias Contables", "Facultad", "ciencias_contables.png",
+				new ArrayList<>(
+						Arrays.asList("ciencias_contables/contables_1.webp", "ciencias_contables/contables_2.webp")),
+				"005", "923122312", "contables@unmsm.edu.pe");
+
+		Facultad ciencias_economicas_nuevo = new Facultad("FAC06", "Ciencias Economicas Nuevo", "Facultad",
+				"ciencias_economicas_nuevo.png",
+				new ArrayList<>(Arrays.asList("ciencias_economicas_nuevo/economicas_nuevo_1.webp")), "006", "923213221",
+				"economicas.nuevo@unmsm.edu.pe");
+
+		Facultad ciencias_economicas_antiguo = new Facultad("FAC07", "Ciencias Economicas Antiguo", "Facultad",
+				"ciencias_economicas_antiguo.png",
+				new ArrayList<>(Arrays.asList("ciencias_economicas_antiguo/economicas_antiguo_1.webp",
+						"ciencias_economicas_antiguo/economicas_antiguo_2.webp")),
+				"008", "929319312", "economicas.antiguo@unmsm.edu.pe");
+
+		Facultad ciencias_sociales = new Facultad("FAC08", "Ciencias Sociales", "Facultad", "ciencias_sociales.png",
+				new ArrayList<>(Arrays.asList("ciencias_sociales/sociales_1.webp", "ciencias_sociales/sociales_2.webp",
+						"ciencias_sociales/sociales_3.webp")),
+				"009", "921334453", "sociales@unmsm.edu.pe");
+
+		Facultad derecho = new Facultad("FAC09", "Derecho", "Facultad", "derecho.png",
+				new ArrayList<>(Arrays.asList("derecho/derecho_1.webp")), "010", "924312312", "derecho@unmsm.edu.pe");
+
+		Facultad educacion = new Facultad("FAC10", "Educacion", "Facultad", "educacion.png",
+				new ArrayList<>(Arrays.asList("educacion/educacion_1.webp", "educacion/educacion_2.webp")),
+				"011", "912312323", "educacion@unmsm.edu.pe");
+
+		Facultad educacion_fisica = new Facultad("FAC11", "Educacion Fisica", "Facultad", "educacion_fisica.png",
+				new ArrayList<>(
+						Arrays.asList("educacion_fisica/edu_fisica_1.webp", "educacion_fisica/edu_fisica_2.webp")),
+				"012", "93213256", "educacion.fisica@unmsm.edu.pe");
+
+		Facultad quimica = new Facultad("FAC12", "Quimica", "Facultad", "quimica.png",
+				new ArrayList<>(Arrays.asList("quimica/quimica_1.webp", "quimica/quimica_2.webp")), "013", "932132123",
+				"quimica@unmsm.edu.pe");
+
+		Facultad sistemas = new Facultad(
+				"FAC13", "Sistemas", "Facultad", "sistemas.png",
+				new ArrayList<>(Arrays.asList("sistemas/sistemas_1.webp")), "014", "912731232",
+				"sistemas@unmsm.edu.pe");
+
+		Facultad geografica = new Facultad(
+				"FAC14", "Geografica", "Facultad", "geografica.png",
+				new ArrayList<>(Arrays.asList("geografica/geografica_1.webp", "geografica/geografica_2.webp")), "015",
+				"992837442", "geografica@unmsm.edu.pe");
+
+		// Pasa los datos de la facultad industrial
+		Facultad industrial = new Facultad(
+				"FAC15", "Industrial", "Facultad", "industrial.png",
+				new ArrayList<>(Arrays.asList("industrial/industrial_1.webp")),
+				"016", "912387223", "industrial@unmsm.edu.pe");
+
+		Facultad electronica_nuevo = new Facultad(
+				"FAC16", "Electronica", "Facultad", "electronica.png", new ArrayList<>(Arrays
+						.asList("electronica_nuevo/electronica_n1.webp", "electronica_nuevo/electronica_n2.webp")),
+				"017", "912312321", "electronica@unmsm.edu.pe");
+
+		Facultad geologica = new Facultad(
+				"FAC17", "Geologica", "Facultad", "geologica.png",
+				new ArrayList<>(Arrays.asList("geologica/geologica_1.webp", "geologica/geologica_2.webp",
+						"geologica/geologica_3.webp")),
+				"018", "912312323", "geologica@unmsm.edu.pe");
+
+		Facultad letras = new Facultad(
+				"FAC18", "Letras", "Facultad", "letras.png",
+				new ArrayList<>(Arrays.asList("letras/letras_1.webp", "letras/letras_2.webp")), "019", "912312323",
+				"letras@unmsm.edu.pe");
+
+		Facultad metalurgica = new Facultad("FAC19", "Metalurgica", "Facultad", "metalurgica.png",
+				new ArrayList<>(Arrays.asList("metalurgica/metalurgica_1.webp")), "020", "986823768",
+				"metalurgica@unmsm.edu.pe");
+
+		Facultad minas = new Facultad(
+				"FAC20", "Minas", "Facultad", "minas.png",
+				new ArrayList<>(Arrays.asList("minas/minas_1.webp", "minas/minas_2.webp")), "021", "736482232",
+				"minas@unmsm.edu.pe");
+
+		Facultad odontologia = new Facultad(
+				"FAC21", "Odontologia", "Facultad", "odontologia.png",
+				new ArrayList<>(Arrays.asList("odontologia/odontologia_1.webp", "odontologia/odontologia_2.webp")),
+				"022", "919231927", "odontologia@unmsm.edu.pe");
+
+		Facultad psicologia = new Facultad(
+				"FAC22", "Psicologia", "Facultad", "psicologia.png",
+				new ArrayList<>(Arrays.asList("psicologia/psicologia_1.webp", "psicologia/psicologia_2.webp")), "023",
+				"9391292959", "psicologia@unmsm.edu.pe");
+
+		Facultad electronica_antiguo = new Facultad(
+				"FAC23", "Electronica Antiguo", "Facultad", "electronica_antiguo.png",
+				new ArrayList<>(Arrays.asList("electronica_antiguo/electronica_a1.webp")), "024", "923991929",
+				"electronica@unmsm.edu.pe");
+
+		Facultad civil = new Facultad(
+				"FAC24", "Civil", "Facultad", "civil.png",
+				new ArrayList<>(Arrays.asList("civil/civil_1.webp", "civil/civil_2.web")), "024", "929393919",
+				"civil@unmsm.edu.pe");
+
+		Facultad mecanica_fluidos = new Facultad(
+				"FAC25", "Mecanica fluidos", "Facultad", "mecanica_fluidos.png",
+				new ArrayList<>(Arrays.asList("fluidos/fluidos_1.webp", "fluidos/fluidos_2.web")), "024", "982738231",
+				"mecanica.fluidos@unmsm.edu.pe");
+
+		ArrayList<Comedor> comedores = new ArrayList<Comedor>();
+		comedores.add(comedor);
+
+		ArrayList<Biblioteca> bibliotecas = new ArrayList<Biblioteca>();
+		bibliotecas.add(biblioteca);
+
+		ArrayList<Establecimiento> facultades = new ArrayList<Establecimiento>();
+
+		facultades.add(ciencias_fisicas);
+		facultades.add(ciencias_biologicas);
+		facultades.add(ciencias_matematicas);
+		facultades.add(ciencias_administrativas);
+		facultades.add(ciencias_contables);
+		facultades.add(ciencias_economicas_nuevo);
+		facultades.add(ciencias_economicas_antiguo);
+		facultades.add(ciencias_sociales);
+		facultades.add(derecho);
+		facultades.add(educacion);
+		facultades.add(educacion_fisica);
+		facultades.add(quimica);
+		facultades.add(sistemas);
+		facultades.add(geografica);
+		facultades.add(industrial);
+		facultades.add(electronica_nuevo);
+		facultades.add(geologica);
+		facultades.add(letras);
+		facultades.add(metalurgica);
+		facultades.add(minas);
+		facultades.add(odontologia);
+		facultades.add(psicologia);
+		facultades.add(electronica_antiguo);
+		facultades.add(civil);
+		facultades.add(mecanica_fluidos);
+
+		ArrayList<Edge<Establecimiento>> edges = new ArrayList<>();
+
+		edges.add(new Edge<Establecimiento>(psicologia, 212, AlmacenDeCaminos.minasPsicologia()));
 
-		Vertex<Establecimiento> ciencias_administrativas = new Vertex<>(new Facultad("Ciencias Administrativas",
-				"Facultad", CargaImagen.retornarImagen("ciencias_administrativas.png"),
-				CargaImagen.setGaleria("administrativas\\\\administrativas_", 2, ".jpg"), Jciencias_administrativas,
-				"444", "932456678", "administrativas@unmsm.edu.pe"), 4);
-
-		labels.add(ciencias_administrativas.getDato().getLabel());
-
-		// Para ciencias contables
-		JLabel Jciencias_contables = new JLabel();
-		Jciencias_contables.setBounds(466, 544, 50, 50);
-		CargaImagen.setImagen(Jciencias_contables, "ciencias_contables.png", 0);
-
-		Vertex<Establecimiento> ciencias_contables = new Vertex<>(
-				new Facultad("Ciencias Contables", "Facultad", CargaImagen.retornarImagen("ciencias_contables.png"),
-						CargaImagen.setGaleria("matemáticas\\\\matematicas_", 2, ".jpg"), Jciencias_contables, "555",
-						"923122312", "contables@unmsm.edu.pe"),
-				5);
-
-		labels.add(ciencias_contables.getDato().getLabel());
-
-		// Para ciencias economicas
-		JLabel Jciencias_economicas = new JLabel();
-		Jciencias_economicas.setBounds(1116, 140, 50, 50);
-		CargaImagen.setImagen(Jciencias_economicas, "ciencias_economicas.png", 0);
-
-		Vertex<Establecimiento> ciencias_economicas = new Vertex<>(
-				new Facultad("Ciencias Economicas", "Facultad", CargaImagen.retornarImagen("ciencias_economicas.png"),
-						CargaImagen.setGaleria("ciencias_economicas_nuevo\\\\economicas_n", 1, ".jpg"),
-						Jciencias_economicas, "666", "923213221", "economicas@unmsm.edu.pe"),
-				6);
-
-		labels.add(ciencias_economicas.getDato().getLabel());
-
-		// Para ciencias sociales
-		JLabel Jciencias_sociales = new JLabel();
-		Jciencias_sociales.setBounds(380, 461, 50, 50);
-		CargaImagen.setImagen(Jciencias_sociales, "ciencias_sociales.png", 0);
-
-		Vertex<Establecimiento> ciencias_sociales = new Vertex<>(
-				new Facultad("Ciencias Sociales", "Facultad", CargaImagen.retornarImagen("ciencias_sociales.png"),
-						CargaImagen.setGaleria("sociales\\\\sociales_", 2, ".jpg"), Jciencias_sociales, "777",
-						"921334453", "sociales@unmsm.edu.pe"),
-				7);
-
-		labels.add(ciencias_sociales.getDato().getLabel());
-
-		// Para el comedor
-		JLabel Jcomedor = new JLabel();
-		Jcomedor.setBounds(260, 328, 50, 50);
-		CargaImagen.setImagen(Jcomedor, "comedor.png", 0);
-
-		Vertex<Establecimiento> comedor = new Vertex<>(
-				new Comedor("Comedor", "Comedor", CargaImagen.retornarImagen("comedor.png"),
-						CargaImagen.setGaleria("comedor\\\\comedor_", 2, ".jpg"), Jcomedor, "6:00 - 18:00", "120"),
-				8);
-
-		labels.add(comedor.getDato().getLabel());
-
-		// Para derecho
-		JLabel Jderecho = new JLabel();
-		Jderecho.setBounds(330, 526, 50, 50);
-		CargaImagen.setImagen(Jderecho, "derecho.png", 0);
-
-		Vertex<Establecimiento> derecho = new Vertex<>(new Facultad("Derecho", "Facultad",
-				CargaImagen.retornarImagen("derecho.png"), CargaImagen.setGaleria("derecho\\\\derecho_", 1, ".jpg"),
-				Jderecho, "888", "924312312", "derecho@unmsm.edu.pe"), 9);
-
-		labels.add(derecho.getDato().getLabel());
-
-		// Para educacion
-
-		JLabel Jeducacion = new JLabel();
-		Jeducacion.setBounds(864, 188, 50, 50);
-		CargaImagen.setImagen(Jeducacion, "educacion.png", 0);
-
-		Vertex<Establecimiento> educacion = new Vertex<>(
-				new Facultad("Educacion", "Facultad", CargaImagen.retornarImagen("educacion.png"),
-						CargaImagen.setGaleria("educacion\\\\educacion_", 2, ".jpg"), Jeducacion, "999", "912312323",
-						"educacion@unmsm.edu.pe"),
-				10);
-
-		labels.add(educacion.getDato().getLabel());
-
-		// Para educacion fisica
-
-		JLabel Jeducacion_fisica = new JLabel();
-		Jeducacion_fisica.setBounds(925, 215, 50, 50);
-		CargaImagen.setImagen(Jeducacion_fisica, "educacion_fisica.png", 0);
-
-		Vertex<Establecimiento> educacion_fisica = new Vertex<>(
-				new Facultad("Educacion Fisica", "Facultad", CargaImagen.retornarImagen("educacion_fisica.png"),
-						CargaImagen.setGaleria("educacion_fisica\\\\edu_fisica_", 2, ".jpg"), Jeducacion_fisica, "1111",
-						"93213256", "educacion.fisica@unmsm.edu.pe"),
-				11);
-
-		labels.add(educacion_fisica.getDato().getLabel());
-
-		// Para quimica
-
-		JLabel Jquimica = new JLabel();
-		Jquimica.setBounds(146, 332, 50, 50);
-		CargaImagen.setImagen(Jquimica, "quimica.png", 0);
-
-		Vertex<Establecimiento> quimica = new Vertex<>(new Facultad("Quimica", "Facultad",
-				CargaImagen.retornarImagen("quimica.png"), CargaImagen.setGaleria("quimica\\\\quimica_", 2, ".jpg"),
-				Jquimica, "2222", "932132123", "@unmsm"), 12);
-
-		labels.add(quimica.getDato().getLabel());
-
-		// Para sistemas
-		JLabel Jsistemas = new JLabel();
-		Jsistemas.setBounds(1040, 172, 50, 50);
-		CargaImagen.setImagen(Jsistemas, "fisi.png", 0);
-
-		Vertex<Establecimiento> sistemas = new Vertex<>(new Facultad("Sistemas", "Facultad",
-				CargaImagen.retornarImagen("fisi.png"), CargaImagen.setGaleria("sistemas\\\\sistemas_", 1, ".jpg"),
-				Jsistemas, "3333", "912731232", "sistemas@unmsm.edu.pe"), 13);
-
-		labels.add(sistemas.getDato().getLabel());
-
-		// Para geografica
-		JLabel Jgeografica = new JLabel();
-		Jgeografica.setBounds(739, 92, 50, 50);
-		CargaImagen.setImagen(Jgeografica, "geografica.png", 0);
-
-		Vertex<Establecimiento> geografica = new Vertex<>(
-				new Facultad("Geografica", "Facultad", CargaImagen.retornarImagen("geografica.png"),
-						CargaImagen.setGaleria("geograficas\\\\geografica_", 2, ".jpg"), Jgeografica, "4444",
-						"992837442", "geografica@unmsm.edu.pe"),
-				14);
-
-		labels.add(geografica.getDato().getLabel());
-
-		// Para industrial
-		JLabel Jindustrial = new JLabel();
-		Jindustrial.setBounds(219, 513, 50, 50);
-		CargaImagen.setImagen(Jindustrial, "industrial.png", 0);
-
-		Vertex<Establecimiento> industrial = new Vertex<>(
-				new Facultad("Industrial", "Facultad", CargaImagen.retornarImagen("industrial.png"),
-						CargaImagen.setGaleria("industrial\\\\industrial_", 2, ".jpg"), Jindustrial, "5555",
-						"912387223", "industrial@unmsm.edu.pe"),
-				15);
-
-		labels.add(industrial.getDato().getLabel());
-
-		// Para electronica
-		JLabel Jelectronica = new JLabel();
-		Jelectronica.setBounds(776, 23, 50, 50);
-		CargaImagen.setImagen(Jelectronica, "electronica.png", 0);
-
-		Vertex<Establecimiento> electronica = new Vertex<>(
-				new Facultad("Electronica", "Facultad", CargaImagen.retornarImagen("electronica.png"),
-						CargaImagen.setGaleria("electronica_nuevo\\\\electronica_n", 2, ".jpg"), Jelectronica, "6666",
-						"912312321", "electronica@unmsm.edu.pe"),
-				16);
-
-		labels.add(electronica.getDato().getLabel());
-
-		// Para geologica
-		JLabel Jgeologica = new JLabel();
-		Jgeologica.setBounds(70, 180, 50, 50);
-		CargaImagen.setImagen(Jgeologica, "geologica.png", 0);
-
-		Vertex<Establecimiento> geologica = new Vertex<>(
-				new Facultad("Geologica", "Facultad", CargaImagen.retornarImagen("geologica.png"),
-						CargaImagen.setGaleria("geológica\\\\geologia_", 2, ".jpg"), Jgeologica, "7777", "989712323",
-						"geologica@unmsm.edu.pe"),
-				17);
-
-		labels.add(geologica.getDato().getLabel());
-
-		// Para letras
-		JLabel Jletras = new JLabel();
-		Jletras.setBounds(530, 469, 50, 50);
-		CargaImagen.setImagen(Jletras, "letras.png", 0);
-
-		Vertex<Establecimiento> letras = new Vertex<>(new Facultad("Letras", "Facultad",
-				CargaImagen.retornarImagen("letras.png"), CargaImagen.setGaleria("letras\\\\letras_", 2, ".jpg"),
-				Jletras, "8888", "989876754", "letras@unmsm.edu.pe"), 18);
-
-		labels.add(letras.getDato().getLabel());
-
-		// Para metalurgica
-
-		JLabel Jmetalurgica = new JLabel();
-		Jmetalurgica.setBounds(135, 255, 50, 50);
-		CargaImagen.setImagen(Jmetalurgica, "metalurgica.png", 0);
-
-		Vertex<Establecimiento> metalurgica = new Vertex<>(
-				new Facultad("Metalurgica", "Facultad", CargaImagen.retornarImagen("metalurgica.png"),
-						CargaImagen.setGaleria("metalúrgica\\\\metalurgica_", 1, ".jpg"), Jmetalurgica, "9999",
-						"986823768", "metalurgica@unmsm.edu.pe"),
-				19);
-
-		labels.add(metalurgica.getDato().getLabel());
-
-		// Para minas
-		JLabel Jminas = new JLabel();
-		Jminas.setBounds(1140, 35, 50, 50);
-		CargaImagen.setImagen(Jminas, "minas.png", 0);
-
-		Vertex<Establecimiento> minas = new Vertex<>(new Facultad("Minas", "Facultad",
-				CargaImagen.retornarImagen("minas.png"), CargaImagen.setGaleria("ingenireria_minas\\\\minas_", 2, ".jpg"),
-				Jminas, "11111", "736482232", "minas@unmsm.edu.pe"), 20);
-
-		labels.add(minas.getDato().getLabel());
-
-		// Para odontologia
-		JLabel Jodontologia = new JLabel();
-		Jodontologia.setBounds(949, 116, 50, 50);
-		CargaImagen.setImagen(Jodontologia, "odontologia.png", 0);
-
-		Vertex<Establecimiento> odontologia = new Vertex<>(
-				new Facultad("Odontologia", "Facultad", CargaImagen.retornarImagen("odontologia.png"),
-						CargaImagen.setGaleria("odontologia\\\\odontologia_", 2, ".jpg"), Jodontologia, "22222",
-						"919231927", "odontologia@unmsm.edu.pe"),
-				21);
-
-		labels.add(odontologia.getDato().getLabel());
-
-		// Para psicologia
-		JLabel Jpsicologia = new JLabel();
-		Jpsicologia.setBounds(1025, 53, 50, 50);
-		CargaImagen.setImagen(Jpsicologia, "psicologia.png", 0);
-
-		Vertex<Establecimiento> psicologia = new Vertex<>(
-				new Facultad("Psicologia", "Facultad", CargaImagen.retornarImagen("psicologia.png"),
-						CargaImagen.setGaleria("psicologia\\\\psicologia_", 2, ".jpg"), Jpsicologia, "33333",
-						"9391292959", "psicologia@unmsm.edu.pe"),
-				22);
-
-		labels.add(psicologia.getDato().getLabel());
-
-		// Para ciencias economicas Antiguo Pabellon
-		JLabel Jciencias_economicasA = new JLabel();
-		Jciencias_economicasA.setBounds(426, 496, 50, 50);
-		CargaImagen.setImagen(Jciencias_economicasA, "ciencias_economicas.png", 0);
-
-		Vertex<Establecimiento> ciencias_economicasA = new Vertex<>(
-				new Facultad("Ciencias Economicas A", "Facultad", CargaImagen.retornarImagen("ciencias_economicas.png"),
-						CargaImagen.setGaleria("ciencias_economicas_antiguo\\\\economicas_a", 2, ".jpg"),
-						Jciencias_economicasA, "44444", "929319312", "economicas@unmsm.edu.pe"),
-				23);
-
-		labels.add(ciencias_economicasA.getDato().getLabel());
-
-		// Para electronica2
-		JLabel Jelectronica2 = new JLabel();
-		Jelectronica2.setBounds(618, 470, 50, 50);
-		CargaImagen.setImagen(Jelectronica2, "electronica.png", 0);
-
-		Vertex<Establecimiento> electronica2 = new Vertex<>(new Facultad("Electronica", "Facultad",
-				CargaImagen.retornarImagen("electronica.png"), CargaImagen.setGaleria("comedor\\\\comedor_", 2, ".jpg"),
-				Jelectronica2, "55555", "923991929", "electronica@unmsm.edu.pe"), 24);
-
-		labels.add(electronica2.getDato().getLabel());
-
-		// Para civil
-		JLabel Jcivil = new JLabel();
-		Jcivil.setBounds(650, 13, 50, 50);
-		CargaImagen.setImagen(Jcivil, "civil.png", 0);
-
-		Vertex<Establecimiento> civil = new Vertex<>(new Facultad("Civil", "Facultad",
-				CargaImagen.retornarImagen("civil.png"), CargaImagen.setGaleria("civil\\\\civil_", 2, ".jpg"), Jcivil,
-				"66666", "929393919", "civil@unmsm.edu.pe"), 25);
-
-		labels.add(civil.getDato().getLabel());
-
-		// Para fluidos
-		JLabel Jmecanica_fluidos = new JLabel();
-		Jmecanica_fluidos.setBounds(574, 51, 50, 50);
-		CargaImagen.setImagen(Jmecanica_fluidos, "mecanica_fluidos.png", 0);
-
-		Vertex<Establecimiento> mecanica_fluidos = new Vertex<>(
-				new Facultad("Mecanica fluidos", "Facultad", CargaImagen.retornarImagen("mecanica_fluidos.png"),
-						CargaImagen.setGaleria("fluidos\\\\fluidos_", 2, ".jpg"), Jmecanica_fluidos, "77777",
-						"982738231", "mecanicaFluidos@unmsm.edu.pe"),
-				26);
-
-		labels.add(mecanica_fluidos.getDato().getLabel());
-
-		vertices.add(biblioteca);
-		vertices.add(ciencias_fisicas);
-		vertices.add(ciencias_biologicas);
-		vertices.add(ciencias_matematicas);
-		vertices.add(ciencias_administrativas);
-		vertices.add(ciencias_contables);
-		vertices.add(ciencias_economicas);
-		vertices.add(ciencias_sociales);
-		vertices.add(comedor);
-		vertices.add(derecho);
-		vertices.add(educacion);
-		vertices.add(educacion_fisica);
-		vertices.add(quimica);
-		vertices.add(sistemas);
-		vertices.add(geografica);
-		vertices.add(industrial);
-		vertices.add(electronica);
-		vertices.add(geologica);
-		vertices.add(letras);
-		vertices.add(metalurgica);
-		vertices.add(minas);
-		vertices.add(odontologia);
-		vertices.add(psicologia);
-		vertices.add(ciencias_economicasA);
-		vertices.add(electronica2);
-		vertices.add(civil);
-		vertices.add(mecanica_fluidos);
-
-		// Para minas
-		// Con psicologia
 		minas.addEdge(new Edge<Establecimiento>(psicologia, 212, AlmacenDeCaminos.minasPsicologia()));
 		// Con civil
 		minas.addEdge(new Edge<Establecimiento>(civil, 535, AlmacenDeCaminos.minasCivil()));
@@ -650,15 +447,5 @@ public class InicializarGrafo {
 		comedor.addEdge(new Edge<Establecimiento>(metalurgica, 374, AlmacenDeCaminos.metalurgicaComedor()));
 		// Con ciencias biologicas
 		comedor.addEdge(new Edge<Establecimiento>(ciencias_biologicas, 119, AlmacenDeCaminos.comedorBiologicas()));
-
-		grafo.setGraph(vertices);
-
-		ManejadorArchivos<Establecimiento> ma = new ManejadorArchivos<>();
-		ma.guardarDatosList(vertices, "grafo.dat");
-	}
-
-	public static void main(String[] args) {
-		InicializarGrafo gf = new InicializarGrafo();
-		gf.inicializarEstablecimientos();
 	}
 }

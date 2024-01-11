@@ -270,16 +270,13 @@ public class PantallaAgregarBiblioteca {
 	}
 
 	private void buttonGuardar() {
-		guardarButton = new CustomButton("REGRESAR");
+		guardarButton = new CustomButton("GUARDAR");
 		guardarButton.setPreferredSize(new Dimension(260, 42));
 		Formato.formato(guardarButton, 0, 25f, 10, 2);
 		guardarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				imagePanel.removeAll();
-				new PantallaAgregarEstablecimiento();
-				imagePanel.repaint();
-				imagePanel.revalidate();
+				
 			}
 		});
 		updatePositionButtonGuardar();
@@ -296,13 +293,16 @@ public class PantallaAgregarBiblioteca {
 	}
 
 	private void buttonRegresar() {
-		regresarButton = new CustomButton("GUARDAR");
+		regresarButton = new CustomButton("REGRESAR");
 		regresarButton.setPreferredSize(new Dimension(260, 42));
 		Formato.formato(regresarButton, 0, 25f, 10, 2);
 		regresarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
+				imagePanel.removeAll();
+				new PantallaAgregarEstablecimiento();
+				imagePanel.repaint();
+				imagePanel.revalidate();
 			}
 		});
 		updatePositionButtonRegresar();
@@ -321,7 +321,7 @@ public class PantallaAgregarBiblioteca {
 	private void logo() {
 		logo = new JLabel("Logo");
 		logo.setPreferredSize(new Dimension(148, 148));
-		CargaImagen.setImagen(logo, "src/main/resources/imagenes/logo.webp");
+		CargaImagen.setImagen(logo, RutasArchivos.LOGO);
 		Formato.formato(logo, 0, 40f);
 		logo.setOpaque(true);
 		updatePositionLogo();

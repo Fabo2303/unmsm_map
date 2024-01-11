@@ -2,39 +2,17 @@ package com.fabo.unmsmmap.logica.entidades;
 
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import lombok.Getter;
+import lombok.Setter;
 
-/*
- * Clase que representa una biblioteca de la universidad
- */
+@Getter
+@Setter
 public class Biblioteca extends Establecimiento {
-	// Atributos
-	String telefono;
-	String horarioAtencion;
+	String telefono, horarioAtencion;
 
-	// Constructor
-	public Biblioteca(String nombre, String descripcion, ImageIcon logo, ArrayList<ImageIcon> ims, JLabel nodo,
-			String telefono, String horAtencion) {
-		super(nombre, descripcion, logo, ims, nodo);
+	public Biblioteca(String alias, String nombre, String descripcion, String logo, ArrayList<String> imagenes,String telefono, String horarioAtencion) {
+		super(alias, nombre, descripcion, logo, imagenes);
 		this.telefono = telefono;
-		horarioAtencion = horAtencion;
-	}
-
-	// Métodos set y get
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getHorarioAtencion() {
-		return horarioAtencion;
-	}
-
-	public void setHorarioAtencion(String horAtencion) {
-		this.horarioAtencion = horAtencion;
+		this.horarioAtencion = horarioAtencion;
 	}
 }

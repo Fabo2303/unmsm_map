@@ -13,6 +13,7 @@ import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class PantallaAgregarEstablecimiento {
 
@@ -182,7 +183,7 @@ public class PantallaAgregarEstablecimiento {
 	private void logo() {
 		logo = new JLabel("Logo");
 		logo.setPreferredSize(new Dimension(148, 148));
-		CargaImagen.setImagen(logo, "src/main/resources/imagenes/logo.webp");
+		CargaImagen.setImagen(logo, RutasArchivos.LOGO);
 		Formato.formato(logo, 0, 40f);
 		logo.setOpaque(true);
 		updatePositionLogo();
