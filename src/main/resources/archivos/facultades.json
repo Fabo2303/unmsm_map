@@ -1,0 +1,323 @@
+[
+    {
+        "codigo": "001",
+        "telefonoContacto": "992829322",
+        "correoContacto": "ciencias.fisicas@unmsm.edu.pe",
+        "alias": "FAC01",
+        "nombre": "Ciencias Fisicas",
+        "descripcion": "Facultad",
+        "logo": "ciencias_fisicas.png",
+        "imagenes": [
+            "ciencias_fisicas/fisicas_1.webp",
+            "ciencias_fisicas/fisicas_2.webp"
+        ]
+    },
+    {
+        "codigo": "002",
+        "telefonoContacto": "992829322",
+        "correoContacto": "ciencias.biologicas@unmsm.edu.pe",
+        "alias": "FAC02",
+        "nombre": "Ciencias Biologicas",
+        "descripcion": "Facultad",
+        "logo": "ciencias_biologicas.png",
+        "imagenes": [
+            "ciencias_biologicas/biologicas_1.webp",
+            "ciencias_biologicas/biologicas_2.webp"
+        ]
+    },
+    {
+        "codigo": "003",
+        "telefonoContacto": "986665776",
+        "correoContacto": "ciencias.matematicas@unmsm.edu.pe",
+        "alias": "FAC03",
+        "nombre": "Ciencias Matematicas",
+        "descripcion": "Facultad",
+        "logo": "ciencias_matematicas.png",
+        "imagenes": [
+            "ciencias_matematicas/matematicas_1.webp",
+            "ciencias_matematicas/matematicas_2.webp"
+        ]
+    },
+    {
+        "codigo": "004",
+        "telefonoContacto": "932456678",
+        "correoContacto": "administrativas@unmsm.edu.pe",
+        "alias": "FAC04",
+        "nombre": "Ciencias Administrativas",
+        "descripcion": "Facultad",
+        "logo": "ciencias_administrativas.png",
+        "imagenes": [
+            "administrativas/administrativas_1.webp",
+            "administrativas/administrativas_2.webp"
+        ]
+    },
+    {
+        "codigo": "005",
+        "telefonoContacto": "923122312",
+        "correoContacto": "contables@unmsm.edu.pe",
+        "alias": "FAC05",
+        "nombre": "Ciencias Contables",
+        "descripcion": "Facultad",
+        "logo": "ciencias_contables.png",
+        "imagenes": [
+            "ciencias_contables/contables_1.webp",
+            "ciencias_contables/contables_2.webp"
+        ]
+    },
+    {
+        "codigo": "006",
+        "telefonoContacto": "923213221",
+        "correoContacto": "economicas.nuevo@unmsm.edu.pe",
+        "alias": "FAC06",
+        "nombre": "Ciencias Economicas Nuevo",
+        "descripcion": "Facultad",
+        "logo": "ciencias_economicas_nuevo.png",
+        "imagenes": [
+            "ciencias_economicas_nuevo/economicas_nuevo_1.webp"
+        ]
+    },
+    {
+        "codigo": "008",
+        "telefonoContacto": "929319312",
+        "correoContacto": "economicas.antiguo@unmsm.edu.pe",
+        "alias": "FAC07",
+        "nombre": "Ciencias Economicas Antiguo",
+        "descripcion": "Facultad",
+        "logo": "ciencias_economicas_antiguo.png",
+        "imagenes": [
+            "ciencias_economicas_antiguo/economicas_antiguo_1.webp",
+            "ciencias_economicas_antiguo/economicas_antiguo_2.webp"
+        ]
+    },
+    {
+        "codigo": "009",
+        "telefonoContacto": "921334453",
+        "correoContacto": "sociales@unmsm.edu.pe",
+        "alias": "FAC08",
+        "nombre": "Ciencias Sociales",
+        "descripcion": "Facultad",
+        "logo": "ciencias_sociales.png",
+        "imagenes": [
+            "ciencias_sociales/sociales_1.webp",
+            "ciencias_sociales/sociales_2.webp",
+            "ciencias_sociales/sociales_3.webp"
+        ]
+    },
+    {
+        "codigo": "010",
+        "telefonoContacto": "924312312",
+        "correoContacto": "derecho@unmsm.edu.pe",
+        "alias": "FAC09",
+        "nombre": "Derecho",
+        "descripcion": "Facultad",
+        "logo": "derecho.png",
+        "imagenes": [
+            "derecho/derecho_1.webp"
+        ]
+    },
+    {
+        "codigo": "011",
+        "telefonoContacto": "912312323",
+        "correoContacto": "educacion@unmsm.edu.pe",
+        "alias": "FAC10",
+        "nombre": "Educacion",
+        "descripcion": "Facultad",
+        "logo": "educacion.png",
+        "imagenes": [
+            "educacion/educacion_1.webp",
+            "educacion/educacion_2.webp"
+        ]
+    },
+    {
+        "codigo": "012",
+        "telefonoContacto": "93213256",
+        "correoContacto": "educacion.fisica@unmsm.edu.pe",
+        "alias": "FAC11",
+        "nombre": "Educacion Fisica",
+        "descripcion": "Facultad",
+        "logo": "educacion_fisica.png",
+        "imagenes": [
+            "educacion_fisica/edu_fisica_1.webp",
+            "educacion_fisica/edu_fisica_2.webp"
+        ]
+    },
+    {
+        "codigo": "013",
+        "telefonoContacto": "932132123",
+        "correoContacto": "quimica@unmsm.edu.pe",
+        "alias": "FAC12",
+        "nombre": "Quimica",
+        "descripcion": "Facultad",
+        "logo": "quimica.png",
+        "imagenes": [
+            "quimica/quimica_1.webp",
+            "quimica/quimica_2.webp"
+        ]
+    },
+    {
+        "codigo": "014",
+        "telefonoContacto": "912731232",
+        "correoContacto": "sistemas@unmsm.edu.pe",
+        "alias": "FAC13",
+        "nombre": "Sistemas",
+        "descripcion": "Facultad",
+        "logo": "sistemas.png",
+        "imagenes": [
+            "sistemas/sistemas_1.webp"
+        ]
+    },
+    {
+        "codigo": "015",
+        "telefonoContacto": "992837442",
+        "correoContacto": "geografica@unmsm.edu.pe",
+        "alias": "FAC14",
+        "nombre": "Geografica",
+        "descripcion": "Facultad",
+        "logo": "geografica.png",
+        "imagenes": [
+            "geografica/geografica_1.webp",
+            "geografica/geografica_2.webp"
+        ]
+    },
+    {
+        "codigo": "016",
+        "telefonoContacto": "912387223",
+        "correoContacto": "industrial@unmsm.edu.pe",
+        "alias": "FAC15",
+        "nombre": "Industrial",
+        "descripcion": "Facultad",
+        "logo": "industrial.png",
+        "imagenes": [
+            "industrial/industrial_1.webp"
+        ]
+    },
+    {
+        "codigo": "017",
+        "telefonoContacto": "912312321",
+        "correoContacto": "electronica@unmsm.edu.pe",
+        "alias": "FAC16",
+        "nombre": "Electronica",
+        "descripcion": "Facultad",
+        "logo": "electronica.png",
+        "imagenes": [
+            "electronica_nuevo/electronica_n1.webp",
+            "electronica_nuevo/electronica_n2.webp"
+        ]
+    },
+    {
+        "codigo": "018",
+        "telefonoContacto": "912312323",
+        "correoContacto": "geologica@unmsm.edu.pe",
+        "alias": "FAC17",
+        "nombre": "Geologica",
+        "descripcion": "Facultad",
+        "logo": "geologica.png",
+        "imagenes": [
+            "geologica/geologica_1.webp",
+            "geologica/geologica_2.webp",
+            "geologica/geologica_3.webp"
+        ]
+    },
+    {
+        "codigo": "019",
+        "telefonoContacto": "912312323",
+        "correoContacto": "letras@unmsm.edu.pe",
+        "alias": "FAC18",
+        "nombre": "Letras",
+        "descripcion": "Facultad",
+        "logo": "letras.png",
+        "imagenes": [
+            "letras/letras_1.webp",
+            "letras/letras_2.webp"
+        ]
+    },
+    {
+        "codigo": "020",
+        "telefonoContacto": "986823768",
+        "correoContacto": "metalurgica@unmsm.edu.pe",
+        "alias": "FAC19",
+        "nombre": "Metalurgica",
+        "descripcion": "Facultad",
+        "logo": "metalurgica.png",
+        "imagenes": [
+            "metalurgica/metalurgica_1.webp"
+        ]
+    },
+    {
+        "codigo": "021",
+        "telefonoContacto": "736482232",
+        "correoContacto": "minas@unmsm.edu.pe",
+        "alias": "FAC20",
+        "nombre": "Minas",
+        "descripcion": "Facultad",
+        "logo": "minas.png",
+        "imagenes": [
+            "minas/minas_1.webp",
+            "minas/minas_2.webp"
+        ]
+    },
+    {
+        "codigo": "022",
+        "telefonoContacto": "919231927",
+        "correoContacto": "odontologia@unmsm.edu.pe",
+        "alias": "FAC21",
+        "nombre": "Odontologia",
+        "descripcion": "Facultad",
+        "logo": "odontologia.png",
+        "imagenes": [
+            "odontologia/odontologia_1.webp",
+            "odontologia/odontologia_2.webp"
+        ]
+    },
+    {
+        "codigo": "023",
+        "telefonoContacto": "9391292959",
+        "correoContacto": "psicologia@unmsm.edu.pe",
+        "alias": "FAC22",
+        "nombre": "Psicologia",
+        "descripcion": "Facultad",
+        "logo": "psicologia.png",
+        "imagenes": [
+            "psicologia/psicologia_1.webp",
+            "psicologia/psicologia_2.webp"
+        ]
+    },
+    {
+        "codigo": "024",
+        "telefonoContacto": "923991929",
+        "correoContacto": "electronica@unmsm.edu.pe",
+        "alias": "FAC23",
+        "nombre": "Electronica Antiguo",
+        "descripcion": "Facultad",
+        "logo": "electronica_antiguo.png",
+        "imagenes": [
+            "electronica_antiguo/electronica_a1.webp"
+        ]
+    },
+    {
+        "codigo": "024",
+        "telefonoContacto": "929393919",
+        "correoContacto": "civil@unmsm.edu.pe",
+        "alias": "FAC24",
+        "nombre": "Civil",
+        "descripcion": "Facultad",
+        "logo": "civil.png",
+        "imagenes": [
+            "civil/civil_1.webp",
+            "civil/civil_2.web"
+        ]
+    },
+    {
+        "codigo": "024",
+        "telefonoContacto": "982738231",
+        "correoContacto": "mecanica.fluidos@unmsm.edu.pe",
+        "alias": "FAC25",
+        "nombre": "Mecanica fluidos",
+        "descripcion": "Facultad",
+        "logo": "mecanica_fluidos.png",
+        "imagenes": [
+            "fluidos/fluidos_1.webp",
+            "fluidos/fluidos_2.web"
+        ]
+    }
+]

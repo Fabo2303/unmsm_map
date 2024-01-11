@@ -3,21 +3,27 @@ package com.fabo.unmsmmap.utilidades;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
+import com.fabo.unmsmmap.datosprecargados.InicializarGrafo;
 import com.fabo.unmsmmap.logica.grafo.Vertex;
+import com.google.gson.Gson;
 
-public class ManejadorArchivos<T> {
+public class ManejadorArchivos {
 
 	private boolean identificarSistema() {
 		String sSistemaOperativo = System.getProperty("os.name");
 		return sSistemaOperativo.equals("Windows 10");
 	}
 
-	public void guardarDatosList(ArrayList<Vertex<T>> generico, String fileName) {
+	public <T> void guardarDatosList(ArrayList<Vertex<T>> generico, String fileName) {
 		String dir = System.getProperty("user.dir").replace("\\", "\\\\") + "\\\\Archivos\\\\";
 		if (identificarSistema())
 			dir = dir.replace("\\\\", "////");
@@ -31,7 +37,7 @@ public class ManejadorArchivos<T> {
 	}
 
 	// Cargar los JLabels desde un archivo
-	public ArrayList<Vertex<T>> cargarDatosList(String fileName) {
+	public <T> ArrayList<Vertex<T>> cargarDatosList(String fileName) {
 		String dir = System.getProperty("user.dir").replace("\\", "\\\\") + "\\\\Archivos\\\\";
 		if (identificarSistema())
 			dir = dir.replace("\\\\", "////");
@@ -52,5 +58,30 @@ public class ManejadorArchivos<T> {
 			System.out.println("Ocurrió un error desconocido: " + e.getMessage());
 		}
 		return generico;
+	}
+
+	public static <T> void saveObjectToJson(ArrayList<T> objects, String nameFile){
+		Gson gson = new Gson();
+        try (FileWriter writer = new FileWriter(nameFile)) {
+            gson.toJson(objects, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+
+	public static void verificarArchivos(){
+		if(!isExists(RutasArchivos.BIBLIOTECAS_FILE))
+			InicializarGrafo.inicializarBibliotecas();
+		if(!isExists(RutasArchivos.COMEDORES_FILE))
+			InicializarGrafo.inicializarComedores();
+		if(!isExists(RutasArchivos.FACULTADES_FILE))
+			InicializarGrafo.inicializarFacultades();
+		if(!isExists(RutasArchivos.EDGES_FILE))
+			InicializarGrafo.inicializarAristas();
+	}
+
+	public static boolean isExists(String rutaArchivo){
+		Path path = FileSystems.getDefault().getPath(rutaArchivo);
+        return Files.exists(path) && !Files.isDirectory(path);
 	}
 }

@@ -35,7 +35,7 @@ public class LoginAdministrador {
 	}
 
 	private void iniciarUsuarios() {
-		try (FileReader fileReader = new FileReader(RutasArchivos.USUARIOS)) {
+		try (FileReader fileReader = new FileReader(RutasArchivos.USUARIOS_FILE)) {
 			Gson gson = new GsonBuilder().create();
 			usuarios = gson.fromJson(fileReader, Usuario[].class);
 		} catch (IOException e) {

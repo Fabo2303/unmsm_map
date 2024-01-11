@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Edge<T> implements Serializable {
+public class Edge implements Serializable {
 	// Atributos
 	private String origen, destino, camino;
 	private float distance;

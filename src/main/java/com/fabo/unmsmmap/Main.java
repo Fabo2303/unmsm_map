@@ -4,12 +4,12 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import com.fabo.unmsmmap.gui.PantallaInicial;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
 import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class Main {
@@ -43,5 +43,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		initApp();
+		ManejadorArchivos.verificarArchivos();
 	}
 }
