@@ -1,8 +1,6 @@
 package com.fabo.unmsmmap.gui.eliminar;
 
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
@@ -12,12 +10,12 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SpringLayout;
 
-import com.fabo.unmsmmap.logica.entidades.Establecimiento;
 import com.fabo.unmsmmap.logica.entidades.Biblioteca;
 import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
 import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class PantallaEliminarBiblioteca {
@@ -27,13 +25,19 @@ public class PantallaEliminarBiblioteca {
 	private JLabel tituloLabel, logo;
 	private CustomButton regresarButton, eliminarButton;
 	private JComboBox<String> bibliotecasBox;
+	private ArrayList<Biblioteca> listaBibliotecas;
 
 	public PantallaEliminarBiblioteca() {
 		imagePanel = ImagePanel.getInstance();
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
+		initBibliotecas();
 		initComponentes();
 		addResizeListener();
+	}
+
+	private void initBibliotecas() {
+		listaBibliotecas = ManejadorArchivos.getObjectFromJson(RutasArchivos.BIBLIOTECAS_FILE, Biblioteca.class);
 	}
 
 	private void initComponentes() {
@@ -85,9 +89,9 @@ public class PantallaEliminarBiblioteca {
 				230, SpringLayout.NORTH, imagePanel);
 	}
 
-	private String[] getBibliotecas(ArrayList<Establecimiento> establecimientos) {
-		ArrayList<String> bibliotecas = new ArrayList<>();
-		for (Object objeto : establecimientos) {
+	private String[] getBibliotecas() {
+		ArrayList<String> bibliotecas = new ArrayList<String>();
+		for (Object objeto : listaBibliotecas) {
 			if (objeto instanceof Biblioteca) {
 				Biblioteca biblioteca = (Biblioteca) objeto;
 				bibliotecas.add(biblioteca.getNombre());
@@ -97,15 +101,9 @@ public class PantallaEliminarBiblioteca {
 	}
 
 	private void boxBibliotecas() {
-		bibliotecasBox = new JComboBox<>();
+		bibliotecasBox = new JComboBox<>(getBibliotecas());
 		bibliotecasBox.setPreferredSize(new Dimension(300, 40));
 		Formato.formato(bibliotecasBox, 1, 26f);
-		bibliotecasBox.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String nombreBiblioteca = (String) bibliotecasBox.getSelectedItem();
-			}
-		});
 		updatePositionBoxBibliotecas();
 		imagePanel.add(bibliotecasBox);
 	}
@@ -125,7 +123,13 @@ public class PantallaEliminarBiblioteca {
 		eliminarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// new PantallaAgregarEs
+				listaBibliotecas.remove(bibliotecasBox.getSelectedIndex());
+				ManejadorArchivos.saveObjectToJson(listaBibliotecas, RutasArchivos.BIBLIOTECAS_FILE);
+				imagePanel.removeAll();
+				new PantallaEliminarBiblioteca();
+				imagePanel.repaint();
+				imagePanel.revalidate();
+				System.out.println("Se ha eliminado el biblioteca");
 			}
 		});
 		updatePositionButtonEliminar();

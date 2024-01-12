@@ -1,8 +1,6 @@
 package com.fabo.unmsmmap.gui.eliminar;
 
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
@@ -12,12 +10,12 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SpringLayout;
 
-import com.fabo.unmsmmap.logica.entidades.Establecimiento;
 import com.fabo.unmsmmap.logica.entidades.Comedor;
 import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
 import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class PantallaEliminarComedor {
@@ -27,11 +25,13 @@ public class PantallaEliminarComedor {
 	private JLabel tituloLabel, logo;
 	private CustomButton regresarButton, eliminarButton;
 	private JComboBox<String> comedoresBox;
+	private ArrayList<Comedor> listaComedores;
 
 	public PantallaEliminarComedor() {
 		imagePanel = ImagePanel.getInstance();
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
+		initComedores();
 		initComponentes();
 		addResizeListener();
 	}
@@ -51,6 +51,10 @@ public class PantallaEliminarComedor {
 		updatePositionButtonEliminar();
 		updatePositionBoxComedores();
 		updatePositionButtonRegresar();
+	}
+
+	public void initComedores(){
+		listaComedores = ManejadorArchivos.getObjectFromJson(RutasArchivos.COMEDORES_FILE, Comedor.class);
 	}
 
 	private void labelTitulo() {
@@ -85,9 +89,9 @@ public class PantallaEliminarComedor {
 				230, SpringLayout.NORTH, imagePanel);
 	}
 
-	private String[] getComedores(ArrayList<Establecimiento> establecimientos) {
-		ArrayList<String> comedores = new ArrayList<>();
-		for (Object objeto : establecimientos) {
+	private String[] getComedores() {
+		ArrayList<String> comedores = new ArrayList<String>();
+		for (Object objeto : listaComedores) {
 			if (objeto instanceof Comedor) {
 				Comedor comedor = (Comedor) objeto;
 				comedores.add(comedor.getNombre());
@@ -97,15 +101,9 @@ public class PantallaEliminarComedor {
 	}
 
 	private void boxComedores() {
-		comedoresBox = new JComboBox<>();
+		comedoresBox = new JComboBox<>(getComedores());
 		comedoresBox.setPreferredSize(new Dimension(300, 40));
 		Formato.formato(comedoresBox, 1, 26f);
-		comedoresBox.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String nombreComedor = (String) comedoresBox.getSelectedItem();
-			}
-		});
 		updatePositionBoxComedores();
 		imagePanel.add(comedoresBox);
 	}
@@ -125,7 +123,13 @@ public class PantallaEliminarComedor {
 		eliminarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// new PantallaAgregarEs
+				listaComedores.remove(comedoresBox.getSelectedIndex());
+				ManejadorArchivos.saveObjectToJson(listaComedores, RutasArchivos.COMEDORES_FILE);
+				imagePanel.removeAll();
+				new PantallaEliminarComedor();
+				imagePanel.repaint();
+				imagePanel.revalidate();
+				System.out.println("Se ha eliminado el comedor");
 			}
 		});
 		updatePositionButtonEliminar();

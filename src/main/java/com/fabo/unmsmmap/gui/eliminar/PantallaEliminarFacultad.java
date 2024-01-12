@@ -1,8 +1,6 @@
 package com.fabo.unmsmmap.gui.eliminar;
 
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
@@ -12,12 +10,12 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SpringLayout;
 
-import com.fabo.unmsmmap.logica.entidades.Establecimiento;
 import com.fabo.unmsmmap.logica.entidades.Facultad;
 import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
 import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
 import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class PantallaEliminarFacultad {
@@ -27,13 +25,19 @@ public class PantallaEliminarFacultad {
 	private JLabel tituloLabel, logo;
 	private CustomButton regresarButton, eliminarButton;
 	private JComboBox<String> facultadesBox;
+	private ArrayList<Facultad> listaFacultades;
 
 	public PantallaEliminarFacultad() {
 		imagePanel = ImagePanel.getInstance();
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
+		initFacultades();
 		initComponentes();
 		addResizeListener();
+	}
+
+	public void initFacultades() {
+		listaFacultades = ManejadorArchivos.getObjectFromJson(RutasArchivos.FACULTADES_FILE, Facultad.class);
 	}
 
 	private void initComponentes() {
@@ -85,9 +89,9 @@ public class PantallaEliminarFacultad {
 				230, SpringLayout.NORTH, imagePanel);
 	}
 
-	private String[] getFacultades(ArrayList<Establecimiento> establecimientos) {
-		ArrayList<String> facultades = new ArrayList<>();
-		for (Object objeto : establecimientos) {
+	private String[] getFacultades() {
+		ArrayList<String> facultades = new ArrayList<String>();
+		for (Object objeto : listaFacultades) {
 			if (objeto instanceof Facultad) {
 				Facultad facultad = (Facultad) objeto;
 				facultades.add(facultad.getNombre());
@@ -97,15 +101,9 @@ public class PantallaEliminarFacultad {
 	}
 
 	private void boxFacultades() {
-		facultadesBox = new JComboBox<>();
+		facultadesBox = new JComboBox<>(getFacultades());
 		facultadesBox.setPreferredSize(new Dimension(300, 40));
 		Formato.formato(facultadesBox, 1, 26f);
-		facultadesBox.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String nombreFacultad = (String) facultadesBox.getSelectedItem();
-			}
-		});
 		updatePositionBoxFacultades();
 		imagePanel.add(facultadesBox);
 	}
@@ -125,7 +123,13 @@ public class PantallaEliminarFacultad {
 		eliminarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// new PantallaAgregarEs
+				listaFacultades.remove(facultadesBox.getSelectedIndex());
+				ManejadorArchivos.saveObjectToJson(listaFacultades, RutasArchivos.FACULTADES_FILE);
+				imagePanel.removeAll();
+				new PantallaEliminarFacultad();
+				imagePanel.repaint();
+				imagePanel.revalidate();
+				System.out.println("Se ha eliminado el facultad");
 			}
 		});
 		updatePositionButtonEliminar();

@@ -12,16 +12,16 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Vertex<T> implements Serializable {
 	private T dato;
-	private ArrayList<Edge<T>> edges;
+	private ArrayList<Edge> edges;
 
-	public boolean addEdge(Edge<T> edge) {
+	public boolean addEdge(Edge edge) {
 		if (edge == null)
 			return false;
 		edges.add(edge);
 		return true;
 	}
 
-	public ArrayList<Edge<T>> getEdges() {
+	public ArrayList<Edge> getEdges() {
 		if (edges.isEmpty())
 			throw new RuntimeException("No hay caminos");
 		return edges;
