@@ -2,27 +2,84 @@ package com.fabo.unmsmmap.gui.modificar;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
+import com.fabo.unmsmmap.logica.entidades.Comedor;
 import com.fabo.unmsmmap.utilidades.*;
 
 public class PantallaModificarComedor {
 	private ImagePanel imagePanel;
 	private SpringLayout springLayout;
-	private JLabel tituloLabel, logo;
-	private CustomButton regresarButton;
-	private JLabel nombreLabel, capacidadLabel, atencionLabel, descripcionLabel, insertLogoLabel,
+	private JLabel tituloLabel, logo, nombreLabel, capacidadLabel, atencionLabel, descripcionLabel, insertLogoLabel,
 			insertImgLabel;
-	private CustomButton adjuntarLogoButton, adjuntarImagenesButton, guardarButton;
+	private CustomButton adjuntarLogoButton, adjuntarImagenesButton, guardarButton, regresarButton;
 	private JTextField nombreTextField, capacidadTextField, atencionTextField;
 	private JTextArea descripcionTextArea;
+	private Comedor comedor;
+	private String iconLogo;
+	private ArrayList<String> iconGallery;
+	private JComboBox<String> comedoresBox;
+	private ArrayList<Comedor> listaComedores;
 
 	public PantallaModificarComedor() {
 		imagePanel = ImagePanel.getInstance();
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
+		initComedores();
+		comedor = listaComedores.get(0);
 		initComponentes();
+		updateComponentData();
 		addResizeListener();
+	}
+
+	public void updateComponentData() {
+		capacidadTextField.setText(comedor.getCapacidad());
+		nombreTextField.setText(comedor.getNombre());
+		atencionTextField.setText(comedor.getHorarioAtencion());
+		descripcionTextArea.setText(comedor.getDescripcion());
+		iconLogo = comedor.getLogo();
+		iconGallery = comedor.getImagenes();
+	}
+
+	public void initComedores() {
+		listaComedores = ManejadorArchivos.getObjectFromJson(RutasArchivos.COMEDORES_FILE, Comedor.class);
+	}
+
+	private String[] getComedores() {
+		ArrayList<String> comedores = new ArrayList<String>();
+		for (Object objeto : listaComedores) {
+			if (objeto instanceof Comedor) {
+				Comedor comedor = (Comedor) objeto;
+				comedores.add(comedor.getNombre());
+			}
+		}
+		return comedores.toArray(new String[0]);
+	}
+
+	private void comboBoxComedores() {
+		comedoresBox = new JComboBox<String>(getComedores());
+		comedoresBox.setPreferredSize(new Dimension(600, 40));
+		Formato.formato(comedoresBox, 0, 28f);
+		comedoresBox.setOpaque(true);
+		comedoresBox.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				comedor = listaComedores.get(comedoresBox.getSelectedIndex());
+				updateComponentData();
+			}
+		});
+		updatePositionComboFacultades();
+		imagePanel.add(comedoresBox);
+	}
+
+	private void updatePositionComboFacultades() {
+		springLayout.putConstraint(SpringLayout.WEST, comedoresBox,
+				(int) ((imagePanel.getWidth() - comedoresBox.getPreferredSize().getWidth()) / 2), SpringLayout.WEST,
+				imagePanel);
+		springLayout.putConstraint(SpringLayout.NORTH, comedoresBox,
+				240, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void initComponentes() {
@@ -36,6 +93,7 @@ public class PantallaModificarComedor {
 		labelAdjImg();
 		buttonAdjImagen();
 		buttonGuardar();
+		comboBoxComedores();
 		logo();
 		buttonRegresar();
 	}
@@ -53,6 +111,7 @@ public class PantallaModificarComedor {
 		updatePositionButtonGuardar();
 		updatePositionLogo();
 		updatePositionButtonRegresar();
+		updatePositionComboFacultades();
 	}
 
 	private void labelTitulo() {
@@ -91,13 +150,13 @@ public class PantallaModificarComedor {
 				(int) ((imagePanel.getWidth() - nombreLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, nombreLabel,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, nombreTextField,
 				(int) ((imagePanel.getWidth() - nombreTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, nombreTextField,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void capacidad() {
@@ -119,14 +178,12 @@ public class PantallaModificarComedor {
 		springLayout.putConstraint(SpringLayout.WEST, capacidadLabel,
 				(int) ((imagePanel.getWidth() - capacidadLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
-		springLayout.putConstraint(SpringLayout.NORTH, capacidadLabel,
-				280, SpringLayout.NORTH, imagePanel);
+		springLayout.putConstraint(SpringLayout.NORTH, capacidadLabel, 350, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, capacidadTextField,
 				(int) ((imagePanel.getWidth() - capacidadTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
-		springLayout.putConstraint(SpringLayout.NORTH, capacidadTextField,
-				280, SpringLayout.NORTH, imagePanel);
+		springLayout.putConstraint(SpringLayout.NORTH, capacidadTextField, 350, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void atencion() {
@@ -149,13 +206,13 @@ public class PantallaModificarComedor {
 				(int) ((imagePanel.getWidth() - atencionLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, atencionLabel,
-				330, SpringLayout.NORTH, imagePanel);
+				400, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, atencionTextField,
 				(int) ((imagePanel.getWidth() - atencionTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, atencionTextField,
-				330, SpringLayout.NORTH, imagePanel);
+				400, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void descripcion() {
@@ -180,13 +237,13 @@ public class PantallaModificarComedor {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, descripcionLabel,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, descripcionTextArea,
 				(int) ((imagePanel.getWidth() - descripcionTextArea.getPreferredSize().getWidth()) / 1.3),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, descripcionTextArea,
-				280, SpringLayout.NORTH, imagePanel);
+				350, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void labelAdjLogo() {
@@ -203,7 +260,7 @@ public class PantallaModificarComedor {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, insertLogoLabel,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonAdjuntarLogo() {
@@ -212,8 +269,8 @@ public class PantallaModificarComedor {
 		Formato.formato(adjuntarLogoButton, 0, 25f, 10, 2);
 		adjuntarLogoButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {// POR MODIFICAR
-				// Agregar filechooser
+			public void mouseClicked(MouseEvent e) {
+				iconLogo = FileChooser.seleccionarArchivo();
 			}
 		});
 		imagePanel.add(adjuntarLogoButton);
@@ -226,7 +283,7 @@ public class PantallaModificarComedor {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, adjuntarLogoButton,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void labelAdjImg() {
@@ -243,7 +300,7 @@ public class PantallaModificarComedor {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, insertImgLabel,
-				430, SpringLayout.NORTH, imagePanel);
+				500, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonAdjImagen() {
@@ -253,7 +310,7 @@ public class PantallaModificarComedor {
 		adjuntarImagenesButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// Agregar filechooser
+				iconGallery.add(FileChooser.seleccionarArchivo());
 			}
 		});
 		imagePanel.add(adjuntarImagenesButton);
@@ -266,24 +323,41 @@ public class PantallaModificarComedor {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, adjuntarImagenesButton,
-				430, SpringLayout.NORTH, imagePanel);
+				500, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonGuardar() {
-		guardarButton = new CustomButton("REGRESAR");
+		guardarButton = new CustomButton("GUARDAR");
 		guardarButton.setPreferredSize(new Dimension(260, 42));
 		Formato.formato(guardarButton, 0, 25f, 10, 2);
 		guardarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				imagePanel.removeAll();
-				new PantallaModificarEstablecimiento();
-				imagePanel.repaint();
-				imagePanel.revalidate();
+				modificarComedor();
 			}
 		});
 		updatePositionButtonGuardar();
 		imagePanel.add(guardarButton);
+	}
+
+	private void modificarComedor() {
+		String nombre = nombreTextField.getText();
+		String capacidad = capacidadTextField.getText();
+		String horarioAtencion = atencionTextField.getText();
+		String descripcion = descripcionTextArea.getText();
+		if (!nombre.isBlank() && !capacidad.isBlank() && !horarioAtencion.isBlank() && !descripcion.isBlank()
+				&& !iconLogo.isBlank() && iconGallery.size() > 0) {
+			Comedor modificado = new Comedor(comedor.getAlias(), nombre, descripcion, iconLogo, iconGallery,
+					horarioAtencion, capacidad);
+			int index = listaComedores.indexOf(comedor);
+			listaComedores.remove(index);
+			listaComedores.add(index, modificado);
+			ManejadorArchivos.saveObjectToJson(listaComedores, RutasArchivos.COMEDORES_FILE);
+			imagePanel.removeAll();
+			new PantallaModificarComedor();
+			imagePanel.repaint();
+			imagePanel.revalidate();
+		}
 	}
 
 	private void updatePositionButtonGuardar() {
@@ -296,13 +370,16 @@ public class PantallaModificarComedor {
 	}
 
 	private void buttonRegresar() {
-		regresarButton = new CustomButton("GUARDAR");
+		regresarButton = new CustomButton("REGRESAR");
 		regresarButton.setPreferredSize(new Dimension(260, 42));
 		Formato.formato(regresarButton, 0, 25f, 10, 2);
 		regresarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
+				imagePanel.removeAll();
+				new PantallaModificarEstablecimiento();
+				imagePanel.repaint();
+				imagePanel.revalidate();
 			}
 		});
 		updatePositionButtonRegresar();

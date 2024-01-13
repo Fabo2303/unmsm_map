@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SpringLayout;
 
 import com.fabo.unmsmmap.logica.entidades.Comedor;
@@ -102,7 +103,7 @@ public class PantallaEliminarComedor {
 
 	private void boxComedores() {
 		comedoresBox = new JComboBox<>(getComedores());
-		comedoresBox.setPreferredSize(new Dimension(300, 40));
+		comedoresBox.setPreferredSize(new Dimension(600, 40));
 		Formato.formato(comedoresBox, 1, 26f);
 		updatePositionBoxComedores();
 		imagePanel.add(comedoresBox);
@@ -129,7 +130,7 @@ public class PantallaEliminarComedor {
 				new PantallaEliminarComedor();
 				imagePanel.repaint();
 				imagePanel.revalidate();
-				System.out.println("Se ha eliminado el comedor");
+				JOptionPane.showMessageDialog(null, "Se elimino el comedor", "ELIMINAR", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		updatePositionButtonEliminar();

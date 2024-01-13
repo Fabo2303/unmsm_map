@@ -2,27 +2,85 @@ package com.fabo.unmsmmap.gui.modificar;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
+import com.fabo.unmsmmap.logica.entidades.Biblioteca;
 import com.fabo.unmsmmap.utilidades.*;
 
 public class PantallaModificarBiblioteca {
 	private ImagePanel imagePanel;
 	private SpringLayout springLayout;
-	private JLabel tituloLabel, logo;
-	private CustomButton regresarButton;
-	private JLabel nombreLabel, telefonoLabel, atencionLabel, descripcionLabel, insertLogoLabel,
+	private JLabel tituloLabel, logo, nombreLabel, telefonoLabel, atencionLabel, descripcionLabel, insertLogoLabel,
 			insertImgLabel;
-	private CustomButton adjuntarLogoButton, adjuntarImagenesButton, guardarButton;
+	private CustomButton regresarButton, adjuntarLogoButton, adjuntarImagenesButton, guardarButton;
 	private JTextField nombreTextField, telefonoTextField, atencionTextField;
 	private JTextArea descripcionTextArea;
+	private Biblioteca biblioteca;
+	private String iconLogo;
+	private ArrayList<String> iconGallery;
+	private JComboBox<String> bibliotecaBox;
+	private ArrayList<Biblioteca> listaBibliotecas;
 
 	public PantallaModificarBiblioteca() {
 		imagePanel = ImagePanel.getInstance();
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
+		initBibliotecas();
+		biblioteca = listaBibliotecas.get(0);
 		initComponentes();
+		updateComponentData();
 		addResizeListener();
+		addResizeListener();
+	}
+
+	public void updateComponentData() {
+		nombreTextField.setText(biblioteca.getNombre());
+		telefonoTextField.setText(biblioteca.getTelefono());
+		atencionTextField.setText(biblioteca.getHorarioAtencion());
+		descripcionTextArea.setText(biblioteca.getDescripcion());
+		iconLogo = biblioteca.getLogo();
+		iconGallery = biblioteca.getImagenes();
+	}
+
+	public void initBibliotecas() {
+		listaBibliotecas = ManejadorArchivos.getObjectFromJson(RutasArchivos.BIBLIOTECAS_FILE, Biblioteca.class);
+	}
+
+	public String[] getBibliotecas() {
+		ArrayList<String> bibliotecas = new ArrayList<String>();
+		for (Object objeto : listaBibliotecas) {
+			if (objeto instanceof Biblioteca) {
+				Biblioteca biblioteca = (Biblioteca) objeto;
+				bibliotecas.add(biblioteca.getNombre());
+			}
+		}
+		return bibliotecas.toArray(new String[0]);
+	}
+
+	private void comboBoxBibliotecas() {
+		bibliotecaBox = new JComboBox<String>(getBibliotecas());
+		bibliotecaBox.setPreferredSize(new Dimension(600, 40));
+		Formato.formato(bibliotecaBox, 0, 28f);
+		bibliotecaBox.setOpaque(true);
+		bibliotecaBox.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				biblioteca = listaBibliotecas.get(bibliotecaBox.getSelectedIndex());
+				updateComponentData();
+			}
+		});
+		updatePositionComboComedores();
+		imagePanel.add(bibliotecaBox);
+	}
+
+	private void updatePositionComboComedores() {
+		springLayout.putConstraint(SpringLayout.WEST, bibliotecaBox,
+				(int) ((imagePanel.getWidth() - bibliotecaBox.getPreferredSize().getWidth()) / 2), SpringLayout.WEST,
+				imagePanel);
+		springLayout.putConstraint(SpringLayout.NORTH, bibliotecaBox,
+				240, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void initComponentes() {
@@ -36,6 +94,7 @@ public class PantallaModificarBiblioteca {
 		labelAdjImg();
 		buttonAdjImagen();
 		buttonGuardar();
+		comboBoxBibliotecas();
 		logo();
 		buttonRegresar();
 	}
@@ -53,6 +112,7 @@ public class PantallaModificarBiblioteca {
 		updatePositionButtonGuardar();
 		updatePositionLogo();
 		updatePositionButtonRegresar();
+		updatePositionComboComedores();
 	}
 
 	private void labelTitulo() {
@@ -91,13 +151,13 @@ public class PantallaModificarBiblioteca {
 				(int) ((imagePanel.getWidth() - nombreLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, nombreLabel,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, nombreTextField,
 				(int) ((imagePanel.getWidth() - nombreTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, nombreTextField,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void telefono() {
@@ -120,13 +180,13 @@ public class PantallaModificarBiblioteca {
 				(int) ((imagePanel.getWidth() - telefonoLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, telefonoLabel,
-				280, SpringLayout.NORTH, imagePanel);
+				350, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, telefonoTextField,
 				(int) ((imagePanel.getWidth() - telefonoTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, telefonoTextField,
-				280, SpringLayout.NORTH, imagePanel);
+				350, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void atencion() {
@@ -149,13 +209,13 @@ public class PantallaModificarBiblioteca {
 				(int) ((imagePanel.getWidth() - atencionLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, atencionLabel,
-				330, SpringLayout.NORTH, imagePanel);
+				400, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, atencionTextField,
 				(int) ((imagePanel.getWidth() - atencionTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, atencionTextField,
-				330, SpringLayout.NORTH, imagePanel);
+				400, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void descripcion() {
@@ -180,13 +240,13 @@ public class PantallaModificarBiblioteca {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, descripcionLabel,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, descripcionTextArea,
 				(int) ((imagePanel.getWidth() - descripcionTextArea.getPreferredSize().getWidth()) / 1.3),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, descripcionTextArea,
-				280, SpringLayout.NORTH, imagePanel);
+				350, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void labelAdjLogo() {
@@ -203,7 +263,7 @@ public class PantallaModificarBiblioteca {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, insertLogoLabel,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonAdjuntarLogo() {
@@ -212,8 +272,8 @@ public class PantallaModificarBiblioteca {
 		Formato.formato(adjuntarLogoButton, 0, 25f, 10, 2);
 		adjuntarLogoButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {// POR MODIFICAR
-				// Agregar filechooser
+			public void mouseClicked(MouseEvent e) {
+				iconLogo = FileChooser.seleccionarArchivo();
 			}
 		});
 		imagePanel.add(adjuntarLogoButton);
@@ -226,7 +286,7 @@ public class PantallaModificarBiblioteca {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, adjuntarLogoButton,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void labelAdjImg() {
@@ -243,7 +303,7 @@ public class PantallaModificarBiblioteca {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, insertImgLabel,
-				430, SpringLayout.NORTH, imagePanel);
+				500, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonAdjImagen() {
@@ -253,7 +313,7 @@ public class PantallaModificarBiblioteca {
 		adjuntarImagenesButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// Agregar filechooser
+				iconGallery.add(FileChooser.seleccionarArchivo());
 			}
 		});
 		imagePanel.add(adjuntarImagenesButton);
@@ -266,24 +326,41 @@ public class PantallaModificarBiblioteca {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, adjuntarImagenesButton,
-				430, SpringLayout.NORTH, imagePanel);
+				500, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonGuardar() {
-		guardarButton = new CustomButton("REGRESAR");
+		guardarButton = new CustomButton("GUARDAR");
 		guardarButton.setPreferredSize(new Dimension(260, 42));
 		Formato.formato(guardarButton, 0, 25f, 10, 2);
 		guardarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				imagePanel.removeAll();
-				new PantallaModificarEstablecimiento();
-				imagePanel.repaint();
-				imagePanel.revalidate();
+				modificarBiblioteca();
 			}
 		});
 		updatePositionButtonGuardar();
 		imagePanel.add(guardarButton);
+	}
+
+	private void modificarBiblioteca() {
+		String nombre = nombreTextField.getText();
+		String telefono = telefonoTextField.getText();
+		String horarioAtencion = atencionTextField.getText();
+		String descripcion = descripcionTextArea.getText();
+		if (!nombre.isBlank() && !telefono.isBlank() && !horarioAtencion.isBlank() && !descripcion.isBlank()
+				&& !iconLogo.isBlank() && iconGallery.size() > 0) {
+			Biblioteca modificado = new Biblioteca(biblioteca.getAlias(), nombre, descripcion, iconLogo, iconGallery,
+					telefono, horarioAtencion);
+			int index = listaBibliotecas.indexOf(biblioteca);
+			listaBibliotecas.remove(index);
+			listaBibliotecas.add(index, modificado);
+			ManejadorArchivos.saveObjectToJson(listaBibliotecas, RutasArchivos.BIBLIOTECAS_FILE);
+			imagePanel.removeAll();
+			new PantallaModificarBiblioteca();
+			imagePanel.repaint();
+			imagePanel.revalidate();
+		}
 	}
 
 	private void updatePositionButtonGuardar() {
@@ -296,13 +373,16 @@ public class PantallaModificarBiblioteca {
 	}
 
 	private void buttonRegresar() {
-		regresarButton = new CustomButton("GUARDAR");
+		regresarButton = new CustomButton("REGRESAR");
 		regresarButton.setPreferredSize(new Dimension(260, 42));
 		Formato.formato(regresarButton, 0, 25f, 10, 2);
 		regresarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
+				imagePanel.removeAll();
+				new PantallaModificarEstablecimiento();
+				imagePanel.repaint();
+				imagePanel.revalidate();
 			}
 		});
 		updatePositionButtonRegresar();

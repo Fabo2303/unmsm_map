@@ -2,30 +2,51 @@ package com.fabo.unmsmmap.gui.modificar;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
+import com.fabo.unmsmmap.logica.entidades.Facultad;
 import com.fabo.unmsmmap.utilidades.*;
 
 public class PantallaModificarFacultad {
 	private ImagePanel imagePanel;
 	private SpringLayout springLayout;
-	private JLabel tituloLabel, logo;
-	private CustomButton regresarButton;
-	private JLabel codigoLabel, nombreLabel, telefonoLabel, correoLabel, descripcionLabel, insertLogoLabel,
+	private JLabel tituloLabel, logo, codigoLabel, nombreLabel, telefonoLabel, correoLabel, descripcionLabel,
+			insertLogoLabel,
 			insertImgLabel;
-	private CustomButton adjuntarLogoButton, adjuntarImagenesButton, guardarButton;
+	private CustomButton regresarButton, adjuntarLogoButton, adjuntarImagenesButton, guardarButton;
 	private JTextField codigoTextField, nombreTextField, telefonoTextField, correoTextField;
 	private JTextArea descripcionTextArea;
+	private Facultad facultad;
+	private String iconLogo;
+	private ArrayList<String> iconGallery;
+	private JComboBox<String> facultadesBox;
+	private ArrayList<Facultad> listaFacultades;
 
 	public PantallaModificarFacultad() {
 		imagePanel = ImagePanel.getInstance();
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
+		initFacultades();
+		facultad = listaFacultades.get(0);
 		initComponentes();
+		updateComponentData();
 		addResizeListener();
 	}
 
+	public void updateComponentData() {
+		codigoTextField.setText(facultad.getCodigo());
+		nombreTextField.setText(facultad.getNombre());
+		telefonoTextField.setText(facultad.getTelefonoContacto());
+		correoTextField.setText(facultad.getCorreoContacto());
+		descripcionTextArea.setText(facultad.getDescripcion());
+		iconGallery = facultad.getImagenes();
+		iconLogo = facultad.getLogo();
+	}
+
 	private void initComponentes() {
+		comboBoxFacultades();
 		labelTitulo();
 		codigo();
 		nombre();
@@ -43,6 +64,7 @@ public class PantallaModificarFacultad {
 
 	private void updatePositionComponents() {
 		updatePositionLabelTitulo();
+		updatePositionComboFacultades();
 		updatePositionCodigo();
 		updatePositionNombre();
 		updatePositionCorreo();
@@ -57,9 +79,48 @@ public class PantallaModificarFacultad {
 		updatePositionButtonRegresar();
 	}
 
+	public void initFacultades() {
+		listaFacultades = ManejadorArchivos.getObjectFromJson(RutasArchivos.FACULTADES_FILE, Facultad.class);
+	}
+
+	private String[] getFacultades() {
+		ArrayList<String> facultades = new ArrayList<String>();
+		for (Object objeto : listaFacultades) {
+			if (objeto instanceof Facultad) {
+				Facultad facultad = (Facultad) objeto;
+				facultades.add(facultad.getNombre());
+			}
+		}
+		return facultades.toArray(new String[0]);
+	}
+
+	private void comboBoxFacultades() {
+		facultadesBox = new JComboBox<String>(getFacultades());
+		facultadesBox.setPreferredSize(new Dimension(600, 40));
+		Formato.formato(facultadesBox, 0, 28f);
+		facultadesBox.setOpaque(true);
+		facultadesBox.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				facultad = listaFacultades.get(facultadesBox.getSelectedIndex());
+				updateComponentData();
+			}
+		});
+		updatePositionComboFacultades();
+		imagePanel.add(facultadesBox);
+	}
+
+	private void updatePositionComboFacultades() {
+		springLayout.putConstraint(SpringLayout.WEST, facultadesBox,
+				(int) ((imagePanel.getWidth() - facultadesBox.getPreferredSize().getWidth()) / 2), SpringLayout.WEST,
+				imagePanel);
+		springLayout.putConstraint(SpringLayout.NORTH, facultadesBox,
+				240, SpringLayout.NORTH, imagePanel);
+	}
+
 	private void labelTitulo() {
 		tituloLabel = new JLabel("MODIFICAR FACULTAD");
-		tituloLabel.setPreferredSize(new Dimension(440, 40));
+		tituloLabel.setPreferredSize(new Dimension(480, 40));
 		Formato.formato(tituloLabel, 1, 32f);
 		updatePositionLabelTitulo();
 		imagePanel.add(tituloLabel);
@@ -93,13 +154,13 @@ public class PantallaModificarFacultad {
 				(int) ((imagePanel.getWidth() - codigoLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, codigoLabel,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, codigoTextField,
 				(int) ((imagePanel.getWidth() - codigoTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, codigoTextField,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void nombre() {
@@ -122,13 +183,13 @@ public class PantallaModificarFacultad {
 				(int) ((imagePanel.getWidth() - nombreLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, nombreLabel,
-				280, SpringLayout.NORTH, imagePanel);
+				350, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, nombreTextField,
 				(int) ((imagePanel.getWidth() - nombreTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, nombreTextField,
-				280, SpringLayout.NORTH, imagePanel);
+				350, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void telefono() {
@@ -151,13 +212,13 @@ public class PantallaModificarFacultad {
 				(int) ((imagePanel.getWidth() - telefonoLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, telefonoLabel,
-				330, SpringLayout.NORTH, imagePanel);
+				400, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, telefonoTextField,
 				(int) ((imagePanel.getWidth() - telefonoTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, telefonoTextField,
-				330, SpringLayout.NORTH, imagePanel);
+				400, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void correo() {
@@ -180,13 +241,13 @@ public class PantallaModificarFacultad {
 				(int) ((imagePanel.getWidth() - correoLabel.getPreferredSize().getWidth()) / 15), SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, correoLabel,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, correoTextField,
 				(int) ((imagePanel.getWidth() - correoTextField.getPreferredSize().getWidth()) / 4),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, correoTextField,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void descripcion() {
@@ -211,13 +272,13 @@ public class PantallaModificarFacultad {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, descripcionLabel,
-				230, SpringLayout.NORTH, imagePanel);
+				300, SpringLayout.NORTH, imagePanel);
 		springLayout.putConstraint(SpringLayout.WEST, descripcionTextArea,
 				(int) ((imagePanel.getWidth() - descripcionTextArea.getPreferredSize().getWidth()) / 1.3),
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, descripcionTextArea,
-				280, SpringLayout.NORTH, imagePanel);
+				350, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void labelAdjLogo() {
@@ -234,7 +295,7 @@ public class PantallaModificarFacultad {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, insertLogoLabel,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonAdjuntarLogo() {
@@ -243,8 +304,8 @@ public class PantallaModificarFacultad {
 		Formato.formato(adjuntarLogoButton, 0, 25f, 10, 2);
 		adjuntarLogoButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {// POR MODIFICAR
-				// Agregar filechooser
+			public void mouseClicked(MouseEvent e) {
+				iconLogo = FileChooser.seleccionarArchivo();
 			}
 		});
 		imagePanel.add(adjuntarLogoButton);
@@ -257,7 +318,7 @@ public class PantallaModificarFacultad {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, adjuntarLogoButton,
-				380, SpringLayout.NORTH, imagePanel);
+				450, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void labelAdjImg() {
@@ -274,7 +335,7 @@ public class PantallaModificarFacultad {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, insertImgLabel,
-				430, SpringLayout.NORTH, imagePanel);
+				500, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonAdjImagen() {
@@ -284,7 +345,7 @@ public class PantallaModificarFacultad {
 		adjuntarImagenesButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// Agregar filechooser
+				iconGallery.add(FileChooser.seleccionarArchivo());
 			}
 		});
 		imagePanel.add(adjuntarImagenesButton);
@@ -297,7 +358,7 @@ public class PantallaModificarFacultad {
 				SpringLayout.WEST,
 				imagePanel);
 		springLayout.putConstraint(SpringLayout.NORTH, adjuntarImagenesButton,
-				430, SpringLayout.NORTH, imagePanel);
+				500, SpringLayout.NORTH, imagePanel);
 	}
 
 	private void buttonGuardar() {
@@ -307,11 +368,32 @@ public class PantallaModificarFacultad {
 		guardarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				modificarFacultad();
 			}
 		});
 		updatePositionButtonGuardar();
 		imagePanel.add(guardarButton);
+	}
+
+	private void modificarFacultad() {
+		String codigo = codigoTextField.getText();
+		String nombre = nombreTextField.getText();
+		String telefono = telefonoTextField.getText();
+		String correo = correoTextField.getText();
+		String descripcion = descripcionTextArea.getText();
+		if (!codigo.isBlank() && !nombre.isBlank() && !telefono.isBlank() && !correo.isBlank() && !descripcion.isBlank()
+				&& !iconLogo.isBlank() && iconGallery.size() > 0) {
+			Facultad modificado = new Facultad(facultad.getAlias(), nombre, descripcion, iconLogo, iconGallery, codigo,
+					telefono, correo);
+			int index = listaFacultades.indexOf(facultad);
+			listaFacultades.remove(index);
+			listaFacultades.add(index, modificado);
+			ManejadorArchivos.saveObjectToJson(listaFacultades, RutasArchivos.FACULTADES_FILE);
+			imagePanel.removeAll();
+			new PantallaModificarFacultad();
+			imagePanel.repaint();
+			imagePanel.revalidate();
+		}
 	}
 
 	private void updatePositionButtonGuardar() {

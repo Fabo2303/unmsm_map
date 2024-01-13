@@ -12,5 +12,5 @@ public class RutasArchivos {
     public static final String FACULTADES_FILE = "src/main/resources/archivos/facultades.json";
     public static final String COMEDORES_FILE = "src/main/resources/archivos/comedores.json";
     public static final String BIBLIOTECAS_FILE = "src/main/resources/archivos/bibliotecas.json";
-    public static final String EDGES_FILE = "src/main/resources/archivos/edges.json";   
+    public static final String EDGES_FILE = "src/main/resources/archivos/edges.json";
 }

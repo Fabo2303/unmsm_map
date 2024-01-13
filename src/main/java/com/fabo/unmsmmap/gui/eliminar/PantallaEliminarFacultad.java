@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SpringLayout;
 
 import com.fabo.unmsmmap.logica.entidades.Facultad;
@@ -59,7 +60,7 @@ public class PantallaEliminarFacultad {
 
 	private void labelTitulo() {
 		tituloLabel = new JLabel("ELIMINAR FACULTAD");
-		tituloLabel.setPreferredSize(new Dimension(440, 40));
+		tituloLabel.setPreferredSize(new Dimension(600, 40));
 		Formato.formato(tituloLabel, 1, 32f);
 		updatePositionLabelTitulo();
 		imagePanel.add(tituloLabel);
@@ -129,7 +130,7 @@ public class PantallaEliminarFacultad {
 				new PantallaEliminarFacultad();
 				imagePanel.repaint();
 				imagePanel.revalidate();
-				System.out.println("Se ha eliminado el facultad");
+				JOptionPane.showMessageDialog(null, "Se elimino la facultad", "ELIMINAR", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		updatePositionButtonEliminar();

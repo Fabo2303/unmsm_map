@@ -82,7 +82,10 @@ public class PantallaModificarEstablecimiento {
 		facultadButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				imagePanel.removeAll();
 				new PantallaModificarFacultad();
+				imagePanel.revalidate();
+				imagePanel.repaint();
 			}
 		});
 		updatePositionbuttonFacultad();
@@ -105,7 +108,10 @@ public class PantallaModificarEstablecimiento {
 		bibliotecaButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				imagePanel.removeAll();
 				new PantallaModificarBiblioteca();
+				imagePanel.revalidate();
+				imagePanel.repaint();
 			}
 		});
 		updatePositionbuttonBiblioteca();
@@ -128,7 +134,10 @@ public class PantallaModificarEstablecimiento {
 		comedorButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				imagePanel.removeAll();
 				new PantallaModificarComedor();
+				imagePanel.revalidate();
+				imagePanel.repaint();
 			}
 		});
 		updatePositionbuttonComedor();

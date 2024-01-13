@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SpringLayout;
 
 import com.fabo.unmsmmap.logica.entidades.Biblioteca;
@@ -102,7 +103,7 @@ public class PantallaEliminarBiblioteca {
 
 	private void boxBibliotecas() {
 		bibliotecasBox = new JComboBox<>(getBibliotecas());
-		bibliotecasBox.setPreferredSize(new Dimension(300, 40));
+		bibliotecasBox.setPreferredSize(new Dimension(600, 40));
 		Formato.formato(bibliotecasBox, 1, 26f);
 		updatePositionBoxBibliotecas();
 		imagePanel.add(bibliotecasBox);
@@ -129,7 +130,7 @@ public class PantallaEliminarBiblioteca {
 				new PantallaEliminarBiblioteca();
 				imagePanel.repaint();
 				imagePanel.revalidate();
-				System.out.println("Se ha eliminado el biblioteca");
+				JOptionPane.showMessageDialog(null, "Se elimino la biblioteca", "ELIMINAR", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		updatePositionButtonEliminar();
