@@ -1,15 +1,1 @@
-[
-    {
-        "telefono": "947806777",
-        "horarioAtencion": "12:00 - 15:00",
-        "alias": "BIB1",
-        "nombre": "Biblioteca central",
-        "descripcion": "Biblioteca",
-        "logo": "biblioteca.png",
-        "imagenes": [
-            "biblioteca_central/biblioteca_1.webp",
-            "biblioteca_central/biblioteca_2.webp",
-            "biblioteca_central/biblioteca_3.webp"
-        ]
-    }
-]
+[{"telefono":"947806777","horarioAtencion":"12:00 - 15:00","alias":"BIB1","nombre":"asdasd","descripcion":"asdasdasdasdasd","logo":"biblioteca.png","imagenes":["biblioteca_central/biblioteca_1.webp","biblioteca_central/biblioteca_2.webp","biblioteca_central/biblioteca_3.webp"]}]
