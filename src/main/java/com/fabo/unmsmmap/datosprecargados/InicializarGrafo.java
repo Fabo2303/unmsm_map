@@ -7,6 +7,7 @@ import com.fabo.unmsmmap.logica.entidades.Biblioteca;
 import com.fabo.unmsmmap.logica.entidades.Comedor;
 import com.fabo.unmsmmap.logica.entidades.Facultad;
 import com.fabo.unmsmmap.logica.grafo.Edge;
+import com.fabo.unmsmmap.utilidades.LabelWithID;
 import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
 import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
@@ -31,7 +32,7 @@ public class InicializarGrafo {
 				"12:00 - 18:00", "600");
 		ArrayList<Comedor> comedores = new ArrayList<>();
 		comedores.add(comedor);
-		
+
 		ManejadorArchivos.saveObjectToJson(comedores, RutasArchivos.COMEDORES_FILE);
 	}
 
@@ -188,6 +189,39 @@ public class InicializarGrafo {
 		facultades.add(mecanica_fluidos);
 
 		ManejadorArchivos.saveObjectToJson(facultades, RutasArchivos.FACULTADES_FILE);
+	}
+
+	public static void inicializarLabelWithID() {
+		ArrayList<LabelWithID> labels = new ArrayList<>();
+		labels.add(new LabelWithID("BIB1", RutasArchivos.LOGOS_BASE_FILE + "biblioteca.webp", 738, 156));
+		labels.add(new LabelWithID("COM1", RutasArchivos.LOGOS_BASE_FILE +"comedor.webp", 260, 328));
+		labels.add(new LabelWithID("FAC01", RutasArchivos.LOGOS_BASE_FILE +"ciencias_fisicas.webp", 148, 443));
+		labels.add(new LabelWithID("FAC02", RutasArchivos.LOGOS_BASE_FILE +"ciencias_biologicas.webp", 190, 385));
+		labels.add(new LabelWithID("FAC03", RutasArchivos.LOGOS_BASE_FILE +"ciencias_matematicas.webp", 103, 400));
+		labels.add(new LabelWithID("FAC04", RutasArchivos.LOGOS_BASE_FILE +"ciencias_administrativas.webp", 468, 454));
+		labels.add(new LabelWithID("FAC05", RutasArchivos.LOGOS_BASE_FILE +"ciencias_contables.webp", 466, 544));
+		labels.add(new LabelWithID("FAC06", RutasArchivos.LOGOS_BASE_FILE +"ciencias_economicas.webp", 1116, 140));
+		labels.add(new LabelWithID("FAC07", RutasArchivos.LOGOS_BASE_FILE +"ciencias_economicas.webp", 426, 496));
+		labels.add(new LabelWithID("FAC08", RutasArchivos.LOGOS_BASE_FILE +"ciencias_sociales.webp", 380, 461));
+		labels.add(new LabelWithID("FAC09", RutasArchivos.LOGOS_BASE_FILE +"derecho.webp", 330, 526));
+		labels.add(new LabelWithID("FAC10", RutasArchivos.LOGOS_BASE_FILE +"educacion.webp", 864, 188));
+		labels.add(new LabelWithID("FAC11", RutasArchivos.LOGOS_BASE_FILE +"educacion_fisica.webp", 925, 215));
+		labels.add(new LabelWithID("FAC12", RutasArchivos.LOGOS_BASE_FILE +"quimica.webp", 146, 332));
+		labels.add(new LabelWithID("FAC13", RutasArchivos.LOGOS_BASE_FILE +"fisi.webp", 1040, 172));
+		labels.add(new LabelWithID("FAC14", RutasArchivos.LOGOS_BASE_FILE +"geografica.webp", 739, 92));
+		labels.add(new LabelWithID("FAC15", RutasArchivos.LOGOS_BASE_FILE +"industrial.webp", 219, 513));
+		labels.add(new LabelWithID("FAC16", RutasArchivos.LOGOS_BASE_FILE +"electronica.webp", 776, 23));
+		labels.add(new LabelWithID("FAC17", RutasArchivos.LOGOS_BASE_FILE +"geologica.webp", 70, 180));
+		labels.add(new LabelWithID("FAC18", RutasArchivos.LOGOS_BASE_FILE +"letras.webp", 530, 469));
+		labels.add(new LabelWithID("FAC19", RutasArchivos.LOGOS_BASE_FILE +"metalurgica.webp", 135, 255));
+		labels.add(new LabelWithID("FAC20", RutasArchivos.LOGOS_BASE_FILE +"minas.webp", 1140, 35));
+		labels.add(new LabelWithID("FAC21", RutasArchivos.LOGOS_BASE_FILE +"odontologia.webp", 949, 116));
+		labels.add(new LabelWithID("FAC22", RutasArchivos.LOGOS_BASE_FILE +"psicologia.webp", 1025, 53));
+		labels.add(new LabelWithID("FAC23", RutasArchivos.LOGOS_BASE_FILE +"electronica.webp", 618, 470));
+		labels.add(new LabelWithID("FAC24", RutasArchivos.LOGOS_BASE_FILE +"civil.webp", 650, 13));
+		labels.add(new LabelWithID("FAC25", RutasArchivos.LOGOS_BASE_FILE +"mecanica_fluidos.webp", 574, 51));
+
+		ManejadorArchivos.saveObjectToJson(labels, RutasArchivos.LABELS_FILE);
 	}
 
 	public static void inicializarAristas() {

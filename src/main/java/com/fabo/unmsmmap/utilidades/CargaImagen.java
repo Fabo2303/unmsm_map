@@ -22,7 +22,7 @@ public abstract class CargaImagen {
 		try {
 			image = ImageIO.read(new File(path));
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("No se encontro la imagen: " + path);
 		}
 		return new ImageIcon(image);
 	}

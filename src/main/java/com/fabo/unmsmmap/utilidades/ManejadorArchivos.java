@@ -48,6 +48,8 @@ public class ManejadorArchivos {
 			InicializarGrafo.inicializarFacultades();
 		if (!isExists(RutasArchivos.EDGES_FILE))
 			InicializarGrafo.inicializarAristas();
+		if(!isExists(RutasArchivos.LABELS_FILE))
+			InicializarGrafo.inicializarLabelWithID();
 	}
 
 	public static boolean isExists(String rutaArchivo) {

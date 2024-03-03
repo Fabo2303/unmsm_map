@@ -1,356 +1,129 @@
 package com.fabo.unmsmmap.gui.gestion;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import javax.swing.JLabel;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
-
-import com.fabo.unmsmmap.logica.algoritmos.Bfs;
-import com.fabo.unmsmmap.logica.algoritmos.Dfs;
-import com.fabo.unmsmmap.logica.algoritmos.Dijkstra;
+import com.fabo.unmsmmap.logica.entidades.Biblioteca;
+import com.fabo.unmsmmap.logica.entidades.Comedor;
 import com.fabo.unmsmmap.logica.entidades.Establecimiento;
-import com.fabo.unmsmmap.logica.grafo.Edge;
-import com.fabo.unmsmmap.logica.grafo.Graph;
-import com.fabo.unmsmmap.logica.grafo.Vertex;
-import com.fabo.unmsmmap.utilidades.Boton;
+import com.fabo.unmsmmap.logica.entidades.Facultad;
 import com.fabo.unmsmmap.utilidades.CaminoComponente;
-import com.fabo.unmsmmap.utilidades.CargaImagen;
-import com.fabo.unmsmmap.utilidades.Formato;
+import com.fabo.unmsmmap.utilidades.ImagePanel;
+import com.fabo.unmsmmap.utilidades.LabelWithID;
+import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
 public class MapaDibujado {
-	private JPanel panelFondo;
-	private JFrame ventana;
-	private JLabel imagenFondo;
+
+	private ImagePanel imagePanel;
+	private ArrayList<LabelWithID> labelsWithID;
 	private ArrayList<JLabel> labels;
+	private ArrayList<JLabel> elegidos;
+	private ArrayList<Establecimiento> establecimientos;
 	private ArrayList<CaminoComponente> caminoPintado;
-	private ArrayList<Vertex<Establecimiento>> vertices;
-	private CaminoComponente caminoComponente;
-	private Boton bfsBtn, dfsBtn;
-	private int indicador = 0;
-	private List<JLabel> clickeados = new ArrayList<>();
-	private int contadorClics = 0;
-	private Dijkstra<Establecimiento> algoritmo;
-	private Graph<Establecimiento> grafo = new Graph<>();
-	private Formato formato = new Formato();
-	private final int WIDTH = 1280;
-	private final int HEIGHT = 720;
 
-	private ArrayList<JLabel> arregloLabelVacio = new ArrayList<>();
-	
-	private int i = 0;
-	private Timer time;
-	private Map<JLabel, Vertex<Establecimiento>> union;
-	private Map<Vertex<Establecimiento>, JLabel> desunion;
-	private Map<JLabel, JLabel> relacionVacioNormal;
-	private Bfs<Establecimiento> algoritmoBfs = new Bfs<>();
-	private Dfs<Establecimiento> algoritmoDfs = new Dfs<>();
-
-	public MapaDibujado(JFrame ventana, ArrayList<Vertex<Establecimiento>> grafo) {
-		this.vertices = grafo;
-		this.grafo.setGraph(vertices);
-		caminoComponente = new CaminoComponente();
-		this.algoritmo = new Dijkstra<>();
-		this.panelFondo = new JPanel();
-		this.caminoPintado = new ArrayList<>();
-		this.labels = new ArrayList<>();
-		this.ventana = ventana;
-		this.union = new HashMap<>();
-		this.desunion = new HashMap<>();
-		initFondo();
+	public MapaDibujado() {
+		imagePanel = ImagePanel.getInstance(RutasArchivos.PLANO);
+		imagePanel.setLayout(null);
+		initData();
 		initComponentes();
-		ventana.getContentPane().repaint();
-		ventana.getContentPane().revalidate();
 	}
 
-	private void initFondo() {
-		ventana.setSize(WIDTH, HEIGHT);
-		ventana.setLocationRelativeTo(null);
-		panelFondo.setLayout(null);
-		ventana.getContentPane().add(panelFondo);
+	private void initData(){
+		labelsWithID = ManejadorArchivos.getObjectFromJson(RutasArchivos.LABELS_FILE, LabelWithID.class);
+		establecimientos = iniEstablecimientos();
+		labels = new ArrayList<>();
+		elegidos = new ArrayList<>();
 	}
 
-	private void coordenadas() {
-		MouseListener mouse = new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				System.out.println("X " + (e.getX() - 30));
-				System.out.println("Y " + (e.getY() - 50));
-			}
-		};
-		panelFondo.addMouseListener(mouse);
-	}
-
-	private void anyadirMouse() {
-		MouseListener mouseListener = new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				JLabel label = (JLabel) e.getSource();
-				System.out.println(e.getSource());
-
-				if (!label.isEnabled()) {
-					mostrarDatos(label);
-					contadorClics = 0;
-					label.setEnabled(true);
-					clickeados.remove(label);
-					return;
-				}
-
-				label.setEnabled(false);
-				contadorClics++;
-				clickeados.add(label);
-
-				if (contadorClics == 2) {
-					if (clickeados.size() == 2) {
-
-						System.out.println(algoritmo.caminoCorto(grafo, identificar(clickeados.get(0)),
-								identificar(clickeados.get(1))));
-						dibujarLinea(algoritmo.obtenerCamino(grafo, identificar(clickeados.get(0)),
-								identificar(clickeados.get(1))));
-					}
-
-					contadorClics = 0;
-					for (JLabel l : labels) {
-						l.setEnabled(true);
-					}
-					clickeados.clear();
-				}
-			}
-		};
-
-		for (int i = 0; i < labels.size(); i++) {
-			labels.get(i).addMouseListener(mouseListener);
-		}
-	}
-
-	private Vertex<Establecimiento> identificar(JLabel a) {
-		for (Vertex<Establecimiento> i : vertices) {
-			if (i.getDato().getLabel().equals(a)) {
-				System.out.println(i.getDato().getNombre());
-				return i;
-			}
-		}
-		return null;
-	}
-
-	private void pintarLabels() {
-		relacionVacioNormal = new HashMap<>();
-		int cont = 0;
-		for (JLabel i : labels) {
-			JLabel labelVacio = new JLabel();
-			labelVacio.setBounds(i.getX(),i.getY(), i.getWidth(), i.getHeight());
-			CargaImagen.setImagen(labelVacio, "logovacio.png", 0);
-			panelFondo.add(i);
-			i.setLayout(null);
-			arregloLabelVacio.add(labelVacio);
-			relacionVacioNormal.put(i,arregloLabelVacio.get(cont));
-			cont++;
-		}
-	}
-
-	private LinkedList<Integer> extraerCamino(Vertex<Establecimiento> v1, Vertex<Establecimiento> v2) {
-		ArrayList<Edge<Establecimiento>> arista = v1.getEdges();
-		for (int i = 0; i < arista.size(); i++) {
-			if (arista.get(i).getFinal().equals(v2)) {
-				return arista.get(i).getCamino();
-			}
-		}
-		return null;
-	}
-
-	private void dibujarLinea(List<Vertex<Establecimiento>> a) {
-		if (indicador == 1) {
-			for (int i = 0; i < caminoPintado.size(); i++) {
-				panelFondo.remove(caminoPintado.get(i));
-			}
-			indicador = 0;
-		}
-		caminoPintado.clear();
-		for (Vertex<Establecimiento> i : a) {
-			System.out.println(i.getDato().getNombre());
-		}
-		for (int i = 0; i < a.size() - 1; i++) {
-			CaminoComponente b = new CaminoComponente();
-			b.setPreferredSize(ventana.getSize());
-			b.setBounds(0, 0, ventana.getWidth(), ventana.getHeight());
-			caminoPintado.add(b);
-			panelFondo.add(b);
-			LinkedList<Integer> camino = new LinkedList<>(extraerCamino(a.get(i), a.get(i + 1)));
-			b.agregarPunto(camino);
-			ventana.repaint();
-			panelFondo.repaint();
-		}
-
-		for (int i = 0; i < caminoPintado.size(); i++) {
-			panelFondo.add(caminoPintado.get(i));
-			ventana.repaint();
-			panelFondo.repaint();
-		}
-
-		panelFondo.repaint();
-		panelFondo.remove(imagenFondo);
-		imagenFondo();
-		indicador++;
-	}
-
-	private void inicializarEstablecimientos() {
-		for (Vertex<Establecimiento> v : vertices) {
-			labels.add(v.getDato().getLabel());
-			System.out.println(v.getDato().getNombre());
-		}
-	}
-
-	private void mostrarDatos(JLabel label) {
-		Vertex<Establecimiento> vertice = identificar(label);
-		VentanaEmergenteDetalles detalles = new VentanaEmergenteDetalles(vertice.getDato());
-	}
-
-	public void empezarAnimacion(List<Vertex<Establecimiento>> result) {
-		
-		for (int i = 0; i < caminoPintado.size(); i++) {
-			panelFondo.remove(caminoPintado.get(i));
-		}
-		panelFondo.remove(imagenFondo);
-		imagenFondo();
-		panelFondo.repaint();
-		
-		i = 0;
-		time = new Timer(10, new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				if (i < result.size()) {
-					panelFondo.remove(relacionVacioNormal.get(desunion.get(result.get(i))));
-					panelFondo.remove(imagenFondo);
-					imagenFondo();
-				}
-				i++;
-				if (i == result.size() + 2) 
-					time.stop();
-				
-				contadorClics=0;
-				clickeados = new ArrayList<>();
-				ventana.repaint();
-				panelFondo.repaint();
-			}
-		});
-
-		time.start();
-	}
-	
-	public void asociarVertexLabel() {
-		for(Vertex<Establecimiento> v: vertices) {
-			union.put(v.getDato().getLabel(),v);
-		}
-	}
-	
-	public void asociarLabelVertex() {
-		for(Vertex<Establecimiento> v: vertices) {
-			desunion.put(v,v.getDato().getLabel());
-		}
-	}
-
-	public void initBotones() {
-		bfsBtn = new Boton();
-		bfsBtn.setText("RECORRIDO BFS");
-		bfsBtn.setBounds((int)(WIDTH*0.7),(int)(HEIGHT*0.7),(int)(WIDTH*0.25), (int)(HEIGHT*0.065));
-		formato.formato(bfsBtn, 0, (float)(HEIGHT*0.035), 50, 0);
-		MouseAdapter accionBfs = new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				JLabel accionador = new JLabel();
-				accionador = devolverLabelDisable();
-				boolean start = false;
-				if(accionador!=null)
-					start=true;
-				
-				if(start) {
-					pintarLabelVacios();
-					List<Vertex<Establecimiento>> result = algoritmoBfs.bfs(union.get(accionador), grafo);
-					empezarAnimacion(result);
-				}
-				
-			}
-		};
-		bfsBtn.addMouseListener(accionBfs);
-		panelFondo.add(bfsBtn);
-		
-		dfsBtn = new Boton();
-		dfsBtn.setText("RECORRDIO DFS");
-		dfsBtn.setBounds(bfsBtn.getX(),(int)(bfsBtn.getY()+bfsBtn.getHeight()+HEIGHT*0.05),(int)(WIDTH*0.25), (int)(HEIGHT*0.065));
-		formato.formato(dfsBtn, 0, (float)(HEIGHT*0.035), 50, 0);
-		MouseAdapter accionDfs = new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				JLabel accionador = new JLabel();
-				accionador = devolverLabelDisable();
-				boolean start = false;
-				if(accionador!=null)
-					start=true;
-				
-				if(start) {
-					pintarLabelVacios();
-					algoritmoDfs.dfs(union.get(accionador), grafo);
-					List<Vertex<Establecimiento>> result = algoritmoDfs.getSalida();
-					empezarAnimacion(result);
-					accionador.setEnabled(true);
-				}
-				
-			}
-		};
-		dfsBtn.addMouseListener(accionDfs);
-		panelFondo.add(dfsBtn);
-	}
-	
-	
-	public void pintarLabelVacios() {
-		int cont = 0;
-		for(JLabel i: arregloLabelVacio) {
-			panelFondo.remove(labels.get(cont));
-			panelFondo.add(i);
-			panelFondo.add(labels.get(cont));
-			cont++;
-		}
-		panelFondo.remove(imagenFondo);
-		imagenFondo();
-		panelFondo.repaint();
-	}
-	
-	
-	public JLabel devolverLabelDisable() {
-		for(JLabel l:labels) {
-			if(!l.isEnabled()) {
-				l.setEnabled(true);
-				return l;
-			}
-		}
-		return null;
+	private ArrayList<Establecimiento> iniEstablecimientos(){
+		ArrayList<Establecimiento> establecimientos = new ArrayList<>();
+        establecimientos.addAll(ManejadorArchivos.getObjectFromJson(RutasArchivos.FACULTADES_FILE, Facultad.class));
+        establecimientos.addAll(ManejadorArchivos.getObjectFromJson(RutasArchivos.COMEDORES_FILE, Comedor.class));
+        establecimientos.addAll(ManejadorArchivos.getObjectFromJson(RutasArchivos.BIBLIOTECAS_FILE, Biblioteca.class));
+        return establecimientos;
 	}
 
 	private void initComponentes() {
-		initBotones();
-		inicializarEstablecimientos();
-		anyadirMouse();
-		pintarLabels();
-		asociarLabelVertex();
-		asociarVertexLabel();
-		imagenFondo();
+		drawLabels();
+		getCoordinates();
 	}
 
-	private void imagenFondo() {
-		imagenFondo = new JLabel();
-		imagenFondo.setBounds(0, 0, WIDTH - 15, HEIGHT - 40);
-		CargaImagen.setImagen(imagenFondo, "planoHor2.png");
-		panelFondo.add(imagenFondo);
+	private void drawLabels(){
+		for (LabelWithID label : labelsWithID) {
+			JLabel labelAux = label.paintIcon();
+			addClickActions(labelAux);
+            imagePanel.add(labelAux);
+			labels.add(labelAux);
+        }
+	}
+
+	private void addClickActions(JLabel label){
+		label.addMouseListener(new MouseAdapter() {
+			@Override
+            public void mouseClicked(MouseEvent e){
+				if(!label.isEnabled())
+					System.out.println("Mostrar Galería");
+
+				label.setEnabled(false);
+				elegidos.add(label);
+
+				if(elegidos.size() ==  2){
+					JLabel label1 = elegidos.get(0);
+					JLabel label2 = elegidos.get(1);
+					System.out.println(label1.getText());
+					System.out.println(label2.getText());
+					label1.setEnabled(true);
+					label2.setEnabled(true);
+					elegidos.clear();
+				}
+            }
+		});
+	}
+
+	// Create a function that will draw line segments between two labels
+	private void drawSegments(String label1, String label2){
+		ArrayList<String> caminos = new ArrayList<>();
+		// Dijstra
+		if (true) {
+			for (int i = 0; i < caminoPintado.size(); i++) {
+				imagePanel.remove(caminoPintado.get(i));
+			}
+		}
+		caminoPintado.clear();
+		for(String camino : caminos){
+			CaminoComponente c = new CaminoComponente();
+			c.setPreferredSize(imagePanel.getSize());
+			c.setBounds(0, 0, imagePanel.getSize().width, imagePanel.getSize().height);
+			caminoPintado.add(c);
+			imagePanel.add(c);
+			LinkedList<Integer> coordenadasCamino = extractCoordenadas(camino);
+			c.agregarPunto(coordenadasCamino);
+			imagePanel.repaint();
+		}
+	}
+
+	private LinkedList<Integer> extractCoordenadas(String camino){
+		String coordenadas[] = camino.split(",");
+		LinkedList<Integer> coordenadasInteger = new LinkedList<>();
+		for(String coordenada : coordenadas){
+			coordenadasInteger.add(Integer.valueOf(coordenada));
+		}
+		return coordenadasInteger;
+	}
+
+	private void getCoordinates(){
+		imagePanel.addMouseListener(new MouseAdapter(){
+			@Override
+            public void mouseClicked(MouseEvent e){
+				System.out.println("X " + (e.getX() - 30));
+				System.out.println("Y " + (e.getY() - 50));
+            }
+		});
 	}
 }

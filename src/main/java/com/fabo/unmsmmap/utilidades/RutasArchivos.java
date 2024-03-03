@@ -13,4 +13,6 @@ public class RutasArchivos {
     public static final String COMEDORES_FILE = "src/main/resources/archivos/comedores.json";
     public static final String BIBLIOTECAS_FILE = "src/main/resources/archivos/bibliotecas.json";
     public static final String EDGES_FILE = "src/main/resources/archivos/edges.json";
+    public static final String LABELS_FILE = "src/main/resources/archivos/labels.json";
+    public static final String LOGOS_BASE_FILE = "src/main/resources/logos/";
 }

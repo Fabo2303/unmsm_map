@@ -5,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import com.fabo.unmsmmap.gui.administrador.LoginAdministrador;
+import com.fabo.unmsmmap.gui.gestion.MapaDibujado;
 import com.fabo.unmsmmap.utilidades.CargaImagen;
 import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
@@ -105,7 +106,7 @@ public class PantallaIngreso {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				imagePanel.removeAll();
-				// MapaDibujado pantallaEleccion = new MapaDibujado(ventana, grafo);
+				new MapaDibujado();
 				imagePanel.repaint();
 				imagePanel.revalidate();
 			}
