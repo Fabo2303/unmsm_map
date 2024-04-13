@@ -17,7 +17,7 @@ public abstract class CargaImagen {
 						(int) auxLabel.getPreferredSize().getHeight(), Image.SCALE_SMOOTH)));
 	}
 
-	private static ImageIcon chargeImageIcon(String path) {
+	public static ImageIcon chargeImageIcon(String path) {
 		Image image = null;
 		try {
 			image = ImageIO.read(new File(path));

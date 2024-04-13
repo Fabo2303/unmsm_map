@@ -1,89 +1,91 @@
 package com.fabo.unmsmmap.logica.algoritmos;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-
+import java.util.Arrays;
+import java.util.Collections;
+import com.fabo.unmsmmap.logica.entidades.Establecimiento;
 import com.fabo.unmsmmap.logica.grafo.Edge;
-import com.fabo.unmsmmap.logica.grafo.Graph;
-import com.fabo.unmsmmap.logica.grafo.Vertex;
+import com.fabo.unmsmmap.utilidades.ManejadorArchivos;
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
-/*
- * Clase que determina el camino mínimo entre dos vértices
- */
-public class Dijkstra<T> {
-	// Atributos
-	private final float INF = Float.MAX_VALUE;
-	private int[] previos;
+public class Dijkstra {
 
-	// Devolver la distancia más corta entre el vértices de inicio y destino
-	public float caminoCorto(Graph<T> grafo, Vertex<T> inicio, Vertex<T> destino) {
-		int numVertex = grafo.getGraph().size();
-		float[] distancias = new float[numVertex];
-		boolean[] visitado = new boolean[numVertex];
-		previos = new int[numVertex];
+    private static final ArrayList<Edge> edges = ManejadorArchivos.getObjectFromJson(RutasArchivos.EDGES_FILE,
+            Edge.class);
+    private final static float INF = Float.MAX_VALUE;
+    private static int[] previos;
 
-		for (int i = 0; i < numVertex; i++) {
-			distancias[i] = INF;
-			visitado[i] = false;
-			previos[i] = -1;
-		}
+    // Función para encontrar el índice de un establecimiento en la lista de
+    // establecimientos
+    private static int findIndex(ArrayList<Establecimiento> establecimientos, String nombre) {
+        for (int i = 0; i < establecimientos.size(); i++) {
+            if (establecimientos.get(i).getAlias().equals(nombre)) {
+                return i;
+            }
+        }
+        return -1; // No encontrado
+    }
 
-		distancias[inicio.getCod()] = 0;
+    // Función para encontrar el establecimiento más cercano a un nodo dado
+    private static Establecimiento findClosest(ArrayList<Establecimiento> establecimientos, float[] dist, boolean[] visited) {
+        float minDist = INF;
+        Establecimiento closest = null;
+        for (Establecimiento establecimiento : establecimientos) {
+            int index = findIndex(establecimientos, establecimiento.getAlias());
+            if (!visited[index] && dist[index] < minDist) {
+                minDist = dist[index];
+                closest = establecimiento;
+            }
+        }
+        return closest;
+    }
 
-		for (int i = 0; i < numVertex - 1; i++) {
-			int minVertex = encontrarMenorVertice(distancias, visitado);
-			visitado[minVertex] = true;
+    public static ArrayList<String> dijkstra(ArrayList<Establecimiento> establecimientos, String inicio, String fin) {
+        int n = establecimientos.size();
+        int startIndex = findIndex(establecimientos, inicio);
+        int endIndex = findIndex(establecimientos, fin);
 
-			List<Edge<T>> edges = grafo.getGraph().get(minVertex).getEdges();
-			
-			for (Edge<T> edge : edges) {
-				int destinationVertex = edge.getFinal().getCod();
-				float weight = edge.getDistance();
-				
-				if (!visitado[destinationVertex] && distancias[minVertex] != INF) {
-					float newDistance = distancias[minVertex] + weight;
-					
-					if (newDistance < distancias[destinationVertex]) {
-						distancias[destinationVertex] = newDistance;
-						previos[destinationVertex] = minVertex;
-					}
-				}
-			}
-		}
+        if (startIndex == -1 || endIndex == -1) {
+            System.out.println("Establecimiento de inicio o final no encontrado.");
+            return null;
+        }
 
-		return distancias[destino.getCod()];
-	}
+        previos = new int[n];
+        Arrays.fill(previos, -1);
+        float[] dist = new float[n];
+        boolean[] visited = new boolean[n];
+        Arrays.fill(dist, INF);
+        dist[startIndex] = 0;
 
-	// Devolver los vértices que componen el camino mínimo
-	public ArrayList<Vertex<T>> obtenerCamino(Graph<T> grafo, Vertex<T> inicio, Vertex<T> destino) {
-		ArrayList<Vertex<T>> camino = new ArrayList<>();
-		Stack<Integer> stack = new Stack<>();
-		int currentVertex = destino.getCod();
+        for (int count = 0; count < n - 1; count++) {
+            Establecimiento u = findClosest(establecimientos, dist, visited);
+            if (u == null)
+                break;
 
-		while (currentVertex != -1) {
-			stack.push(currentVertex);
-			currentVertex = previos[currentVertex];
-		}
+            int uIndex = findIndex(establecimientos, u.getAlias());
+            visited[uIndex] = true;
 
-		while (!stack.isEmpty()) {
-			int vertex = stack.pop();
-			camino.add(grafo.getGraph().get(vertex));
-		}
+            for (Edge edge : edges) {
+                if (edge.getOrigen().equals(u.getAlias())) {
+                    int vIndex = findIndex(establecimientos, edge.getDestino());
+                    float alt = dist[uIndex] + edge.getDistance();
+                    if (alt < dist[vIndex]) {
+                        dist[vIndex] = alt;
+                        previos[vIndex] = uIndex;
+                    }
+                }
+            }
+        }
 
-		return camino;
-	}
-
-	// Encontrar el número identicador del menor vértice
-	public static int encontrarMenorVertice(float[] distancias, boolean[] visitado) {
-		int minVertex = -1;
-		
-		for (int i = 0; i < distancias.length; i++) {
-			if (!visitado[i] && (minVertex == -1 || distancias[i] < distancias[minVertex])) {
-				minVertex = i;
-			}
-		}
-		
-		return minVertex;
-	}
+        // Reconstruir el camino más corto
+        ArrayList<String> shortestPath = new ArrayList<>();
+        int current = endIndex;
+        while (previos[current] != -1) {
+            shortestPath.add(establecimientos.get(current).getAlias());
+            current = previos[current];
+        }
+        shortestPath.add(establecimientos.get(startIndex).getAlias());
+        Collections.reverse(shortestPath);
+        return shortestPath;
+    }
 }

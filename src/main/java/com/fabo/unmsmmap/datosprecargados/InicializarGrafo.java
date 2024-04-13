@@ -117,8 +117,8 @@ public class InicializarGrafo {
 
 		Facultad geologica = new Facultad(
 				"FAC17", "Geologica", "Facultad", "geologica.png",
-				new ArrayList<>(Arrays.asList("geologica/geologica_1.webp", "geologica/geologica_2.webp",
-						"geologica/geologica_3.webp")),
+				new ArrayList<>(Arrays.asList("geologica/geologia_1.webp", "geologica/geologia_2.webp",
+						"geologica/geologia_3.webp")),
 				"018", "912312323", "geologica@unmsm.edu.pe");
 
 		Facultad letras = new Facultad(
@@ -194,32 +194,32 @@ public class InicializarGrafo {
 	public static void inicializarLabelWithID() {
 		ArrayList<LabelWithID> labels = new ArrayList<>();
 		labels.add(new LabelWithID("BIB1", RutasArchivos.LOGOS_BASE_FILE + "biblioteca.webp", 738, 156));
-		labels.add(new LabelWithID("COM1", RutasArchivos.LOGOS_BASE_FILE +"comedor.webp", 260, 328));
-		labels.add(new LabelWithID("FAC01", RutasArchivos.LOGOS_BASE_FILE +"ciencias_fisicas.webp", 148, 443));
-		labels.add(new LabelWithID("FAC02", RutasArchivos.LOGOS_BASE_FILE +"ciencias_biologicas.webp", 190, 385));
-		labels.add(new LabelWithID("FAC03", RutasArchivos.LOGOS_BASE_FILE +"ciencias_matematicas.webp", 103, 400));
-		labels.add(new LabelWithID("FAC04", RutasArchivos.LOGOS_BASE_FILE +"ciencias_administrativas.webp", 468, 454));
-		labels.add(new LabelWithID("FAC05", RutasArchivos.LOGOS_BASE_FILE +"ciencias_contables.webp", 466, 544));
-		labels.add(new LabelWithID("FAC06", RutasArchivos.LOGOS_BASE_FILE +"ciencias_economicas.webp", 1116, 140));
-		labels.add(new LabelWithID("FAC07", RutasArchivos.LOGOS_BASE_FILE +"ciencias_economicas.webp", 426, 496));
-		labels.add(new LabelWithID("FAC08", RutasArchivos.LOGOS_BASE_FILE +"ciencias_sociales.webp", 380, 461));
-		labels.add(new LabelWithID("FAC09", RutasArchivos.LOGOS_BASE_FILE +"derecho.webp", 330, 526));
-		labels.add(new LabelWithID("FAC10", RutasArchivos.LOGOS_BASE_FILE +"educacion.webp", 864, 188));
-		labels.add(new LabelWithID("FAC11", RutasArchivos.LOGOS_BASE_FILE +"educacion_fisica.webp", 925, 215));
-		labels.add(new LabelWithID("FAC12", RutasArchivos.LOGOS_BASE_FILE +"quimica.webp", 146, 332));
-		labels.add(new LabelWithID("FAC13", RutasArchivos.LOGOS_BASE_FILE +"fisi.webp", 1040, 172));
-		labels.add(new LabelWithID("FAC14", RutasArchivos.LOGOS_BASE_FILE +"geografica.webp", 739, 92));
-		labels.add(new LabelWithID("FAC15", RutasArchivos.LOGOS_BASE_FILE +"industrial.webp", 219, 513));
-		labels.add(new LabelWithID("FAC16", RutasArchivos.LOGOS_BASE_FILE +"electronica.webp", 776, 23));
-		labels.add(new LabelWithID("FAC17", RutasArchivos.LOGOS_BASE_FILE +"geologica.webp", 70, 180));
-		labels.add(new LabelWithID("FAC18", RutasArchivos.LOGOS_BASE_FILE +"letras.webp", 530, 469));
-		labels.add(new LabelWithID("FAC19", RutasArchivos.LOGOS_BASE_FILE +"metalurgica.webp", 135, 255));
-		labels.add(new LabelWithID("FAC20", RutasArchivos.LOGOS_BASE_FILE +"minas.webp", 1140, 35));
-		labels.add(new LabelWithID("FAC21", RutasArchivos.LOGOS_BASE_FILE +"odontologia.webp", 949, 116));
-		labels.add(new LabelWithID("FAC22", RutasArchivos.LOGOS_BASE_FILE +"psicologia.webp", 1025, 53));
-		labels.add(new LabelWithID("FAC23", RutasArchivos.LOGOS_BASE_FILE +"electronica.webp", 618, 470));
-		labels.add(new LabelWithID("FAC24", RutasArchivos.LOGOS_BASE_FILE +"civil.webp", 650, 13));
-		labels.add(new LabelWithID("FAC25", RutasArchivos.LOGOS_BASE_FILE +"mecanica_fluidos.webp", 574, 51));
+		labels.add(new LabelWithID("COM1", RutasArchivos.LOGOS_BASE_FILE + "comedor.webp", 260, 328));
+		labels.add(new LabelWithID("FAC01", RutasArchivos.LOGOS_BASE_FILE + "ciencias_fisicas.webp", 148, 443));
+		labels.add(new LabelWithID("FAC02", RutasArchivos.LOGOS_BASE_FILE + "ciencias_biologicas.webp", 190, 385));
+		labels.add(new LabelWithID("FAC03", RutasArchivos.LOGOS_BASE_FILE + "ciencias_matematicas.webp", 103, 400));
+		labels.add(new LabelWithID("FAC04", RutasArchivos.LOGOS_BASE_FILE + "ciencias_administrativas.webp", 468, 454));
+		labels.add(new LabelWithID("FAC05", RutasArchivos.LOGOS_BASE_FILE + "ciencias_contables.webp", 466, 544));
+		labels.add(new LabelWithID("FAC06", RutasArchivos.LOGOS_BASE_FILE + "ciencias_economicas.webp", 1116, 140));
+		labels.add(new LabelWithID("FAC07", RutasArchivos.LOGOS_BASE_FILE + "ciencias_economicas.webp", 426, 496));
+		labels.add(new LabelWithID("FAC08", RutasArchivos.LOGOS_BASE_FILE + "ciencias_sociales.webp", 380, 461));
+		labels.add(new LabelWithID("FAC09", RutasArchivos.LOGOS_BASE_FILE + "derecho.webp", 330, 526));
+		labels.add(new LabelWithID("FAC10", RutasArchivos.LOGOS_BASE_FILE + "educacion.webp", 864, 188));
+		labels.add(new LabelWithID("FAC11", RutasArchivos.LOGOS_BASE_FILE + "educacion_fisica.webp", 925, 215));
+		labels.add(new LabelWithID("FAC12", RutasArchivos.LOGOS_BASE_FILE + "quimica.webp", 146, 332));
+		labels.add(new LabelWithID("FAC13", RutasArchivos.LOGOS_BASE_FILE + "fisi.webp", 1040, 172));
+		labels.add(new LabelWithID("FAC14", RutasArchivos.LOGOS_BASE_FILE + "geografica.webp", 739, 92));
+		labels.add(new LabelWithID("FAC15", RutasArchivos.LOGOS_BASE_FILE + "industrial.webp", 219, 513));
+		labels.add(new LabelWithID("FAC16", RutasArchivos.LOGOS_BASE_FILE + "electronica.webp", 776, 23));
+		labels.add(new LabelWithID("FAC17", RutasArchivos.LOGOS_BASE_FILE + "geologica.webp", 70, 180));
+		labels.add(new LabelWithID("FAC18", RutasArchivos.LOGOS_BASE_FILE + "letras.webp", 530, 469));
+		labels.add(new LabelWithID("FAC19", RutasArchivos.LOGOS_BASE_FILE + "metalurgica.webp", 135, 255));
+		labels.add(new LabelWithID("FAC20", RutasArchivos.LOGOS_BASE_FILE + "minas.webp", 1140, 35));
+		labels.add(new LabelWithID("FAC21", RutasArchivos.LOGOS_BASE_FILE + "odontologia.webp", 949, 116));
+		labels.add(new LabelWithID("FAC22", RutasArchivos.LOGOS_BASE_FILE + "psicologia.webp", 1025, 53));
+		labels.add(new LabelWithID("FAC23", RutasArchivos.LOGOS_BASE_FILE + "electronica.webp", 618, 470));
+		labels.add(new LabelWithID("FAC24", RutasArchivos.LOGOS_BASE_FILE + "civil.webp", 650, 13));
+		labels.add(new LabelWithID("FAC25", RutasArchivos.LOGOS_BASE_FILE + "mecanica_fluidos.webp", 574, 51));
 
 		ManejadorArchivos.saveObjectToJson(labels, RutasArchivos.LABELS_FILE);
 	}
@@ -228,52 +228,99 @@ public class InicializarGrafo {
 		ArrayList<Edge> edges = new ArrayList<>();
 
 		edges.add(new Edge("FAC20", "FAC22", AlmacenDeCaminos.MINAS_PSICOLOGIA, 212));
+		edges.add(new Edge("FAC22", "FAC20", AlmacenDeCaminos.MINAS_PSICOLOGIA, 212));
 		edges.add(new Edge("FAC20", "FAC24", AlmacenDeCaminos.MINAS_CIVIL, 535));
+		edges.add(new Edge("FAC24", "FAC20", AlmacenDeCaminos.MINAS_CIVIL, 535));
 		edges.add(new Edge("FAC22", "FAC13", AlmacenDeCaminos.PSICOLOGIA_SISTEMAS, 179));
+		edges.add(new Edge("FAC13", "FAC22", AlmacenDeCaminos.PSICOLOGIA_SISTEMAS, 179));
 		edges.add(new Edge("FAC22", "FAC21", AlmacenDeCaminos.PSICOLOGIA_ODONTOLOGIA, 233));
+		edges.add(new Edge("FAC21", "FAC22", AlmacenDeCaminos.PSICOLOGIA_ODONTOLOGIA, 233));
 		edges.add(new Edge("FAC22", "FAC16", AlmacenDeCaminos.PSICOLOGIA_ELECTRONICA, 295));
+		edges.add(new Edge("FAC16", "FAC22", AlmacenDeCaminos.PSICOLOGIA_ELECTRONICA, 295));
 		edges.add(new Edge("FAC22", "FAC06", AlmacenDeCaminos.PSICOLOGIA_CIENCIAS_ECONOMICAS, 89));
+		edges.add(new Edge("FAC06", "FAC22", AlmacenDeCaminos.PSICOLOGIA_CIENCIAS_ECONOMICAS, 89));
 		edges.add(new Edge("FAC13", "FAC21", AlmacenDeCaminos.SISTEMAS_ODONTOLOGIA, 135));
+		edges.add(new Edge("FAC21", "FAC13", AlmacenDeCaminos.SISTEMAS_ODONTOLOGIA, 135));
 		edges.add(new Edge("FAC13", "FAC11", AlmacenDeCaminos.SISTEMAS_EDUCACION_FISICA, 262));
+		edges.add(new Edge("FAC11", "FAC13", AlmacenDeCaminos.SISTEMAS_EDUCACION_FISICA, 262));
 		edges.add(new Edge("FAC13", "FAC06", AlmacenDeCaminos.SISTEMAS_CIENCIAS_ECONOMICAS, 46));
+		edges.add(new Edge("FAC06", "FAC13", AlmacenDeCaminos.SISTEMAS_CIENCIAS_ECONOMICAS, 46));
 		edges.add(new Edge("FAC21", "FAC10", AlmacenDeCaminos.ODONTOLOGIA_EDUCACION, 156));
+		edges.add(new Edge("FAC10", "FAC21", AlmacenDeCaminos.ODONTOLOGIA_EDUCACION, 156));
 		edges.add(new Edge("FAC21", "FAC16", AlmacenDeCaminos.ODONTOLOGIA_ELECTRICA, 149));
+		edges.add(new Edge("FAC16", "FAC21", AlmacenDeCaminos.ODONTOLOGIA_ELECTRICA, 149));
 		edges.add(new Edge("FAC21", "FAC06", AlmacenDeCaminos.ODONTOLOGIA_CIENCIAS_ECONOMICAS, 134));
+		edges.add(new Edge("FAC06", "FAC21", AlmacenDeCaminos.ODONTOLOGIA_CIENCIAS_ECONOMICAS, 134));
 		edges.add(new Edge("FAC21", "BIB1", AlmacenDeCaminos.ODONTOLOGIA_BIBLIOTECA, 223));
+		edges.add(new Edge("BIB1", "FAC21", AlmacenDeCaminos.ODONTOLOGIA_BIBLIOTECA, 223));
 		edges.add(new Edge("FAC10", "FAC11", AlmacenDeCaminos.EDUCACION_EDUCACION_FISICA, 33));
+		edges.add(new Edge("FAC11", "FAC10", AlmacenDeCaminos.EDUCACION_EDUCACION_FISICA, 33));
 		edges.add(new Edge("FAC10", "FAC14", AlmacenDeCaminos.EDUCACION_GEOGRAFICA, 184));
+		edges.add(new Edge("FAC14", "FAC10", AlmacenDeCaminos.EDUCACION_GEOGRAFICA, 184));
 		edges.add(new Edge("FAC10", "BIB1", AlmacenDeCaminos.EDUCACION_BIBLIOTECA, 148));
+		edges.add(new Edge("BIB1", "FAC10", AlmacenDeCaminos.EDUCACION_BIBLIOTECA, 148));
 		edges.add(new Edge("FAC16", "FAC24", AlmacenDeCaminos.ELECTRONICA_CIVIL, 141));
+		edges.add(new Edge("FAC24", "FAC16", AlmacenDeCaminos.ELECTRONICA_CIVIL, 141));
 		edges.add(new Edge("FAC16", "FAC14", AlmacenDeCaminos.ELECTRONICA_GEOGRAFICA, 92));
+		edges.add(new Edge("FAC14", "FAC16", AlmacenDeCaminos.ELECTRONICA_GEOGRAFICA, 92));
 		edges.add(new Edge("FAC24", "FAC25", AlmacenDeCaminos.CIVIL_FLUIDOS, 150));
+		edges.add(new Edge("FAC25", "FAC24", AlmacenDeCaminos.CIVIL_FLUIDOS, 150));
 		edges.add(new Edge("FAC25", "FAC17", AlmacenDeCaminos.FLUIDOS_METALURGICA, 524));
+		edges.add(new Edge("FAC17", "FAC25", AlmacenDeCaminos.FLUIDOS_METALURGICA, 524));
 		edges.add(new Edge("FAC25", "COM1", AlmacenDeCaminos.COMEDOR_FLUIDOS, 568));
+		edges.add(new Edge("COM1", "FAC25", AlmacenDeCaminos.COMEDOR_FLUIDOS, 568));
 		edges.add(new Edge("FAC17", "FAC19", AlmacenDeCaminos.GEOLOGICA_METALURGICA, 81));
+		edges.add(new Edge("FAC19", "FAC17", AlmacenDeCaminos.GEOLOGICA_METALURGICA, 81));
 		edges.add(new Edge("FAC17", "FAC03", AlmacenDeCaminos.GEOLOGICA_MATEMATICAS, 294));
+		edges.add(new Edge("FAC03", "FAC17", AlmacenDeCaminos.GEOLOGICA_MATEMATICAS, 294));
 		edges.add(new Edge("FAC12", "FAC19", AlmacenDeCaminos.METALURGICA_QUIMICA, 77));
+		edges.add(new Edge("FAC19", "FAC12", AlmacenDeCaminos.METALURGICA_QUIMICA, 77));
 		edges.add(new Edge("FAC12", "COM1", AlmacenDeCaminos.QUIMICA_COMEDOR, 240));
+		edges.add(new Edge("COM1", "FAC12", AlmacenDeCaminos.QUIMICA_COMEDOR, 240));
 		edges.add(new Edge("FAC03", "FAC02", AlmacenDeCaminos.MATEMATICA_BIOLOGICA, 67));
+		edges.add(new Edge("FAC02", "FAC03", AlmacenDeCaminos.MATEMATICA_BIOLOGICA, 67));
 		edges.add(new Edge("FAC03", "FAC01", AlmacenDeCaminos.MATEMATICA_FISICA, 64));
+		edges.add(new Edge("FAC01", "FAC03", AlmacenDeCaminos.MATEMATICA_FISICA, 64));
 		edges.add(new Edge("FAC03", "COM1", AlmacenDeCaminos.MATEMATICA_COMEDOR, 148));
+		edges.add(new Edge("COM1", "FAC03", AlmacenDeCaminos.MATEMATICA_COMEDOR, 148));
 		edges.add(new Edge("FAC15", "FAC01", AlmacenDeCaminos.INDUSTRIAL_FISICA, 141));
+		edges.add(new Edge("FAC01", "FAC15", AlmacenDeCaminos.INDUSTRIAL_FISICA, 141));
 		edges.add(new Edge("FAC15", "FAC09", AlmacenDeCaminos.INDUSTRIAL_DERECHO, 169));
+		edges.add(new Edge("FAC09", "FAC15", AlmacenDeCaminos.INDUSTRIAL_DERECHO, 169));
 		edges.add(new Edge("FAC09", "FAC07", AlmacenDeCaminos.DERECHO_ECONOMICAS_ANTIGUO, 99));
+		edges.add(new Edge("FAC07", "FAC09", AlmacenDeCaminos.DERECHO_ECONOMICAS_ANTIGUO, 99));
 		edges.add(new Edge("FAC09", "FAC08", AlmacenDeCaminos.SOCIALES_DERECHO, 77));
-		edges.add(new Edge("FAC04", "FAC08", AlmacenDeCaminos.SOCIALES_CIENCIA_ADMINISTRATIVA, 75));
-		edges.add(new Edge("FAC04", "FAC07", AlmacenDeCaminos.ADMINISTRATIVO_CIENCIA_ECONOMICA_ANTIGUO, 57));
-		edges.add(new Edge("FAC04", "FAC18", AlmacenDeCaminos.CIENCIA_ADMINISTRATIVA_LETRAS, 75));
-		edges.add(new Edge("FAC02", "FAC01", AlmacenDeCaminos.CIENCIAS_BIOLOGICAS_FISICA, 52));
-		edges.add(new Edge("FAC02", "COM1", AlmacenDeCaminos.COMEDOR_BIOLOGICA, 119));
-		edges.add(new Edge("FAC19", "COM1", AlmacenDeCaminos.METALURGICA_COMEDOR, 374));
-		edges.add(new Edge("FAC05", "FAC23", AlmacenDeCaminos.CONTABLES_ELECTRONICA_ANTIGUO, 160));
-		edges.add(new Edge("FAC05", "FAC08", AlmacenDeCaminos.SOCIALES_CIENCIA_CONTABLE, 125));
-		edges.add(new Edge("FAC05", "FAC07", AlmacenDeCaminos.CONTABLE_CIENCIA_ECONOMICA_ANTIGUO, 105));
-		edges.add(new Edge("FAC08", "FAC07", AlmacenDeCaminos.SOCIALES_ECONOMICAS_ANTIGUO, 68));
 		edges.add(new Edge("FAC08", "FAC09", AlmacenDeCaminos.SOCIALES_DERECHO, 77));
+		edges.add(new Edge("FAC04", "FAC08", AlmacenDeCaminos.SOCIALES_CIENCIA_ADMINISTRATIVA, 75));
+		edges.add(new Edge("FAC08", "FAC04", AlmacenDeCaminos.SOCIALES_CIENCIA_ADMINISTRATIVA, 75));
+		edges.add(new Edge("FAC04", "FAC07", AlmacenDeCaminos.ADMINISTRATIVO_CIENCIA_ECONOMICA_ANTIGUO, 57));
+		edges.add(new Edge("FAC07", "FAC04", AlmacenDeCaminos.ADMINISTRATIVO_CIENCIA_ECONOMICA_ANTIGUO, 57));
+		edges.add(new Edge("FAC04", "FAC18", AlmacenDeCaminos.CIENCIA_ADMINISTRATIVA_LETRAS, 75));
+		edges.add(new Edge("FAC18", "FAC04", AlmacenDeCaminos.CIENCIA_ADMINISTRATIVA_LETRAS, 75));
+		edges.add(new Edge("FAC02", "FAC01", AlmacenDeCaminos.CIENCIAS_BIOLOGICAS_FISICA, 52));
+		edges.add(new Edge("FAC01", "FAC02", AlmacenDeCaminos.CIENCIAS_BIOLOGICAS_FISICA, 52));
+		edges.add(new Edge("FAC02", "COM1", AlmacenDeCaminos.COMEDOR_BIOLOGICA, 119));
+		edges.add(new Edge("COM1", "FAC02", AlmacenDeCaminos.COMEDOR_BIOLOGICA, 119));
+		edges.add(new Edge("FAC19", "COM1", AlmacenDeCaminos.METALURGICA_COMEDOR, 374));
+		edges.add(new Edge("COM1", "FAC19", AlmacenDeCaminos.METALURGICA_COMEDOR, 374));
+		edges.add(new Edge("FAC05", "FAC23", AlmacenDeCaminos.CONTABLES_ELECTRONICA_ANTIGUO, 160));
+		edges.add(new Edge("FAC23", "FAC05", AlmacenDeCaminos.CONTABLES_ELECTRONICA_ANTIGUO, 160));
+		edges.add(new Edge("FAC05", "FAC08", AlmacenDeCaminos.SOCIALES_CIENCIA_CONTABLE, 125));
+		edges.add(new Edge("FAC08", "FAC05", AlmacenDeCaminos.SOCIALES_CIENCIA_CONTABLE, 125));
+		edges.add(new Edge("FAC05", "FAC07", AlmacenDeCaminos.CONTABLE_CIENCIA_ECONOMICA_ANTIGUO, 105));
+		edges.add(new Edge("FAC07", "FAC05", AlmacenDeCaminos.CONTABLE_CIENCIA_ECONOMICA_ANTIGUO, 105));
+		edges.add(new Edge("FAC08", "FAC07", AlmacenDeCaminos.SOCIALES_ECONOMICAS_ANTIGUO, 68));
+		edges.add(new Edge("FAC07", "FAC08", AlmacenDeCaminos.SOCIALES_ECONOMICAS_ANTIGUO, 68));
+		edges.add(new Edge("FAC08", "FAC09", AlmacenDeCaminos.SOCIALES_DERECHO, 77));
+		edges.add(new Edge("FAC09", "FAC08", AlmacenDeCaminos.SOCIALES_DERECHO, 77));
 		edges.add(new Edge("FAC18", "FAC23", AlmacenDeCaminos.LETRAS_ELECTRONICA, 170));
+		edges.add(new Edge("FAC23", "FAC18", AlmacenDeCaminos.LETRAS_ELECTRONICA, 170));
 		edges.add(new Edge("FAC23", "FAC11", AlmacenDeCaminos.ELECTRONICA_ANTIGUO_EDUCACION_FISICA, 443));
+		edges.add(new Edge("FAC11", "FAC23", AlmacenDeCaminos.ELECTRONICA_ANTIGUO_EDUCACION_FISICA, 443));
 		edges.add(new Edge("FAC14", "COM1", AlmacenDeCaminos.COMEDOR_GEOGRAFICA, 659));
+		edges.add(new Edge("COM1", "FAC14", AlmacenDeCaminos.COMEDOR_GEOGRAFICA, 659));
 		edges.add(new Edge("FAC14", "BIB1", AlmacenDeCaminos.BIBLIOTECA_GEOGRAFICA, 93));
+		edges.add(new Edge("BIB1", "FAC14", AlmacenDeCaminos.BIBLIOTECA_GEOGRAFICA, 93));
 
 		ManejadorArchivos.saveObjectToJson(edges, RutasArchivos.EDGES_FILE);
 	}

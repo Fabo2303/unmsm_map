@@ -2,8 +2,11 @@ package com.fabo.unmsmmap.gui.agregar;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
+import com.fabo.unmsmmap.logica.entidades.Biblioteca;
 import com.fabo.unmsmmap.utilidades.*;
 
 public class PantallaAgregarBiblioteca {
@@ -15,10 +18,13 @@ public class PantallaAgregarBiblioteca {
 			insertImgLabel;
 	private CustomButton adjuntarLogoButton, adjuntarImagenesButton, guardarButton;
 	private JTextField nombreTextField, telefonoTextField, atencionTextField;
+	private String logoPath;
+	private ArrayList<String> imagesPath;
 	private JTextArea descripcionTextArea;
 
 	public PantallaAgregarBiblioteca() {
 		imagePanel = ImagePanel.getInstance();
+		imagesPath = new ArrayList<>();
 		springLayout = new SpringLayout();
 		imagePanel.setLayout(springLayout);
 		initComponentes();
@@ -212,8 +218,8 @@ public class PantallaAgregarBiblioteca {
 		Formato.formato(adjuntarLogoButton, 0, 25f, 10, 2);
 		adjuntarLogoButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {// POR MODIFICAR
-				// Agregar filechooser
+			public void mouseClicked(MouseEvent e) {
+				logoPath = FileChooser.seleccionarArchivo();
 			}
 		});
 		imagePanel.add(adjuntarLogoButton);
@@ -253,7 +259,7 @@ public class PantallaAgregarBiblioteca {
 		adjuntarImagenesButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// Agregar filechooser
+				imagesPath.add(FileChooser.seleccionarArchivo());
 			}
 		});
 		imagePanel.add(adjuntarImagenesButton);
@@ -276,7 +282,12 @@ public class PantallaAgregarBiblioteca {
 		guardarButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				ArrayList<Biblioteca> bibliotecas = ManejadorArchivos.getObjectFromJson(RutasArchivos.BIBLIOTECAS_FILE,
+						Biblioteca.class);
+				String alias = bibliotecas.get(bibliotecas.size() - 1).getAlias();
+				alias = alias.substring(0, 3) + (Integer.parseInt(alias.substring(3)) + 1);
+				Biblioteca biblioteca = new Biblioteca(alias, nombreTextField.getText(), descripcionTextArea.getText(), logoPath, imagesPath, telefonoTextField.getText(), atencionTextField.getText());
+				new PantallaEmergenteCrearEdges(biblioteca);
 			}
 		});
 		updatePositionButtonGuardar();

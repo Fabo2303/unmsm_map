@@ -1,15 +1,19 @@
 package com.fabo.unmsmmap.gui.gestion;
 
 import java.awt.Color;
-import java.awt.Image;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -22,30 +26,34 @@ import com.fabo.unmsmmap.logica.entidades.Comedor;
 import com.fabo.unmsmmap.logica.entidades.Establecimiento;
 import com.fabo.unmsmmap.logica.entidades.Facultad;
 import com.fabo.unmsmmap.utilidades.CargaImagen;
+import com.fabo.unmsmmap.utilidades.CustomButton;
 import com.fabo.unmsmmap.utilidades.Formato;
+import com.fabo.unmsmmap.utilidades.RutasArchivos;
 
-public class VentanaEmergenteDetalles {
+public class VentanaEmergenteDetalles extends JPanel {
 
 	private JFrame ventana;
-	private JPanel panelFondo;
-	private JLabel imagenFondo, titulo1Label, titulo2Label;
-	private JLabel nombreLabel, descripcionLabel, imagenesLabel, listaImgLabel, nextButton, prevButton;
+	private JLabel titulo1Label, titulo2Label;
+	private JLabel nombreLabel, descripcionLabel, imagenesLabel, listaImgLabel;
 	private JLabel codigoLabel, horarioLabel, capacidadLabel, correoLabel, telefonoLabel;
 	private JTextField nombreField;
 	private JTextArea descripcionArea;
 	private JTextField codigoField, horarioField, capacidadField, correoField, telefonoField;
 	private Establecimiento lugar;
-	private Formato formato;
-	private ArrayList<ImageIcon> fotos;
+	private ArrayList<String> fotos;
 	private int indexImg = 0;
+	private BufferedImage image;
 	private final int WIDTH = 1200;
 	private final int HEIGHT = 675;
 
 	public VentanaEmergenteDetalles(Establecimiento lugar) {
 		this.lugar = lugar;
-		this.panelFondo = new JPanel();
+		try {
+			image = ImageIO.read(new File(RutasArchivos.FONDO));
+		} catch (IOException e) {
+			System.out.println("No se encontro la imagen: " + RutasArchivos.FONDO);
+		}
 		this.ventana = new JFrame();
-		this.formato = new Formato();
 		configVentana();
 		initFondo();
 		initComponentes();
@@ -56,7 +64,7 @@ public class VentanaEmergenteDetalles {
 	private void configVentana() {
 		ventana.setSize(WIDTH, HEIGHT);
 		ventana.setTitle("ED-G5-UNMSM");
-		ventana.setLocationRelativeTo(null); // Aparece al medio la ventana
+		ventana.setLocationRelativeTo(null);
 		ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		ventana.setResizable(false);
 		confirmacionCerrar();
@@ -65,7 +73,6 @@ public class VentanaEmergenteDetalles {
 
 	private void confirmacionCerrar() {
 		ventana.addWindowListener(new WindowAdapter() {
-
 			@Override
 			public void windowClosing(WindowEvent windowEvent) {
 				int option = JOptionPane.showConfirmDialog(ventana, "¿Estás seguro de que quieres salir?",
@@ -81,12 +88,11 @@ public class VentanaEmergenteDetalles {
 	private void initFondo() {
 		ventana.setSize(WIDTH, HEIGHT);
 		ventana.setLocationRelativeTo(null);
-		panelFondo.setLayout(null);
-		ventana.getContentPane().add(panelFondo);
+		this.setLayout(null);
+		ventana.getContentPane().add(this);
 	}
 
 	private void initComponentes() {
-		System.out.println(lugar.getClass().equals(Facultad.class));
 		initTitulo();
 		initNombre();
 		initDescripcion();
@@ -105,76 +111,76 @@ public class VentanaEmergenteDetalles {
 		initData();
 		initLista();
 		initDesign();
-		imagenFondo();
 	}
 
 	private void initDesign() {
 
 		JLabel iconoLabel = new JLabel();
+		iconoLabel.setPreferredSize(new Dimension((int) (WIDTH * 0.1), (int) (HEIGHT * 0.18)));
 		iconoLabel.setBounds((int) (WIDTH * 0.87), (int) (HEIGHT * 0), (int) (WIDTH * 0.1), (int) (HEIGHT * 0.18));
-		CargaImagen.setImagen(iconoLabel, "logo.png");
-		panelFondo.add(iconoLabel);
+		CargaImagen.setImagen(iconoLabel, RutasArchivos.LOGO);
+		this.add(iconoLabel);
 
 		JLabel lineaHorizontal = new JLabel();
 		lineaHorizontal.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.WHITE));
 		lineaHorizontal.setBounds((int) (WIDTH * 0.05), titulo2Label.getY(),
 				(int) (titulo2Label.getX() - WIDTH * 0.075), 1);
-		panelFondo.add(lineaHorizontal);
+		this.add(lineaHorizontal);
 
 		JLabel lineaHorizontal2 = new JLabel();
 		lineaHorizontal2.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.WHITE));
 		lineaHorizontal2.setBounds((int) (titulo2Label.getX() + titulo2Label.getWidth() + WIDTH * 0.02),
 				titulo2Label.getY(), (int) (iconoLabel.getX() - titulo2Label.getX() - WIDTH * 0.25), 1);
-		panelFondo.add(lineaHorizontal2);
+		this.add(lineaHorizontal2);
 	}
 
 	private void initTitulo() {
 		titulo1Label = new JLabel("Informacion de");
 		titulo1Label.setBounds((int) (WIDTH * (0.39)), (int) (HEIGHT * 0.05), (int) (WIDTH * 0.22),
 				(int) (HEIGHT * 0.045));
-		formato.formato(titulo1Label, 1, (float) (HEIGHT * 0.045));
-		panelFondo.add(titulo1Label);
+		Formato.formato(titulo1Label, 1, (float) (HEIGHT * 0.045));
+		this.add(titulo1Label);
 
 		titulo2Label = new JLabel("Establecimiento");
 		titulo2Label.setBounds((int) (WIDTH * (0.3865)), (int) (HEIGHT * 0.095), (int) (WIDTH * 0.235),
 				(int) (HEIGHT * 0.045));
-		formato.formato(titulo2Label, 1, (float) (HEIGHT * 0.045));
-		panelFondo.add(titulo2Label);
+		Formato.formato(titulo2Label, 1, (float) (HEIGHT * 0.045));
+		this.add(titulo2Label);
 	}
 
 	private void initNombre() {
 		nombreLabel = new JLabel("Nombre");
 		nombreLabel.setBounds((int) (WIDTH * 0.05), (int) (titulo2Label.getY() + HEIGHT * 0.15), (int) (WIDTH * 0.15),
 				(int) (HEIGHT * 0.045));
-		formato.formato(nombreLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(nombreLabel);
+		Formato.formato(nombreLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(nombreLabel);
 
 		nombreField = new JTextField();
 		nombreField.setBounds((int) (nombreLabel.getX() + nombreLabel.getWidth()), (int) (nombreLabel.getY()),
 				(int) (WIDTH * 0.25), (int) (HEIGHT * 0.045));
-		formato.formato(nombreField, 0, (float) (HEIGHT * 0.035));
+		Formato.formato(nombreField, 0, (float) (HEIGHT * 0.035));
 		nombreField.setEditable(false);
-		panelFondo.add(nombreField);
+		this.add(nombreField);
 	}
 
 	private void initDescripcion() {
 		descripcionLabel = new JLabel("Descripcion");
 		descripcionLabel.setBounds((int) (WIDTH * 0.55), (int) (nombreField.getY()), (int) (WIDTH * 0.15),
 				(int) (HEIGHT * 0.045));
-		formato.formato(descripcionLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(descripcionLabel);
+		Formato.formato(descripcionLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(descripcionLabel);
 
 		descripcionArea = new JTextArea();
 		descripcionArea.setBounds((int) (descripcionLabel.getX()),
 				(int) (descripcionLabel.getY() + descripcionLabel.getHeight() + HEIGHT * 0.015),
 				(int) (WIDTH * 0.95 - descripcionLabel.getX()), (int) (HEIGHT * 0.18));
-		formato.formato(descripcionArea);
+		Formato.formato(descripcionArea);
 		descripcionArea.setFont(descripcionArea.getFont().deriveFont((float) (HEIGHT * 0.035)));
 		descripcionArea.setForeground(Color.WHITE);
 		descripcionArea.setOpaque(false);
 		descripcionArea.setBorder(null);
 		descripcionArea.setEditable(false);
-		panelFondo.add(descripcionArea);
+		this.add(descripcionArea);
 	}
 
 	private void initImagenes() {
@@ -182,8 +188,8 @@ public class VentanaEmergenteDetalles {
 		imagenesLabel.setBounds((int) (descripcionArea.getX()),
 				(int) (descripcionArea.getY() + descripcionArea.getHeight() + HEIGHT * 0.015), (int) (WIDTH * 0.15),
 				(int) (HEIGHT * 0.045));
-		formato.formato(imagenesLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(imagenesLabel);
+		Formato.formato(imagenesLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(imagenesLabel);
 
 		listaImgLabel = new JLabel();
 		listaImgLabel.setBounds((int) (imagenesLabel.getX()),
@@ -197,18 +203,17 @@ public class VentanaEmergenteDetalles {
 		// Centrar verticalmente
 		listaImgLabel.setVerticalAlignment(JLabel.CENTER);
 		listaImgLabel.setAlignmentY(JLabel.CENTER_ALIGNMENT);
-		panelFondo.add(listaImgLabel);
+		this.add(listaImgLabel);
 
 		int width = (int) (listaImgLabel.getWidth() * 0.03);
 		int height = (int) (1.954 * width);
 
-		prevButton = new JLabel();
+		CustomButton prevButton = new CustomButton();
+		prevButton.setText("<");
 		prevButton.setBounds((int) (listaImgLabel.getX()),
 				(int) (listaImgLabel.getY() + listaImgLabel.getHeight() * 0.333), width, height);
-		CargaImagen.setImagen(prevButton, "prevImgButton.png");
-		panelFondo.add(prevButton);
-
-		MouseAdapter prev = new MouseAdapter() {
+		Formato.formato(prevButton, 0, (float) (HEIGHT * 0.035));
+		prevButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				indexImg--;
@@ -216,19 +221,18 @@ public class VentanaEmergenteDetalles {
 				if (indexImg < 0)
 					indexImg = fotos.size() - 1;
 
-				listaImgLabel.setIcon(fotos.get(indexImg));
+				listaImgLabel
+						.setIcon(CargaImagen.chargeImageIcon(RutasArchivos.ESTABLECIMIENTOS + fotos.get(indexImg)));
 			}
-		};
+		});
+		this.add(prevButton);
 
-		prevButton.addMouseListener(prev);
-
-		nextButton = new JLabel();
+		CustomButton nextButton = new CustomButton();
 		nextButton.setBounds((int) (listaImgLabel.getX() + listaImgLabel.getWidth() - width),
 				(int) (listaImgLabel.getY() + listaImgLabel.getHeight() * 0.333), width, height);
-		CargaImagen.setImagen(nextButton, "nextImgButton.png");
-		panelFondo.add(nextButton);
-
-		MouseAdapter next = new MouseAdapter() {
+		nextButton.setText(">");
+		Formato.formato(nextButton, 0, (float) (HEIGHT * 0.035));
+		nextButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				indexImg++;
@@ -236,11 +240,11 @@ public class VentanaEmergenteDetalles {
 				if (indexImg >= fotos.size())
 					indexImg = 0;
 
-				listaImgLabel.setIcon(fotos.get(indexImg));
+				listaImgLabel
+						.setIcon(CargaImagen.chargeImageIcon(RutasArchivos.ESTABLECIMIENTOS + fotos.get(indexImg)));
 			}
-		};
-
-		nextButton.addMouseListener(next);
+		});
+		this.add(nextButton);
 	}
 
 	private void initCorreo() {
@@ -248,16 +252,16 @@ public class VentanaEmergenteDetalles {
 		correoLabel.setBounds((int) (nombreLabel.getX()),
 				(int) (nombreLabel.getY() + 4 * nombreLabel.getHeight() + HEIGHT * 0.15), nombreLabel.getWidth(),
 				nombreLabel.getHeight() * 2);
-		formato.formato(correoLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(correoLabel);
+		Formato.formato(correoLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(correoLabel);
 
 		correoField = new JTextField();
 		correoField.setBounds(nombreField.getX(),
 				(int) (nombreField.getY() + 4 * nombreField.getHeight() + HEIGHT * 0.15), nombreField.getWidth(),
 				nombreField.getHeight() * 2);
-		formato.formato(correoField, 0, (float) (HEIGHT * 0.035));
+		Formato.formato(correoField, 0, (float) (HEIGHT * 0.035));
 		correoField.setEditable(false);
-		panelFondo.add(correoField);
+		this.add(correoField);
 	}
 
 	private void initCodigo() {
@@ -265,16 +269,16 @@ public class VentanaEmergenteDetalles {
 		codigoLabel.setBounds((int) (nombreLabel.getX()),
 				(int) (nombreLabel.getY() + nombreLabel.getHeight() + HEIGHT * 0.075), nombreLabel.getWidth(),
 				nombreLabel.getHeight());
-		formato.formato(codigoLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(codigoLabel);
+		Formato.formato(codigoLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(codigoLabel);
 
 		codigoField = new JTextField();
 		codigoField.setBounds((int) (nombreField.getX()),
 				(int) (nombreField.getY() + nombreField.getHeight() + HEIGHT * 0.075), nombreField.getWidth(),
 				nombreField.getHeight());
-		formato.formato(codigoField, 0, (float) (HEIGHT * 0.035));
+		Formato.formato(codigoField, 0, (float) (HEIGHT * 0.035));
 		codigoField.setEditable(false);
-		panelFondo.add(codigoField);
+		this.add(codigoField);
 
 	}
 
@@ -283,16 +287,16 @@ public class VentanaEmergenteDetalles {
 		horarioLabel.setBounds((int) (nombreLabel.getX()),
 				(int) (nombreLabel.getY() + nombreLabel.getHeight() + HEIGHT * 0.05), nombreLabel.getWidth(),
 				nombreLabel.getHeight() * 2);
-		formato.formato(horarioLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(horarioLabel);
+		Formato.formato(horarioLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(horarioLabel);
 
 		horarioField = new JTextField();
 		horarioField.setBounds((int) (nombreField.getX()),
 				(int) ((nombreField.getY() + nombreField.getHeight() + HEIGHT * 0.075)), nombreField.getWidth(),
 				nombreField.getHeight());
-		formato.formato(horarioField, 0, (float) (HEIGHT * 0.035));
+		Formato.formato(horarioField, 0, (float) (HEIGHT * 0.035));
 		horarioField.setEditable(false);
-		panelFondo.add(horarioField);
+		this.add(horarioField);
 
 	}
 
@@ -301,16 +305,16 @@ public class VentanaEmergenteDetalles {
 		capacidadLabel.setBounds((int) (nombreLabel.getX()),
 				(int) (horarioLabel.getY() + horarioLabel.getHeight() + HEIGHT * 0.05), nombreLabel.getWidth(),
 				nombreLabel.getHeight());
-		formato.formato(capacidadLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(capacidadLabel);
+		Formato.formato(capacidadLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(capacidadLabel);
 
 		capacidadField = new JTextField();
 		capacidadField.setBounds((int) (nombreField.getX()),
 				(int) (horarioLabel.getY() + horarioLabel.getHeight() + HEIGHT * 0.05), nombreField.getWidth(),
 				nombreField.getHeight());
-		formato.formato(capacidadField, 0, (float) (HEIGHT * 0.035));
+		Formato.formato(capacidadField, 0, (float) (HEIGHT * 0.035));
 		capacidadField.setEditable(false);
-		panelFondo.add(capacidadField);
+		this.add(capacidadField);
 
 	}
 
@@ -319,16 +323,16 @@ public class VentanaEmergenteDetalles {
 		telefonoLabel.setBounds((int) (nombreLabel.getX()),
 				(int) (nombreLabel.getY() + 3 * nombreLabel.getHeight() + HEIGHT * 0.1), nombreLabel.getWidth(),
 				nombreLabel.getHeight());
-		formato.formato(telefonoLabel, 0, (float) (HEIGHT * 0.035));
-		panelFondo.add(telefonoLabel);
+		Formato.formato(telefonoLabel, 0, (float) (HEIGHT * 0.035));
+		this.add(telefonoLabel);
 
 		telefonoField = new JTextField();
 		telefonoField.setBounds((int) (nombreField.getX()),
 				(int) (nombreField.getY() + 3 * nombreField.getHeight() + HEIGHT * 0.1), nombreField.getWidth(),
 				nombreField.getHeight());
-		formato.formato(telefonoField, 0, (float) (HEIGHT * 0.035));
+		Formato.formato(telefonoField, 0, (float) (HEIGHT * 0.035));
 		telefonoField.setEditable(false);
-		panelFondo.add(telefonoField);
+		this.add(telefonoField);
 
 	}
 
@@ -337,18 +341,18 @@ public class VentanaEmergenteDetalles {
 		nombreField.setText(lugar.getNombre());
 		descripcionArea.setText(lugar.getDescripcion());
 		if (clase.equals(Facultad.class)) {
-			Facultad f = (Facultad)lugar;
+			Facultad f = (Facultad) lugar;
 			codigoField.setText(f.getCodigo());
-			telefonoField.setText(f.getTelContacto());
-			correoField.setText(f.getCorElec());
+			telefonoField.setText(f.getTelefonoContacto());
+			correoField.setText(f.getCorreoContacto());
 		}
 		if (clase.equals(Comedor.class)) {
-			Comedor c = (Comedor)lugar;
+			Comedor c = (Comedor) lugar;
 			capacidadField.setText(c.getCapacidad());
 			horarioField.setText(c.getHorarioAtencion());
 		}
 		if (clase.equals(Biblioteca.class)) {
-			Biblioteca b = (Biblioteca)lugar;
+			Biblioteca b = (Biblioteca) lugar;
 			telefonoField.setText(b.getTelefono());
 			horarioField.setText(b.getHorarioAtencion());
 		}
@@ -357,36 +361,13 @@ public class VentanaEmergenteDetalles {
 
 	private void initLista() {
 		this.fotos = lugar.getImagenes();
-		reescalarImagenes(fotos, listaImgLabel);
-		listaImgLabel.setIcon(fotos.get(indexImg));
+		listaImgLabel.setIcon(CargaImagen.chargeImageIcon(RutasArchivos.ESTABLECIMIENTOS + fotos.get(indexImg)));
 	}
 
-	private void reescalarImagenes(ArrayList<ImageIcon> fotos, JLabel listaImgLabel) {
-
-		ArrayList<ImageIcon> copia = new ArrayList<>();
-
-		for (ImageIcon img : fotos) {
-			if (img.getIconHeight() > listaImgLabel.getHeight())
-				img = new ImageIcon(img.getImage().getScaledInstance(
-						img.getIconWidth() * listaImgLabel.getHeight() / img.getIconHeight(), listaImgLabel.getHeight(),
-						Image.SCALE_SMOOTH));
-			if (img.getIconWidth() > listaImgLabel.getWidth())
-				img = new ImageIcon(img.getImage().getScaledInstance(listaImgLabel.getWidth(),
-						img.getIconWidth() * listaImgLabel.getWidth() / img.getIconHeight(), Image.SCALE_SMOOTH));
-			copia.add(img);
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		if (image != null) {
+			g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		}
-
-		fotos.clear();
-
-		for (ImageIcon img : copia)
-			fotos.add(img);
-
-	}
-
-	private void imagenFondo() {
-		imagenFondo = new JLabel();
-		imagenFondo.setBounds(0, 0, WIDTH, HEIGHT);
-		CargaImagen.setImagen(imagenFondo, "fondo.png");
-		panelFondo.add(imagenFondo);
 	}
 }
