@@ -96,9 +96,7 @@ public class MapaDibujado {
 		});
 	}
 
-	// Create a function that will draw line segments between two labels
 	private void drawSegments(ArrayList<String> caminos) {
-		// Dijstra
 		if (true) {
 			for (int i = 0; i < caminoPintado.size(); i++) {
 				imagePanel.remove(caminoPintado.get(i));
